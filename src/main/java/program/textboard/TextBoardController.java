@@ -34,7 +34,7 @@ public class TextBoardController {
 	@RequestMapping(value = {"","/*"})
 	public String index(Model model) {
 		model.addAttribute("greeting", "Hello!");
-		return "/index";
+		return "/index0";
 	}
 	
 	/**************************************************

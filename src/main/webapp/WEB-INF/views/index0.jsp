@@ -11,8 +11,6 @@
     <link href="//fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap"
         rel="stylesheet">
     <!-- //google-fonts -->
-    <!-- Template CSS Style link -->
-    <link rel="stylesheet" href="assets/css/style-liberty.css">
 </head>
 
 <body>
@@ -117,7 +115,7 @@
                     </div>
                 </div>
                 <div class="col-md-6 mt-md-0 mt-4">
-                    <img class="img-fluid" src="assets/images/bannerimg.png" alt=" ">
+                    <img class="img-fluid" src="/asset/images/bannerimg.png" alt=" ">
                 </div>
             </div>
         </div>
@@ -129,7 +127,7 @@
             <div class="container py-lg-4 py-md-3">
                 <div class="row">
                     <div class="col-lg-6 content-photo">
-                        <a href="#image"><img src="assets/images/about.png" class="img-responsive"
+                        <a href="#image"><img src="/asset/images/about.png" class="img-responsive"
                                 alt="content-photo"></a>
                     </div>
                     <div class="col-lg-6 content-left mb-md-0 mb-3">
@@ -163,7 +161,7 @@
                         <div class="row">
                             <div class="col-sm-6">
                                 <div class="position-relative">
-                                    <img src="assets/images/team1.jpg" class="img-responsive" alt="content-photo">
+                                    <img src="/asset/images/team1.jpg" class="img-responsive" alt="content-photo">
                                     <div class="text-position">
                                         <h4><a href="about.html">Jimic Nasium</a></h4>
                                         <p>Best Chef</p>
@@ -172,7 +170,7 @@
                             </div>
                             <div class="col-sm-6 mt-sm-0 mt-4">
                                 <div class="position-relative">
-                                    <img src="assets/images/team2.jpg" class="img-responsive" alt="content-photo">
+                                    <img src="/asset/images/team2.jpg" class="img-responsive" alt="content-photo">
                                     <div class="text-position">
                                         <h4><a href="about.html">Henry Itondo</a></h4>
                                         <p>Food Expert</p>
@@ -249,7 +247,7 @@
                     </div>
                     <div class="col-lg-7 left-wthree-img text-righ mt-lg-0 mt-5">
                         <div class="position-relative">
-                            <img src="assets/images/video.jpg" alt="" class="img-fluid radius-image-full">
+                            <img src="/asset/images/video.jpg" alt="" class="img-fluid radius-image-full">
                             <a href="#small-dialog"
                                 class="popup-with-zoom-anim play-view text-center position-absolute">
                                 <span class="video-play-icon">
@@ -280,7 +278,7 @@
                                 <h3 class="date">21<sup>st</sup> October</h3>
                                 <a href="blog-single.html">
                                     <figure>
-                                        <img class="img-responsive" src="assets/images/blog1.jpg" alt="blog-image">
+                                        <img class="img-responsive" src="/asset/images/blog1.jpg" alt="blog-image">
                                     </figure>
                                 </a>
                                 <h3> <a href="blog-single.html" class="vv-link">Nunc consequat justo id commodo
@@ -305,7 +303,7 @@
                                 <h3 class="date">23<sup>rd</sup> October</h3>
                                 <a href="blog-single.html">
                                     <figure>
-                                        <img class="img-responsive" src="assets/images/blog4.jpg" alt="blog-image">
+                                        <img class="img-responsive" src="/asset/images/blog4.jpg" alt="blog-image">
                                     </figure>
                                 </a>
                                 <h3> <a href="blog-single.html" class="vv-link">Fusce ac eros quis metus por edit
@@ -330,7 +328,7 @@
                                 <h3 class="date">1<sup>st</sup> November</h3>
                                 <a href="blog-single.html">
                                     <figure>
-                                        <img class="img-responsive" src="assets/images/blog3.jpg" alt="blog-image">
+                                        <img class="img-responsive" src="/asset/images/blog3.jpg" alt="blog-image">
                                     </figure>
                                 </a>
                                 <h3> <a href="blog-single.html" class="vv-link">Cras fringilla, enim a porta
@@ -423,7 +421,7 @@
             <div class="container">
                 <div class="row aap-4-section">
                     <div class="col-lg-6 app4-right-image">
-                        <img src="assets/images/img3.png" class="img-responsive" alt="App Device" />
+                        <img src="/asset/images/img3.png" class="img-responsive" alt="App Device" />
                     </div>
                     <div class="col-lg-6 app4-left-text pl-lg-0 mb-lg-0 mb-sm-2 mb-4">
                         <h6>For 30% Discount</h6>
@@ -562,11 +560,11 @@
     <!-- //move top -->
 
     <!-- common jquery plugin -->
-    <script src="assets/js/jquery-3.3.1.min.js"></script>
+    <script src="/asset/js/jquery-3.3.1.min.js"></script>
     <!-- //common jquery plugin -->
 
     <!-- theme switch js (light and dark)-->
-    <script src="assets/js/theme-change.js"></script>
+    <script src="/asset/js/theme-change.js"></script>
     <script>
         function autoType(elementClass, typingSpeed) {
             var thhis = $(elementClass);
@@ -605,7 +603,7 @@
     <!-- //theme switch js (light and dark)-->
 
     <!-- magnific popup -->
-    <script src="assets/js/jquery.magnific-popup.min.js"></script>
+    <script src="/asset/js/jquery.magnific-popup.min.js"></script>
     <script>
         $(document).ready(function () {
             $('.popup-with-zoom-anim').magnificPopup({
@@ -683,7 +681,7 @@
     <!-- //disable body scroll which navbar is in active -->
 
     <!--bootstrap-->
-    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="/asset/js/bootstrap.min.js"></script>
     <!-- //bootstrap-->
     <!-- //Js scripts -->
 </body>
