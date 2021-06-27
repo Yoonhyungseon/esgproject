@@ -1,0 +1,68 @@
+@charset "UTF-8";
+
+/* common */
+html { height: 100%;}
+.inline-block { display: inline-block !important;}
+.block { display: block !important;}
+.relative { position: relative;}
+.text-aling-r { text-align: right;}
+.text-aling-c { text-align: center;}
+.m0 { margin: 0 !important;}
+.pl60 { padding-left: 60px;}
+.pr28 { position: relative; padding-right: 28px;}
+
+/* login */
+.login { height: 100%; background-color: #fff;}
+.login #body { min-height: 100%; }
+.login .body_inner { padding-bottom: 72px;}
+.login_wrapper { max-width: 400px;}
+.login_content { padding: 25px 10px 0;}
+.login_content form { margin: 20px 0 40px;}
+.login_form { position: relative;}
+.login h1 { line-height: 70px; padding-top: 5%; margin: 0 0 0 5%; font-size: 58px; font-weight: 700; color: #000;}
+.login h1::before { display: none;}
+.login h1::after { display: none;}
+.login .pl60::before { content: ""; display: block; position: absolute; left: 10px; top: 0; height: 34px; line-height: 34px; font-size: 21px; font-weight: 700; color: #000;}
+.login .pl60:nth-child(1)::before { content: "ID";}
+.login .pl60:nth-child(2)::before { content: "PW";}
+
+.login .separator { border-top: none; text-align: center;}
+.login .change_link { width: 90%; padding: 3% 0; margin: 0 auto; border-top: 1px solid #BFBFBF; font-size: 14px; color: #000;}
+.login .copyright { width: 100%; height: 72px; line-height: 72px; margin-top: -72px; margin-bottom: 0; background-color: #EBEBEB; font-size: 14px; font-weight: 400; color: #000; text-align: center;}
+
+/* nav-md */
+.nav-md .body { background-color: #fff;}
+.nav-md .mid_col { width: 90%; margin: 0 auto;}
+
+.main_container .top_nav { margin-left: 0;}
+.dataTables_wrapper .dataTables_scroll { overflow: hidden; border-radius: 8px; border: 1px solid #c2c9d1;}
+.dataTables_wrapper td::after { content:""; display: block; clear: both;}
+.dataTables_wrapper td .tag_td { display: inline-block; position: relative; line-height: 18px; padding: 4px 8px 4px 24px; border-radius: 4px; font-size: 12px; font-weight: 600;}
+.dataTables_wrapper td .tag_td::before { content:""; display: block; position: absolute; left: 8px; top: 50%; transform: translateY(-50%); width: 6px; height: 6px; border-radius: 50%; }
+.dataTables_wrapper td .tag_td.tag_yellow { border: 1px solid #fceec6; color: #F3BB1C;}
+.dataTables_wrapper td .tag_td.tag_yellow::before { background-color: #f2c94c;}
+.dataTables_wrapper td .tag_td.tag_green { border: 1px solid #ceefce; color: #3cc13b}
+.dataTables_wrapper td .tag_td.tag_green::before { background-color: #3cc13b;}
+.dataTables_wrapper td { position: relative;}
+/* .dataTables_wrapper td:last-child { padding-right: 65px;} */
+/* .dataTables_wrapper th:last-child { padding-right: 65px;} */
+.dataTables_wrapper td .po_right { display: none; position: absolute; right: 32px; top: 50%; transform: translateY(-50%);}
+/* .dataTables_wrapper td .po_right { display: block; position: relative; float: right; margin-right: 32px;} */
+.dataTables_wrapper td .po_right .glyphicon { font-size: 18px; color: #000;}
+.dataTables_wrapper td .block { padding-right: 50px; background-color: red;}
+table.dataTable.stripe tbody tr.odd, table.dataTable.display tbody tr.odd { background-color: #fff;;}
+table.dataTable.display tbody tr.odd > .sorting_1, table.dataTable.order-column.stripe tbody tr.odd > .sorting_1 { background-color: #fff;}
+table.dataTable.display tbody tr.even > .sorting_1, table.dataTable.order-column.stripe tbody tr.even > .sorting_1 { background-color: #fff;}
+table.dataTable.row-border tbody th, table.dataTable.row-border tbody td, table.dataTable.display tbody th, table.dataTable.display tbody td { border-top: 1px solid #f0f1f3;}
+table.dataTable thead th, table.dataTable thead td { padding: 8px 10px;}
+table.dataTable thead td { padding: 10px 18px !important;  }
+.dataTables_wrapper .dataTables_scroll div.dataTables_scrollBody > table > thead > tr > th, .dataTables_wrapper .dataTables_scroll div.dataTables_scrollBody > table > thead > tr > td, .dataTables_wrapper .dataTables_scroll div.dataTables_scrollBody > table > tbody > tr > th, .dataTables_wrapper .dataTables_scroll div.dataTables_scrollBody > table > tbody > tr > td { font-family: 'Open Sans'; color: #000;}
+.dataTables_wrapper .dataTables_scroll div.dataTables_scrollBody > table > thead > tr > th, .dataTables_wrapper .dataTables_scroll div.dataTables_scrollBody > table > thead > tr > td, .dataTables_wrapper .dataTables_scroll div.dataTables_scrollBody > table > tbody > tr > th, .dataTables_wrapper .dataTables_scroll div.dataTables_scrollBody > table > tbody > tr .color_blue { color: #3e66fb;}
+.dataTables_wrapper .dataTables_scroll div.dataTables_scrollBody > table > thead > tr > th, .dataTables_wrapper .dataTables_scroll div.dataTables_scrollBody > table > thead > tr > td, .dataTables_wrapper .dataTables_scroll div.dataTables_scrollBody > table > tbody > tr > th, .dataTables_wrapper .dataTables_scroll div.dataTables_scrollBody > table > tbody > tr .glyphicon-picture { position: absolute; right: 0; top: 0; transform: translateY(-4px); font-size: 20px; color: #000;}
+/* .dataTables_wrapper .dataTables_scroll div.dataTables_scrollBody > table > thead > tr > th, .dataTables_wrapper .dataTables_scroll div.dataTables_scrollBody > table > thead > tr > td, .dataTables_wrapper .dataTables_scroll div.dataTables_scrollBody > table > tbody > tr > th, .dataTables_wrapper .dataTables_scroll div.dataTables_scrollBody > table > tbody > tr > td .st_tag { display: inline-block; padding: 4px 8px 4px 24px; border: 1px solid #3CC13B; border-radius: 4px;} */
+.dataTables_wrapper.no-footer .dataTables_scrollBody  { border-bottom: none;}
+table.dataTable thead th { border-bottom: 1px solid #c3c9d1; font-size: 12px; font-weight: 600; font-family: 'Noto sans KR'; color: #000;}
+table.dataTable.hover tbody tr:hover, table.dataTable.display tbody tr:hover { background-color: #f5f7ff;}
+table.dataTable.hover tbody tr:hover, table.dataTable.display tbody tr:hover .sorting_1 { background-color: #f5f7ff;}
+table.dataTable.hover tbody tr:hover, table.dataTable.display tbody tr:hover .po_right { display: block;}
+.dataTables_wrapper { padding: 0 17px; box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.24); border-radius: 8px;}

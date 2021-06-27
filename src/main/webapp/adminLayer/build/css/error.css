@@ -1,0 +1,47 @@
+/* common */
+html,body,div,p,span,ul,li,ol,input,dl,dt,dd,hr,br,img,h1,h2,h3,h4,h5,h6,fieldset,legend,input,select,textarea {margin:0;padding:0;border:none;font-family: 'Spoqa Han Sans', 'Sans-serif';color:#576071;font-size:18px;}
+ul,ol,li {list-style: none ;}
+a {text-decoration:none;}
+h1,h2,h3,h4,h5,h6 {font-weight:normal;}
+.f_normal {font-weight:normal !important;}
+.f_600 {font-weight:600 !important;}
+.section {padding:20px 0;}
+.txt_s {font-size:11px;}
+a {color:#333;}
+.color_gray {color:#c1c1c1;}
+table {border-collapse: collapse;table-layout:fixed;word-break: break-all;}
+fieldset {border:none;}
+legend {display:none;}
+.height40 {height:40px;}
+.bg_none {background-image:none !important;}
+.full_img {width:100%;height:auto;}
+.inlineB {display:inline-block;}
+.displayB {display:block;}
+.displayN {display:none;}
+.ellipsis {width:200px;text-overflow: ellipsis; white-space: nowrap; overflow: hidden;}
+.bull_import {color:#e20606;padding-left:3px;}
+.link {border-bottom:1px solid #253144;}
+.link:hover {border-bottom:1px solid #25c0e1;color:#25c0e1;}
+.link2 {border-bottom:1px solid #f7105c;color:#f7105c;font-weight:800;}
+.link2:hover {border-bottom:1px solid #e20606;color:#e20606;}
+
+/* error */
+.error_page {margin-top:15%;}
+.error_top {position:relative;width:200px;height:180px;padding:30px 20px;background:url("../images/bg_error.png");margin:0 auto;}
+.error_number {display:inline-block;width:60px;font-weight:800;text-align:center;}
+.btn_error_area {text-align:center;margin-top:55px;}
+.btn_error_area a {color:#576071;font-weight:600;display:inline-block;padding:4px 18px;border:1px solid #a6abb3;box-shadow:0px 0px 0px 1px #566070;margin:1px 3px;}
+
+.txt_error01 {text-align:center;}
+.txt_error02 {text-align:center;margin-top:25px;}
+.txt_error03 {text-align:center;margin-top:20px;}
+
+@media all and (max-width: 640px){
+	.m_none {display:none;}
+	.error_page {margin-top:10%;}
+	.btn_error_area {margin-top:35px;}
+	.txt_error01 {font-size:14px;width:230px;margin:0 auto;}
+	.txt_error02 {font-size:14px;width:270px;margin:15px auto 0;}
+	.txt_error03 {font-size:14px;width:230px;margin:10px auto 0;}
+	.btn_error_area a {font-size:14px;}
+}

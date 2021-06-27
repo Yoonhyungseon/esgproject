@@ -1,0 +1,6 @@
+@charset "UTF-8";
+
+.pagination {text-align:center;}
+.pagination>li {display:inline-block;margin:0 5px;vertical-align:middle;}
+.pagination>li>a, .pagination>li>span {width:35px;padding:0;border:none;line-height:35px;font-size:14px;}
+

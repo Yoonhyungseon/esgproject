@@ -1,0 +1,21 @@
+@charset "UTF-8";
+
+.tbl-align-center {
+	text-align:center;
+}
+
+.tbl-align-right {
+	text-align:right;
+}
+
+.tbl-align-left {
+	text-align:left;
+}
+
+.dataTables_info {
+	float:left;
+}
+
+table.dataTable tbody>tr.selected, table.dataTable tbody>tr>.selected {
+	background-color: #fff79f;
+}
