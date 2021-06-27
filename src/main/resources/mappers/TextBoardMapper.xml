@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="program.textboard.mapper.TextBoardMapper">
+
+	<sql id="boardColumns">
+		  Ssn
+		, Name  
+		, Title
+		, Contents
+		, Insert_time
+		, Delete_yn
+		, View_count
+	</sql>
+
+	<select id="getNow" resultType="java.lang.String">
+		/* getNow :: DB 연동 조회 */
+		SELECT NOW()
+	</select>
+	
+	<select id="selectAll" parameterType="BVo" resultType="BVo">
+		/* selectAll :: DB 모든 칼럼 조회 */
+		SELECT *
+		FROM demo1
+		ORDER BY `Delete_yn` DESC
+	</select>
+	
+	<select id="getBoardList" parameterType="BVo" resultType="BVo">
+		/* getBoardList :: 게시글 리스트 조회 */
+		SELECT d.Ssn, d.Name, d.Title, d.Insert_time, d.View_count
+		FROM demo1 as d
+		WHERE d.Delete_yn = "N"
+	</select>
+	
+	<select id="getBoardDetail" parameterType="long" resultType="BVo">
+		/* getBoardDetail :: 게시글 상세 조회 */
+		SELECT d.Ssn, d.Title, d.Name, d.Contents, d.Insert_time, d.Delete_yn
+		FROM demo1 as d
+		WHERE Ssn = #{ssn}
+	</select>
+	
+	<insert id="insertBoard" parameterType="BVo" >
+		/* insertBoard :: 게시물 등록 */
+		INSERT INTO 
+			demo1 (Ssn, Name, Title, Contents, Insert_time, Delete_yn)
+		VALUES (
+			  #{ssn}
+			, #{name}
+			, #{title}
+			, #{contents}
+			, IFNULL(#{insert_time}, NOW())
+			, 'N'
+		)
+	</insert>
+	
+	<update id="updateBoard" parameterType="BVo">
+		/* updateBoard :: 게시물 수정 */
+		UPDATE 
+			demo1
+		SET
+			  Insert_time = NOW()
+			, Title = #{title}
+			, Contents = #{contents}
+			, Name = #{name}
+		WHERE
+			Ssn = #{ssn}
+	</update>
+	
+	<update  id="deleteBoard" parameterType="long">
+		/* deleteBoard :: 게시물 삭제 */	
+		UPDATE
+		    demo1
+		SET
+			Delete_yn = 'Y'
+		WHERE
+			Ssn = #{ssn}
+	</update >
+
+	<delete  id="deleteDB">
+		/* "deleteDB" :: 게시물 데이터베이스에서 삭제*/	
+		DELETE FROM demo1
+		WHERE Delete_yn = 'Y'
+	</delete >	
+	
+	<update  id="viewCount" parameterType="long">
+		/* viewCount :: 게시물 조회수 업데이트 */	
+		UPDATE
+		    demo1
+		SET
+			View_count = View_count+ 1
+		WHERE
+			Ssn = #{ssn}
+	</update >
+	
+	<select  id="searchName" parameterType="java.lang.String" resultType="BVo">
+		/* searchName :: 게시물 작성자로 검색 기능 */	
+		SELECT
+		    d.Ssn, d.Name, d.Title, d.Insert_time, d.View_count
+		FROM 
+			demo1 as d
+		WHERE
+			d.Name REGEXP #{name}  and d.Delete_yn = "N"
+			<!-- Name = #{name} -->
+	</select >
+	
+	<select  id="searchTitle" parameterType="java.lang.String" resultType="BVo">
+		/* searchTitle :: 게시물 제목으로로 검색 기능 */	
+		SELECT
+		    d.Ssn, d.Name, d.Title, d.Insert_time, d.View_count
+		FROM 
+			demo1 as d
+		WHERE
+			d.title REGEXP #{name} and  d.Delete_yn = "N"
+			<!-- Name = #{name} -->
+	</select >
+</mapper>
