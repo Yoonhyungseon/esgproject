@@ -38,6 +38,15 @@ public class TextBoardController {
 	}
 	
 	/**************************************************
+	* @MethodName : sitemap
+	* @Description: sitemap 페이지
+	**************************************************/
+	@RequestMapping(value="/sitemap", method={RequestMethod.GET, RequestMethod.POST})
+    public String sitemap(HttpServletRequest request, Model model) throws Exception {		
+		return "sitemap";
+	}
+	
+	/**************************************************
 	* @MethodName : getNow
 	* @Description: 데이터베이스 연동 확인
 	**************************************************/
