@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping(value = {"/admin/member"})
 public class AdminMemberController {
 	
-	@Autowired
+//	@Autowired
 //	private TextBoardService textBoardService;
 
 	/**************************************************
@@ -30,7 +30,7 @@ public class AdminMemberController {
 	**************************************************/
 	@RequestMapping(value = {"/memberList"})
 	public String memberList(Model model) {
-		return "admin/memberList";
+		return "admin/member/memberList";
 	}
 }
 	

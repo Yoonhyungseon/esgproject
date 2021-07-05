@@ -14,10 +14,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 * @Copyright : ⓒADUP. All Right Reserved
 **************************************************/
 @Controller
-@RequestMapping(value = {"admin/Companies"})
+@RequestMapping(value = {"admin/companies"})
 public class CompaniesController {
 	
-	@Autowired
+//	@Autowired
 //	private TextBoardService textBoardService;
 	
 	/**************************************************
@@ -30,7 +30,7 @@ public class CompaniesController {
 	**************************************************/
 	@RequestMapping(value = {"/companiesList"})
 	public String commentList(Model model) {
-		return "admin/companiesList";
+		return "/admin/companies/companiesList";
 	}
 }
 	

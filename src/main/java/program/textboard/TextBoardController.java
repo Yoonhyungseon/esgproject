@@ -27,9 +27,9 @@ public class TextBoardController {
 	* @Author : Hyung-Seon. Yoon
 	* @Version : 2021. 7. 5.
 	**************************************************/
-	@RequestMapping(value = {"/textbordList"})
-	public String textbordList(Model model) {
-		return "board/textbordList";
+	@RequestMapping(value = {"/textboardList"})
+	public String textboardList(Model model) {
+		return "contents/board/textboardList";
 	}
 	
 }

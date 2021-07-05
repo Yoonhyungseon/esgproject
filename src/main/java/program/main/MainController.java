@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @RequestMapping(value = {"/*"})
 public class MainController {
 	
-	@Autowired
+//	@Autowired
 //	private TextBoardService textBoardService;
 
 
@@ -32,7 +32,7 @@ public class MainController {
 	* @Author : Hyung-Seon. Yoon
 	* @Version : 2021. 7. 5.
 	**************************************************/
-	@RequestMapping(value = {"","/*"})
+	@RequestMapping(value = {"index","/*"})
 	public String index(Model model) {
 //		model.addAttribute("greeting", "Hello!");
 		return "/index";
@@ -50,7 +50,7 @@ public class MainController {
 	**************************************************/
 	@RequestMapping(value="/sitemap", method={RequestMethod.GET, RequestMethod.POST})
     public String sitemap(HttpServletRequest request, Model model) throws Exception {		
-		return "sitemap";
+		return "/sitemap";
 	}
 
 }

@@ -14,10 +14,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 * @Copyright : ⓒADUP. All Right Reserved
 **************************************************/
 @Controller
-@RequestMapping(value = {"/news"})
+@RequestMapping(value = {"news"})
 public class NewsController {
 	
-	@Autowired
+//	@Autowired
 //	private TextBoardService textBoardService;
 	
 	/**************************************************
@@ -31,7 +31,7 @@ public class NewsController {
 	@RequestMapping(value = {"/newsList"})
 	public String newsList(Model model) {
 		model.addAttribute("greeting", "Hello!");
-		return "/news/newsList";
+		return "contents/news/newsList";
 	}
 
 }

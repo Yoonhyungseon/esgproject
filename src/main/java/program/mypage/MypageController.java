@@ -14,10 +14,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 * @Copyright : ⓒADUP. All Right Reserved
 **************************************************/
 @Controller
-@RequestMapping(value = {"/mypage"})
+@RequestMapping(value = {"mypage"})
 public class MypageController {
 	
-	@Autowired
+//	@Autowired
 //	private TextBoardService textBoardService;
 	
 	/**************************************************
@@ -30,7 +30,7 @@ public class MypageController {
 	**************************************************/
 	@RequestMapping(value = {"/mypage"})
 	public String index(Model model) {
-		return "/mypage/index";
+		return "contents/mypage/index";
 	}
 }
 	

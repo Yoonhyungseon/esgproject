@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping(value = {"member"})
 public class ClientMemberController {
 	
-	@Autowired
+//	@Autowired
 //	private TextBoardService textBoardService;
 	
 	/**************************************************

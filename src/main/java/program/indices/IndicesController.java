@@ -1,6 +1,5 @@
 package program.indices;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,10 +13,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 * @Copyright : ⓒADUP. All Right Reserved
 **************************************************/
 @Controller
-@RequestMapping(value = {"indices"})
+@RequestMapping(value = {"/indices"})
 public class IndicesController {
 	
-	@Autowired
+//	@Autowired
 //	private TextBoardService textBoardService;
 
 	/**************************************************
@@ -30,7 +29,7 @@ public class IndicesController {
 	**************************************************/
 	@RequestMapping(value = {"/indices"})
 	public String indices(Model model) {
-		return "/indices/indices";
+		return "/contents/indices/indices";
 	}
 }
 	

@@ -534,6 +534,8 @@
 			   $(this).find('td:first-child').text(index + 1);
 			});
 		});
+		
+		$('#site-header').hide();
 	</script>
 
 
