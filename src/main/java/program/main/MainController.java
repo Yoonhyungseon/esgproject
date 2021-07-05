@@ -53,6 +53,40 @@ public class MainController {
 		return "/sitemap";
 	}
 
+	@RequestMapping(value = {"/about"})
+	public String about(Model model) {
+		return "/bootstrap/about";
+	}
+	
+	@RequestMapping(value = {"/contact"})
+	public String contact(Model model) {
+		return "/bootstrap/contact";
+	}
+	
+	@RequestMapping(value = {"/errorPage"})
+	public String error(Model model) {
+		return "/bootstrap/error";
+	}
+	
+	@RequestMapping(value = {"/mypage"})
+	public String mypage(Model model) {
+		return "/bootstrap/mypage";
+	}
+	
+	@RequestMapping(value = {"/menu"})
+	public String menu(Model model) {
+		return "/bootstrap/menu";
+	}
+	
+	@RequestMapping(value = {"/landing-single"})
+	public String landing(Model model) {
+		return "/bootstrap/landing-single";
+	}
+	
+	@RequestMapping(value = {"/white_index"})
+	public String white_index(Model model) {
+		return "/bootstrap/white_index";
+	}
 }
 	
 	

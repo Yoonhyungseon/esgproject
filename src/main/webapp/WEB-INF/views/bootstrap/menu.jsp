@@ -12,98 +12,10 @@
         rel="stylesheet">
     <!-- //google-fonts -->
     <!-- Template CSS Style link -->
-    <link rel="stylesheet" href="assets/css/style-liberty.css">
+    <link rel="stylesheet" href="asset/css/style-liberty.css">
 </head>
 
 <body>
-    <!--header-->
-    <header id="site-header" class="fixed-top">
-        <div class="container">
-            <nav class="navbar navbar-expand-lg stroke px-0">
-                <h1>
-                    <a class="navbar-brand" href="index.html">
-                        <i class="fa fa-cutlery" aria-hidden="true"></i> Foodies
-                    </a>
-                </h1>
-                <!-- if logo is image enable this   
-    <a class="navbar-brand" href="#index.html">
-        <img src="image-path" alt="Your logo" title="Your logo" style="height:35px;" />
-    </a> -->
-                <button class="navbar-toggler  collapsed bg-gradient" type="button" data-toggle="collapse"
-                    data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false"
-                    aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon fa icon-expand fa-bars"></span>
-                    <span class="navbar-toggler-icon fa icon-close fa-times"></span>
-                </button>
-
-                <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-                    <ul class="navbar-nav mx-lg-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="about.html">About Us</a>
-                        </li>
-                        <li class="nav-item active">
-                            <a class="nav-link" href="menu.html">Menu</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Pages <span class="fa fa-angle-down"></span>
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="blog.html">Blog Posts</a>
-                                <a class="dropdown-item" href="blog-single.html">Blog Single</a>
-                                <a class="dropdown-item" href="error.html">404 Page</a>
-                                <a class="dropdown-item" href="landing-single.html">Landing Page</a>
-                            </div>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="contact.html">Contact Us</a>
-                        </li>
-                    </ul>
-                </div>
-                <!-- search button -->
-                <div class="search-right">
-                    <a href="#search" title="search"><span class="fa fa-search" aria-hidden="true"></span></a>
-                    <!-- search popup -->
-                    <div id="search" class="pop-overlay">
-                        <div class="popup">
-                            <h4 class="search-pop-text-w3 text-white text-center mb-4">Search Here Your Favourite Food
-                            </h4>
-                            <form action="error.html" method="GET" class="search-box">
-                                <div class="input-search"> <span class="fa fa-search mr-2"
-                                        aria-hidden="true"></span><input type="search" placeholder="Enter Keyword"
-                                        name="search" required="required" autofocus="">
-                                </div>
-                                <button type="submit" class="btn button-style">Search</button>
-                            </form>
-                        </div>
-                        <a class="close" href="#close">×</a>
-                    </div>
-                    <!-- //search popup -->
-                </div>
-                <!-- //search button -->
-                <!-- toggle switch for light and dark theme -->
-                <div class="cont-ser-position">
-                    <nav class="navigation">
-                        <div class="theme-switch-wrapper">
-                            <label class="theme-switch" for="checkbox">
-                                <input type="checkbox" id="checkbox">
-                                <div class="mode-container">
-                                    <i class="gg-sun"></i>
-                                    <i class="gg-moon"></i>
-                                </div>
-                            </label>
-                        </div>
-                    </nav>
-                </div>
-                <!-- //toggle switch for light and dark theme -->
-            </nav>
-        </div>
-    </header>
-    <!--//header-->
     <!-- inner banner -->
     <div class="inner-banner">
         <section class="w3l-breadcrumb">
@@ -127,7 +39,7 @@
                     <!-- Item starts -->
                     <div class="row menu-item">
                         <div class="col-3 p-0 position-relative">
-                            <img src="assets/images/menu1.jpg" class="img-responsive" alt="">
+                            <img src="asset/images/menu1.jpg" class="img-responsive" alt="">
                             <a href="#order" class="btn button-style button-style-2">Add</a>
                         </div>
                         <div class="col-9 pl-4">
@@ -148,7 +60,7 @@
                     <!-- Item starts -->
                     <div class="row menu-item">
                         <div class="col-3 p-0 position-relative">
-                            <img src="assets/images/menu2.jpg" class="img-responsive" alt="">
+                            <img src="asset/images/menu2.jpg" class="img-responsive" alt="">
                             <a href="#order" class="btn button-style button-style-2">Add</a>
                         </div>
                         <div class="col-9 pl-4">
@@ -169,7 +81,7 @@
                     <!-- Item starts -->
                     <div class="row menu-item">
                         <div class="col-3 p-0 position-relative">
-                            <img src="assets/images/menu3.jpg" class="img-responsive" alt="">
+                            <img src="asset/images/menu3.jpg" class="img-responsive" alt="">
                             <a href="#order" class="btn button-style button-style-2">Add</a>
                         </div>
                         <div class="col-9 pl-4">
@@ -190,7 +102,7 @@
                     <!-- Item starts -->
                     <div class="row menu-item">
                         <div class="col-3 p-0 position-relative">
-                            <img src="assets/images/menu4.jpg" class="img-responsive" alt="">
+                            <img src="asset/images/menu4.jpg" class="img-responsive" alt="">
                             <a href="#order" class="btn button-style button-style-2">Add</a>
                         </div>
                         <div class="col-9 pl-4">
@@ -216,7 +128,7 @@
                     <!-- Item starts -->
                     <div class="row menu-item">
                         <div class="col-3 p-0 position-relative">
-                            <img src="assets/images/menu5.jpg" class="img-responsive" alt="">
+                            <img src="asset/images/menu5.jpg" class="img-responsive" alt="">
                             <a href="#order" class="btn button-style button-style-2">Add</a>
                         </div>
                         <div class="col-9 pl-4">
@@ -237,7 +149,7 @@
                     <!-- Item starts -->
                     <div class="row menu-item">
                         <div class="col-3 p-0 position-relative">
-                            <img src="assets/images/menu6.jpg" class="img-responsive" alt="">
+                            <img src="asset/images/menu6.jpg" class="img-responsive" alt="">
                             <a href="#order" class="btn button-style button-style-2">Add</a>
                         </div>
                         <div class="col-9 pl-4">
@@ -258,7 +170,7 @@
                     <!-- Item starts -->
                     <div class="row menu-item">
                         <div class="col-3 p-0 position-relative">
-                            <img src="assets/images/menu7.jpg" class="img-responsive" alt="">
+                            <img src="asset/images/menu7.jpg" class="img-responsive" alt="">
                             <a href="#order" class="btn button-style button-style-2">Add</a>
                         </div>
                         <div class="col-9 pl-4">
@@ -279,7 +191,7 @@
                     <!-- Item starts -->
                     <div class="row menu-item">
                         <div class="col-3 p-0 position-relative">
-                            <img src="assets/images/menu8.jpg" class="img-responsive" alt="">
+                            <img src="asset/images/menu8.jpg" class="img-responsive" alt="">
                             <a href="#order" class="btn button-style button-style-2">Add</a>
                         </div>
                         <div class="col-9 pl-4">
@@ -309,7 +221,7 @@
                         <!-- Item starts -->
                         <div class="row menu-item">
                             <div class="col-3 p-0 position-relative">
-                                <img src="assets/images/menu9.jpg" class="img-responsive" alt="">
+                                <img src="asset/images/menu9.jpg" class="img-responsive" alt="">
                                 <a href="#order" class="btn button-style button-style-2">Add</a>
                             </div>
                             <div class="col-9 pl-4">
@@ -330,7 +242,7 @@
                         <!-- Item starts -->
                         <div class="row menu-item">
                             <div class="col-3 p-0 position-relative">
-                                <img src="assets/images/menu10.jpg" class="img-responsive" alt="">
+                                <img src="asset/images/menu10.jpg" class="img-responsive" alt="">
                                 <a href="#order" class="btn button-style button-style-2">Add</a>
                             </div>
                             <div class="col-9 pl-4">
@@ -351,7 +263,7 @@
                         <!-- Item starts -->
                         <div class="row menu-item">
                             <div class="col-3 p-0 position-relative">
-                                <img src="assets/images/menu11.jpg" class="img-responsive" alt="">
+                                <img src="asset/images/menu11.jpg" class="img-responsive" alt="">
                                 <a href="#order" class="btn button-style button-style-2">Add</a>
                             </div>
                             <div class="col-9 pl-4">
@@ -377,7 +289,7 @@
                         <!-- Item starts -->
                         <div class="row menu-item">
                             <div class="col-3 p-0 position-relative">
-                                <img src="assets/images/menu12.jpg" class="img-responsive" alt="">
+                                <img src="asset/images/menu12.jpg" class="img-responsive" alt="">
                                 <a href="#order" class="btn button-style button-style-2">Add</a>
                             </div>
                             <div class="col-9 pl-4">
@@ -398,7 +310,7 @@
                         <!-- Item starts -->
                         <div class="row menu-item">
                             <div class="col-3 p-0 position-relative">
-                                <img src="assets/images/menu13.jpg" class="img-responsive" alt="">
+                                <img src="asset/images/menu13.jpg" class="img-responsive" alt="">
                                 <a href="#order" class="btn button-style button-style-2">Add</a>
                             </div>
                             <div class="col-9 pl-4">
@@ -419,7 +331,7 @@
                         <!-- Item starts -->
                         <div class="row menu-item">
                             <div class="col-3 p-0 position-relative">
-                                <img src="assets/images/menu14.jpg" class="img-responsive" alt="">
+                                <img src="asset/images/menu14.jpg" class="img-responsive" alt="">
                                 <a href="#order" class="btn button-style button-style-2">Add</a>
                             </div>
                             <div class="col-9 pl-4">
@@ -450,7 +362,7 @@
                         <!-- Item starts -->
                         <div class="row menu-item">
                             <div class="col-3 p-0 position-relative">
-                                <img src="assets/images/menu10.jpg" class="img-responsive" alt="">
+                                <img src="asset/images/menu10.jpg" class="img-responsive" alt="">
                                 <a href="#order" class="btn button-style button-style-2">Add</a>
                             </div>
                             <div class="col-9 pl-4">
@@ -471,7 +383,7 @@
                         <!-- Item starts -->
                         <div class="row menu-item">
                             <div class="col-3 p-0 position-relative">
-                                <img src="assets/images/menu14.jpg" class="img-responsive" alt="">
+                                <img src="asset/images/menu14.jpg" class="img-responsive" alt="">
                                 <a href="#order" class="btn button-style button-style-2">Add</a>
                             </div>
                             <div class="col-9 pl-4">
@@ -492,7 +404,7 @@
                         <!-- Item starts -->
                         <div class="row menu-item">
                             <div class="col-3 p-0 position-relative">
-                                <img src="assets/images/menu7.jpg" class="img-responsive" alt="">
+                                <img src="asset/images/menu7.jpg" class="img-responsive" alt="">
                                 <a href="#order" class="btn button-style button-style-2">Add</a>
                             </div>
                             <div class="col-9 pl-4">
@@ -518,7 +430,7 @@
                         <!-- Item starts -->
                         <div class="row menu-item">
                             <div class="col-3 p-0 position-relative">
-                                <img src="assets/images/menu2.jpg" class="img-responsive" alt="">
+                                <img src="asset/images/menu2.jpg" class="img-responsive" alt="">
                                 <a href="#order" class="btn button-style button-style-2">Add</a>
                             </div>
                             <div class="col-9 pl-4">
@@ -539,7 +451,7 @@
                         <!-- Item starts -->
                         <div class="row menu-item">
                             <div class="col-3 p-0 position-relative">
-                                <img src="assets/images/menu1.jpg" class="img-responsive" alt="">
+                                <img src="asset/images/menu1.jpg" class="img-responsive" alt="">
                                 <a href="#order" class="btn button-style button-style-2">Add</a>
                             </div>
                             <div class="col-9 pl-4">
@@ -560,7 +472,7 @@
                         <!-- Item starts -->
                         <div class="row menu-item">
                             <div class="col-3 p-0 position-relative">
-                                <img src="assets/images/menu9.jpg" class="img-responsive" alt="">
+                                <img src="asset/images/menu9.jpg" class="img-responsive" alt="">
                                 <a href="#order" class="btn button-style button-style-2">Add</a>
                             </div>
                             <div class="col-9 pl-4">
@@ -591,7 +503,7 @@
             <div class="container">
                 <div class="row aap-4-section">
                     <div class="col-lg-6 app4-right-image">
-                        <img src="assets/images/img3.png" class="img-responsive" alt="App Device" />
+                        <img src="asset/images/img3.png" class="img-responsive" alt="App Device" />
                     </div>
                     <div class="col-lg-6 app4-left-text pl-lg-0 mb-lg-0 mb-sm-2 mb-4">
                         <h6>For 30% Discount</h6>
@@ -625,85 +537,6 @@
         </div>
     </section>
     <!-- //promocode section -->
-    <!-- footer -->
-    <section class="w3l-footer-16">
-        <div class="w3l-footer-16-main">
-            <div class="container">
-                <div class="row footer-p">
-                    <div class="col-lg-4 pr-lg-5">
-                        <a class="logo" href="index.html"><i class="fa fa-cutlery" aria-hidden="true"></i>
-                            Foodies</a>
-                        <p class="mt-4">Duis imperdiet sapien tortor, vitae congue diam auctor vitae. Aliquam
-                            eget turpis ornare, euismod ligul aeget, enenatis dui. </p>
-                    </div>
-                    <div class="col-lg-4 mt-lg-0 mt-4">
-                        <h3>Pages</h3>
-                        <div class="row">
-                            <div class="col-6 column">
-                                <ul class="footer-gd-16">
-                                    <li><a href="index.html"><i class="fa fa-angle-right"
-                                                aria-hidden="true"></i>Home</a></li>
-                                    <li><a href="about.html"><i class="fa fa-angle-right" aria-hidden="true"></i>About
-                                            Us</a></li>
-                                    <li><a href="#services"><i class="fa fa-angle-right"
-                                                aria-hidden="true"></i>Services</a></li>
-                                    <li><a href="blog.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Blog
-                                            Posts</a></li>
-                                    <li><a href="contact.html"><i class="fa fa-angle-right"
-                                                aria-hidden="true"></i>Contact Us</a></li>
-                                </ul>
-                            </div>
-                            <div class="col-6 column pl-0">
-                                <ul class="footer-gd-16">
-                                    <li><a href="menu.html"><i class="fa fa-angle-right" aria-hidden="true"></i>Foodies
-                                            Menu</a></li>
-                                    <li><a href="#privacy"><i class="fa fa-angle-right" aria-hidden="true"></i>Privacy
-                                            Policy</a></li>
-                                    <li><a href="#terms"><i class="fa fa-angle-right" aria-hidden="true"></i>Terms
-                                            and
-                                            conditions</a></li>
-                                    <li><a href="#faq"><i class="fa fa-angle-right" aria-hidden="true"></i>FAQ</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-7 column mt-lg-0 mt-4">
-                        <h3>Newsletter </h3>
-                        <div class="end-column">
-                            <h3>Subscribe Here Now</h3>
-                            <form action="#" class="subscribe" method="post">
-                                <input type="email" name="email" placeholder="Email Address" required="">
-                                <button><span class="fa fa-paper-plane" aria-hidden="true"></span></button>
-                            </form>
-                            <p>Subscribe to our mailing list and get updates to your email inbox.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="d-flex below-section justify-content-between align-items-center pt-4 mt-5">
-                    <div class="columns text-lg-left">
-                        <p class="copy-text">@ 2020 Foodies. All rights reserved.
-                        </p>
-                    </div>
-                    <div class="columns-2 mt-md-0 mt-3">
-                        <ul class="social">
-                            <li><a href="#facebook"><span class="fa fa-facebook" aria-hidden="true"></span></a>
-                            </li>
-                            <li><a href="#linkedin"><span class="fa fa-linkedin" aria-hidden="true"></span></a>
-                            </li>
-                            <li><a href="#twitter"><span class="fa fa-twitter" aria-hidden="true"></span></a>
-                            </li>
-                            <li><a href="#google"><span class="fa fa-google-plus" aria-hidden="true"></span></a>
-                            </li>
-                            <li><a href="#github"><span class="fa fa-github" aria-hidden="true"></span></a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- //footer -->
 
     <!-- Js scripts -->
     <!-- move top -->
@@ -733,11 +566,11 @@
     <!-- //move top -->
 
     <!-- common jquery plugin -->
-    <script src="assets/js/jquery-3.3.1.min.js"></script>
+    <script src="asset/js/jquery-3.3.1.min.js"></script>
     <!-- //common jquery plugin -->
 
     <!-- theme switch js (light and dark)-->
-    <script src="assets/js/theme-change.js"></script>
+    <script src="asset/js/theme-change.js"></script>
     <script>
         function autoType(elementClass, typingSpeed) {
             var thhis = $(elementClass);
@@ -815,7 +648,7 @@
     <!-- //disable body scroll which navbar is in active -->
 
     <!--bootstrap-->
-    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="asset/js/bootstrap.min.js"></script>
     <!-- //bootstrap-->
     <!-- //Js scripts -->
 </body>

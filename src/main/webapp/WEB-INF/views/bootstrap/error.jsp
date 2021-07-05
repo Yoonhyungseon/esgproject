@@ -12,7 +12,7 @@
         rel="stylesheet">
     <!-- //google-fonts -->
     <!-- Template CSS Style link -->
-    <link rel="stylesheet" href="assets/css/style-liberty.css">
+    <link rel="stylesheet" href="asset/css/style-liberty.css">
 </head>
 
 <body>
