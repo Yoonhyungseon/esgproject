@@ -528,14 +528,16 @@
 	<!-- //wrap -->
 	<script>
 		$(function(){
+			$('#site-header').hide();
+			$('.border-sec').hide();
+			$('.w3l-footer-16').hide();
+			
 			$('table > tbody  > tr').each(function(index, tr) {
 				console.log("index"+index)
 				console.log("tr"+tr)
 			   $(this).find('td:first-child').text(index + 1);
 			});
 		});
-		
-		$('#site-header').hide();
 	</script>
 
 
