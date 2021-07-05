@@ -6,6 +6,7 @@
 
 
 <body>
+memberView
 </body>
 
 </html>

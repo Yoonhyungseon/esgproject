@@ -6,6 +6,7 @@
 
 
 <body>
+wallet
 </body>
 
 </html>

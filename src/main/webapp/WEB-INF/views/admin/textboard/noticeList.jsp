@@ -6,6 +6,7 @@
 
 
 <body>
+noticeList
 </body>
 
 </html>

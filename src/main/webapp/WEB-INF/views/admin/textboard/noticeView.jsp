@@ -6,6 +6,7 @@
 
 
 <body>
+noticeView
 </body>
 
 </html>

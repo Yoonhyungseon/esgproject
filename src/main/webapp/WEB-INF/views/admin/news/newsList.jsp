@@ -6,6 +6,7 @@
 
 
 <body>
+newsList
 </body>
 
 </html>

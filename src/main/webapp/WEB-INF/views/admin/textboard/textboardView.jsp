@@ -6,6 +6,7 @@
 
 
 <body>
+textboardView
 </body>
 
 </html>

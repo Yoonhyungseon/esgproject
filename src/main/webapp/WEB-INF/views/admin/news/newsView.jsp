@@ -6,6 +6,7 @@
 
 
 <body>
+newsView
 </body>
 
 </html>
