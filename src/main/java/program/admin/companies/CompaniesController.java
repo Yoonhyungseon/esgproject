@@ -1,6 +1,5 @@
 package program.admin.companies;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -31,6 +30,16 @@ public class CompaniesController {
 	@RequestMapping(value = {"/companiesList"})
 	public String commentList(Model model) {
 		return "/admin/companies/companiesList";
+	}
+	
+	@RequestMapping(value = {"/companiesView"})
+	public String companiesView(Model model) {
+		return "/admin/companies/companiesView";
+	}
+	
+	@RequestMapping(value = {"/companiesWrite"})
+	public String companiesWrite(Model model) {
+		return "/admin/companies/companiesWrite";
 	}
 }
 	

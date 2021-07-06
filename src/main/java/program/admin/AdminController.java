@@ -20,6 +20,19 @@ public class AdminController {
 //	private TextBoardService textBoardService;
 
 	/**************************************************
+	* @MethodName : login
+	* @Description: 관리자 페이지 로그인 
+	* @param model
+	* @return String
+	* @Author : Hyung-Seon. Yoon
+	* @Version : 2021. 7. 6.
+	**************************************************/
+	@RequestMapping(value = {"/login"})
+	public String login(Model model) {
+		return "admin/login";
+	}
+	
+	/**************************************************
 	* @MethodName : index
 	* @Description: 어드민 인덱스 페이지
 	* @param model
