@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 * @Copyright : ⓒADUP. All Right Reserved
 **************************************************/
 @Controller
-@RequestMapping(value = {"/admin/member"})
+@RequestMapping(value = {"/admin"})
 public class AdminNewsController {
 	
 //	@Autowired
@@ -29,7 +29,7 @@ public class AdminNewsController {
 	**************************************************/
 	@RequestMapping(value = {"/newsList"})
 	public String newsList(Model model) {
-		return "admin/member/newsList";
+		return "admin/news/newsList";
 	}
 	
 	/**************************************************
@@ -42,7 +42,7 @@ public class AdminNewsController {
 	**************************************************/
 	@RequestMapping(value = {"/newsView"})
 	public String newsView(Model model) {
-		return "admin/member/newsView";
+		return "admin/news/newsView";
 	}
 }
 	
