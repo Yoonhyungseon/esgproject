@@ -341,6 +341,18 @@
 					</tr>
 					<tr>
 						<td data-title="No" class="align-C"></td>
+						<td data-title="1Depth" class="align-C">관리자 인덱스</td>
+						<td data-title="2Depth" class="align-C"></td>
+						<td data-title="3Depth" class="align-C"></td>
+						<td data-title="파일명">
+							<a href="/admin/index" target="_blank">/admin/index</a>
+						</td>
+						<td data-title="상태" class="align-C">X</td>
+						<td data-title="개발" class="align-C">X</td>
+						<td data-title="비고"></td>
+					</tr>					
+					<tr>
+						<td data-title="No" class="align-C"></td>
 						<td data-title="1Depth" class="align-C">게시판 관리</td>
 						<td data-title="2Depth" class="align-C">뿜업 게시판 리스트</td>
 						<td data-title="3Depth" class="align-C"></td>
