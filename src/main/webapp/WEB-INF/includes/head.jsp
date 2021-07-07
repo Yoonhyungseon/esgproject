@@ -29,4 +29,5 @@
 	    <script src="/adminLayer/js/common.js"></script>
 	    
 	    <link rel="stylesheet" href="/asset/css/style-liberty.css">
+	    <link rel="stylesheet" href="/asset/css/login.css">
 	</head>
