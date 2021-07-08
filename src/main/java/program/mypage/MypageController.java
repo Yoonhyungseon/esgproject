@@ -1,6 +1,5 @@
 package program.mypage;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -96,6 +95,11 @@ public class MypageController {
 	@RequestMapping(value = {"/wallet"})
 	public String wallet(Model model) {
 		return "contents/mypage/wallet";
+	}
+	
+	@RequestMapping(value = {"/postList"})
+	public String postList(Model model) {
+		return "contents/mypage/postList";
 	}
 }
 	
