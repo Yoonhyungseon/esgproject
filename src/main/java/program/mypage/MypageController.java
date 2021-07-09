@@ -33,6 +33,19 @@ public class MypageController {
 	}
 	
 	/**************************************************
+	* @MethodName : modifyinfo
+	* @Description: 개인정보 수정
+	* @param model
+	* @return String
+	* @Author : Hyung-Seon. Yoon
+	* @Version : 2021. 7. 5.
+	**************************************************/
+	@RequestMapping(value = {"/modifyinfo"})
+	public String modifyinfo(Model model) {
+		return "contents/mypage/modifyInfo";
+	}
+	
+	/**************************************************
 	* @MethodName : commentList
 	* @Description: 댓글 목록 페이지
 	* @param model

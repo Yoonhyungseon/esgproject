@@ -258,10 +258,22 @@
 					<tr>
 						<td data-title="No" class="align-C"></td>
 						<td data-title="1Depth" class="align-C">마이페이지</td>
-						<td data-title="2Depth" class="align-C">개인정보 수정</td>
+						<td data-title="2Depth" class="align-C"></td>
 						<td data-title="3Depth" class="align-C"></td>
 						<td data-title="파일명">
 							<a href="/mypage/mypage" target="_blank">/mypage/mypage</a>
+						</td>
+						<td data-title="상태" class="align-C">X</td>
+						<td data-title="개발" class="align-C">X</td>
+						<td data-title="비고"></td>
+					</tr>
+					<tr>
+						<td data-title="No" class="align-C"></td>
+						<td data-title="1Depth" class="align-C"></td>
+						<td data-title="2Depth" class="align-C">개인정보 수정</td>
+						<td data-title="3Depth" class="align-C"></td>
+						<td data-title="파일명">
+							<a href="/mypage/modifyinfo" target="_blank">/mypage/modifyinfo</a>
 						</td>
 						<td data-title="상태" class="align-C">X</td>
 						<td data-title="개발" class="align-C">X</td>

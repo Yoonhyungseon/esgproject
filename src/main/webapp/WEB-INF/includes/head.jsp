@@ -26,8 +26,6 @@
 	    <script src="/asset/js/jquery-ui.js"></script>
 	    <script src="/asset/js/common.js"></script>
 	    
-	    <script src="/adminLayer/js/common.js"></script>
-	    
 	    <link rel="stylesheet" href="/asset/css/style-liberty.css">
 	    <link rel="stylesheet" href="/asset/css/login.css">
 	    <link rel="stylesheet" href="/asset/css/join.css">
