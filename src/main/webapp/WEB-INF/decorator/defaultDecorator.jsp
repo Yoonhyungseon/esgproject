@@ -7,7 +7,7 @@
 		<%@ include file="/WEB-INF/includes/header.jsp"%>
 	
 		<!-- body -->
-		<sitemesh:write property='body' />
+		<sitemesh:write property='body'/>
 		
 	
 		<!-- footer  -->

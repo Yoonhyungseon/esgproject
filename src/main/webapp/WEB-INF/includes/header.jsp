@@ -25,7 +25,7 @@
 					<li class="nav-item active"><a class="nav-link"
 						href="${pageContext.request.contextPath}/index">Home <span class="sr-only">(current)</span></a></li>
 					<li class="nav-item"><a class="nav-link"
-						href="${pageContext.request.contextPath}/board/textboardList">board</a></li>
+						href="${pageContext.request.contextPath}/board/textboardList">Board</a></li>
 					<li class="nav-item"><a class="nav-link"
 						href="${pageContext.request.contextPath}/board/noticeList">Notice</a></li>
 					<!--  <li class="nav-item">
