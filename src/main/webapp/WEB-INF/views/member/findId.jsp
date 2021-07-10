@@ -35,12 +35,12 @@
 	                                        required="">
 	                                </div>
 	                                <div class="form-group">
-	                                    <label for="w3lName">아이디</label>
+	                                    <label for="w3lName">휴대전화</label>
 	                                    <input class="form-control" type="text" name="w3lName" id="w3lName" placeholder=""
 	                                        required="">
 	                                </div>
 	                                <div class="form-group">
-	                                    <label for="w3lName">이메일</label>
+	                                    <label for="w3lName">인증번호</label>
 	                                    <input class="form-control" type="text" name="w3lName" id="w3lName" placeholder=""
 	                                        required="">
 	                                </div>
