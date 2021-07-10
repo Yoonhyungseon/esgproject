@@ -284,7 +284,19 @@
 					<tr>
 						<td data-title="No" class="align-C"></td>
 						<td data-title="1Depth" class="align-C"></td>
-						<td data-title="2Depth" class="align-C">글/댓글 작성내역</td>
+						<td data-title="2Depth" class="align-C">글 작성내역</td>
+						<td data-title="3Depth" class="align-C"></td>
+						<td data-title="파일명">
+							<a href="/mypage/postList" target="_blank">/mypage/postList</a>
+						</td>
+						<td data-title="상태" class="align-C">X</td>
+						<td data-title="개발" class="align-C">X</td>
+						<td data-title="비고"></td>
+					</tr>
+					<tr>
+						<td data-title="No" class="align-C"></td>
+						<td data-title="1Depth" class="align-C"></td>
+						<td data-title="2Depth" class="align-C">댓글 작성내역</td>
 						<td data-title="3Depth" class="align-C"></td>
 						<td data-title="파일명">
 							<a href="/mypage/commentList" target="_blank">/mypage/commentList</a>
