@@ -53,7 +53,7 @@
                             conubia nostra, per inceptos himenaeos. Aenean volutpat elementum ante, id eleifend eros
                             luctus sit
                             amet. vel tincidunt erat neque non ipsum. Ut sollicitudin pharetra enim.</p>
-                        <a class="btn button-style" href="about.html">Read More </a>
+                        <a class="btn button-style" href="about.html">About Us</a>
                     </div>
                 </div>
             </div>
