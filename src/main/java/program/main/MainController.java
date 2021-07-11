@@ -52,6 +52,21 @@ public class MainController {
     public String sitemap(HttpServletRequest request, Model model) throws Exception {		
 		return "/sitemap";
 	}
+	
+	/**************************************************
+	* @MethodName : about
+	* @Description: about 페이지
+	* @param request
+	* @param model
+	* @return String
+	* @throws Exception 
+	* @Author : Hyung-Seon. Yoon
+	* @Version : 2021. 7. 11.
+	**************************************************/
+	@RequestMapping(value="/about", method={RequestMethod.GET, RequestMethod.POST})
+    public String about(HttpServletRequest request, Model model) throws Exception {		
+		return "/about";
+	}
 
 	@RequestMapping(value = {"/about"})
 	public String about(Model model) {

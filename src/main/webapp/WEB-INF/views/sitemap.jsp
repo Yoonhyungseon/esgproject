@@ -59,7 +59,7 @@
 						<td data-title="2Depth" class="align-C">기업 소개</td>
 						<td data-title="3Depth" class="align-C"></td>
 						<td data-title="파일명">
-							<a href="/index" title="새창" target="_blank"></a>
+							<a href="/about" title="새창" target="_blank"></a>
 						</td>
 						<td data-title="상태" class="align-C">X</td>
 						<td data-title="개발" class="align-C">X</td>
@@ -71,7 +71,7 @@
 						<td data-title="2Depth" class="align-C">ESG란?</td>
 						<td data-title="3Depth" class="align-C"></td>
 						<td data-title="파일명">
-							<a href="/index" title="새창" target="_blank"></a>
+							<a href="/about" title="새창" target="_blank">/about</a>
 						</td>
 						<td data-title="상태" class="align-C">X</td>
 						<td data-title="개발" class="align-C">X</td>
