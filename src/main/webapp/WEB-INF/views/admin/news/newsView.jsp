@@ -10,10 +10,10 @@
     <div class="inner-banner">
         <section class="w3l-breadcrumb">
             <div class="container">
-                <h4 class="inner-text-title font-weight-bold mb-sm-3 mb-2">Blog Sinle</h4>
+                <h4 class="inner-text-title font-weight-bold mb-sm-3 mb-2">ESG News</h4>
                 <ul class="breadcrumbs-custom-path">
                     <li><a href="index.html">Home</a></li>
-                    <li class="active"><span class="fa fa-chevron-right mx-2" aria-hidden="true"></span>Blog Sinle</li>
+                    <li class="active"><span class="fa fa-chevron-right mx-2" aria-hidden="true"></span>ESG News</li>
                 </ul>
             </div>
         </section>

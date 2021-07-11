@@ -32,12 +32,12 @@
                         <div class="services-gd">
                             <div class="serve-info">
                                 <h3 class="date">21<sup>st</sup> October</h3>
-                                <a href="blog-single.html">
+                                <a href="newsView">
                                     <figure>
                                         <img class="img-responsive" src="assets/images/blog6.jpg" alt="blog-image">
                                     </figure>
                                 </a>
-                                <h3> <a href="blog-single.html" class="vv-link">Nunc consequat justo id commodo
+                                <h3> <a href="newsView" class="vv-link">Nunc consequat justo id commodo
                                         feugiat</a>
                                 </h3>
                             </div>
@@ -47,12 +47,12 @@
                         <div class="services-gd">
                             <div class="serve-info">
                                 <h3 class="date">23<sup>rd</sup> October</h3>
-                                <a href="blog-single.html">
+                                <a href="newsView">
                                     <figure>
                                         <img class="img-responsive" src="assets/images/blog2.jpg" alt="blog-image">
                                     </figure>
                                 </a>
-                                <h3> <a href="blog-single.html" class="vv-link">Fusce ac eros quis metus por edit
+                                <h3> <a href="newsView" class="vv-link">Fusce ac eros quis metus por edit
                                         some</a>
                                 </h3>
                             </div>
@@ -62,12 +62,12 @@
                         <div class="services-gd">
                             <div class="serve-info">
                                 <h3 class="date">1<sup>st</sup> November</h3>
-                                <a href="blog-single.html">
+                                <a href="newsView">
                                     <figure>
                                         <img class="img-responsive" src="assets/images/blog5.jpg" alt="blog-image">
                                     </figure>
                                 </a>
-                                <h3> <a href="blog-single.html" class="vv-link">Cras fringilla, enim a porta
+                                <h3> <a href="newsView" class="vv-link">Cras fringilla, enim a porta
                                         fermentum</a>
                                 </h3>
                             </div>
@@ -77,12 +77,12 @@
                         <div class="services-gd">
                             <div class="serve-info">
                                 <h3 class="date">5<sup>st</sup> October</h3>
-                                <a href="blog-single.html">
+                                <a href="newsView">
                                     <figure>
                                         <img class="img-responsive" src="assets/images/blog1.jpg" alt="blog-image">
                                     </figure>
                                 </a>
-                                <h3> <a href="blog-single.html" class="vv-link">Cras fringilla, enim a porta
+                                <h3> <a href="newsView" class="vv-link">Cras fringilla, enim a porta
                                         fermentum</a>
                                 </h3>
                             </div>
@@ -92,12 +92,12 @@
                         <div class="services-gd">
                             <div class="serve-info">
                                 <h3 class="date">7<sup>st</sup> October</h3>
-                                <a href="blog-single.html">
+                                <a href="newsView">
                                     <figure>
                                         <img class="img-responsive" src="assets/images/blog4.jpg" alt="blog-image">
                                     </figure>
                                 </a>
-                                <h3> <a href="blog-single.html" class="vv-link">Cras fringilla, enim a porta
+                                <h3> <a href="newsView" class="vv-link">Cras fringilla, enim a porta
                                         fermentum</a>
                                 </h3>
                             </div>
@@ -107,12 +107,12 @@
                         <div class="services-gd">
                             <div class="serve-info">
                                 <h3 class="date">4<sup>st</sup> October</h3>
-                                <a href="blog-single.html">
+                                <a href="newsView">
                                     <figure>
                                         <img class="img-responsive" src="assets/images/blog3.jpg" alt="blog-image">
                                     </figure>
                                 </a>
-                                <h3> <a href="blog-single.html" class="vv-link">Cras fringilla, enim a porta
+                                <h3> <a href="newsView" class="vv-link">Cras fringilla, enim a porta
                                         fermentum</a>
                                 </h3>
                             </div>
@@ -122,12 +122,12 @@
                         <div class="services-gd">
                             <div class="serve-info">
                                 <h3 class="date">21<sup>st</sup> October</h3>
-                                <a href="blog-single.html">
+                                <a href="newsView">
                                     <figure>
                                         <img class="img-responsive" src="assets/images/blog6.jpg" alt="blog-image">
                                     </figure>
                                 </a>
-                                <h3> <a href="blog-single.html" class="vv-link">Nunc consequat justo id commodo
+                                <h3> <a href="newsView" class="vv-link">Nunc consequat justo id commodo
                                         feugiat</a>
                                 </h3>
                             </div>
@@ -137,12 +137,12 @@
                         <div class="services-gd">
                             <div class="serve-info">
                                 <h3 class="date">23<sup>rd</sup> October</h3>
-                                <a href="blog-single.html">
+                                <a href="newsView">
                                     <figure>
                                         <img class="img-responsive" src="assets/images/blog2.jpg" alt="blog-image">
                                     </figure>
                                 </a>
-                                <h3> <a href="blog-single.html" class="vv-link">Fusce ac eros quis metus por edit
+                                <h3> <a href="newsView" class="vv-link">Fusce ac eros quis metus por edit
                                         some</a>
                                 </h3>
                             </div>
@@ -152,12 +152,12 @@
                         <div class="services-gd">
                             <div class="serve-info">
                                 <h3 class="date">1<sup>st</sup> November</h3>
-                                <a href="blog-single.html">
+                                <a href="newsView">
                                     <figure>
                                         <img class="img-responsive" src="assets/images/blog5.jpg" alt="blog-image">
                                     </figure>
                                 </a>
-                                <h3> <a href="blog-single.html" class="vv-link">Cras fringilla, enim a porta
+                                <h3> <a href="newsView" class="vv-link">Cras fringilla, enim a porta
                                         fermentum</a>
                                 </h3>
                             </div>
