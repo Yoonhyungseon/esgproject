@@ -110,6 +110,14 @@ public class MypageController {
 		return "contents/mypage/wallet";
 	}
 	
+	/**************************************************
+	* @MethodName : postList
+	* @Description:
+	* @param model
+	* @return String
+	* @Author : Beom-Ki, Lee
+	* @Version : 2021. 7. 10.
+	**************************************************/
 	@RequestMapping(value = {"/postList"})
 	public String postList(Model model) {
 		return "contents/mypage/postList";
