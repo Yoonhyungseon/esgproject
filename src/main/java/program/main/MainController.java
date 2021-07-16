@@ -2,9 +2,11 @@ package program.main;
 
 import javax.servlet.http.HttpServletRequest;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -20,9 +22,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @RequestMapping(value = {"/*"})
 public class MainController {
 	
+	private static final Logger logger = LoggerFactory.getLogger(MainController.class);
+
 //	@Autowired
 //	private TextBoardService textBoardService;
-
 
 	/**************************************************
 	* @MethodName : index
@@ -67,7 +70,15 @@ public class MainController {
     public String about(HttpServletRequest request, Model model) throws Exception {		
 		return "/about";
 	}
-
+	
+	/**************************************************
+	* @MethodName : bootstrap 
+	* @Description: bootstrap 페이지
+	* @param model
+	* @return String
+	* @Author : Hyung-Seon. Yoon
+	* @Version : 2021. 7. 16.
+	**************************************************/
 	@RequestMapping(value = {"/about"})
 	public String about(Model model) {
 		return "/bootstrap/about";
@@ -101,6 +112,28 @@ public class MainController {
 	@RequestMapping(value = {"/white_index"})
 	public String white_index(Model model) {
 		return "/bootstrap/white_index";
+	}
+	
+	/**************************************************
+	* @MethodName : contents
+	* @Description: 컨텐츠 컨트롤러
+	* @param menu
+	* @param page
+	* @param request
+	* @param model
+	* @return String
+	* @throws Exception 
+	* @Author : Hyung-Seon. Yoon
+	* @Version : 2021. 7. 16.
+	**************************************************/
+	@RequestMapping(value="/{menu}/{page}", method={RequestMethod.GET, RequestMethod.POST})
+    public String contents(@PathVariable String menu, @PathVariable String page, HttpServletRequest request, Model model) throws Exception {
+		logger.info("contents controller");
+
+		logger.info("menu : {}", menu);
+		logger.info("page : {}", page);
+		
+		return "contents/"+menu+"/"+page;
 	}
 }
 	
