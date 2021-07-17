@@ -29,8 +29,7 @@
                     <!-- Item starts -->
                     <div class="row menu-item">
                         <div class="col-3 p-0 position-relative">
-                            <img src="asset/images/menu1.jpg" class="img-responsive" alt="">
-                            <a href="#order" class="btn button-style button-style-2">Add</a>
+                         	<img src="/asset/images/menu1.jpg" class="img-responsive" alt="">
                         </div>
                         <div class="col-9 pl-4">
                             <div class="row no-gutters">
@@ -42,7 +41,7 @@
                                 </div>
                             </div>
                             <div class="menu-item-description">
-                                <p>Lorem ipsum dolor sit amet, consectetur tredjh adipiscing elit.</p>
+                                <p>A 기업 설명</p>
                             </div>
                         </div>
                     </div>
@@ -50,20 +49,19 @@
                     <!-- Item starts -->
                     <div class="row menu-item">
                         <div class="col-3 p-0 position-relative">
-                            <img src="asset/images/menu2.jpg" class="img-responsive" alt="">
-                            <a href="#order" class="btn button-style button-style-2">Add</a>
+                            <img src="/asset/images/menu2.jpg" class="img-responsive" alt="">
                         </div>
                         <div class="col-9 pl-4">
                             <div class="row no-gutters">
                                 <div class="col-9 menu-item-name">
-                                    <h6>Avocado Toast with Egg</h6>
+                                    <h6>B기업</h6>
                                 </div>
                                 <div class="col-3 menu-item-price text-right">
-                                    <h6>$28</h6>
+                                    <h6>128pt</h6>
                                 </div>
                             </div>
                             <div class="menu-item-description">
-                                <p>Lorem ipsum dolor sit amet, consectetur tredjh adipiscing elit.</p>
+                                <p>B 기업 설명</p>
                             </div>
                         </div>
                     </div>
@@ -71,20 +69,19 @@
                     <!-- Item starts -->
                     <div class="row menu-item">
                         <div class="col-3 p-0 position-relative">
-                            <img src="asset/images/menu3.jpg" class="img-responsive" alt="">
-                            <a href="#order" class="btn button-style button-style-2">Add</a>
+                            <img src="/asset/images/menu3.jpg" class="img-responsive" alt="">
                         </div>
                         <div class="col-9 pl-4">
                             <div class="row no-gutters">
                                 <div class="col-9 menu-item-name">
-                                    <h6>Nut, Banana & Seed Toast</h6>
+                                    <h6>C기업</h6>
                                 </div>
                                 <div class="col-3 menu-item-price text-right">
-                                    <h6>$18</h6>
+                                    <h6>118pt</h6>
                                 </div>
                             </div>
                             <div class="menu-item-description">
-                                <p>Lorem ipsum dolor sit amet, consectetur tredjh adipiscing elit.</p>
+                                <p>C기업 설명</p>
                             </div>
                         </div>
                     </div>
@@ -92,20 +89,19 @@
                     <!-- Item starts -->
                     <div class="row menu-item">
                         <div class="col-3 p-0 position-relative">
-                            <img src="asset/images/menu4.jpg" class="img-responsive" alt="">
-                            <a href="#order" class="btn button-style button-style-2">Add</a>
+                            <img src="/asset/images/menu4.jpg" class="img-responsive" alt="">
                         </div>
                         <div class="col-9 pl-4">
                             <div class="row no-gutters">
                                 <div class="col-9 menu-item-name">
-                                    <h6>Berry & Yogurt Smoothie</h6>
+                                    <h6>D기업</h6>
                                 </div>
                                 <div class="col-3 menu-item-price text-right">
-                                    <h6>$76</h6>
+                                    <h6>76pt</h6>
                                 </div>
                             </div>
                             <div class="menu-item-description">
-                                <p>Lorem ipsum dolor sit amet, consectetur tredjh adipiscing elit.</p>
+                                <p>D기업 설명</p>
                             </div>
                         </div>
                     </div>
@@ -118,20 +114,19 @@
                     <!-- Item starts -->
                     <div class="row menu-item">
                         <div class="col-3 p-0 position-relative">
-                            <img src="asset/images/menu5.jpg" class="img-responsive" alt="">
-                            <a href="#order" class="btn button-style button-style-2">Add</a>
+                            <img src="/asset/images/menu5.jpg" class="img-responsive" alt="">
                         </div>
                         <div class="col-9 pl-4">
                             <div class="row no-gutters">
                                 <div class="col-9 menu-item-name">
-                                    <h6>Berry Breakfast Parfait</h6>
+                                    <h6>E기업</h6>
                                 </div>
                                 <div class="col-3 menu-item-price text-right">
-                                    <h6>$13</h6>
+                                    <h6>73pt</h6>
                                 </div>
                             </div>
                             <div class="menu-item-description">
-                                <p>Lorem ipsum dolor sit amet, consectetur tredjh adipiscing elit.</p>
+                                <p>E기업 설명</p>
                             </div>
                         </div>
                     </div>
@@ -139,20 +134,19 @@
                     <!-- Item starts -->
                     <div class="row menu-item">
                         <div class="col-3 p-0 position-relative">
-                            <img src="asset/images/menu6.jpg" class="img-responsive" alt="">
-                            <a href="#order" class="btn button-style button-style-2">Add</a>
+                            <img src="/asset/images/menu6.jpg" class="img-responsive" alt="">
                         </div>
                         <div class="col-9 pl-4">
                             <div class="row no-gutters">
                                 <div class="col-9 menu-item-name">
-                                    <h6>Peanut Butter & Banana</h6>
+                                    <h6>F기업</h6>
                                 </div>
                                 <div class="col-3 menu-item-price text-right">
-                                    <h6>$32</h6>
+                                    <h6>53pt</h6>
                                 </div>
                             </div>
                             <div class="menu-item-description">
-                                <p>Lorem ipsum dolor sit amet, consectetur tredjh adipiscing elit.</p>
+                                <p>F기업 설명</p>
                             </div>
                         </div>
                     </div>
@@ -160,20 +154,19 @@
                     <!-- Item starts -->
                     <div class="row menu-item">
                         <div class="col-3 p-0 position-relative">
-                            <img src="asset/images/menu7.jpg" class="img-responsive" alt="">
-                            <a href="#order" class="btn button-style button-style-2">Add</a>
+                            <img src="/asset/images/menu7.jpg" class="img-responsive" alt="">
                         </div>
                         <div class="col-9 pl-4">
                             <div class="row no-gutters">
                                 <div class="col-9 menu-item-name">
-                                    <h6>Quinoa Fruit Salad</h6>
+                                    <h6>G기업</h6>
                                 </div>
                                 <div class="col-3 menu-item-price text-right">
-                                    <h6>$76</h6>
+                                    <h6>46pt</h6>
                                 </div>
                             </div>
                             <div class="menu-item-description">
-                                <p>Lorem ipsum dolor sit amet, consectetur tredjh adipiscing elit.</p>
+                                <p>기업 설명</p>
                             </div>
                         </div>
                     </div>
@@ -181,20 +174,19 @@
                     <!-- Item starts -->
                     <div class="row menu-item">
                         <div class="col-3 p-0 position-relative">
-                            <img src="asset/images/menu8.jpg" class="img-responsive" alt="">
-                            <a href="#order" class="btn button-style button-style-2">Add</a>
+                            <img src="/asset/images/menu7.jpg" class="img-responsive" alt="">
                         </div>
                         <div class="col-9 pl-4">
                             <div class="row no-gutters">
                                 <div class="col-9 menu-item-name">
-                                    <h6>Pumpkin Yogurt Parfait</h6>
+                                    <h6>H기업</h6>
                                 </div>
                                 <div class="col-3 menu-item-price text-right">
-                                    <h6>$26</h6>
+                                    <h6>16pt</h6>
                                 </div>
                             </div>
                             <div class="menu-item-description">
-                                <p>Lorem ipsum dolor sit amet, consectetur tredjh adipiscing elit.</p>
+                                <p>기업 설명</p>
                             </div>
                         </div>
                     </div>
@@ -231,11 +223,11 @@
     <!-- //move top -->
 
     <!-- common jquery plugin -->
-    <script src="asset/js/jquery-3.3.1.min.js"></script>
+    <script src="/asset/js/jquery-3.3.1.min.js"></script>
     <!-- //common jquery plugin -->
 
     <!-- theme switch js (light and dark)-->
-    <script src="asset/js/theme-change.js"></script>
+    <script src="/asset/js/theme-change.js"></script>
     <script>
         function autoType(elementClass, typingSpeed) {
             var thhis = $(elementClass);
@@ -313,7 +305,7 @@
     <!-- //disable body scroll which navbar is in active -->
 
     <!--bootstrap-->
-    <script src="asset/js/bootstrap.min.js"></script>
+    <script src="/asset/js/bootstrap.min.js"></script>
     <!-- //bootstrap-->
     <!-- //Js scripts -->
 </body>
