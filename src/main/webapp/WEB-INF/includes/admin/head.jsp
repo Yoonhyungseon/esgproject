@@ -25,4 +25,10 @@
         <script src="/adminLayer/assets/demo/chart-bar-demo.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
         <script src="/adminLayer/js/datatables-simple-demo.js"></script>
+        
+        <link rel="stylesheet" type="text/css" href="/adminLayer/css/base.css">
+        <link rel="stylesheet" type="text/css" href="/adminLayer/css/forms.css">
+        
+        
+        
 	</head>
