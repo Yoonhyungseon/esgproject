@@ -1,5 +1,16 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-	pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<script type="text/javascript"
+	src="../ckeditor/ckeditor.js"></script>
+<script type="text/javascript">
+	$(function() {
+		CKEDITOR.replace('ckeditor', {
+			width : '70%',
+			height : '200px',
+		});
+	});
+</script>
 <style>
 .container {
 	width: 750px%;
@@ -10,6 +21,7 @@
 }
 </style>
 
+<!-- inner banner -->
 <div class="inner-banner">
 	<section class="w3l-breadcrumb">
 		<div class="container">
@@ -23,12 +35,13 @@
 	</section>
 </div>
 <!-- //inner banner -->
+
 <!-- Write Posting -->
 <section class="w3l-form-comments-sec mt-5 ">
 	<div class="container ">
 		<h3 class="title-big mb-4 pb-2">Write your posting</h3>
 		<div class="form-commets">
-			<form action="#" method="post">
+			<form action="#" method="post" id="form" name="form" class="main-input" action="" enctype="multipart/form-data">
 				<div class="row mb-4">
 					<div class="col-md-6">
 						<input type="text" name="Title" required="Title"
@@ -39,8 +52,7 @@
 						<input type="file" name="postImage" placeholder="Posting Image">
 					</div>
 				</div>
-				<textarea name="content" required="required"
-					placeholder="Write your contents here"></textarea>
+				<textarea name="content" id="ckeditor" placeholder="Write your contents here"></textarea>
 				<button class="btn button-style d-flex ml-auto" type="submit">Posting</button>
 			</form>
 		</div>
@@ -70,92 +82,4 @@
             document.body.scrollTop = 0;
             document.documentElement.scrollTop = 0;
         }
-    </script>
-<!-- //move top -->
-
-<!-- common jquery plugin -->
-<script src="assets/js/jquery-3.3.1.min.js"></script>
-<!-- //common jquery plugin -->
-
-<!-- theme switch js (light and dark)-->
-<script src="assets/js/theme-change.js"></script>
-<script>
-        function autoType(elementClass, typingSpeed) {
-            var thhis = $(elementClass);
-            thhis.css({
-                "position": "relative",
-                "display": "inline-block"
-            });
-            thhis.prepend('<div class="cursor" style="right: initial; left:0;"></div>');
-            thhis = thhis.find(".text-js");
-            var text = thhis.text().trim().split('');
-            var amntOfChars = text.length;
-            var newString = "";
-            thhis.text("|");
-            setTimeout(function () {
-                thhis.css("opacity", 1);
-                thhis.prev().removeAttr("style");
-                thhis.text("");
-                for (var i = 0; i < amntOfChars; i++) {
-                    (function (i, char) {
-                        setTimeout(function () {
-                            newString += char;
-                            thhis.text(newString);
-                        }, i * typingSpeed);
-                    })(i + 1, text[i]);
-                }
-            }, 1500);
-        }
-
-        $(document).ready(function () {
-            // Now to start autoTyping just call the autoType function with the
-            // class of outer div
-            // The second paramter is the speed between each letter is typed.
-            autoType(".type-js", 200);
-        });
-    </script>
-<!-- //theme switch js (light and dark)-->
-
-<!-- MENU-JS -->
-<script>
-        $(window).on("scroll", function () {
-            var scroll = $(window).scrollTop();
-
-            if (scroll >= 80) {
-                $("#site-header").addClass("nav-fixed");
-            } else {
-                $("#site-header").removeClass("nav-fixed");
-            }
-        });
-
-        //Main navigation Active Class Add Remove
-        $(".navbar-toggler").on("click", function () {
-            $("header").toggleClass("active");
-        });
-        $(document).on("ready", function () {
-            if ($(window).width() > 991) {
-                $("header").removeClass("active");
-            }
-            $(window).on("resize", function () {
-                if ($(window).width() > 991) {
-                    $("header").removeClass("active");
-                }
-            });
-        });
-    </script>
-<!-- //MENU-JS -->
-
-<!-- disable body scroll which navbar is in active -->
-<script>
-        $(function () {
-            $('.navbar-toggler').click(function () {
-                $('body').toggleClass('noscroll');
-            })
-        });
-    </script>
-<!-- //disable body scroll which navbar is in active -->
-
-<!--bootstrap-->
-<script src="assets/js/bootstrap.min.js"></script>
-<!-- //bootstrap-->
-<!-- //Js scripts -->
+</script><!-- //move top -->
