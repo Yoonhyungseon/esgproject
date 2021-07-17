@@ -6,12 +6,10 @@
             <!-- Sidebar Toggle-->
             <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
             <!-- Navbar Search-->
-            <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
+            <div class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
                 <div class="input-group">
-                    <input class="form-control" type="text" placeholder="Search for..." aria-label="Search for..." aria-describedby="btnNavbarSearch" />
-                    <button class="btn btn-primary" id="btnNavbarSearch" type="button"><i class="fas fa-search"></i></button>
                 </div>
-            </form>
+            </div>
             <!-- Navbar-->
             <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
                 <li class="nav-item dropdown">
@@ -40,20 +38,20 @@
                             </a>
                             <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="layout-static.html">뿜업 게시판</a>
-                                    <a class="nav-link" href="layout-sidenav-light.html">공지사항</a>
+                                    <a class="nav-link" href="/admin/textboard/textboardList">뿜업 게시판</a>
+                                    <a class="nav-link" href="/admin/textboard/noticeList">공지사항</a>
                                 </nav>
                             </div>
-                            <a class="nav-link" href="index.html">
+                            <a class="nav-link" href="/admin/newsList">
                                 <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
                                 ESG 뉴스
                             </a>
-                             <a class="nav-link" href="index.html">
+                             <a class="nav-link" href="/admin/companies/companiesList">
                                 <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
                                 소비자 지수
                             </a>
                             <div class="sb-sidenav-menu-heading">회원</div>
-                            <a class="nav-link" href="charts.html">
+                            <a class="nav-link" href="/admin/member/memberList">
                                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                                 회원 관리
                             </a>
