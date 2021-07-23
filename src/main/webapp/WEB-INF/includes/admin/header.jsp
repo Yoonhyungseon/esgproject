@@ -48,7 +48,7 @@
                             </a>
                              <a class="nav-link" href="/admin/companies/companiesList">
                                 <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
-                                소비자 지수
+                                기업 관리
                             </a>
                             <div class="sb-sidenav-menu-heading">회원</div>
                             <a class="nav-link" href="/admin/member/memberList">
