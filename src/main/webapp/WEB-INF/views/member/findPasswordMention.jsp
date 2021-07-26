@@ -30,13 +30,13 @@
 	                        <div class="row main-cont-sec">
 	                            <div class="col-md-6 left-cont-contact">
 	                                <div class="form-group">
-	                                    <label for="w3lName">새 비밀번호</label>
-	                                    <input class="form-control" type="text" name="w3lName" id="w3lName" placeholder=""
+	                                    <label for="newpassword">새 비밀번호</label>
+	                                    <input class="form-control" type="text" name="newpassword" id="newpassword" placeholder=""
 	                                        required="">
 	                                </div>
 	                                <div class="form-group">
-	                                    <label for="w3lName">새 비밀번호 확인</label>
-	                                    <input class="form-control" type="text" name="w3lName" id="w3lName" placeholder=""
+	                                    <label for="renewpassword">새 비밀번호 확인</label>
+	                                    <input class="form-control" type="text" name="renewpassword" id="renewpassword" placeholder=""
 	                                        required="">
 	                                </div>
 	                            </div>
@@ -53,6 +53,35 @@
 			</div>
 		</div>
 	</section>
+	
+	<!-- MENU-JS -->
+    <script>
+        $(window).on("scroll", function () {
+            var scroll = $(window).scrollTop();
+
+            if (scroll >= 80) {
+                $("#site-header").addClass("nav-fixed");
+            } else {
+                $("#site-header").removeClass("nav-fixed");
+            }
+        });
+
+        //Main navigation Active Class Add Remove
+        $(".navbar-toggler").on("click", function () {
+            $("header").toggleClass("active");
+        });
+        $(document).on("ready", function () {
+            if ($(window).width() > 991) {
+                $("header").removeClass("active");
+            }
+            $(window).on("resize", function () {
+                if ($(window).width() > 991) {
+                    $("header").removeClass("active");
+                }
+            });
+        });
+    </script>
+    <!-- //MENU-JS -->
 </body>
 
 </html>
