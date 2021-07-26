@@ -114,8 +114,10 @@
 	                                </div>
 	                                <div class="form-group">
 	                                    <label for="gender">성별</label>
-	                                    <input class="form-control" type="text" name="gender" id="gender" placeholder=""
-	                                        required="">
+	                                    <div class="select-gender">
+	                                    	<input type="radio" id="select" name="shop"><label for="select">남</label>
+	                                    	<input type="radio" id="select2" name="shop"><label for="select2">여</label>
+	                                    </div>
 	                                </div>
 	                            </div>
 	                        </div>
