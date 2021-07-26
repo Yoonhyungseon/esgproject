@@ -29,4 +29,5 @@
 	    <link rel="stylesheet" href="/asset/css/style-liberty.css">
 	    <link rel="stylesheet" href="/asset/css/login.css">
 	    <link rel="stylesheet" href="/asset/css/join.css">
+	    <link rel="stylesheet" href="/asset/css/landing.css">
 	</head>
