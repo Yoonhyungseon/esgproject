@@ -113,7 +113,7 @@
 	                                        required="">
 	                                </div>
 	                                <div class="form-group">
-	                                    <label for="w3lName">휴대전화</label>
+	                                    <label for="w3lName">성별</label>
 	                                    <input class="form-control" type="text" name="w3lName" id="w3lName" placeholder=""
 	                                        required="">
 	                                </div>
