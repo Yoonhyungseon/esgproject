@@ -68,7 +68,7 @@
                     <div class="col-lg-4 col-md-6">
                         <div class="features4-grid">
                             <div class="feature-images">
-                                <span class="fa fa-motorcycle" aria-hidden="true"></span>
+                            	<img src="/asset/images/letter-e.png">
                             </div>
                             <h5><a>Environment</a></h5>
                             <p>Lorem ante ipsum primis in faucibus orci luctus eted ultrices posuere curae fers
@@ -78,7 +78,7 @@
                     <div class="col-lg-4 col-md-6 mt-md-0 mt-4">
                         <div class="features4-grid">
                             <div class="feature-images">
-                                <span class="fa fa-shopping-basket" aria-hidden="true"></span>
+                                <img src="/asset/images/letter-s.png">
                             </div>
                             <h5><a>Social</a></h5>
                             <p>Lorem ante ipsum primis in faucibus orci luctus eted ultrices posuere curae fers
@@ -88,7 +88,7 @@
                     <div class="col-lg-4 col-md-6 mt-lg-0 mt-4">
                         <div class="features4-grid">
                             <div class="feature-images">
-                                <span class="fa fa-laptop" aria-hidden="true"></span>
+                                <img src="/asset/images/letter-g.png">
                             </div>
                             <h5><a>Governance</a></h5>
                             <p>Lorem ante ipsum primis in faucibus orci luctus eted ultrices posuere curae fers
