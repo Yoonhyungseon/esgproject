@@ -40,7 +40,22 @@
 
 
                     <fieldset class="module aligned ">
+						<div class="form-row field-mem_num">
 
+
+                            <div>
+
+
+                                <label class="required" for="id_mem_num">회원일련번호:</label>
+
+                                <input type="number" name="mem_num" value="1" class="vIntegerField" maxlength="255" required id="id_id_m">
+
+
+
+                            </div>
+
+                        </div>
+						
 
 
                         <div class="form-row field-id_m">
@@ -49,9 +64,9 @@
                             <div>
 
 
-                                <label class="required" for="id_id_m">Id:</label>
+                                <label class="required" for="id_id_m">아이디:</label>
 
-                                <input type="text" name="id_m" value="이범기" class="vTextField" maxlength="255" required id="id_id_m">
+                                <input type="text" name="id_m" value="jeongiun" class="vTextField" maxlength="255" required id="id_id_m">
 
 
 
@@ -65,9 +80,9 @@
                             <div>
 
 
-                                <label class="required" for="id_password">Password:</label>
+                                <label class="required" for="id_password">비밀번호:</label>
 
-                                <input type="text" name="password" value="1234" class="vTextField" maxlength="255" required id="id_password">
+                                <input type="text" name="password" value="abcd1234" class="vTextField" maxlength="255" required id="id_password">
 
 
 
@@ -81,7 +96,7 @@
                             <div>
 
 
-                                <label class="required" for="id_name">Name:</label>
+                                <label class="required" for="id_name">이름:</label>
 
                                 <input type="text" name="name" value="이범기" class="vTextField" maxlength="255" required id="id_name">
 
@@ -91,15 +106,15 @@
 
                         </div>
 
-                        <div class="form-row field-nickname">
+ 						<div class="form-row field-email">
 
 
                             <div>
 
 
-                                <label class="required" for="id_nickname">Nickname:</label>
+                                <label class="required" for="id_email">이메일:</label>
 
-                                <input type="text" name="nickname" value="뺌기" class="vTextField" maxlength="255" required id="id_nickname">
+                                <input type="text" name="email" value="jeongiun@naver.com" class="vTextField" maxlength="255" required id="id_email">
 
 
 
@@ -107,15 +122,31 @@
 
                         </div>
 
-                        <div class="form-row field-age">
+                        <div class="form-row field-question">
 
 
                             <div>
 
 
-                                <label class="required" for="id_age">Age:</label>
+                                <label class="required" for="id_question">질문:</label>
 
-                                <input type="number" name="age" value="25" class="vIntegerField" required id="id_age">
+                                <input type="text" name="question" value="나의 고향은" class="vTextField" maxlength="255" required id="id_nickname">
+
+
+
+                            </div>
+
+                        </div>
+
+                        <div class="form-row field-state">
+
+
+                            <div>
+
+
+                                <label class="required" for="id_state">상태:</label>
+
+                                <input type="text" name="state" value="접속" class="vTextField" required id="id_state">
 
 
 
@@ -129,7 +160,7 @@
                             <div>
 
 
-                                <label class="required" for="id_gender">Gender:</label>
+                                <label class="required" for="id_gender">성별:</label>
 
                                 <input type="text" name="gender" value="남" class="vTextField" maxlength="255" required id="id_gender">
 
@@ -139,37 +170,57 @@
 
                         </div>
 
-                        <div class="form-row field-email">
+                       
+
+                        <div class="form-row field-rank">
 
 
                             <div>
 
 
-                                <label class="required" for="id_email">Email:</label>
+                                <label class="required" for="id_rank">회원등급:</label>
 
-                                <input type="text" name="email" value="jeongiun@naver.com" class="vTextField" maxlength="255" required id="id_email">
+                                <input type="text" name="rank" value="1" class="vTextField" maxlength="255" required id="id_phone_naumber">
 
 
 
                             </div>
 
                         </div>
-
-                        <div class="form-row field-phone_naumber">
+                        
+                        
+                        <div class="form-row last-access">
 
 
                             <div>
 
 
-                                <label class="required" for="id_phone_naumber">Phone number:</label>
+                                <label class="required" for="id_last_access">최종로그인일시</label>
 
-                                <input type="text" name="phone_naumber" value="01048705633" class="vTextField" maxlength="255" required id="id_phone_naumber">
+                                <input type="text" name="last_access" value="2021-07-26" class="vTextField" maxlength="255" required id="id_phone_naumber">
 
 
 
                             </div>
 
                         </div>
+                        
+                        <div class="form-row start-date">
+
+
+                            <div>
+
+
+                                <label class="required" for="id_start_date">가입등록날짜</label>
+
+                                <input type="text" name="start_date" value="2020-01-21" class="vTextField" maxlength="255" required id="id_phone_naumber">
+
+
+
+                            </div>
+
+                        </div>
+                        
 
                         
                     </fieldset>
