@@ -1,38 +1,84 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
-<!doctype html>
-<html lang="en">
-
-<head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Foodies - Restaurant Category Responsive Web Template - Home</title>
-    <!-- google-fonts -->
-    <link href="//fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap"
-        rel="stylesheet">
-    <!-- //google-fonts -->
-</head>
-
-<body>
-    <!-- banner section -->
-    <section id="home" class="w3l-banner py-5 landing">
-        <div class="container pt-5 pb-md-4">
-            <div class="row align-items-center">
-                <div class="col-md-6 pt-md-0 pt-4">
-                    <h3 class="mb-sm-4 mb-3 title">기업소개</h3>
-                    <p id="landing-information">ESG: 사회를 품다는 ESG 기반의<br>ESG: 사회를 품다는 ESG 기반의<br>ESG: 사회를 품다는 ESG 기반의<br>ESG: 사회를 품다는 ESG 기반의</p>
-                    <div class="mt-md-5 mt-4 mb-lg-0 mb-4">
-                        <button id="btn-scroll-move" class="btn button-style">More information</button>
-                    </div>
-                </div>
-                <div class="col-md-6 mt-md-0 mt-4">
-                    <!-- <img class="img-fluid" src="/asset/images/bannerimg.png" alt=" "> -->
-                </div>
-            </div>
+     <!-- Swiper -->
+    <div class="swiper-container mySwiper" style="height: 560px; margin-top: 90px;">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+		    <section id="home" class="w3l-banner py-5 landing"  style="width: 100%;">
+		        <div class="container pt-5 pb-md-4">
+		            <div class="row align-items-center">
+		                <div class="col-md-6 pt-md-0 pt-4">
+		                    <h3 class="mb-sm-4 mb-3 title">기업소개</h3>
+		                    <p id="landing-information">ESG: 사회를 품다는 ESG 기반의<br>ESG: 사회를 품다는 ESG 기반의<br>ESG: 사회를 품다는 ESG 기반의<br>ESG: 사회를 품다는 ESG 기반의</p>
+		                    <div class="mt-md-5 mt-4 mb-lg-0 mb-4">
+		                        <button id="btn-scroll-move" class="btn button-style">More information</button>
+		                    </div>
+		                </div>
+		            </div>
+		        </div>
+		    </section>        
         </div>
-    </section>
-    <!-- //banner section -->
+        <div class="swiper-slide">
+		    <section id="home" class="w3l-banner py-5 landing"  style="width: 100%;">
+		        <div class="container pt-5 pb-md-4">
+		            <div class="row align-items-center">
+		                <div class="col-md-6 pt-md-0 pt-4">
+		                    <h3 class="mb-sm-4 mb-3 title">기업소개</h3>
+		                    <p id="landing-information">ESG: 사회를 품다는 ESG 기반의<br>ESG: 사회를 품다는 ESG 기반의<br>ESG: 사회를 품다는 ESG 기반의<br>ESG: 사회를 품다는 ESG 기반의</p>
+		                    <div class="mt-md-5 mt-4 mb-lg-0 mb-4">
+		                        <button id="btn-scroll-move" class="btn button-style">More information</button>
+		                    </div>
+		                </div>
+		            </div>
+		        </div>
+		    </section>        
+        </div>
+                        <div class="swiper-slide">
+		    <section id="home" class="w3l-banner py-5 landing"  style="width: 100%;">
+		        <div class="container pt-5 pb-md-4">
+		            <div class="row align-items-center">
+		                <div class="col-md-6 pt-md-0 pt-4">
+		                    <h3 class="mb-sm-4 mb-3 title">기업소개</h3>
+		                    <p id="landing-information">ESG: 사회를 품다는 ESG 기반의<br>ESG: 사회를 품다는 ESG 기반의<br>ESG: 사회를 품다는 ESG 기반의<br>ESG: 사회를 품다는 ESG 기반의</p>
+		                    <div class="mt-md-5 mt-4 mb-lg-0 mb-4">
+		                        <button id="btn-scroll-move" class="btn button-style">More information</button>
+		                    </div>
+		                </div>
+		            </div>
+		        </div>
+		    </section>        
+        </div>
+        <div class="swiper-slide">
+		    <section id="home" class="w3l-banner py-5 landing"  style="width: 100%;">
+		        <div class="container pt-5 pb-md-4">
+		            <div class="row align-items-center">
+		                <div class="col-md-6 pt-md-0 pt-4">
+		                    <h3 class="mb-sm-4 mb-3 title">기업소개</h3>
+		                    <p id="landing-information">ESG: 사회를 품다는 ESG 기반의<br>ESG: 사회를 품다는 ESG 기반의<br>ESG: 사회를 품다는 ESG 기반의<br>ESG: 사회를 품다는 ESG 기반의</p>
+		                    <div class="mt-md-5 mt-4 mb-lg-0 mb-4">
+		                        <button id="btn-scroll-move" class="btn button-style">More information</button>
+		                    </div>
+		                </div>
+		            </div>
+		        </div>
+		    </section>        
+        </div>        
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+
+    <!-- Swiper JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+        pagination: {
+          el: ".swiper-pagination",
+          dynamicBullets: true,
+        },
+      });
+    </script>
     
     <!-- about section -->
     <div id="moved-here" class="w3l-content-photo-5">

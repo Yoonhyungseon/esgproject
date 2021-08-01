@@ -4,7 +4,7 @@
 	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	    <title>ESG</title>
 	    
-	    <meta name="naver-site-verification" content="12c4d09ed2de5159ca3aa3fd13d68cd88c230256" />
+	    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 	    
 	    <meta name="description" content="ESG: 행동주의 소비자">
 	    
@@ -19,6 +19,8 @@
 	    <link rel="stylesheet" href="/asset/css/font/notosanskr-eot.css">
 	    <link rel="stylesheet" href="/asset/css/common/swiper.css">
 	    <link rel="stylesheet" href="/asset/css/common/package.css">
+	    <link rel="stylesheet"  href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+	    
 	    <script src="/asset/js/jquery.min.js"></script>
 	    <script src="/asset/js/jquery.easing.1.3.js"></script>
 	    <script src="/asset/js/imagesloaded.pkgd.min.js"></script>	    
@@ -30,4 +32,11 @@
 	    <link rel="stylesheet" href="/asset/css/login.css">
 	    <link rel="stylesheet" href="/asset/css/join.css">
 	    <link rel="stylesheet" href="/asset/css/landing.css">
+	    
+	    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@1.0/nanumsquare.css"> 
+	    
+	    <!-- google-fonts -->
+	    <link href="//fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+	    <!-- //google-fonts -->
+	    
 	</head>
