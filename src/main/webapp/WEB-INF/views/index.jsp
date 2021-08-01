@@ -8,10 +8,10 @@
 		        <div class="container pt-5 pb-md-4">
 		            <div class="row align-items-center">
 		                <div class="col-md-6 pt-md-0 pt-4">
-		                    <h3 class="mb-sm-4 mb-3 title">기업소개</h3>
-		                    <p id="landing-information">ESG: 사회를 품다는 ESG 기반의<br>ESG: 사회를 품다는 ESG 기반의<br>ESG: 사회를 품다는 ESG 기반의<br>ESG: 사회를 품다는 ESG 기반의</p>
+		                    <h3 class="mb-sm-4 mb-3 title">ESG: 사회를 품다 1</h3>
+		                    <p id="landing-information">기업의 실질적 ESG 경영을 위해<br>우리들의 적극적인 행동이 시작되는 곳</p>
 		                    <div class="mt-md-5 mt-4 mb-lg-0 mb-4">
-		                        <button id="btn-scroll-move" class="btn button-style">More information</button>
+		                        <button class="btn button-style btn-scroll-move">More information</button>
 		                    </div>
 		                </div>
 		            </div>
@@ -23,10 +23,10 @@
 		        <div class="container pt-5 pb-md-4">
 		            <div class="row align-items-center">
 		                <div class="col-md-6 pt-md-0 pt-4">
-		                    <h3 class="mb-sm-4 mb-3 title">기업소개</h3>
-		                    <p id="landing-information">ESG: 사회를 품다는 ESG 기반의<br>ESG: 사회를 품다는 ESG 기반의<br>ESG: 사회를 품다는 ESG 기반의<br>ESG: 사회를 품다는 ESG 기반의</p>
+		                    <h3 class="mb-sm-4 mb-3 title">ESG: 사회를 품다 2</h3>
+		                    <p id="landing-information">기업의 실질적 ESG 경영을 위해<br>우리들의 적극적인 행동이 시작되는 곳</p>
 		                    <div class="mt-md-5 mt-4 mb-lg-0 mb-4">
-		                        <button id="btn-scroll-move" class="btn button-style">More information</button>
+		                        <button class="btn button-style btn-scroll-move">More information</button>
 		                    </div>
 		                </div>
 		            </div>
@@ -38,10 +38,10 @@
 		        <div class="container pt-5 pb-md-4">
 		            <div class="row align-items-center">
 		                <div class="col-md-6 pt-md-0 pt-4">
-		                    <h3 class="mb-sm-4 mb-3 title">기업소개</h3>
-		                    <p id="landing-information">ESG: 사회를 품다는 ESG 기반의<br>ESG: 사회를 품다는 ESG 기반의<br>ESG: 사회를 품다는 ESG 기반의<br>ESG: 사회를 품다는 ESG 기반의</p>
+		                    <h3 class="mb-sm-4 mb-3 title">ESG: 사회를 품다 3</h3>
+		                    <p id="landing-information">기업의 실질적 ESG 경영을 위해<br>우리들의 적극적인 행동이 시작되는 곳</p>
 		                    <div class="mt-md-5 mt-4 mb-lg-0 mb-4">
-		                        <button id="btn-scroll-move" class="btn button-style">More information</button>
+		                        <button class="btn button-style btn-scroll-move">More information</button>
 		                    </div>
 		                </div>
 		            </div>
@@ -53,10 +53,10 @@
 		        <div class="container pt-5 pb-md-4">
 		            <div class="row align-items-center">
 		                <div class="col-md-6 pt-md-0 pt-4">
-		                    <h3 class="mb-sm-4 mb-3 title">기업소개</h3>
-		                    <p id="landing-information">ESG: 사회를 품다는 ESG 기반의<br>ESG: 사회를 품다는 ESG 기반의<br>ESG: 사회를 품다는 ESG 기반의<br>ESG: 사회를 품다는 ESG 기반의</p>
+		                    <h3 class="mb-sm-4 mb-3 title">ESG: 사회를 품다 4</h3>
+		                    <p id="landing-information">기업의 실질적 ESG 경영을 위해<br>우리들의 적극적인 행동이 시작되는 곳</p>
 		                    <div class="mt-md-5 mt-4 mb-lg-0 mb-4">
-		                        <button id="btn-scroll-move" class="btn button-style">More information</button>
+		                        <button class="btn button-style btn-scroll-move">More information</button>
 		                    </div>
 		                </div>
 		            </div>
@@ -77,6 +77,8 @@
           el: ".swiper-pagination",
           dynamicBullets: true,
         },
+        loop: true,
+        loopAdditionalSlides: 1,
       });
     </script>
     
@@ -90,15 +92,11 @@
                                 alt="content-photo">
                     </div>
                     <div class="col-lg-6 content-left mb-md-0 mb-3">
-                        <h3>ESG 란? <span>What is ESG?</span></h3>
-                        <p>Aptent taciti sociosqu ad litora
-                            conubia nostra, per inceptos himenaeos. Aenean volutpat elementum ante, id eleifend eros
-                            luctus sit.</p>
-                        <p>Nunc vel pellentesque. Class aptent taciti sociosqu ad litora
-                            torquent per
-                            conubia nostra, per inceptos himenaeos. Aenean volutpat elementum ante, id eleifend eros
-                            luctus sit
-                            amet. vel tincidunt erat neque non ipsum. Ut sollicitudin pharetra enim.</p>
+                        <h3>ESG 란?<!-- <span>What is ESG?</span> --></h3>
+                        <p>· 기업의 지속가능경영 수준을 투자자 관점에서 해석</p>
+                        <p>· 비재무적 성과를 재무적 지표로 환산하여 평가</p>
+                        <p>· 20여년 전부터 존재한 개념이나, 최근 들어 주목받는 중</p>
+                        <p>· 기업이 환경, 사회, 지배구조에서 발생할 수 있는 위험을 관리하여<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;기회로 잘 전환하는지에 대한 능력을 확인하는 지표</p>
                     </div>
                 </div>
             </div>
@@ -117,8 +115,7 @@
                             	<img src="/asset/images/letter-e.png">
                             </div>
                             <h5><a>Environment</a></h5>
-                            <p>Lorem ante ipsum primis in faucibus orci luctus eted ultrices posuere curae fers
-                                luctus eted.</p>
+                            <p>탄소 배출을 감축해야 하는 상황에서 발생하는 penalty를 기업이 사전적으로 얼마나 잘 대응하고, 얼마나 친환경 기술에 준비가 되었는지를 평가하기 위한 항목</p>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6 mt-md-0 mt-4">
@@ -127,8 +124,7 @@
                                 <img src="/asset/images/letter-s.png">
                             </div>
                             <h5><a>Social</a></h5>
-                            <p>Lorem ante ipsum primis in faucibus orci luctus eted ultrices posuere curae fers
-                                luctus eted.</p>
+                            <p>지배구조 하의 사회 구성원에 대한 항목으로, 구성원을 얼마나 잘 양성하고 있으며 우수한 인재들을 얼마나 hold하고 있는지를 평가하는 항목</p>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-6 mt-lg-0 mt-4">
@@ -137,8 +133,7 @@
                                 <img src="/asset/images/letter-g.png">
                             </div>
                             <h5><a>Governance</a></h5>
-                            <p>Lorem ante ipsum primis in faucibus orci luctus eted ultrices posuere curae fers
-                                luctus eted.</p>
+                            <p>이사회, 임원 보수, ESG 위원회, 정치후원 등과 같은 의사결정 기구가 얼마나 투명하고 유연하며 효율적으로 기업을 리딩하고 있는지 평가하는 항목</p>
                         </div>
                     </div>
                 </div>
@@ -147,30 +142,6 @@
     </section>
     <!-- 3 grids -->
     
-    <!-- call section -->
-    <section class="w3l-call-to-action-6">
-        <div class="call-vv-action py-5">
-            <div class="container py-md-4 py-3">
-                <div class="grid">
-                    <div class="float-lt">
-                        <h3 class="title-big">Contact us now!</h3>
-                        <p>For Online queries, please call us today</p>
-                    </div>
-                    <div class="float-rt text-right">
-                        <ul class="buttons">
-                            <li class="phone"><span class="fa fa-volume-control-phone mr-1" aria-hidden="true"></span>
-                                <a class="call-style-w3" href="tel:+1(23) 456 789 0000">+1(23) 456 789 0000</a>
-                            </li>
-                            <li class="green">Or</li>
-                            <li><a href="contact.html" class="btn button-style">Get in touch</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- //call section -->    
-
     <!-- Js scripts -->
     <!-- move top -->
     <button onclick="topFunction()" id="movetop" title="Go to top">
@@ -327,7 +298,7 @@
     <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
 	<script>
 		$(document).ready(function(){
-			$('#btn-scroll-move').click(function(){
+			$('.btn-scroll-move').click(function(){
 				var offset = $('#moved-here').offset();
 		        $('html').animate({scrollTop : offset.top}, 300);	
 			});
