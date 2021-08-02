@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration scan="true" scanPeriod="30 seconds" debug="true">
+	<!-- local -->
+	<property name="LOG_ROOT" value="/logs/program" />
+	<property name="LOG_LEVEL" value="debug" />
+
+	<appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+		<layout class="ch.qos.logback.classic.PatternLayout">
+			<pattern>[%d{yyyy-MM-dd HH:mm:ss.SSS}] [%thread]  %-5level [%logger{1}.%method:%line] - %msg %n</pattern>
+		</layout>
+	</appender>
+
+	<appender name="file" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${LOG_ROOT}/program.log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+			<fileNamePattern>${LOG_ROOT}/program.%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+			<maxFileSize>200MB</maxFileSize>
+			<!-- 30일 지난 파일은 삭제한다. -->
+			<maxHistory>30</maxHistory>			
+			<totalSizeCap>2GB</totalSizeCap>
+		</rollingPolicy>
+		<encoder>
+			<pattern>[%d{yyyy-MM-dd HH:mm:ss.SSS}] [%thread]  %-5level [%logger{1}.%method:%line] - %msg %n</pattern>
+		</encoder>
+	</appender>
+
+	<!-- RULES for logging TRACE > DEBUG > INFO > WARN > ERROR -->	
+	<logger name="jdbc.resultsettable" additivity="false"><!-- log4jdbc-remix -->
+    	<level value="error" />
+    	<appender-ref ref="console" />
+    	<appender-ref ref="file" />
+  	</logger>
+	<logger name="jdbc.sqltiming" additivity="false">
+		<level value="error" />
+		<appender-ref ref="console" />
+		<appender-ref ref="file" />
+	</logger>
+	<logger name="jdbc.audit" additivity="false">
+		<level value="error" />
+		<appender-ref ref="console" />
+		<appender-ref ref="file" />
+	</logger>
+	<logger name="jdbc.resultset" additivity="false">
+		<level value="error" />
+		<appender-ref ref="console" />
+		<appender-ref ref="file" />
+	</logger>
+	<logger name="jdbc.connection" additivity="false">
+		<level value="error" />
+		<appender-ref ref="console" />
+		<appender-ref ref="file" />
+	</logger>
+	<logger name="log4jdbc.debug" additivity="false">
+		<level value="error" />
+		<appender-ref ref="console" />
+		<appender-ref ref="file" />
+	</logger>
+	
+	<!-- Transaction 로그를 출력하기 위해서... -->
+	<!-- <logger name="org.springframework.jdbc">
+		<level value="debug" />
+	</logger>	
+	<logger name="org.springframework.transaction">
+		<level value="debug" />
+	</logger> -->
+
+	<!-- 배포 시 level 변경 -->
+	<logger name="jdbc.sqlonly" additivity="false">
+		<level value="${LOG_LEVEL}" />
+		<appender-ref ref="console" />
+		<appender-ref ref="file" />
+	</logger>
+	
+	<logger name="program" additivity="false">
+		<level value="${LOG_LEVEL}" />
+		<appender-ref ref="console" />
+		<appender-ref ref="file" />
+	</logger>
+
+	<!-- Root Logger -->
+	<root>
+		<level value="info" />
+		<appender-ref ref="console" />
+		<appender-ref ref="file" />
+	</root>
+
+</configuration>

@@ -14,7 +14,8 @@
 	</settings>
 	
 	<typeAliases>
-		<typeAlias alias="BVo" type="program.common.BoardVo" />
+		<typeAlias alias="dMap" type="program.common.DataMap" />
+		<typeAlias alias="cMap" type="program.common.CamelMap" />
 	</typeAliases>
 	
 	<typeHandlers>

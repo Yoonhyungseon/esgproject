@@ -1,8 +1,23 @@
 package program.admin.member;
 
+import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
+
+import program.admin.member.mapper.AdminMemberMapper;
+import program.common.CamelMap;
+import program.common.DataMap;
+import program.common.util.HttpUtil;
 
 
 /**************************************************
@@ -16,8 +31,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping(value = {"/admin/member"})
 public class AdminMemberController {
 	
-//	@Autowired
-//	private TextBoardService textBoardService;
+	private static final Logger logger = LoggerFactory.getLogger(AdminMemberController.class);
+
+	@Autowired
+	private AdminMemberMapper adminMemberMapper;
 
 	/**************************************************
 	* @MethodName : memberList
@@ -56,6 +73,72 @@ public class AdminMemberController {
 	@RequestMapping(value = {"/memberWrite"})
 	public String memberWrite(Model model) {
 		return "admin/member/memberWrite";
+	}
+	
+	/*************************************************AJAX*************************************************/
+	
+	/**************************************************
+	* @MethodName : getMemberList
+	* @Description: 관리자 회원 정보 조회 컨트롤러
+	* @param request
+	* @param model
+	* @return ModelAndView
+	* @Author : Hyung-Seon. Yoon
+	* @Version : 2021. 8. 2.
+	**************************************************/
+	@ResponseBody
+	@RequestMapping(value = {"/getMemberList"}, method = {RequestMethod.GET, RequestMethod.POST })
+	public ModelAndView getMemberList(HttpServletRequest request, Model model) {
+		logger.debug("AdminMemberController : getMemberList - start");
+
+		ModelAndView mv = new ModelAndView("jsonView");
+		
+		List<CamelMap> resultList = null;
+		
+		try {
+			resultList = adminMemberMapper.getMemberList();
+		} catch (Exception e) {
+			logger.debug("회원 리스트 조회 오류", e);
+		}
+		
+		mv.addObject("resultList",resultList);
+		
+		logger.debug("AdminMemberController : getMemberList - end");
+
+		return mv;
+	}
+	
+	/**************************************************
+	* @MethodName : getMemberInfo
+	* @Description: 회원정보 상세 조회 컨트롤러
+	* @param request
+	* @param model
+	* @return ModelAndView
+	* @Author : Hyung-Seon. Yoon
+	* @Version : 2021. 8. 2.
+	**************************************************/
+	@ResponseBody
+	@RequestMapping(value = {"/getMemberInfo"}, method = {RequestMethod.GET, RequestMethod.POST })
+	public ModelAndView getMemberInfo(HttpServletRequest request, Model model) {
+		logger.debug("AdminMemberController : getMemberInfo - start");
+
+		ModelAndView mv = new ModelAndView("jsonView");
+		
+		DataMap paramMap = HttpUtil.getRequestDataMap(request);
+		
+		CamelMap resultInfo = null;
+		
+		try {
+			resultInfo = adminMemberMapper.getMemberInfo(paramMap);
+		} catch (Exception e) {
+			logger.debug("회원정보 조회 오류", e);
+		}
+		
+		mv.addObject("resultInfo",resultInfo);
+		
+		logger.debug("AdminMemberController : getMemberInfo - end");
+
+		return mv;
 	}
 }
 	
