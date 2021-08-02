@@ -9,9 +9,12 @@
         <title>Login - SB Admin</title>
         <link href="css/styles.css" rel="stylesheet" />
         <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" crossorigin="anonymous"></script>
+        <link href="/adminLayer/css/styles.css" rel="stylesheet" />
+        <link rel="stylesheet" type="text/css" href="/adminLayer/css/base.css">
+        <link rel="stylesheet" type="text/css" href="/adminLayer/css/forms.css">
     </head>
     <body class="bg-primary">
-        <div id="layoutAuthentication" style="width: 100%;">
+        <div id="layoutAuthentication">
             <div id="layoutAuthentication_content" style="margin-top: 85px;">
                 <main>
                     <div class="container">
@@ -47,20 +50,6 @@
                         </div>
                     </div>
                 </main>
-            </div>
-            <div id="layoutAuthentication_footer">
-                <footer class="py-4 bg-light mt-auto">
-                    <div class="container-fluid px-4">
-                        <div class="d-flex align-items-center justify-content-between small">
-                            <div class="text-muted">Copyright &copy; Your Website 2021</div>
-                            <div>
-                                <a href="#">Privacy Policy</a>
-                                &middot;
-                                <a href="#">Terms &amp; Conditions</a>
-                            </div>
-                        </div>
-                    </div>
-                </footer>
             </div>
         </div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
