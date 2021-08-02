@@ -28,17 +28,17 @@
                                     <th>게시글 제목</th>
                                     <th>게시글 작성자</th>
                                     <th>댓글 작성일</th>
-                                    <th>원문링크</th>
+                                   
                                     <th>&nbsp;</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                                     <th scope="row">1</th>
-                                    <td>매일유업 빨대 없애주세요</td>
+                                    <td><a href = "/board/textboardView">매일유업 빨대 없애주세요</a></td>
                                     <td>esg지킴이</td>
                                     <td>2021-07-26</td>
-                                    <td>http://localhost:8080/board/textboardView</td>
+                                    
                                     <td>
                                         <i class="fa" aria-hidden="true"></i>
                                     </td>
@@ -50,10 +50,10 @@
                                 </tr>
                                 <tr data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" class="collapsed">
                                     <th scope="row">2</th>
-                                    <td>매일유업 빨대 없애주세요</td>
+                                    <td><a href = "/board/textboardView">매일유업 빨대 없애주세요</a></td>
                                     <td>esg지킴이</td>
                                     <td>2021-07-26</td>
-                                    <td>http://localhost:8080/board/textboardView</td>
+                                    
                                     <td>
                                         <i class="fa" aria-hidden="false"></i>
                                     </td>
@@ -65,10 +65,10 @@
                                 </tr>
                                 <tr data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree" class="collapsed">
                                     <th scope="row">3</th>
-                                    <td>매일유업 빨대 없애주세요</td>
+                                    <td><a href = "/board/textboardView">매일유업 빨대 없애주세요</a></td>
                                     <td>esg지킴이</td>
                                     <td>2021-07-26</td>
-                                    <td>http://localhost:8080/board/textboardView</td>
+                                    
                                     <td>
                                         <i class="fa" aria-hidden="false"></i>
                                     </td>
@@ -80,10 +80,10 @@
                                 </tr>
                                 <tr data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour" class="collapsed">
                                     <th scope="row">4</th>
-                                    <td>매일유업 빨대 없애주세요</td>
+                                    <td><a href = "/board/textboardView">매일유업 빨대 없애주세요</a></td>
                                     <td>esg지킴이</td>
                                     <td>2021-07-26</td>
-                                    <td>http://localhost:8080/board/textboardView</td>
+                                    
                                     <td>
                                         <i class="fa" aria-hidden="false"></i>
                                     </td>
