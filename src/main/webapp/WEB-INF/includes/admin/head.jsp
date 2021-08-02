@@ -30,7 +30,7 @@
         
         <link rel="stylesheet" type="text/css" href="/adminLayer/css/base.css">
         <link rel="stylesheet" type="text/css" href="/adminLayer/css/forms.css">
-        
+        <link rel="stylesheet" type="text/css" href="/adminLayer/css/member.css">
         
         
 	</head>

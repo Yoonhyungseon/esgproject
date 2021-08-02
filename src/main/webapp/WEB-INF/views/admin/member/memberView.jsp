@@ -48,7 +48,7 @@
 
                                 <label class="required" for="id_mem_num">회원일련번호:</label>
 
-                                <input type="number" name="mem_num" value="1" class="vIntegerField" maxlength="255" required id="id_id_m">
+                                <input type="number" name="mem_num" value="1" class="vIntegerField" maxlength="255" required id="id_id_m" disabled>
 
 
 
@@ -66,7 +66,7 @@
 
                                 <label class="required" for="id_id_m">아이디:</label>
 
-                                <input type="text" name="id_m" value="jeongiun" class="vTextField" maxlength="255" required id="id_id_m">
+                                <input type="text" name="id_m" value="jeongiun" class="vTextField" maxlength="255" required id="id_id_m" disabled>
 
 
 
@@ -82,7 +82,7 @@
 
                                 <label class="required" for="id_password">비밀번호:</label>
 
-                                <input type="text" name="password" value="abcd1234" class="vTextField" maxlength="255" required id="id_password">
+                                <input type="text" name="password" value="abcd1234" class="vTextField" maxlength="255" required id="id_password" disabled>
 
 
 
@@ -98,7 +98,7 @@
 
                                 <label class="required" for="id_name">이름:</label>
 
-                                <input type="text" name="name" value="이범기" class="vTextField" maxlength="255" required id="id_name">
+                                <input type="text" name="name" value="이범기" class="vTextField" maxlength="255" required id="id_name" disabled>
 
 
 
@@ -114,14 +114,14 @@
 
                                 <label class="required" for="id_email">이메일:</label>
 
-                                <input type="text" name="email" value="jeongiun@naver.com" class="vTextField" maxlength="255" required id="id_email">
+                                <input type="text" name="email" value="jeongiun@naver.com" class="vTextField" maxlength="255" required id="id_email" disabled>
 
 
 
                             </div>
 
                         </div>
-
+<!--  
                         <div class="form-row field-question">
 
 
@@ -137,7 +137,7 @@
                             </div>
 
                         </div>
-
+-->
                         <div class="form-row field-state">
 
 
@@ -146,14 +146,14 @@
 
                                 <label class="required" for="id_state">상태:</label>
 
-                                <input type="text" name="state" value="접속" class="vTextField" required id="id_state">
+                                <input type="text" name="state" value="접속" class="vTextField" required id="id_state" disabled>
 
 
 
                             </div>
 
                         </div>
-
+<!-- 
                         <div class="form-row field-gender">
 
 
@@ -169,6 +169,14 @@
                             </div>
 
                         </div>
+ -->                        
+                        <div class="form-row field-gender">
+	                                    <label class="required" for="id_gender">성별:</label>
+	                                    <div class="select-gender">
+	                                    	<input type="radio" id="select" name="shop" checked disabled><label for="select">남</label>
+	                                    	<input type="radio" id="select2" name="shop" disabled><label for="select2">여</label>
+	                                    </div>
+	                    </div>
 
                        
 
@@ -180,7 +188,7 @@
 
                                 <label class="required" for="id_rank">회원등급:</label>
 
-                                <input type="text" name="rank" value="1" class="vTextField" maxlength="255" required id="id_phone_naumber">
+                                <input type="text" name="rank" value="1" class="vTextField" maxlength="255" required id="id_rank" disabled>
 
 
 
@@ -197,7 +205,7 @@
 
                                 <label class="required" for="id_last_access">최종로그인일시</label>
 
-                                <input type="text" name="last_access" value="2021-07-26" class="vTextField" maxlength="255" required id="id_phone_naumber">
+                                <input type="text" name="last_access" value="2021-07-26" class="vTextField" maxlength="255" required id="id_phone_naumber" disabled>
 
 
 
@@ -213,7 +221,7 @@
 
                                 <label class="required" for="id_start_date">가입등록날짜</label>
 
-                                <input type="text" name="start_date" value="2020-01-21" class="vTextField" maxlength="255" required id="id_phone_naumber">
+                                <input type="text" name="start_date" value="2020-01-21" class="vTextField" maxlength="255" required id="id_phone_naumber" disabled>
 
 
 
@@ -235,14 +243,12 @@
 
                     <div class="submit-row">
 
-                        <input type="submit" value="Save" class="default" name="_save">
+                        <input type="submit" value="목록" class="default" name="list">
 
 
-                        <p class="deletelink-box"><a href="/admin/accounts/member/4/delete/" class="deletelink">Delete</a></p>
+                        <p class="deletelink-box"><a href="/admin/accounts/member/4/delete/" class="deletelink" style="height: auto;">삭제</a></p>
 
 
-                        <input type="submit" value="Save and add another" name="_addanother">
-                        <input type="submit" value="Save and continue editing" name="_continue">
 
 
                     </div>
