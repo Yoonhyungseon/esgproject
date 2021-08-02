@@ -243,7 +243,8 @@
 
                     <div class="submit-row">
 
-                        <input type="submit" value="목록" class="default" name="list">
+                        
+                        <a class="btn btn-primary btn-block myform" href="memberList" style="color: white!important;">목록</a>
 
 
                         <p class="deletelink-box"><a href="/admin/accounts/member/4/delete/" class="deletelink" style="height: auto;">삭제</a></p>
