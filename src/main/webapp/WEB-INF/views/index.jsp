@@ -77,6 +77,10 @@
           el: ".swiper-pagination",
           dynamicBullets: true,
         },
+        autoplay: {
+            delay: 5000,
+            disableOnInteraction: false,
+        },
         loop: true,
         loopAdditionalSlides: 1,
       });
