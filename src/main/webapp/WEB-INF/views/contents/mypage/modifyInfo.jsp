@@ -6,7 +6,6 @@
 
 
 <body class="bg-light">
-modifyInfo
 
   <div class="container">
   <div class="py-5 text-center">
@@ -24,28 +23,32 @@ modifyInfo
       <ul class="list-group mb-3">
         <li class="list-group-item d-flex justify-content-between bg-light">
           <div>
-            <h6 class="my-success">개인정보 수정</h6>
+            <a class="my-success" href="modifyInfo">개인정보 수정</a>
+            <br>
             <small class="text-muted">정보 수정</small>
           </div>
           <!-- <span class="text-muted">$12</span> -->
         </li>
         <li class="list-group-item d-flex justify-content-between lh-condensed">
           <div>
-            <h6 class="my-0">게시글 작성 내역</h6>
+            <a class="my-0" href="postList">게시글 작성 내역</a>
+            <br>
             <small class="text-muted">게시글</small>
           </div>
           <!-- <span class="text-muted">$8</span> -->
         </li>
         <li class="list-group-item d-flex justify-content-between lh-condensed">
           <div>
-            <h6 class="my-0">댓글 작성 내역</h6>
+            <a class="my-0" href="commentList">댓글 작성 내역</a>
+            <br>
             <small class="text-muted">댓글</small>
           </div>
           <!-- <span class="text-muted">$5</span> -->
         </li>
         <li class="list-group-item d-flex justify-content-between lh-condensed">
           <div>
-            <h6 class="my-0">스크랩 내역</h6>
+            <a class="my-0" href="scrap">스크랩 내역</a>
+            <br>
             <small class="text-muted">스크랩</small>
           </div>
           <!-- <span class="text-muted">$5</span> -->
@@ -58,7 +61,7 @@ modifyInfo
           <span class="text-success">-$5</span>
         </li> -->
         <li class="list-group-item d-flex justify-content-between">
-          <span>지갑</span>
+          <a class="my-0" href="wallet">지갑</a>
           <!-- <strong>$20</strong> -->
         </li>
       </ul>
@@ -131,13 +134,13 @@ modifyInfo
         
         
         <div class="mb-3">
-          <label for="email">이메일 <span class="text-muted">(선택사항)</span></label>
+          <label for="email">이메일</label>
           <input type="email" class="form-control" id="email" placeholder="email@example.com">
           <div class="invalid-feedback">
             Please enter a valid email address
           </div>
         </div>
-        
+     <!--    
         <div class="mb-3">
           <label for="question">질문</label>
           <input type="text" class="form-control" id="question" placeholder="나의 고향은?" required>
@@ -145,7 +148,18 @@ modifyInfo
             Please enter your question.
           </div>
         </div>
-        
+     --> 
+     
+        <div class="mb-3">
+	     	<label class="required" for="id_gender">성별</label>
+	     	<br>
+	        	<div class="select-gender">
+	             	<input type="radio" id="select" name="shop" checked><label for="select">남</label>
+	                <input type="radio" id="select2" name="shop"><label for="select2">여</label>
+	            </div>
+	    </div>
+	    <!-- 
+	    
         <div class="mb-3">
           <label for="gender">성별</label>
           <input type="text" class="form-control" id="gender" placeholder="" required>
@@ -154,7 +168,7 @@ modifyInfo
           </div>
         </div>
         
-       
+        -->
         
  <!--
         <div class="mb-3">

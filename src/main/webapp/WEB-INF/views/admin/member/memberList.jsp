@@ -26,7 +26,6 @@
                                 	<th>비밀번호</th>
                                     <th>이름</th>
                                     <th>이메일</th>
-                                    <th>질문</th>
                                     <th>상태</th>
                                     <th>성별</th>
                                     <th>회원등급</th>
@@ -41,7 +40,6 @@
                                     <th>PassWord</th>
                                     <th>Name</th>
                                     <th>Email</th>
-                                    <th>Question</th>
                                     <th>State</th>
                                     <th>Gender</th>
                                     <th>rank</th>
@@ -52,11 +50,10 @@
                             <tbody>
                                 <tr>
                                     <td>1</td>
-                                    <td>baaaam771</td>
+                                    <td><a href="memberView">baaaam771</a></td>
                                     <td>1234</td>
                                     <td>이범기</td>
                                     <td>jeongiun@naver.com</td>
-                                    <td>나의 고향은?</td>
                                     <td>접속</td>
                                     <td>남</td>
                                     <td>1</td>
@@ -65,11 +62,10 @@
                                 </tr>
                                 <tr>
                                     <td>1</td>
-                                    <td>baaaam771</td>
+                                    <td><a href="memberView">baaaam771</a></td>
                                     <td>1234</td>
                                     <td>이범기</td>
                                     <td>jeongiun@naver.com</td>
-                                    <td>나의 고향은?</td>
                                     <td>접속</td>
                                     <td>남</td>
                                     <td>1</td>
@@ -78,11 +74,10 @@
                                 </tr>
                                 <tr>
                                     <td>1</td>
-                                    <td>baaaam771</td>
+                                    <td><a href="memberView">baaaam771</a></td>
                                     <td>1234</td>
                                     <td>이범기</td>
                                     <td>jeongiun@naver.com</td>
-                                    <td>나의 고향은?</td>
                                     <td>접속</td>
                                     <td>남</td>
                                     <td>1</td>
@@ -91,11 +86,10 @@
                                 </tr>
                                 <tr>
                                     <td>1</td>
-                                    <td>baaaam771</td>
+                                    <td><a href="memberView">baaaam771</a></td>
                                     <td>1234</td>
                                     <td>이범기</td>
                                     <td>jeongiun@naver.com</td>
-                                    <td>나의 고향은?</td>
                                     <td>접속</td>
                                     <td>남</td>
                                     <td>1</td>
@@ -104,11 +98,10 @@
                                 </tr>
                                 <tr>
                                     <td>1</td>
-                                    <td>baaaam771</td>
+                                    <td><a href="memberView">baaaam771</a></td>
                                     <td>1234</td>
                                     <td>이범기</td>
                                     <td>jeongiun@naver.com</td>
-                                    <td>나의 고향은?</td>
                                     <td>접속</td>
                                     <td>남</td>
                                     <td>1</td>
@@ -117,11 +110,10 @@
                                 </tr>
                                 <tr>
                                     <td>1</td>
-                                    <td>baaaam771</td>
+                                    <td><a href="memberView">baaaam771</a></td>
                                     <td>1234</td>
                                     <td>이범기</td>
                                     <td>jeongiun@naver.com</td>
-                                    <td>나의 고향은?</td>
                                     <td>접속</td>
                                     <td>남</td>
                                     <td>1</td>
@@ -130,11 +122,10 @@
                                 </tr>
                                 <tr>
                                     <td>1</td>
-                                    <td>baaaam771</td>
+                                    <td><a href="memberView">baaaam771</a></td>
                                     <td>1234</td>
                                     <td>이범기</td>
                                     <td>jeongiun@naver.com</td>
-                                    <td>나의 고향은?</td>
                                     <td>접속</td>
                                     <td>남</td>
                                     <td>1</td>
@@ -143,11 +134,10 @@
                                 </tr>
                                 <tr>
                                     <td>1</td>
-                                    <td>baaaam771</td>
+                                    <td><a href="memberView">baaaam771</a></td>
                                     <td>1234</td>
                                     <td>이범기</td>
                                     <td>jeongiun@naver.com</td>
-                                    <td>나의 고향은?</td>
                                     <td>접속</td>
                                     <td>남</td>
                                     <td>1</td>

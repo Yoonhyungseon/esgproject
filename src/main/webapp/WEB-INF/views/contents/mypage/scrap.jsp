@@ -30,20 +30,20 @@
                         <div class="services-gd">
                             <div class="serve-info">
                                 <h3 class="date">21<sup>st</sup> October</h3>
-                                <a href="textboardView">
+                                <a href="/board/textboardView">
                                     <figure>
                                         <img class="img-responsive" src="/asset/images/esg.jpg" alt="blog-image">
                                     </figure>
                                 </a>
-                                <h3> <a href="textboardView" class="vv-link">Nunc consequat justo id commodo
+                                <h3> <a href="/board/textboardView" class="vv-link">Nunc consequat justo id commodo
                                         feugiat</a>
                                 </h3>
                                 <ul class="admin-list">
-                                    <li><a href="textboardView"><span class="fa fa-user-circle" aria-hidden="true"></span>
+                                    <li><a href="/board/textboardView"><span class="fa fa-user-circle" aria-hidden="true"></span>
                                             Admin</a></li>
-                                    <li><a href="textboardView"><span class="fa fa-heart" aria-hidden="true"></span>7
+                                    <li><a href="/board/textboardView"><span class="fa fa-heart" aria-hidden="true"></span>7
                                             Likes</a></li>
-                                    <li><a href="textboardView"><span class="fa fa-comments"
+                                    <li><a href="/board/textboardView"><span class="fa fa-comments"
                                                 aria-hidden="true"></span>8 Comments</a>
                                     </li>
                                 </ul>
@@ -54,21 +54,21 @@
                         <div class="services-gd">
                             <div class="serve-info">
                                 <h3 class="date">23<sup>rd</sup> October</h3>
-                                <a href="textboardView">
+                                <a href="/board/textboardView">
                                     <figure>
                                         <img class="img-responsive" src="/asset/images/esg2.jpg" alt="blog-image">
                                     </figure>
                                 </a>
-                                <h3> <a href="textboardView" class="vv-link">Fusce ac eros quis metus por edit
+                                <h3> <a href="/board/textboardView" class="vv-link">Fusce ac eros quis metus por edit
                                         some</a>
                                 </h3>
                                 <ul class="admin-list">
-                                    <li><a href="textboardView"><span class="fa fa-user-circle"
+                                    <li><a href="/board/textboardView"><span class="fa fa-user-circle"
                                                 aria-hidden="true"></span>
                                             Admin</a></li>
-                                    <li><a href="textboardView"><span class="fa fa-heart" aria-hidden="true"></span>9
+                                    <li><a href="/board/textboardView"><span class="fa fa-heart" aria-hidden="true"></span>9
                                             Likes</a></li>
-                                    <li><a href="textboardView"><span class="fa fa-comments"
+                                    <li><a href="/board/textboardView"><span class="fa fa-comments"
                                                 aria-hidden="true"></span>7 Comments</a>
                                     </li>
                                 </ul>
@@ -79,21 +79,21 @@
                         <div class="services-gd">
                             <div class="serve-info">
                                 <h3 class="date">1<sup>st</sup> November</h3>
-                                <a href="textboardView">
+                                <a href="/board/textboardView">
                                     <figure>
                                         <img class="img-responsive" src="/asset/images/esg3.jpg" alt="blog-image">
                                     </figure>
                                 </a>
-                                <h3> <a href="textboardView" class="vv-link">Cras fringilla, enim a porta
+                                <h3> <a href="/board/textboardView" class="vv-link">Cras fringilla, enim a porta
                                         fermentum</a>
                                 </h3>
                                 <ul class="admin-list">
-                                    <li><a href="textboardView"><span class="fa fa-user-circle"
+                                    <li><a href="/board/textboardView"><span class="fa fa-user-circle"
                                                 aria-hidden="true"></span>
                                             Admin</a></li>
-                                    <li><a href="textboardView"><span class="fa fa-heart" aria-hidden="true"></span>6
+                                    <li><a href="/board/textboardView"><span class="fa fa-heart" aria-hidden="true"></span>6
                                             Likes</a></li>
-                                    <li><a href="textboardView"><span class="fa fa-comments"
+                                    <li><a href="/board/textboardView"><span class="fa fa-comments"
                                                 aria-hidden="true"></span>9 Comments</a>
                                     </li>
                                 </ul>
