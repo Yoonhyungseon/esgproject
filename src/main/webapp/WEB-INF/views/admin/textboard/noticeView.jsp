@@ -31,6 +31,7 @@
 						</div>
 						<h3 style="margin: auto; display: block;">ESG ADMIN NOTICE
 							SUB TITLE</h3>
+							
 						<br> <br>
 						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
 							sed do eiusmod tempor incididunt ut labore et dolore magna
@@ -60,9 +61,8 @@
 								class="fa fa-arrow-right" aria-hidden="true"></span>
 							</a>
 						</div>
-
 						<!-- comments section blog single -->
-						<section class="w3l-comments-9-main mt-5">
+						<!-- <section class="w3l-comments-9-main mt-5">
 							<div class="gallery-32">
 								<h3 class="title-main2-blog-single">Comments (2)</h3>
 								<div class="row">
@@ -97,9 +97,17 @@
 									</div>
 								</div>
 							</div>
-						</section>
+						</section> -->
 						<!-- //comments section blog single -->
 					</div>
+					<div class="row" style="display: inline; padding: 1rem 1.1rem;">
+					<div class="btn_area">
+	                	<div class="btn_right" style="margin-top:10px; float: right;">
+	                		<a class="btn btn-primary btn-block myform" href="noticeList" style="color: white!important;">목록</a>
+	                		<!-- <a class="btn btn-primary btn-block myform" href="companiesWrite" style="color: white!important;">수정</a> -->
+	                    </div>
+	                </div>
+				</div>
 				</div>
 			</div>
 		</main>

@@ -24,28 +24,31 @@
 					<div class="card-header">
 						<i class="fas fa-table me-1"></i> 공지사항 등록
 					</div>
-
 					<form method="post" action="" enctype="multipart/form-data"
-						class="card-body">
-
-						<div class="top-inputs d-grid">
-							<input type="text" class="form-control" placeholder=" Title"
-								name="title" id="w3lName" required="required"
-								style="width: 800px; margin: auto; align: center;" />
+						class="card-body" style="text-align: center;">
+						<div class="form-group">
+							<label for="title" class="col-form-label"
+								style="display: inline-block;  margin-right: 60px;">Title</label> 
+							<input type="text" class="form-control" placeholder=" Title" name="title"
+								id="title" required="required" style="width: 800px; display: inline-block;" />
 						</div>
+						<br> 
+						<div class="form-group"> <!-- style="text-align: center;" -->
+							<label for="subTitle" class="col-form-label"
+								style="display: inline-block;  margin-right: 30px;">Sub Title</label> 
+							<input type="text" class="form-control" placeholder=" Sub Title" name="subTitle"
+								id="subTitle" required="required" style="width: 800px; display: inline-block;" />
+						</div>	
 						<br>
-						<input type="text" class="form-control" placeholder=" Sub Title"
-								name="subTitle" id="w3lName" required="required"
-								style="width: 800px; margin: auto; align: center;" />
-						<br>
-						<textarea name="content" class="form-control" id="ckeditor"
-							placeholder="Content" style="width: 800px; margin: auto;"></textarea>
-						<br> <br> 
-						<input id="filename" name="uploadImg"
-							type="file" style="display: block; margin: auto;" /> <input
-							type="submit" class="btn btn-primary"
-							style="float: right; background-color: #0d6efd; padding: 0.375rem 0.75rem;"
-							value="등록" />
+						<div class="form-group"><!--  style="text-align: center;" -->
+							<label for="content" class="col-form-label"
+								style="display: inline-block;  margin-right: 37px;">Content</label> 
+							<textarea name="content" class="form-control" id="content"
+							placeholder="Content" style="width: 800px; display: inline-block;"></textarea>
+						</div>	
+						<br> 
+						<input id="filename" name="uploadImg" type="file" style="display: block; margin: auto;" /> 
+						<input type="submit" class="btn btn-primary" style="float: right; background-color: #0d6efd; padding: 0.375rem 0.75rem;" value="등록" />
 					</form>
 				</div>
 			</div>
