@@ -44,15 +44,15 @@
 			<form action="#" method="post" id="form" name="form" class="main-input" action="" enctype="multipart/form-data">
 				<div class="row mb-4">
 					<div class="col-md-6">
-						<input type="text" name="Title" required="Title"
-							placeholder="Posting Title">
+						<input type="text" name="Title" required="required" placeholder="Posting Title">
 					</div>
 					<br>
 					<div class="col-md-6 mt-md-0 mt-4">
 						<input type="file" name="postImage" placeholder="Posting Image">
 					</div>
 				</div>
-				<textarea name="content" id="ckeditor" placeholder="Write your contents here"></textarea>
+				<textarea name="content" id="ckeditor" placeholder="Write your contents here" style="margin-bottom: 1.5rem !important;"></textarea>
+				<input type="text" name="Hash Tag" required="required" placeholder="Hash Tag" style="margin-bottom: 1.5rem !important;">
 				<button class="btn button-style d-flex ml-auto" type="submit">Posting</button>
 			</form>
 		</div>
