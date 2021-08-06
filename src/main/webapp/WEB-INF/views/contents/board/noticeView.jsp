@@ -7,10 +7,10 @@
     <div class="inner-banner">
         <section class="w3l-breadcrumb">
             <div class="container">
-                <h4 class="inner-text-title font-weight-bold mb-sm-3 mb-2">공지사항</h4>
+                <h4 class="inner-text-title font-weight-bold mb-sm-3 mb-2">Notice</h4>
                 <ul class="breadcrumbs-custom-path">
                     <li><a href="index.html">Home</a></li>
-                    <li class="active"><span class="fa fa-chevron-right mx-2" aria-hidden="true"></span>공지사항</li>
+                    <li class="active"><span class="fa fa-chevron-right mx-2" aria-hidden="true"></span>Notice</li>
                 </ul>
             </div>
         </section>
@@ -84,23 +84,7 @@
                         deserunt mollit
                         anim
                         id est laborum.</p>
-                    <div class="blog-single-tags d-flex align-items-center mt-4 pt-1 mb-5">
-                        <div class="blog-tags">
-                            <ul>
-                                <li class="text-tag">Tags:</li>
-                                <li><a href="#url">Fresh</a></li>
-                                <li><a href="#url">Foodie</a></li>
-                                <li><a href="#url">Eat</a></li>
-                                <li><a href="#url">Healthy</a></li>
-                            </ul>
-                        </div>
-                        <div class="social-singles ml-md-auto mt-md-0 mt-4">
-                            <a href="#blog"><span class="fa fa-facebook" aria-hidden="true"></span></a>
-                            <a href="#blog"><span class="fa fa-twitter" aria-hidden="true"></span></a>
-                            <a href="#blog"><span class="fa fa-google-plus" aria-hidden="true"></span></a>
-                            <a href="#blog"><span class="fa fa-pinterest-p" aria-hidden=" true"></span></a>
-                        </div>
-                    </div>
+                 
                     <div class="single-pagination clearfix">
                         <a class="prev-post pull-left" href="#prev"><span class="fa fa-arrow-left"
                                 aria-hidden="true"></span>
@@ -109,50 +93,6 @@
                                 aria-hidden="true"></span></a>
                     </div>
                     <!-- //blog single -->
-                    <!-- comments section blog single -->
-                    <section class="w3l-comments-9-main mt-5">
-                        <div class="gallery-32">
-                            <h3 class="title-main2-blog-single">Comments (2)</h3>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="comment-grid">
-                                        <p><i class="fa fa-quote-left" aria-hidden="true"></i> Sed ut perspiciatis unde
-                                            omnis iste natus error sit voluptatem
-                                            accusantium doloremque laudantium, totam rem aperiam.
-                                        </p>
-                                        <div class="testi-pos mt-3 d-flex align-items-center">
-                                            <img src="assets/images/testi2.jpg" alt=""
-                                                class="img-responsive rounded-circle mb-3" />
-                                            <div class="right-coment">
-                                                <h4>Nemo en</h4>
-                                                <span>totam rem</span>
-                                            </div>
-                                        </div>
-                                        <a href="#reply" class="reply-blog"><i class="fa fa-reply"></i>Reply</a>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 mt-md-0 mt-4">
-                                    <div class="comment-grid">
-                                        <p><i class="fa fa-quote-left" aria-hidden="true"></i>
-                                            Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut
-                                            fugit, sed quia consequuntur magni dolores eos qui.
-                                        </p>
-                                        <div class="testi-pos mt-3 d-flex align-items-center">
-                                            <img src="assets/images/testi1.jpg" alt=""
-                                                class="img-responsive rounded-circle mb-3" />
-                                            <div class="right-coment">
-                                                <h4>eius mod</h4>
-                                                <span>sed quia</span>
-                                            </div>
-                                        </div>
-                                        <a href="#reply" class="reply-blog"><i class="fa fa-reply"></i>Reply</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-                    <!-- //comments section blog single -->
-                  
                 </div>
             </div>
         </div>
