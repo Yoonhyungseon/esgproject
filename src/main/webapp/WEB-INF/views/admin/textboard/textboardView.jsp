@@ -1,7 +1,35 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
+<script src="js/jquery.js" type="text/javascript">
+	$(document).ready(function() {
+ 	var progressbar = $('#progressbar'),
+    max = progressbar.attr('max'),
+    value = progressbar.val();
+};
+</script>
+<style>
+progress {
+	width: 500px;
+	margin: auto;
+	margin-top: 3px;
+}
+
+progress::-webkit-progress-bar {
+	background-color: rgb(192, 192, 192);
+	width: 100%;
+	border-radius: 15px;
+}
+
+progress::-webkit-progress-value {
+	background-color: #0abf53;
+	color: white;
+	padding: 1%;
+	text-align: right;
+	font-size: 20px;
+	border-radius: 15px;
+}
+</style>
 <body class="sb-nav-fixed">
 	<div id="layoutSidenav_content">
 		<main>
@@ -22,19 +50,16 @@
 						<h2 style="margin: auto; display: block;">ESG Board</h2>
 
 						<h5 class="date" style="float: right;">
-							Writer : <span style="font-weight: normal;"">Yejin</span>
-							<br> 
-							21<sup>st</sup> October
-							<br>
-							Hits : <span style="font-weight: normal;">15</span>
-							<br>
-							Likes : <span style="font-weight: normal;">32</span>
-							<br>
-							Points : <span style="font-weight: normal;">320,800₩</span>
+							Writer : <span style="font-weight: normal;"">Yejin</span> <br>
+							21<sup>st</sup> October <br> Hits : <span
+								style="font-weight: normal;">15</span> <br> Likes : <span
+								style="font-weight: normal;">32</span> <br> Points : <span
+								style="font-weight: normal;">320,800₩</span>
 						</h5>
 						<div class="blog-img-single">
 							<img src="/asset/images/esg.jpg"
 								style="width: 500px; height: 350px; margin: auto; display: block; padding: 20px;" />
+							<progress id="progressbar" max="100" value="50" style="margin-left: 313px; width: 465px;"></progress>
 						</div>
 						<br> <br>
 						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
@@ -59,11 +84,10 @@
 							class="blog-single-tags d-flex align-items-center mt-4 pt-1 mb-5">
 						</div>
 						<div class="single-pagination clearfix">
-							<a class="" href="#prev"> 
-								<span class="fa fa-arrow-left" aria-hidden="true"></span> Previous Post
-							</a> 
-							<a class="" style="float:right;" href="#next">Next Post 
-								<span class="fa fa-arrow-right" aria-hidden="true"></span>
+							<a class="" href="#prev"> <span class="fa fa-arrow-left"
+								aria-hidden="true"></span> Previous Post
+							</a> <a class="" style="float: right;" href="#next">Next Post <span
+								class="fa fa-arrow-right" aria-hidden="true"></span>
 							</a>
 						</div>
 
@@ -105,7 +129,16 @@
 							</div>
 						</section>
 						<!-- //comments section blog single -->
-					
+
+					</div>
+					<div class="row" style="display: inline; padding: 1rem 1.1rem;">
+						<div class="btn_area">
+							<div class="btn_right" style="margin-top: 10px; float: right;">
+								<a class="btn btn-primary btn-block myform" href="textboardList"
+									style="color: white !important;">목록</a>
+								<!-- <a class="btn btn-primary btn-block myform" href="companiesWrite" style="color: white!important;">수정</a> -->
+							</div>
+						</div>
 					</div>
 				</div>
 				<div class="card mb-4">
@@ -113,17 +146,24 @@
 						<i class="fas fa-book-open"></i> 뿜업게시판 피드백 등록
 					</div>
 					<form method="post" action="" enctype="multipart/form-data"
-						class="card-body">
+						class="card-body" style="text-align: center;">
 
-						<div class="top-inputs d-grid">
+						<div class="form-group">
+							<label for="title" class="col-form-label"
+								style="display: inline-block; margin-right: 60px;">Title</label>
 							<input type="text" class="form-control" placeholder=" Title"
-								name="title" id="w3lName" required="required"
-								style="width: 800px; margin: auto; align: center;" />
+								name="title" id="title" required="required"
+								style="width: 800px; display: inline-block;" />
 						</div>
 						<br>
-						<textarea name="content" class="form-control" id="ckeditor"
-							placeholder="Content" style="width: 800px; margin: auto;"></textarea>
-						<br> <br>
+						<div class="form-group">
+							<!--  style="text-align: center;" -->
+							<label for="content" class="col-form-label"
+								style="display: inline-block; margin-right: 37px;">Content</label>
+							<textarea name="content" class="form-control" id="content"
+								placeholder="Content"
+								style="width: 800px; display: inline-block;"></textarea>
+						</div>
 						<input type="submit" class="btn btn-primary"
 							style="float: right; background-color: #0d6efd; padding: 0.375rem 0.75rem;"
 							value="등록" />
@@ -133,4 +173,116 @@
 		</main>
 	</div>
 </body>
+<!-- Js scripts -->
+<!-- move top -->
+<button onclick="topFunction()" id="movetop" title="Go to top">
+	<span class="fa fa-level-up" aria-hidden="true"></span>
+</button>
+<script>
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function () {
+            scrollFunction()
+        };
 
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                document.getElementById("movetop").style.display = "block";
+            } else {
+                document.getElementById("movetop").style.display = "none";
+            }
+        }
+
+        // When the user clicks on the button, scroll to the top of the document
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }
+    </script>
+<!-- //move top -->
+
+<!-- common jquery plugin -->
+<script src="assets/js/jquery-3.3.1.min.js"></script>
+<!-- //common jquery plugin -->
+
+<!-- theme switch js (light and dark)-->
+<script src="assets/js/theme-change.js"></script>
+<script>
+        function autoType(elementClass, typingSpeed) {
+            var thhis = $(elementClass);
+            thhis.css({
+                "position": "relative",
+                "display": "inline-block"
+            });
+            thhis.prepend('<div class="cursor" style="right: initial; left:0;"></div>');
+            thhis = thhis.find(".text-js");
+            var text = thhis.text().trim().split('');
+            var amntOfChars = text.length;
+            var newString = "";
+            thhis.text("|");
+            setTimeout(function () {
+                thhis.css("opacity", 1);
+                thhis.prev().removeAttr("style");
+                thhis.text("");
+                for (var i = 0; i < amntOfChars; i++) {
+                    (function (i, char) {
+                        setTimeout(function () {
+                            newString += char;
+                            thhis.text(newString);
+                        }, i * typingSpeed);
+                    })(i + 1, text[i]);
+                }
+            }, 1500);
+        }
+
+        $(document).ready(function () {
+            // Now to start autoTyping just call the autoType function with the 
+            // class of outer div
+            // The second paramter is the speed between each letter is typed.   
+            autoType(".type-js", 200);
+        });
+    </script>
+<!-- //theme switch js (light and dark)-->
+
+<!-- MENU-JS -->
+<script>
+        $(window).on("scroll", function () {
+            var scroll = $(window).scrollTop();
+
+            if (scroll >= 80) {
+                $("#site-header").addClass("nav-fixed");
+            } else {
+                $("#site-header").removeClass("nav-fixed");
+            }
+        });
+
+        //Main navigation Active Class Add Remove
+        $(".navbar-toggler").on("click", function () {
+            $("header").toggleClass("active");
+        });
+        $(document).on("ready", function () {
+            if ($(window).width() > 991) {
+                $("header").removeClass("active");
+            }
+            $(window).on("resize", function () {
+                if ($(window).width() > 991) {
+                    $("header").removeClass("active");
+                }
+            });
+        });
+    </script>
+<!-- //MENU-JS -->
+
+<!-- disable body scroll which navbar is in active -->
+<script>
+        $(function () {
+            $('.navbar-toggler').click(function () {
+                $('body').toggleClass('noscroll');
+            })
+        });
+    </script>
+<!-- //disable body scroll which navbar is in active -->
+
+<!--bootstrap-->
+<script src="assets/js/bootstrap.min.js"></script>
+<!-- //bootstrap-->
+<!-- //Js scripts -->
