@@ -1,11 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
-<!doctype html>
-<html>
-
-
-
-<body class="sb-nav-fixed">
     <div id="layoutSidenav_content">
         <main>
             <div class="container-fluid px-4">
@@ -66,7 +60,7 @@
 
                                 <label class="required" for="id_id_m">아이디:</label>
 
-                                <input type="text" name="id_m" value="jeongiun" class="vTextField" maxlength="255" required id="id_id_m" disabled>
+                                <input type="text" id="req_id" name="id_m" value="jeongiun" class="vTextField" maxlength="255" required id="id_id_m" disabled>
 
 
 
@@ -74,21 +68,6 @@
 
                         </div>
 
-                        <div class="form-row field-password">
-
-
-                            <div>
-
-
-                                <label class="required" for="id_password">비밀번호:</label>
-
-                                <input type="text" name="password" value="abcd1234" class="vTextField" maxlength="255" required id="id_password" disabled>
-
-
-
-                            </div>
-
-                        </div>
 
                         <div class="form-row field-name">
 
@@ -138,21 +117,6 @@
 
                         </div>
 -->
-                        <div class="form-row field-state">
-
-
-                            <div>
-
-
-                                <label class="required" for="id_state">상태:</label>
-
-                                <input type="text" name="state" value="접속" class="vTextField" required id="id_state" disabled>
-
-
-
-                            </div>
-
-                        </div>
 <!-- 
                         <div class="form-row field-gender">
 
@@ -173,8 +137,8 @@
                         <div class="form-row field-gender">
 	                                    <label class="required" for="id_gender">성별:</label>
 	                                    <div class="select-gender">
-	                                    	<input type="radio" id="select" name="shop" checked disabled><label for="select">남</label>
-	                                    	<input type="radio" id="select2" name="shop" disabled><label for="select2">여</label>
+	                                    	<input type="radio" id="select" name="gender_M"  disabled><label for="select">남</label>
+	                                    	<input type="radio" id="select2" name="gender_F" disabled><label for="select2">여</label>
 	                                    </div>
 	                    </div>
 
@@ -247,23 +211,12 @@
                         <a class="btn btn-primary btn-block myform" href="memberList" style="color: white!important;">목록</a>
 
 
-                        <p class="deletelink-box"><a href="/admin/accounts/member/4/delete/" class="deletelink" style="height: auto;">삭제</a></p>
+                        <p class="deletelink-box"><a href="#none" class="deletelink" style="height: auto;" onclick="memberObj.fn_delete()">삭제</a></p>
 
 
 
 
                     </div>
-
-
-
-                    <script id="" src="/static/admin/js/change_form.js" async>
-                    </script>
-
-
-
-
-                    <script id="" src="/static/admin/js/prepopulate_init.js" data-prepopulated-fields="[]">
-                    </script>
 
 
                 </div>
@@ -280,6 +233,45 @@
             
         </main>
     </div>
-</body>
 
-</html>
+    <script>
+    var memNum = '${memNum}'
+    
+    $(document).ready(function(){
+    	memberObj.fn_getMemberInfo(memNum);
+    });
+    
+    let memberObj = {
+    	fn_getMemberInfo : function(memNum) {
+    		var param = "memNum="+memNum;
+			ajaxParamExecute(param, "/admin/member/getMemberInfo", "post", false, false, memberObj.fn_getMemberInfoRetrun);
+		},
+		fn_getMemberInfoRetrun : function(rst) {
+// 			console.log(rst)
+			$('#req_id').val(rst.resultInfo.userId);
+			$('input[name=mem_num]').val(rst.resultInfo.memNum);
+			$('input[name=name]').val(rst.resultInfo.nickName);
+			$('input[name=email]').val(rst.resultInfo.email);
+			$('input[name=rank]').val(rst.resultInfo.userType);
+			$('input[name=last_access]').val(rst.resultInfo.lastLoginDt);
+			$('input[name=start_date]').val(rst.resultInfo.regDtYmd);
+			
+			if (rst.resultInfo.gender == 'M') $('input[name=gender_M]').prop('checked', true);
+			else $('input[name=gender_F]').prop('checked', true); 
+		},
+		fn_delete : function() {
+		     if (confirm("삭제하시겠습니까?")) {
+		            alert("삭제되었습니다.");
+		            
+		        	var param = "memNum="+memNum;
+					ajaxParamExecute(param, "/admin/member/memberdelete", "post", false, false, memberObj.fn_deleteoRetrun);
+		        }
+		},
+		fn_deleteoRetrun : function(rst) {
+// 			console.log(rst);
+
+			$('#member_form').attr('action','/admin/member/memberList');
+			$('#member_form').submit();
+		}
+    }
+    </script>

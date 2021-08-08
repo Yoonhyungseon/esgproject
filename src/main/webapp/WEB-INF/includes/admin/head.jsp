@@ -32,5 +32,6 @@
         <link rel="stylesheet" type="text/css" href="/adminLayer/css/forms.css">
         <link rel="stylesheet" type="text/css" href="/adminLayer/css/member.css">
         
+        <script src="/adminLayer/vendors/validation/common.js"></script>
         
 	</head>

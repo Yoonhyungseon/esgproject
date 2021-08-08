@@ -58,7 +58,11 @@ public class AdminMemberController {
 	* @Version : 2021. 7. 6.
 	**************************************************/
 	@RequestMapping(value = {"/memberView"})
-	public String memberView(Model model) {
+	public String memberView(HttpServletRequest request, Model model) {
+		
+		DataMap paramMap = HttpUtil.getRequestDataMap(request);
+		HttpUtil.getParams(paramMap, model);
+		
 		return "admin/member/memberView";
 	}
 	
@@ -104,7 +108,6 @@ public class AdminMemberController {
 		mv.addObject("resultList",resultList);
 		
 		logger.debug("AdminMemberController : getMemberList - end");
-
 		return mv;
 	}
 	
@@ -125,7 +128,6 @@ public class AdminMemberController {
 		ModelAndView mv = new ModelAndView("jsonView");
 		
 		DataMap paramMap = HttpUtil.getRequestDataMap(request);
-		
 		CamelMap resultInfo = null;
 		
 		try {
@@ -137,8 +139,36 @@ public class AdminMemberController {
 		mv.addObject("resultInfo",resultInfo);
 		
 		logger.debug("AdminMemberController : getMemberInfo - end");
-
 		return mv;
+	}
+	
+	/**************************************************
+	* @MethodName : memberdelete
+	* @Description: 회원 삭제 컨트롤러
+	* @param request
+	* @param model
+	* @return boolean
+	* @Author : Hyung-Seon. Yoon
+	* @Version : 2021. 8. 8.
+	**************************************************/
+	@ResponseBody
+	@RequestMapping(value = {"/memberdelete"}, method = {RequestMethod.GET, RequestMethod.POST })
+	public boolean memberdelete(HttpServletRequest request, Model model) {
+		logger.debug("AdminMemberController : memberdelete - start");
+
+		DataMap paramMap = HttpUtil.getRequestDataMap(request);
+
+		int result = 0;
+		
+		try {
+			result = adminMemberMapper.memberdelete(paramMap);
+		} catch (Exception e) {
+			logger.debug("회원정보 조회 오류", e);
+		}
+		
+		logger.debug("AdminMemberController : memberdelete - end");
+
+		return result > 0 ? true : false;
 	}
 }
 	

@@ -5,14 +5,22 @@
     
     <select id="getMemberList" resultType="cMap">
     	/* getMemberList :: 관리자 회원 리스트 조회 */
-		SELECT *
+		SELECT *, DATE_FORMAT(REG_DT, '%Y-%m-%d') AS REG_DT_YMD
 		  FROM member
+		 WHERE ENABLE = 'Y';
     </select>
     
     <select id="getMemberInfo" resultType="cMap" parameterType="dMap">
     	/* getMemberInfo :: 관리자 회원 정보 조회 */
-		SELECT *
+		SELECT *, DATE_FORMAT(REG_DT, '%Y-%m-%d') AS REG_DT_YMD
 		  FROM member
 		 WHERE MEM_NUM = #{memNum}
-    </select>    
+    </select> 
+    
+    <update id="memberdelete" parameterType="dMap">
+    	/* memberdelete :: 회원 정보 삭제 */
+    	UPDATE member SET
+               ENABLE = 'N'
+         WHERE MEM_NUM = #{memNum}
+    </update>       
 </mapper>

@@ -37,6 +37,18 @@ public interface AdminMemberMapper {
 	* @Version : 2021. 8. 2.
 	**************************************************/
 	public CamelMap getMemberInfo(DataMap paramMap) throws SQLException;
+	
+	/**************************************************
+	* @MethodName : memberdelete
+	* @Description: 회원 삭제
+	* @param paramMap
+	* @return int
+	* @Author : Hyung-Seon. Yoon
+	* @Version : 2021. 8. 8.
+	**************************************************/
+	public int memberdelete(DataMap paramMap);
 
 	public int insertMemberInfo(DataMap paramMap) throws SQLException;
+
+	
 }
