@@ -5,14 +5,14 @@
     
     <select id="getMemberList" resultType="cMap">
     	/* getMemberList :: 관리자 회원 리스트 조회 */
-		SELECT *, DATE_FORMAT(REG_DT, '%Y-%m-%d') AS REG_DT_YMD
+		SELECT *, DATE_FORMAT(REG_DT, '%Y-%m-%d') AS REG_DT_YMD, DATE_FORMAT(LAST_LOGIN_DT, '%Y-%m-%d') AS LAST_LOGIN_DT_YMD
 		  FROM member
 		 WHERE ENABLE = 'Y';
     </select>
     
     <select id="getMemberInfo" resultType="cMap" parameterType="dMap">
     	/* getMemberInfo :: 관리자 회원 정보 조회 */
-		SELECT *, DATE_FORMAT(REG_DT, '%Y-%m-%d') AS REG_DT_YMD
+		SELECT *, DATE_FORMAT(REG_DT, '%Y-%m-%d') AS REG_DT_YMD, DATE_FORMAT(LAST_LOGIN_DT, '%Y-%m-%d') AS LAST_LOGIN_DT_YMD
 		  FROM member
 		 WHERE MEM_NUM = #{memNum}
     </select> 
