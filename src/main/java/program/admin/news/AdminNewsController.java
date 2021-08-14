@@ -6,6 +6,7 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import program.admin.news.mapper.AminNewsMapper;
 import program.common.CamelMap;
 import program.common.DataMap;
 import program.common.util.HttpUtil;
@@ -31,8 +33,8 @@ public class AdminNewsController {
 	
 	private static final Logger logger = LoggerFactory.getLogger(AdminNewsController.class);
 	
-//	@Autowired
-//	private AminNewsMapper adminNewsMapper;
+	@Autowired
+	private AminNewsMapper adminNewsMapper;
 
 	/**************************************************
 	* @MethodName : newsList
@@ -81,7 +83,7 @@ public class AdminNewsController {
 		List<CamelMap> resultList = null;
 		
 		try {
-//			resultList = adminNewsMapper.getNewsList();
+			resultList = adminNewsMapper.getNewsList();
 		} catch (Exception e) {
 			logger.debug("뉴스 리스트 조회 오류", e);
 		}
@@ -112,7 +114,7 @@ public class AdminNewsController {
 		CamelMap resultInfo = null;
 		
 		try {
-//			resultInfo = adminNewsMapper.getNewsInfo(paramMap);
+			resultInfo = adminNewsMapper.getNewsInfo(paramMap);
 		} catch (Exception e) {
 			logger.debug("뉴스 상세 조회 오류", e);
 		}
@@ -142,7 +144,7 @@ public class AdminNewsController {
 		int result = 0;
 		
 		try {
-//			result = adminNewsMapper.newsdelete(paramMap);
+			result = adminNewsMapper.newsdelete(paramMap);
 		} catch (Exception e) {
 			logger.debug("뉴스 삭제 오류", e);
 		}
