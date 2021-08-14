@@ -1,11 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
-<!doctype html>
-<html>
-
-
-
-<body class="bg-light">
 
   <div class="container">
   <div class="py-5 text-center">
@@ -367,6 +361,34 @@
       </form>
     </div>
   </div>
-</body>
-
-</html>
+  
+  <script type="text/javascript">
+  
+  	var memNum = "3"
+    
+    $(document).ready(function(){
+    	memberObj.fn_getThisMemberInfo(memNum);
+    });
+    
+    let memberObj = {
+    	fn_getThisMemberInfo : function(memNum) {
+    		var param = "memNum="+memNum;
+			ajaxParamExecute(param, "/mypage/getThisMemberInfo", "post", false, false, memberObj.fn_getThisMemberInfoRetrun);
+		},
+		fn_getThisMemberInfoRetrun : function(rst) {
+ 			console.log(rst)
+			$('input[id=id]').val(rst.resultInfo.userId);
+			$('input[id=password]').val(rst.resultInfo.userPw);
+			$('input[id=name]').val(rst.resultInfo.nickName);
+			$('input[id=email]').val(rst.resultInfo.email);
+//			$('input[id=rank]').val(rst.resultInfo.userType);
+//			$('input[id=last_access]').val(rst.resultInfo.lastLoginDt);
+//			$('input[id=start_date]').val(rst.resultInfo.regDtYmd);
+			
+			if (rst.resultInfo.gender == 'M') $('input[id=select1]').prop('checked', true);
+			else $('input[id=select2]').prop('checked', true); 
+		}
+//		
+    }
+  
+  </script>
