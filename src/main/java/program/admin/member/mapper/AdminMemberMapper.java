@@ -49,6 +49,4 @@ public interface AdminMemberMapper {
 	public int memberdelete(DataMap paramMap);
 
 	public int insertMemberInfo(DataMap paramMap) throws SQLException;
-
-	
 }

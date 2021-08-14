@@ -163,11 +163,10 @@ public class AdminMemberController {
 		try {
 			result = adminMemberMapper.memberdelete(paramMap);
 		} catch (Exception e) {
-			logger.debug("회원정보 조회 오류", e);
+			logger.debug("회원정보 삭제 오류", e);
 		}
 		
 		logger.debug("AdminMemberController : memberdelete - end");
-
 		return result > 0 ? true : false;
 	}
 }
