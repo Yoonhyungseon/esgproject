@@ -15504,7 +15504,7 @@ h3.title-main {
 /*-- //title style --*/
 /*-- banner --*/
 .w3l-banner {
-  background: url(../images/enterprise.jpg) no-repeat center;
+  background: url(../images/rating.jpg) no-repeat center;
   background-size: cover;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -15512,8 +15512,11 @@ h3.title-main {
   -ms-background-size: cover;
   /* min-height: 800px; */
   min-height: 100vh;
-  display: flex;
+  display: block;
   align-items: center;
+  width:1200px;
+ margin:auto;
+ padding-left:100px;
 }
 
 .w3l-banner h3 {
@@ -15755,6 +15758,7 @@ h3.title-big {
   border: 1px solid var(--border-color-light);
   padding: 1em;
   border-radius: 15px;
+  height:450px;
 }
 
 .w3l-blog-sec .serve-info span {
@@ -15829,6 +15833,7 @@ h3.title-big {
 
 .w3l-blog-sec .column-img img {
   width: 100%;
+  height: 200px;
 }
 
 .w3l-blog-sec .pagination {
@@ -16204,7 +16209,7 @@ h3.title-big {
 }
 
 .w3l-footer-16 form {
-  display: flex;
+  display: block;
   margin-bottom: 15px;
 }
 
