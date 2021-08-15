@@ -1,4 +1,4 @@
-package program.admin.member.mapper;
+package program.admin.news.mapper;
 
 import java.sql.SQLException;
 import java.util.List;
@@ -10,43 +10,41 @@ import program.common.DataMap;
 
 /**************************************************
 * @FileName : AdminMemberMapper.java
-* @Description: 관리자 회원정보 인터페이스
+* @Description: 뉴스 관리 인터페이스
 * @Author : Hyung-Seon. Yoon
 * @Version : 2021. 8. 2.
 **************************************************/
 @Repository
-public interface AdminMemberMapper {
+public interface AminNewsMapper {
 
 	/**************************************************
-	* @MethodName : getMemberList
-	* @Description: 관리자 회원 리스트 조회
+	* @MethodName : getNewsList
+	* @Description:  뉴스 리스트 조회
 	* @param paramMap
 	* @return List<CamelMap>
 	* @throws SQLException 
 	* @Author : Hyung-Seon. Yoon
 	* @Version : 2021. 8. 2.
 	**************************************************/
-	public List<CamelMap> getMemberList() throws SQLException;
+	public List<CamelMap> getNewsList() throws SQLException;
 	
 	/**************************************************
-	* @MethodName : getMemberInfo
-	* @Description: 회원정보 상세 조회
+	* @MethodName : getNewsInfo
+	* @Description: 뉴스 상세 조회
 	* @return CamelMap
 	* @throws SQLException 
 	* @Author : Hyung-Seon. Yoon
 	* @Version : 2021. 8. 2.
 	**************************************************/
-	public CamelMap getMemberInfo(DataMap paramMap) throws SQLException;
+	public CamelMap getNewsInfo(DataMap paramMap) throws SQLException;
 	
 	/**************************************************
-	* @MethodName : memberdelete
-	* @Description: 회원 삭제
+	* @MethodName : newsdelete
+	* @Description: 뉴스 삭제 
 	* @param paramMap
 	* @return int
 	* @Author : Hyung-Seon. Yoon
 	* @Version : 2021. 8. 8.
 	**************************************************/
-	public int memberdelete(DataMap paramMap);
-
-	public int insertMemberInfo(DataMap paramMap) throws SQLException;
+	public int newsdelete(DataMap paramMap);
 }
