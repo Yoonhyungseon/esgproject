@@ -1,8 +1,19 @@
 package program.member;
 
+import javax.servlet.http.HttpServletRequest;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import program.member.mapper.MemberMapper;
+import program.common.DataMap;
+import program.common.util.HttpUtil;
 
 
 /**************************************************
@@ -15,6 +26,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @RequestMapping(value = {"member"})
 public class ClientMemberController {
+	
+	private static final Logger logger = LoggerFactory.getLogger(ClientMemberController.class);
+	
+	@Autowired
+	private MemberMapper MemberMapper;
 	
 //	@Autowired
 //	private TextBoardService textBoardService;
@@ -134,6 +150,34 @@ public class ClientMemberController {
 	@RequestMapping(value = {"/withdrawalCompleted"})
 	public String withdrawalCompleted(Model model) {
 		return "/member/withdrawalCompleted";
+	}
+	
+	/**************************************************
+	* @MethodName : memberinsert
+	* @Description: 회원 추가 컨트롤러
+	* @param request
+	* @param model
+	* @return boolean
+	* @Author : Na-Young. Woo
+	* @Version : 2021. 8. 14.
+	**************************************************/
+	@ResponseBody
+	@RequestMapping(value = {"/memberinsert"}, method = {RequestMethod.GET, RequestMethod.POST })
+	public boolean memberinsert(HttpServletRequest request, Model model) {
+		logger.debug("MemberController : memberinsert - start");
+
+		DataMap paramMap = HttpUtil.getRequestDataMap(request);
+
+		int result = 0;
+		
+		try {
+			result = MemberMapper.memberinsert(paramMap);
+		} catch (Exception e) {
+			logger.debug("회원 추가 오류", e);
+		}
+		
+		logger.debug("MemberController : memberinsert - end");
+		return result > 0 ? true : false;
 	}
 }
 	
