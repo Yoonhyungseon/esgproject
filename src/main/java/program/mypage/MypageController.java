@@ -1,8 +1,21 @@
 package program.mypage;
 
+import javax.servlet.http.HttpServletRequest;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
+
+import program.mypage.mapper.MypageMapper;
+import program.common.CamelMap;
+import program.common.DataMap;
+import program.common.util.HttpUtil;
 
 
 /**************************************************
@@ -16,8 +29,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping(value = {"mypage"})
 public class MypageController {
 	
-//	@Autowired
-//	private TextBoardService textBoardService;
+	private static final Logger logger = LoggerFactory.getLogger(MypageController.class);
+	
+	@Autowired
+	private MypageMapper mypageMapper;
 	
 	/**************************************************
 	* @MethodName : index
@@ -122,6 +137,45 @@ public class MypageController {
 	public String postList(Model model) {
 		return "contents/mypage/postList";
 	}
+	
+	
+	
+	/************************AJAX*********************************************/
+	
+	/**************************************************
+	* @MethodName : getThisMemberInfo
+	* @Description: 현재 접속 회원 정보 조회
+	* @param request
+	* @param model
+	* @return ModelAndView
+	* @Author : Beom-Ki, Lee
+	* @Version : 2021. 8. 8.
+	**************************************************/
+	@ResponseBody
+	@RequestMapping(value = {"/getThisMemberInfo"}, method = {RequestMethod.GET, RequestMethod.POST })
+	public ModelAndView getThisMemberInfo(HttpServletRequest request, Model model) {
+		logger.debug("MypageController : getThisMemberInfo - start");
+
+		ModelAndView mv = new ModelAndView("jsonView");
+		
+		DataMap paramMap = HttpUtil.getRequestDataMap(request);
+		
+		CamelMap resultInfo = null;
+		
+		try {
+			resultInfo = mypageMapper.getThisMemberInfo(paramMap);
+		} catch (Exception e) {
+			logger.debug("현재 접속 회원정보 조회 오류", e);
+		}
+		
+		mv.addObject("resultInfo",resultInfo);
+		
+		logger.debug("MypageController : getThisMemberInfo - end");
+
+		return mv;
+	}
+	
+	
 }
 	
 	

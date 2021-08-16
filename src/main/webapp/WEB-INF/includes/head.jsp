@@ -39,4 +39,6 @@
 	    <link href="//fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 	    <!-- //google-fonts -->
 	    
+	    <script src="/adminLayer/vendors/validation/common.js"></script>
+	    
 	</head>
