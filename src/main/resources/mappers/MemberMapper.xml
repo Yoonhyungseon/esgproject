@@ -4,7 +4,7 @@
 <mapper namespace="program.member.mapper.MemberMapper">
     <insert id="memberinsert" parameterType="cMap">
     	/* memberinsert :: 회원 추가 */
-    	INSERT INTO member(USER_ID, USER_PW, NICK_NAME, EMAIL, GENDER, REG_DT)
-    	VALUES (#{userId}, #{userPw}, #{nickName}, #{email}, #{gender}, DATE_FORMAT(REG_DT, '%Y-%m-%d'));
+    	INSERT INTO member(USER_ID, USER_PW, NICK_NAME, EMAIL, STATUS, GENDER, ENABLE, USER_TYPE, REG_DT)
+    	VALUES (#{userId}, #{userPw}, #{nickName}, #{email}, 'D', #{gender}, 'Y', 'A', NOW());
     </insert>
 </mapper>
