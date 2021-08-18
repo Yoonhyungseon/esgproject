@@ -14,8 +14,10 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
+import org.springframework.web.util.WebUtils;
 
 import program.common.CamelMap;
 import program.common.DataMap;
@@ -53,7 +55,9 @@ public class CommonService {
 	 * @Version : 2021. 2. 8.
 	 **************************************************/
 	public List<CamelMap> saveFile(HttpServletRequest request, DataMap paramMap) throws Exception {
+	//public List<CamelMap> saveFile(MultipartHttpServletRequest request,@RequestParam("uploadImg") MultipartFile multipartFile, DataMap paramMap) throws Exception{
 		MultipartHttpServletRequest multipartRequest = (MultipartHttpServletRequest) request;
+		//MultipartHttpServletRequest multipartRequest = WebUtils.getNativeRequest(request, MultipartHttpServletRequest.class);
 		Iterator<String> iterator = multipartRequest.getFileNames();
 		MultipartFile multipartFile = null;
 
@@ -72,7 +76,7 @@ public class CommonService {
 		if (StringUtils.isNotEmpty(paramMap.getString("filePath")))
 			filePath = paramMap.getString("filePath");
 		else {
-			filePath = "komabio/" + DateFmt.getSimpleDate("yyyy") + "/" + DateFmt.getSimpleDate("MMdd");
+			filePath = "notice/" + DateFmt.getSimpleDate("yyyy") + "/" + DateFmt.getSimpleDate("MMdd");
 		}
 
 		root = root + "/" + filePath;
@@ -108,7 +112,7 @@ public class CommonService {
 		return rstFileList;
 	}
 	
-	public boolean deleteFile(CamelMap delFile) throws Exception {
+	public boolean deleteFile(DataMap paramMap) throws Exception {
 		boolean sw = false;
 		
 		String root = FILE_ROOT;
@@ -120,9 +124,9 @@ public class CommonService {
 //			root = FILE_ROOT_LINUX;
 //		}
 		
-		logger.info("test :: "+root+"/"+delFile.getString("fileName"));
+		logger.info("test :: "+root+"/"+paramMap.getString("fileName"));
 		
-		File file = new File(root+"/"+delFile.getString("fileName"));
+		File file = new File(root+"/"+paramMap.getString("fileName"));
 		
 		if( file.exists() ){
 			if(file.delete()){
