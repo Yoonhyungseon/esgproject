@@ -42,13 +42,13 @@
                             <button type="submit" class="btn button-style d-flex ml-auto">로그인</button>
                         </div>
                         <div class="form-group-2 mt-4 login-button find-id-mention-button">
-                            <button type="submit" class="btn button-style d-flex ml-auto">회원가입</button>
+                            <button type="button" class="btn button-style d-flex ml-auto" onclick="location.href='/member/join'">회원가입</button>
                         </div>
                         <div class="form-group-2 mt-4 login-button find-id-mention-button">
-                            <button type="submit" class="btn button-style d-flex ml-auto">아이디 찾기</button>
+                            <button type="button" class="btn button-style d-flex ml-auto" onclick="location.href='/member/findId'">아이디 찾기</button>
                         </div>
                         <div class="form-group-2 mt-4 login-button">
-                            <button type="submit" class="btn button-style d-flex ml-auto">비밀번호 찾기</button>
+                            <button type="button" class="btn button-style d-flex ml-auto" onclick="location.href='/member/findPassword'">비밀번호 찾기</button>
                         </div>
                     </form>
                 </div>

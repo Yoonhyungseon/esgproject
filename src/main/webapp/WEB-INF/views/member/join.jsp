@@ -84,27 +84,27 @@
 				                </li>
 				            </ul>
 				        </form>
-				        <form method="post" class="w3layouts-contact-fm" action="https://sendmail.w3layouts.com/submitForm">
+				        <form class="w3layouts-contact-fm" id="signupForm">
 	                        <div class="row main-cont-sec">
 	                            <div class="col-md-6 left-cont-contact">
 	                                <div class="form-group">
-	                                    <label for="id">아이디</label>
-	                                    <input class="form-control" type="text" name="id" id="id" placeholder=""
+	                                    <label for="userId">아이디</label>
+	                                    <input class="form-control" type="text" name="userId" id="userId" placeholder=""
 	                                        required="">
 	                                </div>
 	                                <div class="form-group">
-	                                    <label for="password">비밀번호</label>
-	                                    <input class="form-control" type="text" name="password" id="password" placeholder=""
+	                                    <label for="userPw">비밀번호</label>
+	                                    <input class="form-control" type="text" name="userPw" id="userPw" placeholder=""
 	                                        required="">
 	                                </div>
 	                                <div class="form-group">
-	                                    <label for="repassword">비밀번호 재확인</label>
+	                                    <label for="repassword">비밀번호 확인</label>
 	                                    <input class="form-control" type="text" name="repassword" id="repassword" placeholder=""
 	                                        required="">
 	                                </div>
 	                                <div class="form-group">
-	                                    <label for="name">이름</label>
-	                                    <input class="form-control" type="text" name="name" id="name" placeholder=""
+	                                    <label for="nickName">이름</label>
+	                                    <input class="form-control" type="text" name="nickName" id="nickName" placeholder=""
 	                                        required="">
 	                                </div>
 	                                <div class="form-group">
@@ -115,14 +115,15 @@
 	                                <div class="form-group">
 	                                    <label for="gender">성별</label>
 	                                    <div class="select-gender">
-	                                    	<input type="radio" id="select" name="shop"><label for="select">남</label>
-	                                    	<input type="radio" id="select2" name="shop"><label for="select2">여</label>
+	                                    	<input type="radio" name="gender" value="" checked>
+	                                    	<input type="radio" id="select" name="gender" value="M"><label for="select">남</label>
+	                                    	<input type="radio" id="select2" name="gender" value="F"><label for="select2">여</label>
 	                                    </div>
 	                                </div>
 	                            </div>
 	                        </div>
 	                        <div class="form-group-2 mt-4 login-button">
-	                            <button type="submit" class="btn button-style d-flex ml-auto">완료</button>
+	                            <button type="button" class="btn button-style d-flex ml-auto" onclick="signUpValidation()">완료</button>
 	                        </div>
 	                    </form>
 					</div>
@@ -132,7 +133,63 @@
 	</section>
 	
 	<!-- MENU-JS -->
-    <script>
+    <script type="text/javascript">
+    	function signUpValidation(){
+			var userId = $("#userId").val();
+			var userPw = $("#userPw").val();
+			var userPwCheck = $("#repassword").val();
+			var nickName = $("#nickName").val();
+			var email = $("#email").val();
+			var gender = $('input[name="gender"]:checked').val();
+			
+			if(!userId){
+				alert("아이디를 입력해주세요.");
+				$("#userId").focus();
+			}else if(!userPw){
+				alert("비밀번호를 입력해주세요.");
+				$("#userPw").focus();
+			}else if(!userPwCheck){
+				alert("비밀번호 확인을 입력해주세요.");
+				$("#repassword").focus();
+			}else if(userPw != userPwCheck){
+				alert("비밀번호가 맞지 않습니다.");
+				$("#repassword").focus();		
+			}else if(!nickName){
+				alert("이름을 입력해주세요.");
+				$("#nickName").focus();
+			}else if(!email){
+				alert("이메일을 입력해주세요.");
+				$("#email").focus();
+			}else if(!gender){
+				alert("성별을 선택해주세요.");
+			}else {
+				signUp()
+			}
+		}
+
+		function signUp(){
+			console.log('signupFun');
+			$.ajax({
+				url : "/member/memberinsert",
+				type : 'POST',
+				data : {
+					"userId" : $("#userId").val(),
+					"userPw" : $("#userPw").val(),
+					"nickName" : $("#nickName").val(),
+					"email" : $("#email").val(),
+					"gender" : $('input[name="gender"]:checked').val()
+				},
+				success : function(data){
+					if(data == true){
+						alert("회원가입이 완료되었습니다.");
+						location.href = "/member/login"
+					} else {
+						alert("회원가입 실패");
+					}
+				}
+			})
+		}
+    
         $(window).on("scroll", function () {
             var scroll = $(window).scrollTop();
 

@@ -162,7 +162,7 @@ public class ClientMemberController {
 	* @Version : 2021. 8. 14.
 	**************************************************/
 	@ResponseBody
-	@RequestMapping(value = {"/memberinsert"}, method = {RequestMethod.GET, RequestMethod.POST })
+	@RequestMapping(value = {"/memberinsert"}, method = RequestMethod.POST)
 	public boolean memberinsert(HttpServletRequest request, Model model) {
 		logger.debug("MemberController : memberinsert - start");
 

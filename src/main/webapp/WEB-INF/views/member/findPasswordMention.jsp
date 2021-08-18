@@ -44,9 +44,6 @@
 	                        <div class="form-group-2 mt-4 login-button find-id-mention-button">
 			                	<button type="submit" class="btn button-style d-flex ml-auto">변경하기</button>
 			                </div>
-			                <div class="form-group-2 mt-4 login-button">
-			                	<button type="submit" class="btn button-style d-flex ml-auto">돌아가기</button>
-			                </div>
 	                    </form>
 					</div>
 				</div>
