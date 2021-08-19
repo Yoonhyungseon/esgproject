@@ -4,12 +4,22 @@
 <mapper namespace="program.admin.textboard.mapper.AdminTextBoardMapper">
 
 	<insert id="insertSiteBoard" parameterType="dMap">
- 		INSERT INTO site_board(TITLE,SUB_TITLE, C_URL,ATT_FILE, CONTENTS, REG_ID, REG_DT)
-      	VALUES (#{title}, #{subTitle},#{cUrl} #{attFile}, #{contents},#{regId}, now())
+ 		INSERT INTO site_board(TITLE, SUB_TITLE, C_URL, ATT_FILE, CONTENTS, REG_ID, REG_DT)
+      	VALUES (#{title}, #{subTitle}, #{cUrl}, #{attFile}, #{contents}, #{regId}, now()) 	
  	</insert>	
  	
  	<update id="updateSiteBoard" parameterType="dMap">
  		
  	</update>
 
+	<select id="getNoticeList" resultType="cMap">
+		SELECT *, DATE_FORMAT(REG_DT, '%Y-%m-%d') AS REG_DT_YMD
+		  FROM site_board
+	</select>
+	
+	<select id="getNoticeInfo" resultType="cMap" parameterType="dMap">
+		SELECT *, DATE_FORMAT(REG_DT, '%Y-%m-%d') AS REG_DT_YMD
+		  FROM site_board
+		WHERE SEQ = #{seq}
+	</select>
 </mapper>
