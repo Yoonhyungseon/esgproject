@@ -2,7 +2,6 @@ package program.admin.textboard;
 
 import java.util.List;
 
-import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 
 import org.slf4j.Logger;
@@ -20,9 +19,7 @@ import program.common.CamelMap;
 import program.common.DataMap;
 import program.common.service.CommonService;
 import program.common.util.HttpUtil;
-import program.common.util.StringUtil;
 import program.textboard.TextBoardController;
-import program.textboard.mapper.TextBoardMapper;
 
 /**************************************************
  * @FileName : AdminTextBoardController.java
@@ -38,8 +35,9 @@ public class AdminTextBoardController {
 
 	@Autowired
 	private CommonService commonService;
-	@Autowired
-	private TextBoardMapper textBoardMapper;
+	/*
+	 * @Autowired private TextBoardMapper textBoardMapper;
+	 */
 	@Autowired
 	private AdminTextBoardMapper adminTBMapper;
 	
@@ -106,7 +104,11 @@ public class AdminTextBoardController {
 	 * @Version : 2021. 7. 6.
 	 **************************************************/
 	@RequestMapping(value = { "/noticeView" })
-	public String noticeView(Model model) {
+	public String noticeView(HttpServletRequest request,Model model) {
+		
+		DataMap paramMap = HttpUtil.getRequestDataMap(request);
+		HttpUtil.getParams(paramMap, model);
+		
 		return "/admin/textboard/noticeView";
 	}
 
@@ -128,14 +130,14 @@ public class AdminTextBoardController {
 	 * @Description:
 	 * @param request
 	 * @param model
-	 * @return boolean
+	 * @return String
 	 * @Author : Ye-Jin. Jeong
 	 * @Version : 2021. 8. 17.
 	 **************************************************/
 	@SuppressWarnings("unchecked")
 	@RequestMapping(value = { "/ajaxSiteBoardSave" }, method = { RequestMethod.GET, RequestMethod.POST })
 	@ResponseBody
-	public boolean ajaxSiteBoardSave(HttpServletRequest request, Model model) {
+	public String ajaxSiteBoardSave(HttpServletRequest request, Model model) {
 		logger.debug("AdminTextBoardController : ajaxSiteBoardSave - start");
 		
 		DataMap paramMap = HttpUtil.getRequestDataMap(request);
@@ -162,10 +164,11 @@ public class AdminTextBoardController {
 
 			//if ("MOD".equals(mode) && !StringUtil.isEmpty(seq)) {
 
-				if (!StringUtil.isEmpty(paramMap.getString("attFile"))) {
-					paramMap.put("fileName", paramMap.getString("orgAttFile"));
-					commonService.deleteFile(paramMap);
-				}
+			/*
+			 * if (!StringUtil.isEmpty(paramMap.getString("attFile"))) {
+			 * paramMap.put("fileName", paramMap.getString("orgAttFile"));
+			 * commonService.deleteFile(paramMap); }
+			 */
 				// sw = adminTBMapper.updateSiteBoard(paramMap);
 			//} else {
 				sw = adminTBMapper.insertSiteBoard(paramMap);
@@ -174,43 +177,44 @@ public class AdminTextBoardController {
 		} catch (Exception e) {
 			logger.debug("사이트 공지사항 저장 오류", e);
 		}
-		logger.debug("AdminTextBoardController : ajaxSiteBoardSave - start");
-		return sw;
+		logger.debug("AdminTextBoardController : ajaxSiteBoardSave - end");
+		System.out.println(sw);
+		return "redirect:/noticeList";
 	}
 
 	/**************************************************
-	 * @MethodName : getBoardList
-	 * @Description: 게시글 리스트 조회 컨트롤러
-	 * @param request
-	 * @param model
-	 * @return ModelAndView
-	 * @Author : Ye-Jin. Jeong
-	 * @Version : 2021. 8. 14.
-	 **************************************************/
+	* @MethodName : getNoticeList
+	* @Description: 관리자 공지사항 조회 컨트롤러
+	* @param request
+	* @param model
+	* @return ModelAndView
+	* @Author : Ye-Jin. Jeong
+	* @Version : 2021. 8. 18.
+	**************************************************/
 	@ResponseBody
-	@RequestMapping(value = { "/getBoardList" }, method = { RequestMethod.GET, RequestMethod.POST })
-	public ModelAndView getBoardList(HttpServletRequest request, Model model) {
-		logger.debug("TextBoardController : getBoardList - start");
+	@RequestMapping(value = { "/getNoticeList" }, method = { RequestMethod.GET, RequestMethod.POST })
+	public ModelAndView getNoticeList(HttpServletRequest request, Model model) {
+		logger.debug("AdminTextBoardController : getNoticeList - start");
 
 		ModelAndView mv = new ModelAndView("jsonView");
 
 		List<CamelMap> resultList = null;
 
 		try {
-			resultList = textBoardMapper.getBoardList();
+			resultList = adminTBMapper.getNoticeList();
 		} catch (Exception e) {
 			logger.debug("게시글 리스트 조회 오류", e);
 		}
 
 		mv.addObject("resultList", resultList);
 
-		logger.debug("TextBoardController : getBoardList - end");
+		logger.debug("AdminTextBoardController : getNoticeList - end");
 		return mv;
 	}
 
 	/**************************************************
 	 * @MethodName : getBoardInfo
-	 * @Description: 게시글 상세 조회 컨트롤러
+	 * @Description: 관리자 공지사항 상세 조회 컨트롤러
 	 * @param request
 	 * @param model
 	 * @return ModelAndView
@@ -218,24 +222,26 @@ public class AdminTextBoardController {
 	 * @Version : 2021. 8. 14.
 	 **************************************************/
 	@ResponseBody
-	@RequestMapping(value = { "/getBoardInfo" }, method = { RequestMethod.GET, RequestMethod.POST })
-	public ModelAndView getBoardInfo(HttpServletRequest request, Model model) {
-		logger.debug("TextBoardController : getBoardInfo - start");
+	@RequestMapping(value = { "/getNoticeInfo" }, method = { RequestMethod.GET, RequestMethod.POST })
+	public ModelAndView getNoticeInfo(HttpServletRequest request, Model model) {
+		logger.debug("AdminTextBoardController : getNoticeInfo - start");
 
 		ModelAndView mv = new ModelAndView("jsonView");
 
 		DataMap paramMap = HttpUtil.getRequestDataMap(request);
+		
+		System.out.println(paramMap.toString());
 		CamelMap resultInfo = null;
 
 		try {
-			resultInfo = textBoardMapper.getBoardInfo(paramMap);
+			resultInfo = adminTBMapper.getNoticeInfo(paramMap);
 		} catch (Exception e) {
 			logger.debug("게시글 조회 오류", e);
 		}
 
 		mv.addObject("resultInfo", resultInfo);
 
-		logger.debug("TextBoardController : getBoardInfo - end");
+		logger.debug("AdminTextBoardController : getNoticeInfo - end");
 		return mv;
 	}
 }
