@@ -7,4 +7,11 @@
     	INSERT INTO member(USER_ID, USER_PW, NICK_NAME, EMAIL, STATUS, GENDER, ENABLE, USER_TYPE, REG_DT)
     	VALUES (#{userId}, #{userPw}, #{nickName}, #{email}, 'D', #{gender}, 'Y', 'A', NOW());
     </insert>
+    
+    <select id="getFindId" resultType="cMap" parameterType="dMap">
+    	/* findid :: 아이디 찾기 */
+		SELECT USER_ID
+		FROM member
+		WHERE email = #{email}
+    </select>
 </mapper>

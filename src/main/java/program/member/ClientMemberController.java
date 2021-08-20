@@ -10,8 +10,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 
 import program.member.mapper.MemberMapper;
+import program.common.CamelMap;
 import program.common.DataMap;
 import program.common.util.HttpUtil;
 
@@ -178,6 +180,37 @@ public class ClientMemberController {
 		
 		logger.debug("MemberController : memberinsert - end");
 		return result > 0 ? true : false;
+	}
+	
+	/**************************************************
+	* @MethodName : getFindId
+	* @Description: 아이디 찾기
+	* @param request
+	* @param model
+	* @return ModelAndView
+	* @Author : Na-Young. Woo
+	* @Version : 2021. 8. 21.
+	**************************************************/
+	@ResponseBody
+	@RequestMapping(value = {"/getFindId"}, method = {RequestMethod.GET, RequestMethod.POST })
+	public ModelAndView getFindId(HttpServletRequest request, Model model) {
+		logger.debug("MemberController : getFindId - start");
+
+		ModelAndView mv = new ModelAndView("jsonView");
+		
+		DataMap paramMap = HttpUtil.getRequestDataMap(request);
+		CamelMap resultInfo = null;
+		
+		try {
+			resultInfo = MemberMapper.getFindId(paramMap);
+		} catch (Exception e) {
+			logger.debug("아이디 찾기 오류", e);
+		}
+		
+		mv.addObject("resultInfo",resultInfo);
+		
+		logger.debug("MemberController : getFindId - end");
+		return mv;
 	}
 }
 	

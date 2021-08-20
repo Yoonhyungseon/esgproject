@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Repository;
 
+import program.common.CamelMap;
 import program.common.DataMap;
 import program.common.MemberVo;
 
@@ -13,7 +14,7 @@ public interface MemberMapper {
 	
 	/**************************************************
 	* @MethodName : memberinsert
-	* @Description: 회원 추가
+	* @Description:
 	* @param paramMap
 	* @return int
 	* @Author : Na-Young. Woo
@@ -21,4 +22,14 @@ public interface MemberMapper {
 	**************************************************/
 	public int memberinsert(DataMap paramMap);
 	
+	/**************************************************
+	* @MethodName : getMemberInfo
+	* @Description:
+	* @param paramMap
+	* @return
+	* @throws SQLException CamelMap
+	* @Author : Na-Young. Woo
+	* @Version : 2021. 8. 19.
+	**************************************************/
+	public CamelMap getFindId(DataMap paramMap) throws SQLException;
 }

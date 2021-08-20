@@ -26,12 +26,12 @@
                 <div class="single-bottom-blog">
                     <div class="bottom-grid mt-4 pt-2">
                         <h3 class="find-id">아이디 찾기</h3>
-				        <form method="post" class="w3layouts-contact-fm" action="https://sendmail.w3layouts.com/submitForm">
+				        <form class="w3layouts-contact-fm">
 	                        <div class="row main-cont-sec">
 	                            <div class="col-md-6 left-cont-contact">
 	                                <div class="form-group">
-	                                    <label for="name">이름</label>
-	                                    <input class="form-control" type="text" name="name" id="name" placeholder=""
+	                                    <label for="nickName">이름</label>
+	                                    <input class="form-control" type="text" name="nickName" id="nickName" placeholder=""
 	                                        required="">
 	                                </div>
 	                                <div class="form-group">
@@ -39,15 +39,10 @@
 	                                    <input class="form-control" type="text" name="email" id="email" placeholder=""
 	                                        required="">
 	                                </div>
-	                                <div class="form-group">
-	                                    <label for="code">인증번호</label>
-	                                    <input class="form-control" type="text" name="code" id="code" placeholder=""
-	                                        required="">
-	                                </div>
 	                            </div>
 	                        </div>
 	                        <div class="form-group-2 mt-4 login-button">
-	                            <button type="submit" class="btn button-style d-flex ml-auto">완료</button>
+	                            <button type="button" class="btn button-style d-flex ml-auto" onclick="findIdValidation()">완료</button>
 	                        </div>
 	                    </form>
 					</div>
@@ -57,7 +52,22 @@
 	</section>
 	
 	<!-- MENU-JS -->
-    <script>
+    <script type="text/javascript">
+    	function findIdValidation(){
+			var nickName = $("#nickName").val();
+			var email = $("#email").val();
+			
+			if(!nickName){
+				alert("이름을 입력해주세요.");
+				$("#nickName").focus();
+			}else if(!email){
+				alert("이메일을 입력해주세요.");
+				$("#email").focus();
+			}else {
+				
+			}
+		}
+		
         $(window).on("scroll", function () {
             var scroll = $(window).scrollTop();
 
