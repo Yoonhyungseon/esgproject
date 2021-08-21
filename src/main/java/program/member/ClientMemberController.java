@@ -215,6 +215,34 @@ public class ClientMemberController {
 		logger.debug("MemberController : getFindId - end");
 		return mv;
 	}
+	
+	/**************************************************
+	* @MethodName : updatePw
+	* @Description : 비밀번호 변경
+	* @param request
+	* @param model
+	* @return boolean
+	* @Author : Na-Young. Woo
+	* @Version : 2021. 8. 22.
+	**************************************************/
+	@ResponseBody
+	@RequestMapping(value = {"/updatePw"}, method = RequestMethod.POST)
+	public boolean updatePw(HttpServletRequest request, Model model) {
+		logger.debug("MemberController : updatePw - start");
+
+		DataMap paramMap = HttpUtil.getRequestDataMap(request);
+
+		int result = 0;
+		
+		try {
+			result = MemberMapper.updatePw(paramMap);
+		} catch (Exception e) {
+			logger.debug("비밀번호 변경 오류", e);
+		}
+		
+		logger.debug("MemberController : updatePw - end");
+		return result > 0 ? true : false;
+	}
 }
 	
 	

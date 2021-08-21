@@ -44,11 +44,6 @@
 	                                    <input class="form-control" type="text" name="email" id="email" placeholder=""
 	                                        required="">
 	                                </div>
-	                                <div class="form-group">
-	                                    <label for="code">인증번호</label>
-	                                    <input class="form-control" type="text" name="code" id="code" placeholder=""
-	                                        required="">
-	                                </div>
 	                            </div>
 	                        </div>
 	                        <div class="form-group-2 mt-4 login-button">

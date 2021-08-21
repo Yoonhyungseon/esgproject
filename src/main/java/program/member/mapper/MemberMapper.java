@@ -16,11 +16,11 @@ public interface MemberMapper {
 	* @MethodName : memberinsert
 	* @Description:
 	* @param paramMap
-	* @return int
+	* @return SQLException int
 	* @Author : Na-Young. Woo
 	* @Version : 2021. 8. 14.
 	**************************************************/
-	public int memberinsert(DataMap paramMap);
+	public int memberinsert(DataMap paramMap) throws SQLException;
 	
 	/**************************************************
 	* @MethodName : getMemberInfo
@@ -32,4 +32,15 @@ public interface MemberMapper {
 	* @Version : 2021. 8. 19.
 	**************************************************/
 	public CamelMap getFindId(DataMap paramMap) throws SQLException;
+	
+	/**************************************************
+	* @MethodName : updatePw
+	* @Description:
+	* @param paramMap
+	* @return
+	* @throws SQLException int
+	* @Author : Na-Young. Woo
+	* @Version : 2021. 8. 22.
+	**************************************************/
+	public int updatePw(DataMap paramMap) throws SQLException;
 }
