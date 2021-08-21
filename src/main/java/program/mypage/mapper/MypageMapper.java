@@ -39,5 +39,16 @@ public interface MypageMapper {
 	* @Version : 2021. 8. 21.
 	**************************************************/
 	public List<CamelMap> getBoardList() throws SQLException;
+	
+	
+	/**************************************************
+	* @MethodName : getScrapList
+	* @Description: 스트랩 리스트 조회
+	* @return
+	* @throws SQLException List<CamelMap>
+	* @Author : Beom-Ki, Lee
+	* @Version : 2021. 8. 21.
+	**************************************************/
+	public List<CamelMap> getScrapList() throws SQLException;
 
 }

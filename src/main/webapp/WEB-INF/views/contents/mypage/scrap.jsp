@@ -1,11 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
-<!doctype html>
-<html>
 
-
-
-<body>
  <div class="inner-banner">
         <section class="w3l-breadcrumb">
             <div class="container">
@@ -391,6 +386,24 @@
     <script src="assets/js/bootstrap.min.js"></script>
     <!-- //bootstrap-->
     <!-- //Js scripts -->
-</body>
-
-</html>
+    
+    
+    
+    <script type="text/javascript">
+	$(document).ready(function(){
+    	boardObj.fn_getScrapList();
+    });
+    
+	let boardObj = {
+		fn_getScrapList : function() {
+			ajaxParamExecute("", "/mypage/getScrapList", "post", false, false, boardObj.fn_getScrapListReturn);
+		},
+		fn_getScrapListReturn : function(rst) {
+ 			console.log(rst);
+			
+			
+		}
+		
+	}
+	
+	</script>
