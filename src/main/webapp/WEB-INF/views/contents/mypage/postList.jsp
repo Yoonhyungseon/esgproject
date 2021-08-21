@@ -1,11 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
-<!doctype html>
-<html>
 
-
-
-<body>
 
 <!-- //inner banner -->
     <!-- menu -->
@@ -109,6 +104,22 @@
     </div>
     <!-- //menu -->
 
-</body>
-
-</html>
+	<script type="text/javascript">
+	$(document).ready(function(){
+    	boardObj.fn_getBoardList();
+    });
+    
+	let boardObj = {
+		fn_getBoardList : function() {
+			ajaxParamExecute("", "/mypage/getBoardList", "post", false, false, boardObj.fn_getBoardListReturn);
+		},
+		fn_getBoardListReturn : function(rst) {
+ 			console.log(rst);
+			
+			
+			
+		}
+		
+	}
+	
+	</script>

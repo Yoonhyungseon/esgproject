@@ -1,6 +1,7 @@
 package program.mypage.mapper;
 
 import java.sql.SQLException;
+import java.util.List;
 
 import org.springframework.stereotype.Repository;
 
@@ -27,5 +28,16 @@ public interface MypageMapper {
 	* @Version : 2021. 8. 8.
 	**************************************************/
 	public CamelMap getThisMemberInfo(DataMap paramMap) throws SQLException;
+	
+	
+	/**************************************************
+	* @MethodName : getBoardList
+	* @Description: 게시글 목록 조회
+	* @return
+	* @throws SQLException List<CamelMap>
+	* @Author : Beom-Ki, Lee
+	* @Version : 2021. 8. 21.
+	**************************************************/
+	public List<CamelMap> getBoardList() throws SQLException;
 
 }
