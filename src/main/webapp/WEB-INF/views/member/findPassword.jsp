@@ -30,13 +30,13 @@
 	                        <div class="row main-cont-sec">
 	                            <div class="col-md-6 left-cont-contact">
 	                                <div class="form-group">
-	                                    <label for="name">이름</label>
-	                                    <input class="form-control" type="text" name="name" id="name" placeholder=""
+	                                    <label for="nickName">이름</label>
+	                                    <input class="form-control" type="text" name="nickName" id="nickName" placeholder=""
 	                                        required="">
 	                                </div>
 	                                <div class="form-group">
-	                                    <label for="id">아이디</label>
-	                                    <input class="form-control" type="text" name="id" id="id" placeholder=""
+	                                    <label for="userId">아이디</label>
+	                                    <input class="form-control" type="text" name="userId" id="userId" placeholder=""
 	                                        required="">
 	                                </div>
 	                                <div class="form-group">
@@ -47,9 +47,13 @@
 	                            </div>
 	                        </div>
 	                        <div class="form-group-2 mt-4 login-button">
-	                            <button type="submit" class="btn button-style d-flex ml-auto">완료</button>
+	                            <button type="button" class="btn button-style d-flex ml-auto" onclick="findPwValidation()">완료</button>
 	                        </div>
 	                    </form>
+	                    <form id="boardFrm" name="boardFrm" method="post" action="/member/findPasswordMention">
+	                    	<input type="hidden" id=memId name="memId" value="">
+							<input type="hidden" id=memEmail name="memEmail" value="">
+						</form>
 					</div>
 				</div>
 			</div>
@@ -58,6 +62,27 @@
 	
 	<!-- MENU-JS -->
     <script>
+    	function findPwValidation(){
+			var nickName = $("#nickName").val();
+			var userId = $("#userId").val();
+			var email = $("#email").val();
+			
+			if(!nickName){
+				alert("이름을 입력해주세요.");
+				$("#nickName").focus();
+			}else if(!userId){
+				alert("아이디를 입력해주세요.");
+				$("#email").focus();
+			}else if(!email){
+				alert("이메일을 입력해주세요.");
+				$("#email").focus();
+			}else {
+				$('#memId').val(userId);
+				$('#memEmail').val(email);
+				$('#boardFrm').submit();
+			}
+		}
+    
         $(window).on("scroll", function () {
             var scroll = $(window).scrollTop();
 

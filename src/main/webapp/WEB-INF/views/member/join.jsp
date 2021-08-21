@@ -163,12 +163,11 @@
 			}else if(!gender){
 				alert("성별을 선택해주세요.");
 			}else {
-				signUp()
+				signUp();
 			}
 		}
 
 		function signUp(){
-			console.log('signupFun');
 			$.ajax({
 				url : "/member/memberinsert",
 				type : 'POST',

@@ -42,7 +42,7 @@
 	                            </div>
 	                        </div>
 	                        <div class="form-group-2 mt-4 login-button find-id-mention-button">
-			                	<button type="submit" class="btn button-style d-flex ml-auto">변경하기</button>
+			                	<button type="button" class="btn button-style d-flex ml-auto" onclick="updatePwValidation()">변경하기</button>
 			                </div>
 	                    </form>
 					</div>
@@ -53,6 +53,47 @@
 	
 	<!-- MENU-JS -->
     <script>
+    	var memId = '${memId}';
+    	var memEmail = '${memEmail}';
+    
+    	function updatePwValidation(){
+			var newpassword = $("#newpassword").val();
+			var renewpassword = $("#renewpassword").val();
+			
+			if(!newpassword){
+				alert("새 비밀번호를 입력해주세요.");
+				$("#newpassword").focus();
+			}else if(!renewpassword){
+				alert("새 비밀번호 확인을 입력해주세요.");
+				$("#renewpassword").focus();
+			}else if(newpassword != renewpassword){
+				alert("비밀번호가 맞지 않습니다.");
+				$("#renewpassword").focus();
+			}else {
+				updatePw();
+			}
+		}
+		
+		function updatePw(){
+			$.ajax({
+				url : "/member/updatePw",
+				type : 'POST',
+				data : {
+					"newPw" : $("#newpassword").val(),
+					"userId" : memId,
+					"email" : memEmail
+				},
+				success : function(data){
+					if(data == true){
+						alert("비밀번호 변경이 완료되었습니다.");
+						location.href = "/member/login"
+					} else {
+						alert("비밀번호 변경 실패");
+					}
+				}
+			})
+		}
+    
         $(window).on("scroll", function () {
             var scroll = $(window).scrollTop();
 

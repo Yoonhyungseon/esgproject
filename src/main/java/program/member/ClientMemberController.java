@@ -127,7 +127,10 @@ public class ClientMemberController {
 	* @Version : 2021. 7. 6.
 	**************************************************/
 	@RequestMapping(value = {"/findPasswordMention"})
-	public String findPasswordMention(Model model) {
+	public String findPasswordMention(HttpServletRequest request, Model model) {
+		DataMap paramMap = HttpUtil.getRequestDataMap(request);
+		HttpUtil.getParams(paramMap, model);
+		
 		return "/member/findPasswordMention";
 	}
 	
