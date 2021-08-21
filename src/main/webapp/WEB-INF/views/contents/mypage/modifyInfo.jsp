@@ -364,7 +364,7 @@
   
   <script type="text/javascript">
   
-  	var memNum = "3"
+  	var memNum = "5"
     
     $(document).ready(function(){
     	memberObj.fn_getThisMemberInfo(memNum);

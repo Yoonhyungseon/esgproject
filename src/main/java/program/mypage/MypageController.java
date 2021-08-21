@@ -1,5 +1,7 @@
 package program.mypage;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.slf4j.Logger;
@@ -175,6 +177,66 @@ public class MypageController {
 		return mv;
 	}
 	
+	
+	/**************************************************
+	* @MethodName : getBoardList
+	* @Description: 게시판 목록 조회
+	* @param request
+	* @param model
+	* @return ModelAndView
+	* @Author : Beom-Ki, Lee
+	* @Version : 2021. 8. 21.
+	**************************************************/
+	@ResponseBody
+	@RequestMapping(value = {"/getBoardList"}, method = {RequestMethod.GET, RequestMethod.POST })
+	public ModelAndView getBoardList(HttpServletRequest request, Model model) {
+		logger.debug("MypageController : getBoardList - start");
+
+		ModelAndView mv = new ModelAndView("jsonView");
+		
+		List<CamelMap> resultList = null;
+		
+		try {
+			resultList = mypageMapper.getBoardList();
+		} catch (Exception e) {
+			logger.debug("게시글 목록 조회 오류", e);
+		}
+		
+		mv.addObject("resultList",resultList);
+		
+		logger.debug("MypageController : getBoardList - end");
+		return mv;
+	}
+	
+	/**************************************************
+	* @MethodName : getScrapList
+	* @Description: 스크랩 리스트 조회
+	* @param request
+	* @param model
+	* @return ModelAndView
+	* @Author : Beom-Ki, Lee
+	* @Version : 2021. 8. 21.
+	**************************************************/
+	@ResponseBody
+	@RequestMapping(value = {"/getScrapList"}, method = {RequestMethod.GET, RequestMethod.POST })
+	public ModelAndView getScrapList(HttpServletRequest request, Model model) {
+		logger.debug("MypageController : getScrapList - start");
+
+		ModelAndView mv = new ModelAndView("jsonView");
+		
+		List<CamelMap> resultList = null;
+		
+		try {
+			resultList = mypageMapper.getScrapList();
+		} catch (Exception e) {
+			logger.debug("게시글 목록 조회 오류", e);
+		}
+		
+		mv.addObject("resultList",resultList);
+		
+		logger.debug("MypageController : getScrapList - end");
+		return mv;
+	}
 	
 }
 	
