@@ -27,9 +27,8 @@
                     <div class="blog-img-single">
                         <img src="/assets/images/single.jpg" alt="" class="img-fluid img-responsive" />
                     </div>
-                    <div class="bottom-grid mt-4 pt-2">
+                    <div class="bottom-grid mt-4 pt-2" id="findId">
                         <h3 class="find-id-mention">한이음 님의 아이디는</h3>
-                        <h2 class="find-id-mention">hanium@daum.com 입니다</h2>
                     </div>
                    	<div class="form-group-2 mt-4 login-button find-id-mention-button">
 	                	<button type="button" class="btn button-style d-flex ml-auto" onclick="location.href='/member/findPassword'">비밀번호 찾기</button>
@@ -44,6 +43,24 @@
     
     <!-- MENU-JS -->
     <script>
+	    var memEmail = '${memEmail}';
+	    
+	    $(document).ready(function(){
+	    	memberObj.fn_getMemberId(memEmail);
+	    });
+	    
+	    let memberObj = {
+	    	fn_getMemberId : function(memEmail) {
+	    		var param = "email="+memEmail;
+				ajaxParamExecute(param, "/member/getFindId", "post", false, false, memberObj.fn_getMemberIdRetrun);
+			},
+			fn_getMemberIdRetrun : function(rst) {
+	 			var tag = "<h2>" + rst.resultInfo.userId + " 입니다." + "</h2>";
+	 			$("#findId").append(tag);
+			},
+	    }
+    
+    
         $(window).on("scroll", function () {
             var scroll = $(window).scrollTop();
 

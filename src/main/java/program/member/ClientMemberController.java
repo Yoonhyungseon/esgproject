@@ -98,7 +98,10 @@ public class ClientMemberController {
 	* @Version : 2021. 7. 6.
 	**************************************************/
 	@RequestMapping(value = {"/findIdMention"})
-	public String findIdMention(Model model) {
+	public String findIdMention(HttpServletRequest request, Model model) {
+		DataMap paramMap = HttpUtil.getRequestDataMap(request);
+		HttpUtil.getParams(paramMap, model);
+		
 		return "/member/findIdMention";
 	}
 	

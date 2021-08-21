@@ -45,6 +45,9 @@
 	                            <button type="button" class="btn button-style d-flex ml-auto" onclick="findIdValidation()">완료</button>
 	                        </div>
 	                    </form>
+	                    <form id="boardFrm" name="boardFrm" method="post" action="/member/findIdMention">
+							<input type="hidden" id=memEmail name="memEmail" value="">
+						</form>
 					</div>
 				</div>
 			</div>
@@ -64,7 +67,8 @@
 				alert("이메일을 입력해주세요.");
 				$("#email").focus();
 			}else {
-				
+				$('#memEmail').val(email);
+				$('#boardFrm').submit();
 			}
 		}
 		
