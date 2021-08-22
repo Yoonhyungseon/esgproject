@@ -1,6 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java"%>
 
-<body class="sb-nav-fixed">
+<div class="sb-nav-fixed">
 	<div id="layoutSidenav_content">
 		<main>
 			<div class="container-fluid px-4">
@@ -20,36 +20,65 @@
 									<th>No.</th>
 									<th>Title</th>
 									<th>Date</th>
-									<!-- <th>Comments</th> -->
 								</tr>
 							</thead>
-							<tbody>
-								<tr>
-									<td>3</td>
-									<td><a href="noticeView">System Architect</a></td>
-									<td>2011/04/25</td>
-									<!-- <td>9</td> -->
-								</tr>
-								<tr>
-									<td>2</td>
-									<td><a href="noticeView">Accountant</a></td>
-									<td>2011/07/25</td>
-									<!-- <td>63</td> -->
-								</tr>
-								<tr>
-									<td>1</td>
-									<td><a href="noticeView">Junior Technical Author</a></td>
-									<td>2009/01/12</td>
-									<!-- <td>6</td> -->
-								</tr>
+							<tbody id="listClone">
 							</tbody>
+
+							<tr id="listCron" style="display: none;">
+								<td class="req_seq"></td>
+								<td class="req_title"><a href="noticeView"></a></td>
+								<td class="req_regDt"></td>
+							</tr>
 						</table>
 						<div class="inputArea">
-							<a class="btn btn-primary" role="button" style="float: right; color: white;" href="noticeWrite">Post</a>
+							<a class="btn btn-primary" role="button"
+								style="float: right; color: white;" href="noticeWrite">Post</a>
 						</div>
+						<form id="boardFrm" name="boardFrm" method="post" action="/admin/textboard/noticeView">
+							<input type="hidden" id=seq name="seq" value="">
+						</form>
 					</div>
 				</div>
 			</div>
 		</main>
 	</div>
-</body>
+</div>
+	<script type="text/javascript">
+    $(document).ready(function(){
+    	noticeObj.fn_getNoticeList();
+    });
+    
+	let noticeObj = {
+		fn_getNoticeList : function() {
+			ajaxParamExecute("", "/admin/textboard/getNoticeList", "post", false, false, noticeObj.fn_getNoticeListReturn);
+		},
+		fn_getNoticeListReturn : function(rst) {
+ 			console.log(rst);
+			$('#listClone').html('');
+			
+			if (rst.resultList.length > 0) {
+				for (var i in rst.resultList) {
+					
+					var html = $('#listCron').clone().removeAttr('title').show();
+					
+					html.find('.req_seq').text(rst.resultList[i].seq);
+				
+					html.find('.req_title').text(rst.resultList[i].title);
+					html.find('.req_title').attr('onclick', 'noticeObj.fn_view(\''+rst.resultList[i].seq+'\')');
+	               
+					html.find('.req_regDt').text(rst.resultList[i].regDtYmd);
+
+					$('#listClone').append(html);
+				}
+			} else {
+				$('#listClone').html('');
+			}
+		},
+		fn_view : function(seq) {
+ 			console.log(seq);
+			$('#seq').val(seq);
+			$('#boardFrm').submit();
+		}
+	}
+    </script>

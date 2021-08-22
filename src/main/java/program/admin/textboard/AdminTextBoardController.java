@@ -137,12 +137,15 @@ public class AdminTextBoardController {
 	@SuppressWarnings("unchecked")
 	@RequestMapping(value = { "/ajaxSiteBoardSave" }, method = { RequestMethod.GET, RequestMethod.POST })
 	@ResponseBody
-	public String ajaxSiteBoardSave(HttpServletRequest request, Model model) {
+	//public void ajaxSiteBoardSave(HttpServletRequest request, Model model) {
+
+	public Boolean ajaxSiteBoardSave(HttpServletRequest request, Model model) {
+	//public String ajaxSiteBoardSave(HttpServletRequest request, Model model) {
 		logger.debug("AdminTextBoardController : ajaxSiteBoardSave - start");
 		
 		DataMap paramMap = HttpUtil.getRequestDataMap(request);
 
-		boolean sw = false;
+		//boolean sw = false;
 
 		// Authentication authentication =
 		// SecurityContextHolder.getContext().getAuthentication();
@@ -161,25 +164,28 @@ public class AdminTextBoardController {
 				logger.info("fileMap : {}", fileMap);
 				paramMap.put("attFile", fileMap.get("saveFilePath") + "/" + fileMap.get("saveFileName"));
 			}
-
-			//if ("MOD".equals(mode) && !StringUtil.isEmpty(seq)) {
-
+			//sw = adminTBMapper.insertSiteBoard(paramMap);
+			adminTBMapper.insertSiteBoard(paramMap);
 			/*
-			 * if (!StringUtil.isEmpty(paramMap.getString("attFile"))) {
+			 * if ("MOD".equals(mode) && !StringUtil.isEmpty(seq)) { if
+			 * (!StringUtil.isEmpty(paramMap.getString("attFile"))) {
 			 * paramMap.put("fileName", paramMap.getString("orgAttFile"));
-			 * commonService.deleteFile(paramMap); }
+			 * commonService.deleteFile(paramMap); } sw =
+			 * adminTBMapper.updateSiteBoard(paramMap); } else { sw =
+			 * adminTBMapper.insertSiteBoard(paramMap); }
 			 */
-				// sw = adminTBMapper.updateSiteBoard(paramMap);
-			//} else {
-				sw = adminTBMapper.insertSiteBoard(paramMap);
-			//}
-
 		} catch (Exception e) {
 			logger.debug("사이트 공지사항 저장 오류", e);
 		}
 		logger.debug("AdminTextBoardController : ajaxSiteBoardSave - end");
-		System.out.println(sw);
-		return "redirect:/noticeList";
+		//System.out.println(sw);
+		//return "redirect:noticeResult";
+		return sw;
+	}
+	
+	@RequestMapping(value= {"/noticeResult"})
+	public String noticeResult() {
+		return "/admin/textboard/noticeResult";
 	}
 
 	/**************************************************
