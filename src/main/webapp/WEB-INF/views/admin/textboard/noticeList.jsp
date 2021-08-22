@@ -1,6 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java"%>
 
-<div class="sb-nav-fixed">
 	<div id="layoutSidenav_content">
 		<main>
 			<div class="container-fluid px-4">
@@ -43,7 +42,7 @@
 			</div>
 		</main>
 	</div>
-</div>
+	
 	<script type="text/javascript">
     $(document).ready(function(){
     	noticeObj.fn_getNoticeList();

@@ -20,7 +20,7 @@ public interface AdminTextBoardMapper {
 	* @Author : Ye-Jin. Jeong
 	* @Version : 2021. 8. 18.
 	**************************************************/
-	boolean insertSiteBoard(DataMap paramMap) throws SQLException;
+	int insertSiteBoard(DataMap paramMap) throws SQLException;
 
 	boolean updateSiteBoard(DataMap paramMap) throws SQLException;
 

@@ -1,6 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java"%>
 
-<div class="sb-nav-fixed">
 	<div id="layoutSidenav_content">
 		<div class="container-fluid px-4">
 			<h1 class="mt-4">게시판 관리</h1>
@@ -20,8 +19,7 @@
 					
 					<h5 id="req_date" class="date" style="float: right;">${regDtYmd}</h5>
 					<div class="blog-img-single">
-						<img id="req_file" 
-							style="width: 500px; height: 350px; margin: auto; display: block; padding: 20px;" />
+						<img id="req_file" style="width: 500px; height: 350px; margin: auto; display: none; padding: 20px;" />
 					</div>
 					<h3 id="req_subTitle" style="margin: auto; display: block;">${subTitle}</h3>
 					<br> <br>
@@ -50,7 +48,6 @@
 			</div>
 		</div>
 	</div>
-</div>
 	<script type="text/javascript">
     $(document).ready(function(){
     	noticeObj.fn_getNoticeInfo('${seq}');
@@ -67,6 +64,10 @@
  			//$("#req_seq').val(rst.resultInfo.seq);
  			$('#req_title').text(rst.resultInfo.title);
  			$('#req_date').text(rst.resultInfo.regDtYmd);
+ 			if(rst.resultInfo.attFile != null){
+ 				$('#req_file').show()
+ 				$('#req_file').attr("src", "/common/imageload?fullImageFileNm="+rst.resultInfo.attFile);
+ 			}
  			//$('#req_file').attr(rst.resultInfo.attFile);
  			//var img = document.createElement('img');
      		//img.setAttribute('src', contextPath + '/SITE_BOARD/' + file.fileName);

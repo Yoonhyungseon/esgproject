@@ -145,7 +145,7 @@ public class AdminTextBoardController {
 		
 		DataMap paramMap = HttpUtil.getRequestDataMap(request);
 
-		//boolean sw = false;
+		int rst = 0;;
 
 		// Authentication authentication =
 		// SecurityContextHolder.getContext().getAuthentication();
@@ -164,8 +164,8 @@ public class AdminTextBoardController {
 				logger.info("fileMap : {}", fileMap);
 				paramMap.put("attFile", fileMap.get("saveFilePath") + "/" + fileMap.get("saveFileName"));
 			}
-			//sw = adminTBMapper.insertSiteBoard(paramMap);
-			adminTBMapper.insertSiteBoard(paramMap);
+			rst = adminTBMapper.insertSiteBoard(paramMap);
+//			adminTBMapper.insertSiteBoard(paramMap);
 			/*
 			 * if ("MOD".equals(mode) && !StringUtil.isEmpty(seq)) { if
 			 * (!StringUtil.isEmpty(paramMap.getString("attFile"))) {
@@ -178,9 +178,10 @@ public class AdminTextBoardController {
 			logger.debug("사이트 공지사항 저장 오류", e);
 		}
 		logger.debug("AdminTextBoardController : ajaxSiteBoardSave - end");
-		//System.out.println(sw);
+		
+		System.out.println(rst);
 		//return "redirect:noticeResult";
-		return sw;
+		return rst>0 ? true : false;
 	}
 	
 	@RequestMapping(value= {"/noticeResult"})
