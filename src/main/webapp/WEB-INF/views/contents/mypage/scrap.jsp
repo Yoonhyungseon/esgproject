@@ -19,13 +19,13 @@
         <div class="services-layout py-md-4 py-3">
             <div class="container">
                 <h3 class="title-big mb-4 pb-2">스크랩 내역</h3>
-                
-                <div id="listClone">
-                </div> 
+                <div class="row"> 
+	                <div id="listClone" >
+	                </div> 
                 	
                 	<div id="listCron" style="display:none;">                  
-                		<div class="row">              		
-		                    <div class="col-lg-4 col-md-6 column column-img" id="zoomIn">
+                		             		
+		                    <div class="col-lg-4 col-md-6 column column-img" id="zoomIn" style="float : left; margin: 10px 0">
 		                        <div class="services-gd">
 		                            <div class="serve-info">
 		                                <h3 class="date"></h3>
@@ -48,8 +48,9 @@
 		                            </div>
 		                        </div>
 		                    </div>
-                    	</div>                   
+                    	                   
                 	</div>
+                </div>
                 <!-- pagination -->
                 <div class="pagination">
                     <ul>
