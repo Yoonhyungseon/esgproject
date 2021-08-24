@@ -9,14 +9,15 @@
             <h3 class="title-big mb-2">내가 등록한 게시글</h3>
             <div class="row menu-body">
                 <!-- Section starts: Breakfast -->
-                <div class="col-lg-6 menu-section" id="listClone">
+                <div class="col-lg-12 menu-section" id="listClone">
                 </div>
                     <!-- Item starts -->
-                    <div class="row menu-item" id="listCron" style="display:none;">
+                    <div class="row menu-item" id="listCron" style="display:none; float: left; width: 400px; height: 200px;">
                         <div class="col-3 p-0 position-relative">
                             <img src="https://image.edaily.co.kr/images/Photo/files/NP/S/2020/12/PS20122000371.jpg" class="img-responsive" alt="">
                             <a href="/board/textboardView" class="btn button-style button-style-2">자세히</a>
                         </div>
+                        <br>
                         <div class="col-9 pl-4">
                             <div class="row no-gutters">
                                 <div class="col-9 menu-item-name">
