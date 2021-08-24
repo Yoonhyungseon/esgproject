@@ -239,6 +239,15 @@ public class MypageController {
 	}
 	
 	
+	/**************************************************
+	* @MethodName : getCommentList
+	* @Description: 댓글 목록 조회
+	* @param request
+	* @param model
+	* @return ModelAndView
+	* @Author : Beom-Ki, Lee
+	* @Version : 2021. 8. 24.
+	**************************************************/
 	@ResponseBody
 	@RequestMapping(value = {"/getCommentList"}, method = {RequestMethod.GET, RequestMethod.POST })
 	public ModelAndView getCommentList(HttpServletRequest request, Model model) {

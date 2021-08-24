@@ -27,68 +27,26 @@
                                     <th>&nbsp;</th>
                                 </tr>
                             </thead>
-                            <tbody>
-                                <tr data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                    <th scope="row">1</th>
-                                    <td><a href = "/board/textboardView">매일유업 빨대 없애주세요</a></td>
-                                    <td>esg지킴이</td>
-                                    <td>2021-07-26</td>
-                                    
-                                    <td>
-                                        <i class="fa" aria-hidden="true"></i>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td colspan="6" id="collapseOne" class="collapse show acc" data-parent="#accordion">
-                                        <p>정말 좋은 아이디어다고 생각합니다. 환경보호의 중요성이 커져가고 있는 시기인 만큼 기업이 지구를 지키기 위한 많은 노력이 필요하다고 생각합니다 적극 찬성 합니다!</p>
-                                    </td>
-                                </tr>
-                                <tr data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" class="collapsed">
-                                    <th scope="row">2</th>
-                                    <td><a href = "/board/textboardView">매일유업 빨대 없애주세요</a></td>
-                                    <td>esg지킴이</td>
-                                    <td>2021-07-26</td>
-                                    
-                                    <td>
-                                        <i class="fa" aria-hidden="false"></i>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td colspan="6" id="collapseTwo" class="collapse show acc" data-parent="#accordion">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro iste, facere sunt sequi nostrum ipsa, amet doloremque magnam reiciendis tempore sapiente. Necessitatibus recusandae harum nam sit perferendis quia inventore natus.</p>
-                                    </td>
-                                </tr>
-                                <tr data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree" class="collapsed">
-                                    <th scope="row">3</th>
-                                    <td><a href = "/board/textboardView">매일유업 빨대 없애주세요</a></td>
-                                    <td>esg지킴이</td>
-                                    <td>2021-07-26</td>
-                                    
-                                    <td>
-                                        <i class="fa" aria-hidden="false"></i>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td colspan="6" id="collapseThree" class="collapse show acc" data-parent="#accordion">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro iste, facere sunt sequi nostrum ipsa, amet doloremque magnam reiciendis tempore sapiente. Necessitatibus recusandae harum nam sit perferendis quia inventore natus.</p>
-                                    </td>
-                                </tr>
-                                <tr data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour" class="collapsed">
-                                    <th scope="row">4</th>
-                                    <td><a href = "/board/textboardView">매일유업 빨대 없애주세요</a></td>
-                                    <td>esg지킴이</td>
-                                    <td>2021-07-26</td>
-                                    
-                                    <td>
-                                        <i class="fa" aria-hidden="false"></i>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td colspan="6" id="collapseFour" class="collapse show acc" data-parent="#accordion">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro iste, facere sunt sequi nostrum ipsa, amet doloremque magnam reiciendis tempore sapiente. Necessitatibus recusandae harum nam sit perferendis quia inventore natus.</p>
-                                    </td>
-                                </tr>
+                            <tbody id="listClone">
                             </tbody>
+                            	<table id="listCron" style="display:none;">
+	                                <tr data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+	                                    <th class="seq" scope="row"></th>
+	                                    <td class="title"></td>
+	                                    <td class="name"></td>
+	                                    <td class="date"></td>
+	                                    
+	                                    <td>
+	                                        <i class="fa" aria-hidden="true"></i>
+	                                    </td>
+	                                </tr>
+	                                <tr>
+	                                    <td colspan="6" id="collapseOne" class="collapse show acc" data-parent="#accordion">
+	                                        <p class="comment"></p>
+	                                    </td>
+	                                </tr>
+                        		</table>
+                            
                         </table>
                     </div>
                 </div>
@@ -107,6 +65,24 @@
 		},
 		fn_getCommentListReturn : function(rst) {
  			console.log(rst);
+ 			$('#listClone').html('');
+			console.log(rst.resultList.length);
+			if (rst.resultList.length > 0) {
+				for (var i in rst.resultList) {
+					
+					var html = $('#listCron').clone().removeAttr('id').show();
+					
+					html.find('.seq').text(rst.resultList[i].seq);
+					html.find('.date').text(rst.resultList[i].regDtYmd);
+		//			html.find('.title').text(rst.resultList[i].title);
+					html.find('.name').text(rst.resultList[i].regNm);
+					html.find('.comment').text(rst.resultList[i].contents);
+
+					$('#listClone').append(html);
+				}
+			} else {
+				$('#listClone').html('');
+			}
  			
 			
 			

@@ -26,7 +26,7 @@
     </select>
     
     <select id="getCommentList" resultType="cMap">
-    	/* getScrapList :: 스크랩 리스트 조회 */
+    	/* getCommentList :: 댓글 리스트 조회 */
 		SELECT *, DATE_FORMAT(REG_DT, '%Y-%m-%d') AS REG_DT_YMD
 		  FROM board_comment
 		
