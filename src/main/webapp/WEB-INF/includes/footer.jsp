@@ -21,13 +21,13 @@
 		<div class="w3l-footer-16-main">
 			<div class="container">
 				<div class="row footer-p">
-					<div class="col-lg-4 pr-lg-5">
-						<a class="logo" href="index.html">
+					<div class="col-lg-4 pr-lg-5" style="margin-top: -36px;">
+						<a class="logo" href="index" style="display: contents;">
 						<!-- <i class="fa fa-cutlery" aria-hidden="true"></i> Foodies -->
-						<img class="" src="../asset/images/ESGlogo.png">
+						<img class="" src="/asset/images/logo1.png" style="height: auto; width: auto;">
 						</a>
-						<p class="mt-4">기업의 실질적 ESG 경영을 위해, </p>
-						<p class="my-4">우리들의 적극적인 행동이 시작되는 곳</p>
+						<p class="mt-4" style="margin-top:0px!important;margin-left: 30px;">기업의 실질적 ESG 경영을 위해, </p>
+						<p class="my-4" style="margin-top:0px!important;margin-left: 30px;">우리들의 적극적인 행동이 시작되는 곳</p>
 					</div>
 					<div class="col-lg-4 mt-lg-0 mt-4">
 						<h3>Pages</h3>
@@ -86,20 +86,20 @@
 					<div class="columns text-lg-left">
 						<p class="copy-text">@ 2021 ESG. All rights reserved.</p>
 					</div>
-					<div class="columns-2 mt-md-0 mt-3">
-						<ul class="social">
-							<li><a href="#facebook"><span class="fa fa-facebook"
-									aria-hidden="true"></span></a></li>
-							<li><a href="#linkedin"><span class="fa fa-linkedin"
-									aria-hidden="true"></span></a></li>
-							<li><a href="#twitter"><span class="fa fa-twitter"
-									aria-hidden="true"></span></a></li>
-							<li><a href="#google"><span class="fa fa-google-plus"
-									aria-hidden="true"></span></a></li>
-							<li><a href="#github"><span class="fa fa-github"
-									aria-hidden="true"></span></a></li>
-						</ul>
-					</div>
+<!-- 					<div class="columns-2 mt-md-0 mt-3"> -->
+<!-- 						<ul class="social"> -->
+<!-- 							<li><a href="#facebook"><span class="fa fa-facebook" -->
+<!-- 									aria-hidden="true"></span></a></li> -->
+<!-- 							<li><a href="#linkedin"><span class="fa fa-linkedin" -->
+<!-- 									aria-hidden="true"></span></a></li> -->
+<!-- 							<li><a href="#twitter"><span class="fa fa-twitter" -->
+<!-- 									aria-hidden="true"></span></a></li> -->
+<!-- 							<li><a href="#google"><span class="fa fa-google-plus" -->
+<!-- 									aria-hidden="true"></span></a></li> -->
+<!-- 							<li><a href="#github"><span class="fa fa-github" -->
+<!-- 									aria-hidden="true"></span></a></li> -->
+<!-- 						</ul> -->
+<!-- 					</div> -->
 				</div>
 			</div>
 		</div>

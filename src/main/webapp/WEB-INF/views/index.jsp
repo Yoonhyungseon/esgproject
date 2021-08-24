@@ -1,16 +1,32 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
      <!-- Swiper -->
-    <div class="swiper-container mySwiper" style="height: 560px; margin-top: 90px;">
+    <div class="swiper-container mySwiper" style="height: 37.25vw; margin-top: 90px;">
       <div class="swiper-wrapper">
-        <div class="swiper-slide">
+        <div class="swiper-slide" style="background-image: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ), url(/asset/img/iStock-1213710695.jpg); background-size: cover; background-position:center center;">
 		    <section id="home" class="w3l-banner py-5 landing"  style="width: 100%;">
 		        <div class="container pt-5 pb-md-4">
 		            <div class="row align-items-center">
 		                <div class="col-md-6 pt-md-0 pt-4">
-		                    <h3 class="mb-sm-4 mb-3 title">ESG: 사회를 품다 1</h3>
-		                    <p id="landing-information">기업의 실질적 ESG 경영을 위해<br>우리들의 적극적인 행동이 시작되는 곳</p>
-		                    <div class="mt-md-5 mt-4 mb-lg-0 mb-4">
+		                    <h3 class="mb-sm-4 mb-3 title" style="text-align: left;">ESG: 사회를 품다.</h3>
+		                    <p id="landing-information" style="text-align: left;">기업의 실질적 ESG 경영을 위해<br>우리들의 적극적인 행동이 시작되는 곳</p>
+		                    <div class="mt-md-5 mt-4 mb-lg-0 mb-4" style="text-align: left;">
+		                        <button class="btn button-style btn-scroll-move">More information</button>
+		                    </div>
+		                </div>
+		            </div>
+		        </div>
+		    </section>        
+        </div>   
+        
+        <div class="swiper-slide" style="background-image: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ), url(/asset/img/iStock-1131802896.jpg); background-size: cover;">
+		    <section id="home" class="w3l-banner py-5 landing"  style="width: 100%;">
+		        <div class="container pt-5 pb-md-4">
+		            <div class="row align-items-center">
+		                <div class="col-md-6 pt-md-0 pt-4">
+		                    <h3 class="mb-sm-4 mb-3 title" style="text-align: left;">ESG: 사회를 품다.</h3>
+		                    <p id="landing-information" style="text-align: left;">기업의 실질적 ESG 경영을 위해<br>우리들의 적극적인 행동이 시작되는 곳</p>
+		                    <div class="mt-md-5 mt-4 mb-lg-0 mb-4" style="text-align: left;">
 		                        <button class="btn button-style btn-scroll-move">More information</button>
 		                    </div>
 		                </div>
@@ -18,14 +34,15 @@
 		        </div>
 		    </section>        
         </div>
-        <div class="swiper-slide">
+        
+        <div class="swiper-slide" style="background-image: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ), url(/asset/img/iStock-1200807320.jpg); background-size: cover;">
 		    <section id="home" class="w3l-banner py-5 landing"  style="width: 100%;">
 		        <div class="container pt-5 pb-md-4">
 		            <div class="row align-items-center">
 		                <div class="col-md-6 pt-md-0 pt-4">
-		                    <h3 class="mb-sm-4 mb-3 title">ESG: 사회를 품다 2</h3>
-		                    <p id="landing-information">기업의 실질적 ESG 경영을 위해<br>우리들의 적극적인 행동이 시작되는 곳</p>
-		                    <div class="mt-md-5 mt-4 mb-lg-0 mb-4">
+		                    <h3 class="mb-sm-4 mb-3 title" style="text-align: left; color: white; text-shadow: 1px 1px 5px #000;">ESG: 사회를 품다.</h3>
+		                    <p id="landing-information" style="text-align: left; color: white; text-shadow: 1px 1px 5px #000;">기업의 실질적 ESG 경영을 위해<br>우리들의 적극적인 행동이 시작되는 곳</p>
+		                    <div class="mt-md-5 mt-4 mb-lg-0 mb-4" style="text-align: left;">
 		                        <button class="btn button-style btn-scroll-move">More information</button>
 		                    </div>
 		                </div>
@@ -33,14 +50,15 @@
 		        </div>
 		    </section>        
         </div>
-                        <div class="swiper-slide">
+
+        <div class="swiper-slide" style="background-image: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ), url(/asset/img/iStock-1126410337.jpg); background-size: cover;">
 		    <section id="home" class="w3l-banner py-5 landing"  style="width: 100%;">
 		        <div class="container pt-5 pb-md-4">
 		            <div class="row align-items-center">
 		                <div class="col-md-6 pt-md-0 pt-4">
-		                    <h3 class="mb-sm-4 mb-3 title">ESG: 사회를 품다 3</h3>
-		                    <p id="landing-information">기업의 실질적 ESG 경영을 위해<br>우리들의 적극적인 행동이 시작되는 곳</p>
-		                    <div class="mt-md-5 mt-4 mb-lg-0 mb-4">
+		                    <h3 class="mb-sm-4 mb-3 title" style="text-align: left; color: white; left; text-shadow: 1px 1px 5px #000;">ESG: 사회를 품다.</h3>
+		                    <p id="landing-information" style="text-align: left; color: white; left; text-shadow: 1px 1px 5px #000;">기업의 실질적 ESG 경영을 위해<br>우리들의 적극적인 행동이 시작되는 곳</p>
+		                    <div class="mt-md-5 mt-4 mb-lg-0 mb-4" style="text-align: left;">
 		                        <button class="btn button-style btn-scroll-move">More information</button>
 		                    </div>
 		                </div>
@@ -48,21 +66,6 @@
 		        </div>
 		    </section>        
         </div>
-        <div class="swiper-slide">
-		    <section id="home" class="w3l-banner py-5 landing"  style="width: 100%;">
-		        <div class="container pt-5 pb-md-4">
-		            <div class="row align-items-center">
-		                <div class="col-md-6 pt-md-0 pt-4">
-		                    <h3 class="mb-sm-4 mb-3 title">ESG: 사회를 품다 4</h3>
-		                    <p id="landing-information">기업의 실질적 ESG 경영을 위해<br>우리들의 적극적인 행동이 시작되는 곳</p>
-		                    <div class="mt-md-5 mt-4 mb-lg-0 mb-4">
-		                        <button class="btn button-style btn-scroll-move">More information</button>
-		                    </div>
-		                </div>
-		            </div>
-		        </div>
-		    </section>        
-        </div>        
       </div>
       <div class="swiper-pagination"></div>
     </div>
@@ -78,7 +81,7 @@
           dynamicBullets: true,
         },
         autoplay: {
-            delay: 5000,
+            delay: 50000,
             disableOnInteraction: false,
         },
         loop: true,
