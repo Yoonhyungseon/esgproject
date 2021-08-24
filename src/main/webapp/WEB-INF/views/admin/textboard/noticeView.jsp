@@ -26,18 +26,17 @@
 					<p id="req_url">${cUrl}</p>
 
 					<div class="form-group">
-						<label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">내용<span class="required">*</span></label>
-						<div class="col-md-6 col-sm-6 col-xs-12" style="min-height:500px;overflow-y:auto;">
-							<div style="margin-top:10px;height:200px;" id="contents"></div>
+						<div style="overflow-y:auto;">
+							<div style="margin-top:10px;" id="contents"></div>
 						</div>
 					</div>					
 					<div
 						class="blog-single-tags d-flex align-items-center mt-4 pt-1 mb-5">
 					</div>
 					<div class="single-pagination clearfix">
-						<a class="" href="#prev"> <span class="fa fa-arrow-left"
-							aria-hidden="true"></span> Previous Post
-						</a> <a class="" style="float: right;" href="#next">Next Post <span
+						<a class="" onclick="noticeObj.fn_getNoticePrev()"> <span
+							class="fa fa-arrow-left" aria-hidden="true"></span> Previous Post
+						</a> <a class="" style="float: right;" onclick="noticeObj.fn_getNoticeNext()">Next Post <span
 							class="fa fa-arrow-right" aria-hidden="true"></span>
 						</a>
 					</div>
@@ -74,15 +73,56 @@
  				$('#req_file').show()
  				$('#req_file').attr("src", "/common/imageload?fullImageFileNm="+rst.resultInfo.attFile);
  			}
- 			//$('#req_file').attr(rst.resultInfo.attFile);
- 			//var img = document.createElement('img');
-     		//img.setAttribute('src', contextPath + '/SITE_BOARD/' + file.fileName);
-     		//$('#req_file').append(img);
  			$('#req_subTitle').text(rst.resultInfo.subTitle);
  			$('#req_url').text(rst.resultInfo.cUrl);
 			$('#contents').html(rst.resultInfo.contents);
  			$('#req_file').val(rst.resultInfo.attFile);
  		
-		}	
+		},
+		/*fn_getNoticePrev : function() {
+			//$('#post_seq').val('${seq}');
+    		var prevParam = "seq="+'${seq}';
+    		console.log(prevParam);
+			ajaxParamExecute(prevParam, "/board/getNoticePrev", "post", false, false, noticeObj.fn_getNoticePrevReturn);
+		},
+		fn_getNoticePrevReturn : function(rst){
+			console.log(rst);
+			$('#req_seq').text(rst.resultInfo.seq);
+ 			
+ 			$('#req_title').text(rst.resultInfo.title);
+ 			$('#req_date').text(rst.resultInfo.regDtYmd);
+ 			if(rst.resultInfo.attFile != null){
+ 				$('#req_file').show()
+ 				$('#req_file').attr("src", "/common/imageload?fullImageFileNm="+rst.resultInfo.attFile);
+ 			}
+ 			$('#req_subTitle').text(rst.resultInfo.subTitle);
+ 			if(rst.resultInfo.cUrl != null){
+ 				$('#req_url').show()
+ 				$('#req_url').text(rst.resultInfo.cUrl);
+ 			}
+ 			$('#req_content').text(rst.resultInfo.contents);
+ 		},
+ 		fn_getNoticeNext : function(){
+ 			var nextParam = "seq="+'${seq}';
+    		console.log(nextParam);
+			ajaxParamExecute(nextParam, "/board/getNoticeNext", "post", false, false, noticeObj.fn_getNoticeNextReturn);
+		},
+		fn_getNoticeNextReturn : function(rst){
+			console.log(rst);
+			$('#req_seq').text(rst.resultInfo.seq);
+ 			
+ 			$('#req_title').text(rst.resultInfo.title);
+ 			$('#req_date').text(rst.resultInfo.regDtYmd);
+ 			if(rst.resultInfo.attFile != null){
+ 				$('#req_file').show()
+ 				$('#req_file').attr("src", "/common/imageload?fullImageFileNm="+rst.resultInfo.attFile);
+ 			}
+ 			$('#req_subTitle').text(rst.resultInfo.subTitle);
+ 			if(rst.resultInfo.cUrl != null){
+ 				$('#req_url').show()
+ 				$('#req_url').text(rst.resultInfo.cUrl);
+ 			}
+ 			$('#req_content').text(rst.resultInfo.contents);
+ 		}*/	
     }
     </script>

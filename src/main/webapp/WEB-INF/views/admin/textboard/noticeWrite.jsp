@@ -28,50 +28,44 @@
 							<!-- <sec:csrfInput /> -->
 							<div class="form-group">
 								<label for="title" class="col-form-label" style="display: inline-block; margin-right: 60px;">Title</label>
-								<input type="text" class="form-control" placeholder=" Title" name="title" id="title" required="required" style="width: 800px; display: inline-block;" />
+								<input type="text" class="form-control" placeholder=" Title" name="title" id="title" required="required" style="width: 1400px; display: inline-block;" />
 							</div>
 							<br>
 							<div class="form-group">
 								<!-- style="text-align: center;" -->
-								<label for="subTitle" class="col-form-label" style="display: inline-block; margin-right: 30px;">Sub Title</label> <input type="text" class="form-control"
+								<label for="subTitle" class="col-form-label" style="display: inline-block; margin-right: 28px;">Sub Title</label> <input type="text" class="form-control"
 									placeholder=" Sub Title" name="subTitle" id="subTitle"
 									required="required"
-									style="width: 800px; display: inline-block;" />
+									style="width: 1400px; display: inline-block;" />
 							</div>
 							<br>
 							<div class="form-group">
 								<!-- style="text-align: center;" -->
 								<label for="cUrl" class="col-form-label"
-									style="display: inline-block; margin-right: 60px;">URL</label>
+									style="display: inline-block; margin-right: 62px;">URL</label>
 								<input type="text" class="form-control" placeholder=" URL"
 									name="cUrl" id="cUrl" required="required"
-									style="width: 800px; display: inline-block;" />
+									style="width: 1400px; display: inline-block;" />
 							</div>
 							<br>
-									
 							<div class="form-group">
-								<label for="cUrl" class="col-form-label"
-									style="display: inline-block; margin-right: 60px;">contents</label>
-								<div class="col-md-6 col-sm-6 col-xs-12">
-									<TEXTAREA id="contents" name="contents" style="width:100%;" rows="15" cols="200" class="form-control col-md-7 col-xs-12" required="required"></textarea>
+								<label for="contents" class="col-form-label" style="display: inline-block; margin-right: 37px;">Contents</label>
+								<div class="col-sm-6 col-xs-12" style="width:1400px; margin-left:100px;">
+									<TEXTAREA id="contents" name="contents" style="width:100%; display: inline-block;" rows="15" cols="200" class="form-control col-md-7 col-xs-12" required="required"></textarea>
 								</div>
 							</div>	
 					
 							<br> 
 							<a href="#" class="glyphicon glyphicon-download-alt"></a>
-							<input type="file" id="uploadFile" name="uploadFile" class="upload-hidden"> 
-					
-							<div class="form-group text-right">
-								<div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+							<input type="file" id="uploadFile" name="uploadFile" class="upload-hidden" style="margin: auto;display: block;">
+
+							<div class="form-group">
+								<div style="float: right;">
 									<button type="button" class="btn btn-primary" onclick="noWriteObj.fn_list()">취소</button>
 									<button type="button" class="btn btn-primary" onclick="noWriteObj.fn_save()">완료</button>	
 								</div>
 							</div>
-							
 						</form>
-<!-- 						<button type="submit" class="btn btn-primary" style="float: right; background-color: #0d6efd; padding: 0.375rem 0.75rem;" -->
-<%-- 							onClick="location.href='${pageContext.request.contextPath}/admin/textboard/noticeResult'">등록</button>  --%>
-						<!-- 이동 잘되지만 저장되지 않음 -->
 					</div>
 				</div>
 			</div>

@@ -1,19 +1,19 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ page contentType="text/html;charset=UTF-8" language="java"%>
 
 <!-- inner banner -->
 <div class="inner-banner">
-        <section class="w3l-breadcrumb">
-            <div class="container">
-                <h4 class="inner-text-title font-weight-bold mb-sm-3 mb-2" style="font-weight: 900 !important;">Notice</h4>
-                <ul class="breadcrumbs-custom-path">
-                    <li><a href="index.html">Home</a></li>
-                    <li class="active"><span class="fa fa-chevron-right mx-2" aria-hidden="true"></span>Notice</li>
-                </ul>
-            </div>
-        </section>
-    </div>
+	<section class="w3l-breadcrumb">
+		<div class="container">
+			<h4 class="inner-text-title font-weight-bold mb-sm-3 mb-2"
+				style="font-weight: 900 !important;">Notice</h4>
+			<ul class="breadcrumbs-custom-path">
+				<li><a href="index.html">Home</a></li>
+				<li class="active"><span class="fa fa-chevron-right mx-2"
+					aria-hidden="true"></span>Notice</li>
+			</ul>
+		</div>
+	</section>
+</div>
 <!-- //inner banner -->
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -50,25 +50,64 @@
 
 				<div class="table100-body js-pscroll">
 					<table>
-						<tbody>
-							<c:forEach items="${postList}" var="list">
-								<tr class="row100 body">
-									<td class="cell100 column1">${list.boardNo}</td>
-									<td class="cell100 column2"><a
-										href="member/detailpost?boardNo=${list.boardNo}">${list.title}</a>
-									</td>
-									<td class="cell100 column3">${list.id}</td>
-									<td class="cell100 column4">${list.timePosted}</td>
-								</tr>
-							</c:forEach>
+						<tbody id="listClone">
 						</tbody>
+						<tr class="row100 body" id="listCron" style="display: none;">
+							<td class="cell100 column1 req_seq"></td>
+							<td class="cell100 column2 req_title"><a href="noticeView"></a></td>
+							<td class="cell100 column3 req_Id"></td>
+							<td class="cell100 column4 req_regDt"></td>
+						</tr>
 					</table>
 				</div>
+				<form id="boardFrm" name="boardFrm" method="post"
+					action="/board/noticeView">
+					<input type="hidden" id=seq name="seq" value="">
+				</form>
 			</div>
 		</div>
 	</div>
 </div>
+<script type="text/javascript">
+    $(document).ready(function(){
+    	noticeObj.fn_getNoticeList();
+    });
+    
+	let noticeObj = {
+		fn_getNoticeList : function() {
+			ajaxParamExecute("", "/board/getNoticeList", "post", false, false, noticeObj.fn_getNoticeListReturn);
+		},
+		fn_getNoticeListReturn : function(rst) {
+ 			console.log(rst);
+			$('#listClone').html('');
+			
+			if (rst.resultList.length > 0) {
+				for (var i in rst.resultList) {
+					
+					var html = $('#listCron').clone().removeAttr('title').show();
+					
+					html.find('.req_seq').text(rst.resultList[i].seq);
+				
+					html.find('.req_title').text(rst.resultList[i].title);
+					html.find('.req_title').attr('onclick', 'noticeObj.fn_view(\''+rst.resultList[i].seq+'\')');
+					
+					html.find('.req_Id').text(rst.resultList[i].regId);
+	               
+					html.find('.req_regDt').text(rst.resultList[i].regDtYmd);
 
+					$('#listClone').append(html);
+				}
+			} else {
+				$('#listClone').html('');
+			}
+		},
+		fn_view : function(seq) {
+ 			console.log(seq);
+			$('#seq').val(seq);
+			$('#boardFrm').submit();
+		}
+	}
+    </script>
 
 
 <script src="/table/vendor/jquery/jquery-3.2.1.min.js"></script>

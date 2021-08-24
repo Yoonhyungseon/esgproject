@@ -19,7 +19,6 @@ import program.common.CamelMap;
 import program.common.DataMap;
 import program.common.service.CommonService;
 import program.common.util.HttpUtil;
-import program.textboard.TextBoardController;
 
 /**************************************************
  * @FileName : AdminTextBoardController.java
@@ -31,7 +30,7 @@ import program.textboard.TextBoardController;
 @Controller
 @RequestMapping(value = { "/admin/textboard" })
 public class AdminTextBoardController {
-	private static final Logger logger = LoggerFactory.getLogger(TextBoardController.class);
+	private static final Logger logger = LoggerFactory.getLogger(AdminTextBoardController.class);
 
 	@Autowired
 	private CommonService commonService;
