@@ -29,12 +29,12 @@
                             </thead>
                             <tbody id="listClone">
                             </tbody>
-                            	<table id="listCron" style="display:none;">
-	                                <tr data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-	                                    <th class="seq" scope="row"></th>
-	                                    <td class="title"></td>
-	                                    <td class="name"></td>
-	                                    <td class="date"></td>
+                            	<table id="listCron" style="display:none;" >
+	                                <tr data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" >
+	                                    <th class="seq" scope="row" style="width: 200px"></th>
+	                                    <td class="title" style="width: 170px"></td>
+	                                    <td class="name" style="width: 190px"></td>
+	                                    <td class="date" style="width: 200px"></td>
 	                                    
 	                                    <td>
 	                                        <i class="fa" aria-hidden="true"></i>
@@ -74,7 +74,7 @@
 					
 					html.find('.seq').text(rst.resultList[i].seq);
 					html.find('.date').text(rst.resultList[i].regDtYmd);
-		//			html.find('.title').text(rst.resultList[i].title);
+					html.find('.title').text(rst.resultList[i].regNm);
 					html.find('.name').text(rst.resultList[i].regNm);
 					html.find('.comment').text(rst.resultList[i].contents);
 
