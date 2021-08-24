@@ -19,6 +19,8 @@ public class SitemeshFilter extends ConfigurableSiteMeshFilter {
 		// Map decorators
 		.addDecoratorPath("/*", "/WEB-INF/decorator/defaultDecorator.jsp")
 	    .addDecoratorPath("/admin/*", "/WEB-INF/decorator/admin_default.jsp")
+        .addExcludedPath("/adminLayer/*")
+        .addExcludedPath("/asset/*")
 		.addExcludedPath("/sitemap")
 		.addExcludedPath("/admin/login")
 		;

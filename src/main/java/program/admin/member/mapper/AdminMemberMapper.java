@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Repository;
 
+import program.security.Account;
 import program.common.CamelMap;
 import program.common.DataMap;
 
@@ -49,4 +50,9 @@ public interface AdminMemberMapper {
 	public int memberdelete(DataMap paramMap);
 
 	public int insertMemberInfo(DataMap paramMap) throws SQLException;
+	
+	public Account getLoginInfo(String username);
+	
+	public CamelMap selectMemberInfo(DataMap paramMap) throws SQLException;
+
 }

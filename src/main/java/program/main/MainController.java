@@ -113,6 +113,11 @@ public class MainController {
 	public String white_index(Model model) {
 		return "/bootstrap/white_index";
 	}
+	@RequestMapping(value="/access-denied", method={RequestMethod.GET, RequestMethod.POST})
+    public String access_denied(HttpServletRequest request, Model model) throws Exception {
+		
+		return "/access_denied";
+	}
 	
 	/**************************************************
 	* @MethodName : contents

@@ -48,30 +48,19 @@
 									style="width: 800px; display: inline-block;" />
 							</div>
 							<br>
+									
 							<div class="form-group">
-								<!--  style="text-align: center;" -->
-								<label for="contents" class="col-form-label"
-									style="display: inline-block; margin-right: 37px;">Content</label>
-								<textarea name="contents" class="form-control" id="contents"
-									placeholder="Content"
-									style="width: 800px; display: inline-block;"></textarea>
-							</div>
+								<label for="cUrl" class="col-form-label"
+									style="display: inline-block; margin-right: 60px;">contents</label>
+								<div class="col-md-6 col-sm-6 col-xs-12">
+									<TEXTAREA id="contents" name="contents" style="width:100%;" rows="15" cols="200" class="form-control col-md-7 col-xs-12" required="required"></textarea>
+								</div>
+							</div>	
+					
 							<br> 
 							<a href="#" class="glyphicon glyphicon-download-alt"></a>
 							<input type="file" id="uploadFile" name="uploadFile" class="upload-hidden"> 
 					
-<!-- 							<input type="submit" value="등록back" class="btn btn-primary" style="float: right; background-color: #0d6efd; padding: 0.375rem 0.75rem;" -->
-<!-- 							onclick="history.back()"> -->
-<!-- 							<input type="submit" value="등록등록" class="btn btn-primary" style="float: right; background-color: #0d6efd; padding: 0.375rem 0.75rem;" -->
-<%-- 							onClick="location.href='${pageContext.request.contextPath}/admin/textboard/noticeResult'"> --%>
-<!-- 							저장되지만 ajaxSiteBoardSave로 이동 -->
-<!-- 							<button type="submit" class="btn btn-primary" style="float: right; background-color: #0d6efd; padding: 0.375rem 0.75rem;" -->
-<!-- 							formaction="/admin/textboard/noticeList" formmethod = "post">등록버튼</button> -->
-<!-- 							저장과 이동 둘다 안됌 -->
-<!-- 							<button type="submit" class="btn btn-primary" style="float: right; background-color: #0d6efd; padding: 0.375rem 0.75rem;" -->
-<%-- 							onClick="location.href='${pageContext.request.contextPath}/admin/textboard/noticeList'">등록리스트</button> --%>
-<!-- 							저장되지만 ajaxSiteBoardSave로 이동 -->
-
 							<div class="form-group text-right">
 								<div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
 									<button type="button" class="btn btn-primary" onclick="noWriteObj.fn_list()">취소</button>
@@ -92,6 +81,10 @@
 <script type="text/javascript">
 	var seq="${seq}";
 	var mode;
+	
+	function replaceAll(str, searchStr, replaceStr) {
+		return str.split(searchStr).join(replaceStr);
+	}
 	
 	$(document).ready(function(){
 		if(seq) mode = 'MOD';
@@ -130,8 +123,17 @@
 				$('#subTitle').focus();
 				return false;
 			}
-			if(!$('#contents').val() || !$('#contents').val().trim()){
-				alert("내용을 입력해주세요.");
+			
+			oEditors.getById["contents"].exec("UPDATE_CONTENTS_FIELD", []);
+			
+			var text = $('#contents').val();
+			var texttrim = replaceAll(text, ' ', '');
+			texttrim = replaceAll(texttrim, ' ', '');
+			texttrim = replaceAll(texttrim, '<p></p>', '');
+			texttrim = texttrim.replace(/(<p>)*(\s*&nbsp;)*(<\/p>)*(<p><br><\/p>)*/g,'');
+			
+			if(texttrim=="" || texttrim=='&nbsp;' || texttrim == '<br>' || texttrim == '<br/>' || texttrim == '<p>&nbsp;</p>' || texttrim == '<p></p>'){
+				alert('내용을 입력해주세요.');
 				$('#contents').focus();
 				return false;
 			}
@@ -156,7 +158,56 @@
 	}
 </script>
 
+<!-- 스마트 에디터2 -->
+<script type="text/javascript" src="/adminLayer/js/smarteditor2/js/HuskyEZCreator.js" charset="utf-8"></script>
 
+<script type="text/javascript">
+	var oEditors = [];
 
+	var sLang = "ko_KR"; // 언어 (ko_KR/ en_US/ ja_JP/ zh_CN/ zh_TW), default = ko_KR
+	// 추가 글꼴 목록
+	//var aAdditionalFontSet = [["MS UI Gothic", "MS UI Gothic"], ["Comic Sans MS", "Comic Sans MS"],["TEST","TEST"]];
 
+	nhn.husky.EZCreator.createInIFrame({
+		oAppRef: oEditors,
+		elPlaceHolder: "contents",
+		sSkinURI: "/adminLayer/js/smarteditor2/SmartEditor2Skin.html", 
+		htParams : {
+			bUseToolbar : true,    // 툴바 사용 여부 (true:사용/ false:사용하지 않음)
+			bUseVerticalResizer : true,  // 입력창 크기 조절바 사용 여부 (true:사용/ false:사용하지 않음)
+			bUseModeChanger : true,   // 모드 탭(Editor | HTML | TEXT) 사용 여부 (true:사용/ false:사용하지 않음)
+			fOnBeforeUnload : function(){
+				//alert("완료!");
+				},
+				I18N_LOCALE : sLang
+			}, //boolean
+			fOnAppLoad : function(){
+			//예제 코드
+			//oEditors.getById["contents"].exec("PASTE_HTML", ["로딩이 완료된 후에 본문에 삽입되는 text입니다."]);
+		},
+		fCreator: "createSEditor2"
+	});
 
+	function pasteHTML(filepath) {
+
+		 var sHTML = '<span style="color:#FF0000;"><img src="'+filepath+'"></span>';
+		 oEditors.getById["contents"].exec("PASTE_HTML", [sHTML]);
+	}
+
+	function showHTML() {
+		var sHTML = oEditors.getById["contents"].getIR();
+		alert(sHTML);
+	}
+					
+	function setDefaultFont() {
+		var sDefaultFont = '궁서';
+		var nFontSize = 24;
+		oEditors.getById["contents"].setDefaultFont(sDefaultFont, nFontSize);
+	}
+
+	function writeReset() {
+		document.f.reset();
+		oEditors.getById["contents"].exec("SET_IR", [""]);
+	}
+	
+</script>

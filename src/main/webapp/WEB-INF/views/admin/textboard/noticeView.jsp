@@ -24,7 +24,13 @@
 					<h3 id="req_subTitle" style="margin: auto; display: block;">${subTitle}</h3>
 					<br> <br>
 					<p id="req_url">${cUrl}</p>
-					<p id="req_content">${contents}</p>
+
+					<div class="form-group">
+						<label class="control-label col-md-3 col-sm-3 col-xs-12" for="first-name">내용<span class="required">*</span></label>
+						<div class="col-md-6 col-sm-6 col-xs-12" style="min-height:500px;overflow-y:auto;">
+							<div style="margin-top:10px;height:200px;" id="contents"></div>
+						</div>
+					</div>					
 					<div
 						class="blog-single-tags d-flex align-items-center mt-4 pt-1 mb-5">
 					</div>
@@ -74,7 +80,7 @@
      		//$('#req_file').append(img);
  			$('#req_subTitle').text(rst.resultInfo.subTitle);
  			$('#req_url').text(rst.resultInfo.cUrl);
- 			$('#req_content').text(rst.resultInfo.contents);
+			$('#contents').html(rst.resultInfo.contents);
  			$('#req_file').val(rst.resultInfo.attFile);
  		
 		}	
