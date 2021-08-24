@@ -238,6 +238,28 @@ public class MypageController {
 		return mv;
 	}
 	
+	
+	@ResponseBody
+	@RequestMapping(value = {"/getCommentList"}, method = {RequestMethod.GET, RequestMethod.POST })
+	public ModelAndView getCommentList(HttpServletRequest request, Model model) {
+		logger.debug("MypageController : getCommentList - start");
+
+		ModelAndView mv = new ModelAndView("jsonView");
+		
+		List<CamelMap> resultList = null;
+		
+		try {
+			resultList = mypageMapper.getCommentList();
+		} catch (Exception e) {
+			logger.debug("게시글 목록 조회 오류", e);
+		}
+		
+		mv.addObject("resultList",resultList);
+		
+		logger.debug("MypageController : getCommentList - end");
+		return mv;
+	}
+	
 }
 	
 	

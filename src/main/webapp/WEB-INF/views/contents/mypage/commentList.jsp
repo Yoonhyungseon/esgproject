@@ -1,11 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
-<!doctype html>
-<html>
 
-
-
-<body>
 <!--  commentList-->
 	<br>
 	<br>
@@ -59,7 +54,7 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td colspan="6" id="collapseTwo" class="collapse acc" data-parent="#accordion">
+                                    <td colspan="6" id="collapseTwo" class="collapse show acc" data-parent="#accordion">
                                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro iste, facere sunt sequi nostrum ipsa, amet doloremque magnam reiciendis tempore sapiente. Necessitatibus recusandae harum nam sit perferendis quia inventore natus.</p>
                                     </td>
                                 </tr>
@@ -74,7 +69,7 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td colspan="6" id="collapseThree" class="collapse acc" data-parent="#accordion">
+                                    <td colspan="6" id="collapseThree" class="collapse show acc" data-parent="#accordion">
                                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro iste, facere sunt sequi nostrum ipsa, amet doloremque magnam reiciendis tempore sapiente. Necessitatibus recusandae harum nam sit perferendis quia inventore natus.</p>
                                     </td>
                                 </tr>
@@ -89,7 +84,7 @@
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td colspan="6" id="collapseFour" class="collapse acc" data-parent="#accordion">
+                                    <td colspan="6" id="collapseFour" class="collapse show acc" data-parent="#accordion">
                                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro iste, facere sunt sequi nostrum ipsa, amet doloremque magnam reiciendis tempore sapiente. Necessitatibus recusandae harum nam sit perferendis quia inventore natus.</p>
                                     </td>
                                 </tr>
@@ -100,7 +95,24 @@
             </div>
         </div>
     </section>
+    
+    <script type="text/javascript">
+	$(document).ready(function(){
+    	boardObj.fn_getCommentList();
+    });
+    
+	let boardObj = {
+		fn_getCommentList : function() {
+			ajaxParamExecute("", "/mypage/getCommentList", "post", false, false, boardObj.fn_getCommentListReturn);
+		},
+		fn_getCommentListReturn : function(rst) {
+ 			console.log(rst);
+ 			
+			
+			
+		}
+		
+	}
+	
+	</script>
 
-</body>
-
-</html>
