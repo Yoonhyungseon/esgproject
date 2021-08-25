@@ -22,4 +22,15 @@
 		  FROM site_board
 		WHERE SEQ = #{seq}
 	</select>
+	
+	<select id="getBoardList" resultType="cMap">
+ 		SELECT *, DATE_FORMAT(REG_DT, '%Y-%m-%d') AS REG_DT_YMD
+ 			FROM bboom_board
+ 	</select>
+ 	
+ 	<select id="getBoardInfo" resultType="cMap" parameterType="dMap">
+ 		SELECT *,DATE_FORMAT(REG_DT, '%Y-%m-%d') AS REG_DT_YMD
+ 			FROM bboom_board
+ 		WHERE BOARD_SSN = #{boardSsn}
+ 	</select>
 </mapper>

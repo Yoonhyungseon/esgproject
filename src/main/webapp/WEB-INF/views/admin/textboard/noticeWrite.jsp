@@ -33,18 +33,15 @@
 							<br>
 							<div class="form-group">
 								<!-- style="text-align: center;" -->
-								<label for="subTitle" class="col-form-label" style="display: inline-block; margin-right: 28px;">Sub Title</label> <input type="text" class="form-control"
-									placeholder=" Sub Title" name="subTitle" id="subTitle"
-									required="required"
-									style="width: 1400px; display: inline-block;" />
+								<label for="subTitle" class="col-form-label" style="display: inline-block; margin-right: 28px;">Sub Title</label> 
+								<input type="text" class="form-control"	placeholder=" Sub Title" name="subTitle" id="subTitle"
+									required="required"	style="width: 1400px; display: inline-block;" />
 							</div>
 							<br>
 							<div class="form-group">
 								<!-- style="text-align: center;" -->
-								<label for="cUrl" class="col-form-label"
-									style="display: inline-block; margin-right: 62px;">URL</label>
-								<input type="text" class="form-control" placeholder=" URL"
-									name="cUrl" id="cUrl" required="required"
+								<label for="cUrl" class="col-form-label" style="display: inline-block; margin-right: 62px;">URL</label>
+								<input type="text" class="form-control" placeholder=" URL" name="cUrl" id="cUrl" required="required"
 									style="width: 1400px; display: inline-block;" />
 							</div>
 							<br>
@@ -113,7 +110,7 @@
 				return false;
 			}
 			if(!$('#subTitle').val() || !$('#subTitle').val().trim()){
-				alert("부재목을 입력해주세요.");
+				alert("부제목을 입력해주세요.");
 				$('#subTitle').focus();
 				return false;
 			}

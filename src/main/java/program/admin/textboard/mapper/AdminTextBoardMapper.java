@@ -44,4 +44,25 @@ public interface AdminTextBoardMapper {
 	* @Version : 2021. 8. 18.
 	**************************************************/
 	CamelMap getNoticeInfo(DataMap paramMap) throws SQLException;
+
+	/**************************************************
+	* @MethodName : getBoardList
+	* @Description: 게시판 리스트
+	* @return
+	* @throws SQLException List<CamelMap>
+	* @Author : Ye-Jin. Jeong
+	* @Version : 2021. 8. 26.
+	**************************************************/
+	List<CamelMap> getBoardList() throws SQLException;
+
+	/**************************************************
+	* @MethodName : getBoardInfo
+	* @Description: 게시판 상세
+	* @param paramMap
+	* @return
+	* @throws SQLException CamelMap
+	* @Author : Ye-Jin. Jeong
+	* @Version : 2021. 8. 26.
+	**************************************************/
+	CamelMap getBoardInfo(DataMap paramMap) throws SQLException;
 }
