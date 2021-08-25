@@ -15504,7 +15504,7 @@ h3.title-main {
 /*-- //title style --*/
 /*-- banner --*/
 .w3l-banner {
-  background: url(../images/rating.jpg) no-repeat center;
+/*   background: url(../images/rating.jpg) no-repeat center; */
   background-size: cover;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -16708,7 +16708,8 @@ p.count-text {
 }
 
 .w3l-blog-single .blog-img-single img {
-  width: 100%;
+  width: 50%;
+  margin: auto;
   border-radius: 15px;
 }
 
@@ -16960,5 +16961,4 @@ h3.title-main2-blog-single {
 }
 
 /* //error page */
-
-/*# sourceMappingURL=style-freedom.css.map */
+ 

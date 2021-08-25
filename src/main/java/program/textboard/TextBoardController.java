@@ -16,6 +16,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import program.common.CamelMap;
 import program.common.DataMap;
+import program.common.service.CommonService;
 import program.common.util.HttpUtil;
 import program.textboard.mapper.TextBoardMapper;
 
@@ -27,8 +28,8 @@ public class TextBoardController {
 
 	@Autowired
 	private TextBoardMapper textBoardMapper;
-	//@Autowired
-	//private CommonService commonService;
+	@Autowired
+	private CommonService commonService;
 
 	/**************************************************
 	 * @MethodName : textbordList
@@ -52,7 +53,11 @@ public class TextBoardController {
 	 * @Version : 2021. 7. 6.
 	 **************************************************/
 	@RequestMapping(value = { "/textboardView" })
-	public String textboardView(Model model) {
+	public String textboardView(HttpServletRequest request,Model model) {
+	
+		DataMap paramMap = HttpUtil.getRequestDataMap(request);
+		HttpUtil.getParams(paramMap, model);
+		
 		return "contents/board/textboardView";
 	}
 
@@ -82,14 +87,16 @@ public class TextBoardController {
 		return "contents/board/noticeList";
 	}
 
+	
 	/**************************************************
-	 * @MethodName : noticeView
-	 * @Description: 공지사항 상세
-	 * @param model
-	 * @return String
-	 * @Author : Hyung-Seon. Yoon
-	 * @Version : 2021. 7. 6.
-	 **************************************************/
+	* @MethodName : noticeView
+	* @Description: 공지사항 상세
+	* @param request
+	* @param model
+	* @return String
+	* @Author : Ye-Jin. Jeong
+	* @Version : 2021. 8. 26.
+	**************************************************/
 	@RequestMapping(value = { "/noticeView" })
 	public String noticeView(HttpServletRequest request,Model model) {
 		
@@ -99,29 +106,42 @@ public class TextBoardController {
 		return "contents/board/noticeView";
 	}
 
+
 	/**************************************************
-	 * @MethodName : posting
-	 * @Description: 게시판 글 작성 ${tags} ${return_type}
-	 * @Author : Ye-Jin. Jeong
-	 * @Version : 2021. 8. 11.
-	 **************************************************/
+	* @MethodName : posting
+	* @Description: 뿜업게시판 글 등록
+	* @param model
+	* @param request
+	* @return Boolean
+	* @Author : Ye-Jin. Jeong
+	* @Version : 2021. 8. 25.
+	**************************************************/
 	@ResponseBody
+	@SuppressWarnings("unchecked")
 	@RequestMapping(value= {"/posting"},method= {RequestMethod.GET,RequestMethod.POST})
 	public Boolean posting(Model model, HttpServletRequest request) {
 		logger.debug("TextBoardController : posting - start");
 		
 		DataMap paramMap=HttpUtil.getRequestDataMap(request);
-		System.out.println(paramMap);
-		Boolean result=false;
-		 
+		
+		int rst = 0;
+		
+		paramMap.put("filePath", "BBOOM_BOARD");
+		List<CamelMap> rstFileList = null;
+
 		try {
-			result = textBoardMapper.posting(paramMap);
+			rstFileList = commonService.saveFile(request, paramMap);
+			for (CamelMap fileMap : rstFileList) {
+				logger.info("fileMap : {}", fileMap);
+				paramMap.put("attFile", fileMap.get("saveFilePath") + "/" + fileMap.get("saveFileName"));
+			}
+			rst = textBoardMapper.posting(paramMap);
 		} catch (Exception e) {
 			logger.debug("게시글 등록 오류", e);
 		}
 
 		logger.debug("TextBoardController : posting - end");
-		return result;
+		return rst>0 ? true : false;
 	}
 
 	/**************************************************
@@ -171,6 +191,7 @@ public class TextBoardController {
 		ModelAndView mv = new ModelAndView("jsonView");
 
 		DataMap paramMap = HttpUtil.getRequestDataMap(request);
+		System.out.println(paramMap.toString());
 		CamelMap resultInfo = null;
 
 		try {

@@ -108,7 +108,7 @@ public interface TextBoardMapper {
 	* @Author : Ye-Jin. Jeong
 	* @Version : 2021. 8. 15.
 	**************************************************/
-	public Boolean posting(DataMap paramMap) throws SQLException;
+	int posting(DataMap paramMap) throws SQLException;
 
 
 	/**************************************************
