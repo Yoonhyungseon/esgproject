@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page contentType="text/html;charset=UTF-8" language="java"%>
+
 
 <script src="js/jquery.js" type="text/javascript">
 	$(document).ready(function() {
@@ -50,71 +50,20 @@ progress::-webkit-progress-value {
 <section class="w3l-blog-single py-5">
 	<div class="single-blog sec-padding py-md-4 py-3">
 		<div class="container">
+			<div id="req_seq" style="display: none">${boardSsn}</div>
 			<div class="single-bottom-blog">
-				<h3 class="date">
-					21<sup>st</sup> October
-				</h3>
+				<h3 id="req_date" class="date">${regDtYmd}</h3>
 				<div class="blog-img-single">
-					<img src="/asset/images/straw.jpg" alt=""
-						class="img-fluid img-responsive" />
+					<img id="req_file" class="img-fluid img-responsive" style="width:100%;"/>
 				</div>
 
 				<div class="bottom-grid mt-4 pt-2">
-					<h3>Our Latest Foodies Blog</h3>
+					<h3 id="req_title">${title}</h3>
 
-					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-						do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-						enim ad minim veniam, quis nostrud exercitation ullamco laboris
-						nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-						reprehenderit in voluptate velit esse cillum dolore eu fugiat
-						nulla pariatur.</p>
-					<p>Sed ut perspiciatis unde omnis iste natus error sit
-						voluptatem accusantium doloremque laudantium, totam rem aperiam,
-						eaque ipsa quae ab illo inventore aperiam, eaque ipsa quae ab illo
-						inventore veritatis et quasi architecto beatae vitae dicta sunt
-						explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur
-						aut odit aut fugit, sed quia consequuntur magni dolores eos qui
-						ratione voluptatem sequi nesciunt.</p>
-					<p>Dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-						exercitation ullamco laboris nisi ut aliquip ex ea commodo
-						consequat. Duis aute irure dolor in reprehenderit in voluptate
-						velit esse cillum dolore eu fugiat nulla pariatur.</p>
+					<p id="req_content">${contents}</p>
 				</div>
 				<!-- bottom -->
-				<div class="row mb-4 pb-2">
-					<div class="col-sm-6">
-						<div class="blog-img-single">
-							<a href="#blog"><img src="assets/images/blog1.jpg" alt=""
-								class="img-fluid" /></a>
-						</div>
-					</div>
-					<div class="col-sm-6 mt-sm-0 mt-4">
-						<div class="blog-img-single">
-							<a href="#blog"><img src="assets/images/blog2.jpg" alt=""
-								class="img-fluid" /></a>
-						</div>
-					</div>
-				</div>
-				<p class="para-single">Sed ut perspiciatis unde omnis iste natus
-					error sit voluptatem accusantium doloremque laudantium, totam rem
-					aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
-					architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam
-					voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed
-					quia consequuntur magni dolores eos qui ratione voluptatem sequi
-					nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor
-					sit amet, consectetur, adipisci velit, sed quia non numquam eius
-					modi tempora.</p>
-				<p class="para-single">Neque porro quisquam est, qui dolorem
-					ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia
-					non numquam eius modi tempora incidunt ut labore et dolore magnam
-					aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum
-					exercitationem ullam corporis.suscipit laboriosam, nisi ut aliquid
-					ex ea commodi consequatur? Quis autem vel eum iure reprehenderit
-					qui in ea voluptate velit esse quam nihil molestiae consequatur.</p>
-				<p class="para-single">N Duis aute irure dolor in reprehenderit
-					in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-					Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-					officia deserunt mollit anim id est laborum.</p>
+				
 				<progress id="progressbar" max="100" value="50"></progress>
 
 				<div
@@ -122,19 +71,14 @@ progress::-webkit-progress-value {
 					<div class="blog-tags">
 						<ul>
 							<li class="text-tag">Tags:</li>
-							<li><a href="#url">Fresh</a></li>
-							<li><a href="#url">Foodie</a></li>
-							<li><a href="#url">Eat</a></li>
-							<li><a href="#url">Healthy</a></li>
+							<li><a href="#url" id="req_hash">${hashTag}</a></li>
 						</ul>
 					</div>
 					<div class="social-singles ml-md-auto mt-md-0 mt-4">
-						<a href="#blog"><span class="fa fa-facebook"
-							aria-hidden="true"></span></a> <a href="#blog"><span
-							class="fa fa-twitter" aria-hidden="true"></span></a> <a href="#blog"><span
-							class="fa fa-google-plus" aria-hidden="true"></span></a> <a
-							href="#blog"><span class="fa fa-pinterest-p"
-							aria-hidden=" true"></span></a>
+						<a href="#blog"><span class="fa fa-facebook"aria-hidden="true"></span></a> 
+						<a href="#blog"><span class="fa fa-twitter" aria-hidden="true"></span></a> 
+						<a href="#blog"><span class="fa fa-google-plus" aria-hidden="true"></span></a> 
+						<a href="#blog"><span class="fa fa-pinterest-p"	aria-hidden=" true"></span></a>
 					</div>
 				</div>
 				<div class="single-pagination clearfix">
@@ -145,7 +89,7 @@ progress::-webkit-progress-value {
 				</div>
 				<!-- //blog single -->
 				<!-- comments section blog single -->
-				<section class="w3l-comments-9-main mt-5">
+			<!-- 	<section class="w3l-comments-9-main mt-5">
 					<div class="gallery-32">
 						<h3 class="title-main2-blog-single">Comments (2)</h3>
 						<div class="row">
@@ -188,8 +132,8 @@ progress::-webkit-progress-value {
 						</div>
 					</div>
 				</section>
-				<!-- //comments section blog single -->
-				<!-- comments form blog single -->
+				//comments section blog single
+				comments form blog single
 				<section class="w3l-form-comments-sec mt-5">
 					<div class="coments-forms-sub">
 						<h3 class="title-main2-blog-single">Leave A Message</h3>
@@ -212,13 +156,43 @@ progress::-webkit-progress-value {
 							</form>
 						</div>
 					</div>
-				</section>
+				</section> -->
 				<!-- //comments form blog single -->
+				<div class="btn_right" style="margin-top: 10px; float: right;">
+					<a class="btn button-style" href="textboardList" style="background-color: #0abf53;">목록</a>
+				</div>
 			</div>
 		</div>
 	</div>
 </section>
 <!-- //blog single -->
+<script type="text/javascript">
+//var boardSsn="${boardSsn}";
+var boardSsn='172';
+    $(document).ready(function(){
+    	boardObj.fn_getBoardInfo(boardSsn);
+    });
+    
+    let boardObj = {
+    	fn_getBoardInfo : function(boardSsn) {
+    		console.log(boardSsn);
+    		var param = "boardSsn="+boardSsn;
+			ajaxParamExecute(param, "/board/getBoardInfo", "post", false, false, boardObj.fn_getBoardInfoReturn);
+		},
+		fn_getBoardInfoReturn : function(rst) {
+ 			console.log(rst)
+ 			//$('#req_seq').text(rst.resultInfo.seq);
+ 			$('#req_title').text(rst.resultInfo.title);
+ 			$('#req_date').text(rst.resultInfo.regDtYmd);
+ 			if(rst.resultInfo.attFile != null){
+ 				$('#req_file').show()
+ 				$('#req_file').attr("src", "/common/imageload?fullImageFileNm="+rst.resultInfo.attFile);
+ 			}
+ 			$('#req_hash').text(rst.resultInfo.hashTag);
+ 			$('#req_content').text(rst.resultInfo.contents);
+		}
+    }
+</script>
 <!-- Js scripts -->
 <!-- move top -->
 <button onclick="topFunction()" id="movetop" title="Go to top">
