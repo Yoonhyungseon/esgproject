@@ -12,7 +12,7 @@
                 <div class="col-lg-12 menu-section" id="listClone">
                 </div>
                     <!-- Item starts -->
-                    <div class="row menu-item" id="listCron" style="display:none; float: left; width: 400px; height: 200px;">
+                    <div class="row menu-item" id="listCron" style="display:none; float: left; width: 400px; height: 80px;">
                         <div class="col-3 p-0 position-relative">
                             <img src="https://image.edaily.co.kr/images/Photo/files/NP/S/2020/12/PS20122000371.jpg" class="img-responsive" alt="">
                             <a href="/board/textboardView" class="btn button-style button-style-2">자세히</a>
@@ -27,9 +27,11 @@
                                     <h6>up32</h6>
                                 </div>
                             </div>
+                            <!--  
                             <div class="menu-item-description">
                                 <p class="contents"></p>
                             </div>
+                            -->
                         </div>
                     </div>
                     <!-- Item ends -->
@@ -65,8 +67,8 @@
 					var html = $('#listCron').clone().removeAttr('id').show();
 					
 					
-					html.find('.title').text(rst.resultList[i].title);
-					html.find('.contents').text(rst.resultList[i].contents);
+					html.find('.title').html(rst.resultList[i].title25);
+		//			html.find('.contents').html(rst.resultList[i].contents60);
 
 					$('#listClone').append(html);
 				}
