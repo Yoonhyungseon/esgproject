@@ -94,12 +94,12 @@
 	                                </div>
 	                                <div class="form-group">
 	                                    <label for="userPw">비밀번호</label>
-	                                    <input class="form-control" type="text" name="userPw" id="userPw" placeholder=""
+	                                    <input class="form-control" type="password" name="userPw" id="userPw" placeholder=""
 	                                        required="">
 	                                </div>
 	                                <div class="form-group">
 	                                    <label for="repassword">비밀번호 확인</label>
-	                                    <input class="form-control" type="text" name="repassword" id="repassword" placeholder=""
+	                                    <input class="form-control" type="password" name="repassword" id="repassword" placeholder=""
 	                                        required="">
 	                                </div>
 	                                <div class="form-group">

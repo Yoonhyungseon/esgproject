@@ -33,7 +33,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="password">비밀번호</label>
-                                    <input class="form-control" type="text" name="password" id="password" placeholder=""
+                                    <input class="form-control" type="password" name="password" id="password" placeholder=""
                                         required="">
                                 </div>
                             </div>

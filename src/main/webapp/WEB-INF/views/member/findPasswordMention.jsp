@@ -31,12 +31,12 @@
 	                            <div class="col-md-6 left-cont-contact">
 	                                <div class="form-group">
 	                                    <label for="newpassword">새 비밀번호</label>
-	                                    <input class="form-control" type="text" name="newpassword" id="newpassword" placeholder=""
+	                                    <input class="form-control" type="password" name="newpassword" id="newpassword" placeholder=""
 	                                        required="">
 	                                </div>
 	                                <div class="form-group">
 	                                    <label for="renewpassword">새 비밀번호 확인</label>
-	                                    <input class="form-control" type="text" name="renewpassword" id="renewpassword" placeholder=""
+	                                    <input class="form-control" type="password" name="renewpassword" id="renewpassword" placeholder=""
 	                                        required="">
 	                                </div>
 	                            </div>
