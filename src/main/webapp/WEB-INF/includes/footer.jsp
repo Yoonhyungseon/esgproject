@@ -24,7 +24,7 @@
 					<div class="col-lg-4 pr-lg-5" style="margin-top: -36px;">
 						<a class="logo" href="index" style="display: contents;">
 						<!-- <i class="fa fa-cutlery" aria-hidden="true"></i> Foodies -->
-						<img class="" src="/asset/images/logo1.png" style="height: auto; width: auto;">
+						<img class="" src="/asset/images/logo1.png" style="height: 36%; width: 41%; margin-left: 14px">
 						</a>
 						<p class="mt-4" style="margin-top:0px!important;margin-left: 30px;">기업의 실질적 ESG 경영을 위해, </p>
 						<p class="my-4" style="margin-top:0px!important;margin-left: 30px;">우리들의 적극적인 행동이 시작되는 곳</p>

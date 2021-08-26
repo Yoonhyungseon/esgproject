@@ -167,8 +167,8 @@ progress::-webkit-progress-value {
 </section>
 <!-- //blog single -->
 <script type="text/javascript">
-//var boardSsn="${boardSsn}";
-var boardSsn='172';
+var boardSsn="${boardSsn}";
+// var boardSsn='172';
     $(document).ready(function(){
     	boardObj.fn_getBoardInfo(boardSsn);
     });
@@ -189,7 +189,7 @@ var boardSsn='172';
  				$('#req_file').attr("src", "/common/imageload?fullImageFileNm="+rst.resultInfo.attFile);
  			}
  			$('#req_hash').text(rst.resultInfo.hashTag);
- 			$('#req_content').text(rst.resultInfo.contents);
+ 			$('#req_content').html(rst.resultInfo.contents);
 		}
     }
 </script>

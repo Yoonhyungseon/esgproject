@@ -83,19 +83,19 @@ progress::-webkit-progress-value {
 					<div class="col-lg-4 col-md-6 column column-img" id="zoomIn" style="float: left; margin: 10px 0">
 						<div class="services-gd">
 							<div class="serve-info">
-								<div id="boardSsn" style="display:none;"></div>
+<!-- 								<div id="boardSsn" style="display:none;"></div> -->
 								<h3 class="date"></h3>
-								<img class="img-responsive" id="req_file" alt="blog-image">
+								<a class="req_title"><img class="img-responsive" id="req_file" alt="blog-image"></a>
 								<h3>
-									<a href="" id="req_title"></a>
+									<a href="#none" id="req_title" class="req_title"></a>
 								</h3>
 								<ul class="admin-list">
-									<li><a id="req_regName"><span
-											class="fa fa-user-circle" aria-hidden="true"></span></a></li>
+									<li><div id="req_regName"><span
+											class="fa fa-user-circle" aria-hidden="true"></span></div></li>
 									<li><a href="textboardView"><span class="fa fa-heart"
 											aria-hidden="true"></span>55 Likes</a></li>
-									<li><a href="textboardView"><span
-											class="fa fa-comments" aria-hidden="true"></span>7 Comments</a></li>
+									<li><div href="textboardView"><span
+											class="fa fa-comments" aria-hidden="true"></span>7 Comments</div></li>
 								</ul>
 								<progress id="progressbar" max="100" value="50"></progress>
 							</div>
@@ -146,10 +146,10 @@ progress::-webkit-progress-value {
 					
 					var html = $('#listCron').clone().removeAttr('title').show();
 					
-					html.find('#boardSsn').text(rst.resultList[i].boardSsn);
+// 					html.find('#boardSsn').text(rst.resultList[i].boardSsn);
 				    
 					html.find('#req_title').text(rst.resultList[i].title);
-					html.find('#req_title').attr('onclick', 'boardeObj.fn_view(\''+rst.resultList[i].boardSsn+'\')');
+					html.find('.req_title').attr('onclick', 'boardeObj.fn_view(\''+rst.resultList[i].boardSsn+'\')');
 	               
 					html.find('.date').text(rst.resultList[i].regDtYmd);
 					
@@ -165,7 +165,7 @@ progress::-webkit-progress-value {
 		},
 		fn_view : function(boardSsn) {
  			console.log(boardSsn);
-			$('#boardSsn').val('${boardSsn}');
+			$('#boardSsn').val(boardSsn);
 			$('#boardFrm').submit();
 		}
 	}
