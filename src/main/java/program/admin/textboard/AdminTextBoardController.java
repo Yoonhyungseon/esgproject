@@ -19,7 +19,6 @@ import program.common.CamelMap;
 import program.common.DataMap;
 import program.common.service.CommonService;
 import program.common.util.HttpUtil;
-import program.textboard.TextBoardController;
 
 /**************************************************
  * @FileName : AdminTextBoardController.java
@@ -31,7 +30,7 @@ import program.textboard.TextBoardController;
 @Controller
 @RequestMapping(value = { "/admin/textboard" })
 public class AdminTextBoardController {
-	private static final Logger logger = LoggerFactory.getLogger(TextBoardController.class);
+	private static final Logger logger = LoggerFactory.getLogger(AdminTextBoardController.class);
 
 	@Autowired
 	private CommonService commonService;
@@ -57,15 +56,20 @@ public class AdminTextBoardController {
 	}
 
 	/**************************************************
-	 * @MethodName : textboardView
-	 * @Description: 관리자 페이지 뿜업 게시판 상세
-	 * @param model
-	 * @return String
-	 * @Author : Hyung-Seon. Yoon
-	 * @Version : 2021. 7. 6.
-	 **************************************************/
+	* @MethodName : textboardView
+	* @Description: 관리자 페이지 뿜업 게시판 상세
+	* @param request
+	* @param model
+	* @return String
+	* @Author : Ye-Jin. Jeong
+	* @Version : 2021. 8. 26.
+	**************************************************/
 	@RequestMapping(value = { "/textboardView" })
-	public String textboardView(Model model) {
+	public String textboardView(HttpServletRequest request, Model model) {
+		
+		DataMap paramMap = HttpUtil.getRequestDataMap(request);
+		HttpUtil.getParams(paramMap, model);
+		
 		return "/admin/textboard/textboardView";
 	}
 
@@ -127,7 +131,7 @@ public class AdminTextBoardController {
 
 	/**************************************************
 	 * @MethodName : ajaxSiteBoardSave
-	 * @Description:
+	 * @Description: 관리자 공지사항 등록
 	 * @param request
 	 * @param model
 	 * @return String
@@ -137,12 +141,15 @@ public class AdminTextBoardController {
 	@SuppressWarnings("unchecked")
 	@RequestMapping(value = { "/ajaxSiteBoardSave" }, method = { RequestMethod.GET, RequestMethod.POST })
 	@ResponseBody
-	public String ajaxSiteBoardSave(HttpServletRequest request, Model model) {
+	//public void ajaxSiteBoardSave(HttpServletRequest request, Model model) {
+
+	public Boolean ajaxSiteBoardSave(HttpServletRequest request, Model model) {
+	//public String ajaxSiteBoardSave(HttpServletRequest request, Model model) {
 		logger.debug("AdminTextBoardController : ajaxSiteBoardSave - start");
 		
 		DataMap paramMap = HttpUtil.getRequestDataMap(request);
 
-		boolean sw = false;
+		int rst = 0;
 
 		// Authentication authentication =
 		// SecurityContextHolder.getContext().getAuthentication();
@@ -161,25 +168,29 @@ public class AdminTextBoardController {
 				logger.info("fileMap : {}", fileMap);
 				paramMap.put("attFile", fileMap.get("saveFilePath") + "/" + fileMap.get("saveFileName"));
 			}
-
-			//if ("MOD".equals(mode) && !StringUtil.isEmpty(seq)) {
-
+			rst = adminTBMapper.insertSiteBoard(paramMap);
+//			adminTBMapper.insertSiteBoard(paramMap);
 			/*
-			 * if (!StringUtil.isEmpty(paramMap.getString("attFile"))) {
+			 * if ("MOD".equals(mode) && !StringUtil.isEmpty(seq)) { if
+			 * (!StringUtil.isEmpty(paramMap.getString("attFile"))) {
 			 * paramMap.put("fileName", paramMap.getString("orgAttFile"));
-			 * commonService.deleteFile(paramMap); }
+			 * commonService.deleteFile(paramMap); } sw =
+			 * adminTBMapper.updateSiteBoard(paramMap); } else { sw =
+			 * adminTBMapper.insertSiteBoard(paramMap); }
 			 */
-				// sw = adminTBMapper.updateSiteBoard(paramMap);
-			//} else {
-				sw = adminTBMapper.insertSiteBoard(paramMap);
-			//}
-
 		} catch (Exception e) {
 			logger.debug("사이트 공지사항 저장 오류", e);
 		}
 		logger.debug("AdminTextBoardController : ajaxSiteBoardSave - end");
-		System.out.println(sw);
-		return "redirect:/noticeList";
+		
+		System.out.println(rst);
+		//return "redirect:noticeResult";
+		return rst>0 ? true : false;
+	}
+	
+	@RequestMapping(value= {"/noticeResult"})
+	public String noticeResult() {
+		return "/admin/textboard/noticeResult";
 	}
 
 	/**************************************************
@@ -242,6 +253,68 @@ public class AdminTextBoardController {
 		mv.addObject("resultInfo", resultInfo);
 
 		logger.debug("AdminTextBoardController : getNoticeInfo - end");
+		return mv;
+	}
+	
+	/**************************************************
+	* @MethodName : getBoardList
+	* @Description: 게시글 리스트 컨트롤러
+	* @param request
+	* @param model
+	* @return ModelAndView
+	* @Author : Ye-Jin. Jeong
+	* @Version : 2021. 8. 26.
+	**************************************************/
+	@ResponseBody
+	@RequestMapping(value = { "/getBoardList" }, method = { RequestMethod.GET, RequestMethod.POST })
+	public ModelAndView getBoardList(HttpServletRequest request, Model model) {
+		logger.debug("AdminTextBoardController : getBoardList - start");
+
+		ModelAndView mv = new ModelAndView("jsonView");
+
+		List<CamelMap> resultList = null;
+
+		try {
+			resultList = adminTBMapper.getBoardList();
+		} catch (Exception e) {
+			logger.debug("게시글 리스트 조회 오류", e);
+		}
+
+		mv.addObject("resultList", resultList);
+
+		logger.debug("AdminTextBoardController : getBoardList - end");
+		return mv;
+	}
+	
+	/**************************************************
+	* @MethodName : getBoardInfo
+	* @Description: 게시글 상세 조회 컨트롤러
+	* @param request
+	* @param model
+	* @return ModelAndView
+	* @Author : Ye-Jin. Jeong
+	* @Version : 2021. 8. 26.
+	**************************************************/
+	@ResponseBody
+	@RequestMapping(value = { "/getBoardInfo" }, method = { RequestMethod.GET, RequestMethod.POST })
+	public ModelAndView getBoardInfo(HttpServletRequest request, Model model) {
+		logger.debug("AdminTextBoardController : getBoardInfo - start");
+
+		ModelAndView mv = new ModelAndView("jsonView");
+
+		DataMap paramMap = HttpUtil.getRequestDataMap(request);
+		System.out.println(paramMap.toString());
+		CamelMap resultInfo = null;
+
+		try {
+			resultInfo = adminTBMapper.getBoardInfo(paramMap);
+		} catch (Exception e) {
+			logger.debug("게시글 조회 오류", e);
+		}
+
+		mv.addObject("resultInfo", resultInfo);
+
+		logger.debug("AdminTextBoardController : getBoardInfo - end");
 		return mv;
 	}
 }

@@ -1,6 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java"%>
 
-<body class="sb-nav-fixed">
+
 	<div id="layoutSidenav_content">
 		<main>
 			<div class="container-fluid px-4">
@@ -20,38 +20,25 @@
 									<th>No</th>
 									<th>제목</th>
 									<th>작성자</th>
-									<th>조회수</th>
+									<th>답변여부</th>
 									<th>작성일</th>
 									<th>모금액</th>
 								</tr>
 							</thead>
-							<tbody>
-								<tr>
-									<td>1</td>
-									<td><a href="textboardView">홈플러스 계산원에게 의자를 주세요</a></td>
-									<td>윤형선</td>
-									<td>61</td>
-									<td>2021/07/24</td>
+							<tbody id="listClone">
+							</tbody>
+								<tr id="listCron" style="display: none;">
+									<td class="boardSsn"></td>
+									<td class="req_title"><a href="textboardView"></a></td>
+									<td class="req_regName"></td>
+									<td class="req_reply"></td>
+									<td class="req_regDt"></td>
 									<td>320,800원</td>
 								</tr>
-								<tr>
-									<td>2</td>
-									<td><a href="textboardView">포카칩의 과대포장에 대해서..</a></td>
-									<td>외붕이</td>
-									<td>43</td>
-									<td>2021/07/16</td>
-									<td>120,300원</td>
-								</tr>
-								<tr>
-									<td>3</td>
-									<td><a href="textboardView">폐건전지 재생사업을 제안합니다.</a></td>
-									<td>홍길동</td>
-									<td>93</td>
-									<td>2021/06/09</td>
-									<td>920,800원</td>
-								</tr>
-							</tbody>
 						</table>
+						<form id="boardFrm" name="boardFrm" method="post" action="/admin/textboard/textboardView">
+							<input type="hidden" id=boardSsn name="boardSsn" value="">
+						</form>
 						<!-- <div class="inputArea">
 							<a class="btn btn-primary" role="button"
 								style="float: right; color: white;" href="textboardWrite">Post</a>
@@ -61,5 +48,46 @@
 			</div>
 		</main>
 	</div>
-</body>
 
+<script type="text/javascript">
+    $(document).ready(function(){
+    	boardeObj.fn_getBoardList();
+    });
+    
+	let boardeObj = {
+		fn_getBoardList : function() {
+			ajaxParamExecute("", "/admin/textboard/getBoardList", "post", false, false, boardeObj.fn_getBoardListReturn);
+		},
+		fn_getBoardListReturn : function(rst) {
+ 			console.log(rst);
+			$('#listClone').html('');
+			
+			if (rst.resultList.length > 0) {
+				for (var i in rst.resultList) {
+					
+					var html = $('#listCron').clone().removeAttr('title').show();
+					
+					html.find('.boardSsn').text(rst.resultList[i].boardSsn);
+				
+					html.find('.req_title').text(rst.resultList[i].title);
+					html.find('.req_title').attr('onclick', 'boardeObj.fn_view(\''+rst.resultList[i].boardSsn+'\')');
+
+					html.find('.req_regName').text(rst.resultList[i].uName);
+
+					html.find('.req_reply').text(rst.resultList[i].replyYn);
+					   
+					html.find('.req_regDt').text(rst.resultList[i].regDtYmd);
+
+					$('#listClone').append(html);
+				}
+			} else {
+				$('#listClone').html('');
+			}
+		},
+		fn_view : function(boardSsn) {
+ 			console.log(boardSsn);
+			$('#boardSsn').val(boardSsn);
+			$('#boardFrm').submit();
+		}
+	}
+    </script>

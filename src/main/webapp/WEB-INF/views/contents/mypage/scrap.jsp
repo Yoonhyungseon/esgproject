@@ -19,13 +19,13 @@
         <div class="services-layout py-md-4 py-3">
             <div class="container">
                 <h3 class="title-big mb-4 pb-2">스크랩 내역</h3>
-                
-                <div id="listClone">
-                </div> 
+                <div class="row"> 
+	                <div id="listClone" >
+	                </div> 
                 	
                 	<div id="listCron" style="display:none;">                  
-                		<div class="row">              		
-		                    <div class="col-lg-4 col-md-6 column column-img" id="zoomIn">
+                		             		
+		                    <div class="col-lg-4 col-md-6 column column-img" id="zoomIn" style="float : left; margin: 10px 0; ">
 		                        <div class="services-gd">
 		                            <div class="serve-info">
 		                                <h3 class="date"></h3>
@@ -34,7 +34,7 @@
 		                                        <img class="img-responsive" src="/asset/images/esg.jpg" alt="blog-image">
 		                                    </figure>
 		                                </a>
-		                                <h3 class="title"> <a href="/board/textboardView" class="vv-link"></a>
+		                                <h3 class="title" style="line-height: 33px;"> <a href="/board/textboardView" class="vv-link"></a>
 		                                </h3>
 		                                <ul class="admin-list">
 		                                    <li class="name"><a href="/board/textboardView"><span class="fa fa-user-circle" aria-hidden="true"></span>
@@ -48,8 +48,9 @@
 		                            </div>
 		                        </div>
 		                    </div>
-                    	</div>                   
+                    	                   
                 	</div>
+                </div>
                 <!-- pagination -->
                 <div class="pagination">
                     <ul>
@@ -211,7 +212,7 @@
 					
 					
 					html.find('.date').text(rst.resultList[i].regDtYmd);
-					html.find('.title').text(rst.resultList[i].title);
+					html.find('.title').text(rst.resultList[i].title20);
 					html.find('.name').text(rst.resultList[i].uName);
 
 					$('#listClone').append(html);

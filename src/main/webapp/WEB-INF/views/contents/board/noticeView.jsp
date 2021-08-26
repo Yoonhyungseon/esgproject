@@ -1,111 +1,145 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-   pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-               
+<%@ page contentType="text/html;charset=UTF-8" language="java"%>
 
- <!-- inner banner -->
-    <div class="inner-banner">
-        <section class="w3l-breadcrumb">
-            <div class="container">
-                <h4 class="inner-text-title font-weight-bold mb-sm-3 mb-2">Notice</h4>
-                <ul class="breadcrumbs-custom-path">
-                    <li><a href="index.html">Home</a></li>
-                    <li class="active"><span class="fa fa-chevron-right mx-2" aria-hidden="true"></span>Notice</li>
-                </ul>
-            </div>
-        </section>
-    </div>
-    <!-- //inner banner -->
-    <!-- blog single -->
-    <section class="w3l-blog-single py-5">
-        <div class="single-blog sec-padding py-md-4 py-3">
-            <div class="container">
-                <div class="single-bottom-blog">
-                    <h3 class="date">21<sup>st</sup> October</h3>
-                    <div class="blog-img-single">
-                        <img src="assets/images/single.jpg" alt="" class="img-fluid img-responsive" />
-                    </div>
-                    <div class="bottom-grid mt-4 pt-2">
-                        <h3>Our Latest Foodies Blog</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                            laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-                            voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
-                            laudantium, totam
-                            rem
-                            aperiam, eaque ipsa quae ab illo inventore aperiam, eaque ipsa quae ab illo inventore
-                            veritatis et quasi
-                            architecto beatae vitae dicta sunt explicabo.
-                            Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia
-                            consequuntur magni
-                            dolores eos qui ratione voluptatem sequi nesciunt.</p>
-                        <p>Dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                            laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-                            voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-                    </div>
-                    <!-- bottom -->
-                    <div class="row mb-4 pb-2">
-                        <div class="col-sm-6">
-                            <div class="blog-img-single">
-                                <a href="#blog"><img src="assets/images/blog1.jpg" alt="" class="img-fluid" /></a>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 mt-sm-0 mt-4">
-                            <div class="blog-img-single">
-                                <a href="#blog"><img src="assets/images/blog2.jpg" alt="" class="img-fluid" /></a>
-                            </div>
-                        </div>
-                    </div>
-                    <p class="para-single">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
-                        doloremque laudantium,
-                        totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae
-                        dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut
-                        fugit,
-                        sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro
-                        quisquam
-                        est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam
-                        eius
-                        modi tempora.</p>
-                    <p class="para-single">Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur,
-                        adipisci
-                        velit, sed quia non
-                        numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut
-                        enim ad minima
-                        veniam, quis nostrum exercitationem ullam corporis.suscipit laboriosam, nisi ut aliquid ex ea
-                        commodi
-                        consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil
-                        molestiae
-                        consequatur.</p>
-                    <p class="para-single">N Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-                        dolore eu
-                        fugiat
-                        nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
-                        deserunt mollit
-                        anim
-                        id est laborum.</p>
-                 
-                    <div class="single-pagination clearfix">
-                        <a class="prev-post pull-left" href="#prev"><span class="fa fa-arrow-left"
-                                aria-hidden="true"></span>
-                            Previous Post</a>
-                        <a class="next-post pull-right" href="#next">Next Post <span class="fa fa-arrow-right"
-                                aria-hidden="true"></span></a>
-                    </div>
-                    <!-- //blog single -->
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- //blog single -->
 
- 
-    <!-- Js scripts -->
-    <!-- move top -->
-    <button onclick="topFunction()" id="movetop" title="Go to top">
-        <span class="fa fa-level-up" aria-hidden="true"></span>
-    </button>
-    <script>
+<!-- inner banner -->
+<div class="inner-banner">
+	<section class="w3l-breadcrumb">
+		<div class="container">
+			<h4 class="inner-text-title font-weight-bold mb-sm-3 mb-2">Notice</h4>
+			<ul class="breadcrumbs-custom-path">
+				<li><a href="index.html">Home</a></li>
+				<li class="active"><span class="fa fa-chevron-right mx-2"
+					aria-hidden="true"></span>Notice</li>
+			</ul>
+		</div>
+	</section>
+</div>
+<!-- //inner banner -->
+<!-- blog single -->
+<section class="w3l-blog-single py-5">
+	<div class="single-blog sec-padding py-md-4 py-3">
+		<div class="container">
+			<div id="req_seq" style="display: none">${seq}</div>
+			<div class="single-bottom-blog">
+				<h3 id="req_date" class="date">${regDtYmd}</h3>
+
+				<div class="bottom-grid mt-4 pt-2">
+					<h3 id="req_title">${title}</h3>
+					<p id="req_subTitle" style="margin: auto; display: block;">${subTitle}</p>
+					<br> <br>
+					<div class="blog-img-single">
+						<img id="req_file" class="img-fluid img-responsive" />
+					</div>
+					<p id="req_url">${cUrl}</p>
+					<p id="req_content">${contents}</p>
+				</div>
+				<form id="boardFrm" name="boardFrm" method="post" action="/board/noticeView">
+					<input type="hidden" id="post_seq" name="seq" value="">
+					<div class="single-pagination clearfix">
+						<input type="hidden" id="post_seq" name="seq" value=""> 
+						<a class="prev-post pull-left" onclick="noticeObj.fn_getNoticePrev()">
+						<span class="fa fa-arrow-left" aria-hidden="true"></span> Previous Post</a>
+						<a class="next-post pull-right" onclick="noticeObj.fn_getNoticeNext()">Next Post <span
+							class="fa fa-arrow-right" aria-hidden="true"></span></a>
+					</div>
+				</form>
+				<div class="row" style="display: inline; padding: 1rem 1.1rem;">
+					<div class="btn_area">
+						<div class="btn_right" style="margin-top: 10px; float: right;">
+							<a class="btn btn-primary btn-block myform" href="noticeList"
+								style="background-color: #0abf53;">목록</a>
+						</div>
+					</div>
+				</div>
+				<!-- //blog single -->
+			</div>
+		</div>
+	</div>
+</section>
+<!-- //blog single -->
+<script type="text/javascript">
+    $(document).ready(function(){
+    	noticeObj.fn_getNoticeInfo('${seq}');
+    });
+    
+    let noticeObj = {
+    	fn_getNoticeInfo : function(seq) {
+    		console.log(seq);
+    		var param = "seq="+seq;
+			ajaxParamExecute(param, "/board/getNoticeInfo", "post", false, false, noticeObj.fn_getNoticeInfoReturn);
+		},
+		fn_getNoticeInfoReturn : function(rst) {
+ 			console.log(rst)
+ 			//$('#req_seq').text(rst.resultInfo.seq);
+ 			$('#req_title').text(rst.resultInfo.title);
+ 			$('#req_date').text(rst.resultInfo.regDtYmd);
+ 			if(rst.resultInfo.attFile != null){
+ 				$('#req_file').show()
+ 				$('#req_file').attr("src", "/common/imageload?fullImageFileNm="+rst.resultInfo.attFile);
+ 			}
+ 			$('#req_subTitle').text(rst.resultInfo.subTitle);
+ 			if(rst.resultInfo.cUrl != null){
+ 				$('#req_url').show()
+ 				$('#req_url').text(rst.resultInfo.cUrl);
+ 			}
+ 			$('#req_content').text(rst.resultInfo.contents);
+ 			//location.reload();
+		},
+		fn_getNoticePrev : function() {
+			$('#post_seq').val('${seq}');
+    		var prevParam = "seq="+'${seq}';
+    		console.log(prevParam);
+			ajaxParamExecute(prevParam, "/board/getNoticePrev", "post", false, false, noticeObj.fn_getNoticePrevReturn);
+		},
+		fn_getNoticePrevReturn : function(rst){
+			console.log(rst);
+			$('#req_seq').text(rst.resultInfo.seq);
+ 			
+ 			$('#req_title').text(rst.resultInfo.title);
+ 			$('#req_date').text(rst.resultInfo.regDtYmd);
+ 			if(rst.resultInfo.attFile != null){
+ 				$('#req_file').show()
+ 				$('#req_file').attr("src", "/common/imageload?fullImageFileNm="+rst.resultInfo.attFile);
+ 			}
+ 			$('#req_subTitle').text(rst.resultInfo.subTitle);
+ 			if(rst.resultInfo.cUrl != null){
+ 				$('#req_url').show()
+ 				$('#req_url').text(rst.resultInfo.cUrl);
+ 			}
+ 			$('#req_content').text(rst.resultInfo.contents);
+ 		},
+ 		fn_getNoticeNext : function(){
+ 			$('#post_seq').val('${seq}');
+ 			var nextParam = "seq="+'${seq}';
+    		console.log(nextParam);
+			ajaxParamExecute(nextParam, "/board/getNoticeNext", "post", false, false, noticeObj.fn_getNoticeNextReturn);
+		},
+		fn_getNoticeNextReturn : function(rst){
+			console.log(rst);
+			$('#req_seq').text(rst.resultInfo.seq);
+ 			
+ 			$('#req_title').text(rst.resultInfo.title);
+ 			$('#req_date').text(rst.resultInfo.regDtYmd);
+ 			if(rst.resultInfo.attFile != null){
+ 				$('#req_file').show()
+ 				$('#req_file').attr("src", "/common/imageload?fullImageFileNm="+rst.resultInfo.attFile);
+ 			}
+ 			$('#req_subTitle').text(rst.resultInfo.subTitle);
+ 			if(rst.resultInfo.cUrl != null){
+ 				$('#req_url').show()
+ 				$('#req_url').text(rst.resultInfo.cUrl);
+ 			}
+ 			$('#req_content').text(rst.resultInfo.contents);
+ 		}
+   }
+    </script>
+
+<!-- Js scripts -->
+<!-- move top -->
+<button onclick="topFunction()" id="movetop" title="Go to top">
+	<span class="fa fa-level-up" aria-hidden="true"></span>
+</button>
+<script>
         // When the user scrolls down 20px from the top of the document, show the button
         window.onscroll = function () {
             scrollFunction()
@@ -125,15 +159,15 @@
             document.documentElement.scrollTop = 0;
         }
     </script>
-    <!-- //move top -->
+<!-- //move top -->
 
-    <!-- common jquery plugin -->
-    <script src="assets/js/jquery-3.3.1.min.js"></script>
-    <!-- //common jquery plugin -->
+<!-- common jquery plugin -->
+<script src="assets/js/jquery-3.3.1.min.js"></script>
+<!-- //common jquery plugin -->
 
-    <!-- theme switch js (light and dark)-->
-    <script src="assets/js/theme-change.js"></script>
-    <script>
+<!-- theme switch js (light and dark)-->
+<script src="assets/js/theme-change.js"></script>
+<script>
         function autoType(elementClass, typingSpeed) {
             var thhis = $(elementClass);
             thhis.css({
@@ -168,10 +202,10 @@
             autoType(".type-js", 200);
         });
     </script>
-    <!-- //theme switch js (light and dark)-->
+<!-- //theme switch js (light and dark)-->
 
-    <!-- MENU-JS -->
-    <script>
+<!-- MENU-JS -->
+<script>
         $(window).on("scroll", function () {
             var scroll = $(window).scrollTop();
 
@@ -197,19 +231,19 @@
             });
         });
     </script>
-    <!-- //MENU-JS -->
+<!-- //MENU-JS -->
 
-    <!-- disable body scroll which navbar is in active -->
-    <script>
+<!-- disable body scroll which navbar is in active -->
+<script>
         $(function () {
             $('.navbar-toggler').click(function () {
                 $('body').toggleClass('noscroll');
             })
         });
     </script>
-    <!-- //disable body scroll which navbar is in active -->
+<!-- //disable body scroll which navbar is in active -->
 
-    <!--bootstrap-->
-    <script src="assets/js/bootstrap.min.js"></script>
-    <!-- //bootstrap-->
-    <!-- //Js scripts -->
+<!--bootstrap-->
+<script src="assets/js/bootstrap.min.js"></script>
+<!-- //bootstrap-->
+<!-- //Js scripts -->

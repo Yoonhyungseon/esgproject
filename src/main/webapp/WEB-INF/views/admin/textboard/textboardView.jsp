@@ -30,7 +30,7 @@ progress::-webkit-progress-value {
 	border-radius: 15px;
 }
 </style>
-<body class="sb-nav-fixed">
+
 	<div id="layoutSidenav_content">
 		<main>
 			<div class="container-fluid px-4">
@@ -47,39 +47,25 @@ progress::-webkit-progress-value {
 					</div>
 					<div class="card-body">
 						<!-- blog single -->
-						<h2 style="margin: auto; display: block;">ESG Board</h2>
+						<h2 id="req_title" style="margin: auto; display: block;">${title}</h2>
 
 						<h5 class="date" style="float: right;">
-							Writer : <span style="font-weight: normal;"">Yejin</span> <br>
-							21<sup>st</sup> October <br> Hits : <span
-								style="font-weight: normal;">15</span> <br> Likes : <span
-								style="font-weight: normal;">32</span> <br> Points : <span
-								style="font-weight: normal;">320,800₩</span>
+							Writer : <span id="req_name"style="font-weight: normal;">${uName}</span> <br>
+							Date : <span id="req_date" style="font-weight: normal;">${regDtYmd}</span><br>
+							Reply : <span id="req_reply" style="font-weight: normal;">${replyYn}</span> <br> 
+							Likes : <span style="font-weight: normal;">32</span> <br> 
+							Points : <span style="font-weight: normal;">320,800₩</span>
 						</h5>
 						<div class="blog-img-single">
-							<img src="/asset/images/esg.jpg"
+							<img id="req_file"
 								style="width: 500px; height: 350px; margin: auto; display: block; padding: 20px;" />
-							<progress id="progressbar" max="100" value="50" style="margin-left: 313px; width: 465px;"></progress>
+							<progress id="progressbar" max="100" value="50" style="margin-left: 500px; width: 465px;"></progress>
 						</div>
 						<br> <br>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-							sed do eiusmod tempor incididunt ut labore et dolore magna
-							aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-							ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
-							aute irure dolor in reprehenderit in voluptate velit esse cillum
-							dolore eu fugiat nulla pariatur.</p>
-						<p>Sed ut perspiciatis unde omnis iste natus error sit
-							voluptatem accusantium doloremque laudantium, totam rem aperiam,
-							eaque ipsa quae ab illo inventore aperiam, eaque ipsa quae ab
-							illo inventore veritatis et quasi architecto beatae vitae dicta
-							sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit
-							aspernatur aut odit aut fugit, sed quia consequuntur magni
-							dolores eos qui ratione voluptatem sequi nesciunt.</p>
-						<p>Dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-							exercitation ullamco laboris nisi ut aliquip ex ea commodo
-							consequat. Duis aute irure dolor in reprehenderit in voluptate
-							velit esse cillum dolore eu fugiat nulla pariatur.</p>
-
+						<p id="req_content">${contents}</p>
+						<br><br>
+						<p class="text-tag">Tags:<a href="#url" id="req_hash">${hashTag}</a></p>
+						
 						<div
 							class="blog-single-tags d-flex align-items-center mt-4 pt-1 mb-5">
 						</div>
@@ -134,8 +120,7 @@ progress::-webkit-progress-value {
 					<div class="row" style="display: inline; padding: 1rem 1.1rem;">
 						<div class="btn_area">
 							<div class="btn_right" style="margin-top: 10px; float: right;">
-								<a class="btn btn-primary btn-block myform" href="textboardList"
-									style="color: white !important;">목록</a>
+								<a class="btn btn-primary" href="textboardList"	style="color: white !important;">목록</a>
 								<!-- <a class="btn btn-primary btn-block myform" href="companiesWrite" style="color: white!important;">수정</a> -->
 							</div>
 						</div>
@@ -172,117 +157,33 @@ progress::-webkit-progress-value {
 			</div>
 		</main>
 	</div>
-</body>
-<!-- Js scripts -->
-<!-- move top -->
-<button onclick="topFunction()" id="movetop" title="Go to top">
-	<span class="fa fa-level-up" aria-hidden="true"></span>
-</button>
-<script>
-        // When the user scrolls down 20px from the top of the document, show the button
-        window.onscroll = function () {
-            scrollFunction()
-        };
-
-        function scrollFunction() {
-            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-                document.getElementById("movetop").style.display = "block";
-            } else {
-                document.getElementById("movetop").style.display = "none";
-            }
-        }
-
-        // When the user clicks on the button, scroll to the top of the document
-        function topFunction() {
-            document.body.scrollTop = 0;
-            document.documentElement.scrollTop = 0;
-        }
-    </script>
-<!-- //move top -->
-
-<!-- common jquery plugin -->
-<script src="assets/js/jquery-3.3.1.min.js"></script>
-<!-- //common jquery plugin -->
-
-<!-- theme switch js (light and dark)-->
-<script src="assets/js/theme-change.js"></script>
-<script>
-        function autoType(elementClass, typingSpeed) {
-            var thhis = $(elementClass);
-            thhis.css({
-                "position": "relative",
-                "display": "inline-block"
-            });
-            thhis.prepend('<div class="cursor" style="right: initial; left:0;"></div>');
-            thhis = thhis.find(".text-js");
-            var text = thhis.text().trim().split('');
-            var amntOfChars = text.length;
-            var newString = "";
-            thhis.text("|");
-            setTimeout(function () {
-                thhis.css("opacity", 1);
-                thhis.prev().removeAttr("style");
-                thhis.text("");
-                for (var i = 0; i < amntOfChars; i++) {
-                    (function (i, char) {
-                        setTimeout(function () {
-                            newString += char;
-                            thhis.text(newString);
-                        }, i * typingSpeed);
-                    })(i + 1, text[i]);
-                }
-            }, 1500);
-        }
-
-        $(document).ready(function () {
-            // Now to start autoTyping just call the autoType function with the 
-            // class of outer div
-            // The second paramter is the speed between each letter is typed.   
-            autoType(".type-js", 200);
-        });
-    </script>
-<!-- //theme switch js (light and dark)-->
-
-<!-- MENU-JS -->
-<script>
-        $(window).on("scroll", function () {
-            var scroll = $(window).scrollTop();
-
-            if (scroll >= 80) {
-                $("#site-header").addClass("nav-fixed");
-            } else {
-                $("#site-header").removeClass("nav-fixed");
-            }
-        });
-
-        //Main navigation Active Class Add Remove
-        $(".navbar-toggler").on("click", function () {
-            $("header").toggleClass("active");
-        });
-        $(document).on("ready", function () {
-            if ($(window).width() > 991) {
-                $("header").removeClass("active");
-            }
-            $(window).on("resize", function () {
-                if ($(window).width() > 991) {
-                    $("header").removeClass("active");
-                }
-            });
-        });
-    </script>
-<!-- //MENU-JS -->
-
-<!-- disable body scroll which navbar is in active -->
-<script>
-        $(function () {
-            $('.navbar-toggler').click(function () {
-                $('body').toggleClass('noscroll');
-            })
-        });
-    </script>
-<!-- //disable body scroll which navbar is in active -->
-
-<!--bootstrap-->
-<script src="assets/js/bootstrap.min.js"></script>
-<!-- //bootstrap-->
-<!-- //Js scripts -->
+<script type="text/javascript">
+var boardSsn="${boardSsn}";
+//var boardSsn='172';
+    $(document).ready(function(){
+    	boardObj.fn_getBoardInfo(boardSsn);
+    });
+    
+    let boardObj = {
+    	fn_getBoardInfo : function(boardSsn) {
+    		console.log(boardSsn);
+    		var param = "boardSsn="+boardSsn;
+			ajaxParamExecute(param, "/admin/textboard/getBoardInfo", "post", false, false, boardObj.fn_getBoardInfoReturn);
+		},
+		fn_getBoardInfoReturn : function(rst) {
+ 			console.log(rst)
+ 			//$('#req_seq').text(rst.resultInfo.seq);
+ 			$('#req_title').text(rst.resultInfo.title);
+ 			$('#req_name').text(rst.resultInfo.uName);
+ 			$('#req_reply').text(rst.resultInfo.replyYn);
+ 			
+ 			$('#req_date').text(rst.resultInfo.regDtYmd);
+ 			if(rst.resultInfo.attFile != null){
+ 				$('#req_file').show()
+ 				$('#req_file').attr("src", "/common/imageload?fullImageFileNm="+rst.resultInfo.attFile);
+ 			}
+ 			$('#req_hash').text(rst.resultInfo.hashTag);
+ 			$('#req_content').text(rst.resultInfo.contents);
+		}
+    }
+</script>

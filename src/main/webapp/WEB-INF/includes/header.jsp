@@ -49,41 +49,41 @@
 				</ul>
 			</div>
 			<!-- search button -->
-			<div class="search-right">
-				<a href="#search" title="search"><span class="fa fa-search"
-					aria-hidden="true"></span></a>
-				<!-- search popup -->
-				<div id="search" class="pop-overlay">
-					<div class="popup">
-						<h4 class="search-pop-text-w3 text-white text-center mb-4">Search
-							Here Your Favourite Food</h4>
-						<form action="error.html" method="GET" class="search-box">
-							<div class="input-search">
-								<span class="fa fa-search mr-2" aria-hidden="true"></span><input
-									type="search" placeholder="Enter Keyword" name="search"
-									required="required" autofocus="">
-							</div>
-							<button type="submit" class="btn button-style">Search</button>
-						</form>
-					</div>
-					<a class="close" href="#close">Ã</a>
-				</div>
-				<!-- //search popup -->
-			</div>
+<!-- 			<div class="search-right"> -->
+<!-- 				<a href="#search" title="search"><span class="fa fa-search" -->
+<!-- 					aria-hidden="true"></span></a> -->
+<!-- 				search popup -->
+<!-- 				<div id="search" class="pop-overlay"> -->
+<!-- 					<div class="popup"> -->
+<!-- 						<h4 class="search-pop-text-w3 text-white text-center mb-4">Search -->
+<!-- 							Here Your Favourite Food</h4> -->
+<!-- 						<form action="error.html" method="GET" class="search-box"> -->
+<!-- 							<div class="input-search"> -->
+<!-- 								<span class="fa fa-search mr-2" aria-hidden="true"></span><input -->
+<!-- 									type="search" placeholder="Enter Keyword" name="search" -->
+<!-- 									required="required" autofocus=""> -->
+<!-- 							</div> -->
+<!-- 							<button type="submit" class="btn button-style">Search</button> -->
+<!-- 						</form> -->
+<!-- 					</div> -->
+<!-- 					<a class="close" href="#close">Ã</a> -->
+<!-- 				</div> -->
+<!-- 				//search popup -->
+<!-- 			</div> -->
 			<!-- //search button -->
 			<!-- toggle switch for light and dark theme -->
-			<div class="cont-ser-position">
-				<nav class="navigation">
-					<div class="theme-switch-wrapper">
-						<label class="theme-switch" for="checkbox"> <input
-							type="checkbox" id="checkbox">
-							<div class="mode-container">
-								<i class="gg-sun"></i> <i class="gg-moon"></i>
-							</div>
-						</label>
-					</div>
-				</nav>
-			</div>
+<!-- 			<div class="cont-ser-position"> -->
+<!-- 				<nav class="navigation"> -->
+<!-- 					<div class="theme-switch-wrapper"> -->
+<!-- 						<label class="theme-switch" for="checkbox"> <input -->
+<!-- 							type="checkbox" id="checkbox"> -->
+<!-- 							<div class="mode-container"> -->
+<!-- 								<i class="gg-sun"></i> <i class="gg-moon"></i> -->
+<!-- 							</div> -->
+<!-- 						</label> -->
+<!-- 					</div> -->
+<!-- 				</nav> -->
+<!-- 			</div> -->
 			<!-- //toggle switch for light and dark theme -->
 		</nav>
 	</div>

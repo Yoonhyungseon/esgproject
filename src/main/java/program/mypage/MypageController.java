@@ -238,6 +238,37 @@ public class MypageController {
 		return mv;
 	}
 	
+	
+	/**************************************************
+	* @MethodName : getCommentList
+	* @Description: 댓글 목록 조회
+	* @param request
+	* @param model
+	* @return ModelAndView
+	* @Author : Beom-Ki, Lee
+	* @Version : 2021. 8. 24.
+	**************************************************/
+	@ResponseBody
+	@RequestMapping(value = {"/getCommentList"}, method = {RequestMethod.GET, RequestMethod.POST })
+	public ModelAndView getCommentList(HttpServletRequest request, Model model) {
+		logger.debug("MypageController : getCommentList - start");
+
+		ModelAndView mv = new ModelAndView("jsonView");
+		
+		List<CamelMap> resultList = null;
+		
+		try {
+			resultList = mypageMapper.getCommentList();
+		} catch (Exception e) {
+			logger.debug("게시글 목록 조회 오류", e);
+		}
+		
+		mv.addObject("resultList",resultList);
+		
+		logger.debug("MypageController : getCommentList - end");
+		return mv;
+	}
+	
 }
 	
 	

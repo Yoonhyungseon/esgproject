@@ -50,5 +50,15 @@ public interface MypageMapper {
 	* @Version : 2021. 8. 21.
 	**************************************************/
 	public List<CamelMap> getScrapList() throws SQLException;
+	
+	/**************************************************
+	* @MethodName : getCommentList
+	* @Description: 댓글 목록 조회
+	* @return
+	* @throws SQLException List<CamelMap>
+	* @Author : Beom-Ki, Lee
+	* @Version : 2021. 8. 24.
+	**************************************************/
+	public List<CamelMap> getCommentList() throws SQLException;
 
 }

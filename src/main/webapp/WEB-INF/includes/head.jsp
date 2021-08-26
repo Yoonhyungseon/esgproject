@@ -41,4 +41,5 @@
 	    
 	    <script src="/adminLayer/vendors/validation/common.js"></script>
 	    
+	    <link rel="stylesheet" href="/asset/css/common/custom.css">
 	</head>

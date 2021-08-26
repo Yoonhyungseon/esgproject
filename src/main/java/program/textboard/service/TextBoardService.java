@@ -1,22 +1,22 @@
-//package program.textboard.service;
-//
-//import java.util.List;
-//
-//import org.springframework.beans.factory.annotation.Autowired;
-//import org.springframework.stereotype.Service;
-//
-//import program.textboard.mapper.TextBoardMapper;
-//import program.common.BoardVo;
-//
-///**************************************************
-// * @FileName : TextBoardService.java
-// **************************************************/
-//
-//@Service
-//public class TextBoardService {
-//
-//	@Autowired
-//	private TextBoardMapper textBoardMapper;
+package program.textboard.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import program.textboard.mapper.TextBoardMapper;
+
+
+/**************************************************
+ * @FileName : TextBoardService.java
+ **************************************************/
+
+@Service
+public class TextBoardService {
+
+	//@Autowired
+	//private TextBoardMapper textBoardMapper;
 //
 //	/**************************************************
 //	 * @MethodName : getNow
@@ -110,5 +110,5 @@
 //	public List<BoardVo> searchTitle(String name) throws Exception {	
 //		return textBoardMapper.searchTitle(name);
 //	}
-//}
-//
+}
+

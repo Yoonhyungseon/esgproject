@@ -1,13 +1,13 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page contentType="text/html;charset=UTF-8" language="java"%>
 
-<script src="js/jquery.js" type="text/javascript">
+
+<!-- <script src="js/jquery.js" type="text/javascript">
 	$(document).ready(function() {
  	var progressbar = $('#progressbar'),
     max = progressbar.attr('max'),
     value = progressbar.val();
 };
-</script>
+</script> -->
 <style>
 progress {
 	width: 100%;
@@ -29,6 +29,12 @@ progress::-webkit-progress-value {
 	text-align: right;
 	font-size: 20px;
 	border-radius: 15px;
+}
+.Yrow{
+	display: flow-root;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
 }
 
 /* .container_bar {
@@ -67,277 +73,43 @@ progress::-webkit-progress-value {
 </div>
 <!-- //inner banner -->
 <!-- blog section -->
-<section class="w3l-blog-sec py-5">
+<div class="w3l-blog-sec py-5">
 	<div class="services-layout py-md-4 py-3">
 		<div class="container">
 			<h3 class="title-big mb-4 pb-2">Blog Posts</h3>
-
-			<div class="row">
-				<div class="col-lg-4 col-md-6 column column-img" id="zoomIn">
-					<div class="services-gd">
-						<div class="serve-info serveInfoSize">
-							<h3 class="date">
-								21<sup>st</sup> October
-							</h3>
-							<a href="textboardView">
-								<figure>
-									<img class="img-responsive uploadImg"
-										src="/asset/images/straw.jpg" alt="blog-image">
-								</figure>
-							</a>
-							<h3>
-								<a href="textboardView" class="vv-link">빨대는 바다 생물들에게 해로운 영향을
-									줄 수 있어요. 저는 앞으로 이 빨대가 붙어있는 제품을 사용하지 않겠습니다.</a>
-							</h3>
-							<ul class="admin-list">
-								<li><a href="textboardView"><span
-										class="fa fa-user-circle" aria-hidden="true"></span> 중앙초</a></li>
-								<li><a href="textboardView"><span class="fa fa-heart"
-										aria-hidden="true"></span>55 Likes</a></li>
-								<li><a href="textboardView"><span
-										class="fa fa-comments" aria-hidden="true"></span>7 Comments</a></li>
-							</ul>
-							<!-- 	<div class="container_bar">
-								<div class="skill html">80%</div>
+			<div class="Yrow">
+				<div id="listClone"></div>
+				<div id="listCron" style="display: none;">
+					<div class="col-lg-4 col-md-6 column column-img" id="zoomIn" style="float: left; margin: 10px 0">
+						<div class="services-gd">
+							<div class="serve-info">
+<!-- 								<div id="boardSsn" style="display:none;"></div> -->
+								<h3 class="date"></h3>
+								<a class="req_title"><img class="img-responsive" id="req_file" alt="blog-image"></a>
+								<h3>
+									<a href="#none" id="req_title" class="req_title"></a>
+								</h3>
+								<ul class="admin-list">
+									<li><div id="req_regName"><span
+											class="fa fa-user-circle" aria-hidden="true"></span></div></li>
+									<li><a href="textboardView"><span class="fa fa-heart"
+											aria-hidden="true"></span>55 Likes</a></li>
+									<li><div href="textboardView"><span
+											class="fa fa-comments" aria-hidden="true"></span>7 Comments</div></li>
+								</ul>
+								<progress id="progressbar" max="100" value="50"></progress>
 							</div>
-							<br> -->
-							<progress id="progressbar" max="100" value="50"></progress>
 						</div>
 					</div>
 				</div>
-				<div class="col-lg-4 col-md-6 column column-img mt-md-0 mt-4"
-					id="zoomIn">
-					<div class="services-gd">
-						<div class="serve-info serveInfoSize">
-							<h3 class="date">
-								6<sup>th</sup> January
-							</h3>
-							<a href="textboardView">
-								<figure>
-									<img class="img-responsive uploadImg"
-										src="/asset/images/parking.PNG" alt="blog-image">
-								</figure>
-							</a>
-							<h3>
-								<a href="textboardView" class="vv-link">젊은
-									청년들의 건강과 인권을 생각해 백화점 측에서 패딩을 입을 수 있도록 배려해줬으면 좋겠습니다.</a>
-							</h3>
-							<ul class="admin-list">
-								<li><a href="textboardView"><span
-										class="fa fa-user-circle" aria-hidden="true"></span> 김영웅</a></li>
-								<li><a href="textboardView"><span class="fa fa-heart"
-										aria-hidden="true"></span>55 Likes</a></li>
-								<li><a href="textboardView"><span
-										class="fa fa-comments" aria-hidden="true"></span>30 Comments</a></li>
-							</ul>
-							<progress id="progressbar" max="100" value="80"></progress>
-						</div>
-					</div>
-				</div>
-				<div
-					class="col-lg-4 col-md-6 mt-lg-0 mt-md-5 mt-4 column column-img"
-					id="zoomIn">
-					<div class="services-gd">
-						<div class="serve-info serveInfoSize">
-							<h3 class="date">
-								1<sup>st</sup> November
-							</h3>
-							<a href="textboardView">
-								<figure>
-									<img class="img-responsive uploadImg"
-										src="/asset/images/spam.jpg" alt="blog-image">
-								</figure>
-							</a>
-							<h3>
-								<a href="textboardView" class="vv-link">스팸 캔은 이미 밀봉 상태라 플라스틱
-									뚜껑을 굳이 씌울 필요가 없습니다. 스팸 뚜껑은 반납합니다.</a>
-							</h3>
-							<ul class="admin-list">
-								<li><a href="textboardView"><span
-										class="fa fa-user-circle" aria-hidden="true"></span> 쓰담쓰담</a></li>
-								<li><a href="textboardView"><span class="fa fa-heart"
-										aria-hidden="true"></span>15 Likes</a></li>
-								<li><a href="textboardView"><span
-										class="fa fa-comments" aria-hidden="true"></span>10 Comments</a></li>
-							</ul>
-							<progress id="progressbar" max="100" value="30"></progress>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-6 mt-md-5 mt-4 column column-img"
-					id="zoomIn">
-					<div class="services-gd">
-						<div class="serve-info">
-							<h3 class="date">
-								5<sup>st</sup> October
-							</h3>
-							<a href="textboardView">
-								<figure>
-									<img class="img-responsive" src="assets/images/blog1.jpg"
-										alt="blog-image">
-								</figure>
-							</a>
-							<h3>
-								<a href="textboardView" class="vv-link">Cras fringilla, enim
-									a porta fermentum</a>
-							</h3>
-							<ul class="admin-list">
-								<li><a href="textboardView"><span
-										class="fa fa-user-circle" aria-hidden="true"></span> Admin</a></li>
-								<li><a href="textboardView"><span class="fa fa-heart"
-										aria-hidden="true"></span>6 Likes</a></li>
-								<li><a href="textboardView"><span
-										class="fa fa-comments" aria-hidden="true"></span>9 Comments</a></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-6 mt-md-5 mt-4 column column-img"
-					id="zoomIn">
-					<div class="services-gd">
-						<div class="serve-info">
-							<h3 class="date">
-								7<sup>st</sup> October
-							</h3>
-							<a href="textboardView">
-								<figure>
-									<img class="img-responsive" src="assets/images/blog4.jpg"
-										alt="blog-image">
-								</figure>
-							</a>
-							<h3>
-								<a href="textboardView" class="vv-link">Cras fringilla, enim
-									a porta fermentum</a>
-							</h3>
-							<ul class="admin-list">
-								<li><a href="textboardView"><span
-										class="fa fa-user-circle" aria-hidden="true"></span> Admin</a></li>
-								<li><a href="textboardView"><span class="fa fa-heart"
-										aria-hidden="true"></span>9 Likes</a></li>
-								<li><a href="textboardView"><span
-										class="fa fa-comments" aria-hidden="true"></span>8 Comments</a></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-6 mt-md-5 mt-4 column column-img"
-					id="zoomIn">
-					<div class="services-gd">
-						<div class="serve-info">
-							<h3 class="date">
-								4<sup>st</sup> October
-							</h3>
-							<a href="textboardView">
-								<figure>
-									<img class="img-responsive" src="assets/images/blog3.jpg"
-										alt="blog-image">
-								</figure>
-							</a>
-							<h3>
-								<a href="textboardView" class="vv-link">Cras fringilla, enim
-									a porta fermentum</a>
-							</h3>
-							<ul class="admin-list">
-								<li><a href="textboardView"><span
-										class="fa fa-user-circle" aria-hidden="true"></span> Admin</a></li>
-								<li><a href="textboardView"><span class="fa fa-heart"
-										aria-hidden="true"></span>8 Likes</a></li>
-								<li><a href="textboardView"><span
-										class="fa fa-comments" aria-hidden="true"></span>6 Comments</a></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-6 mt-md-5 mt-4 column column-img"
-					id="zoomIn">
-					<div class="services-gd">
-						<div class="serve-info">
-							<h3 class="date">
-								21<sup>st</sup> October
-							</h3>
-							<a href="textboardView">
-								<figure>
-									<img class="img-responsive" src="assets/images/blog6.jpg"
-										alt="blog-image">
-								</figure>
-							</a>
-							<h3>
-								<a href="textboardView" class="vv-link">Nunc consequat justo
-									id commodo feugiat</a>
-							</h3>
-							<ul class="admin-list">
-								<li><a href="textboardView"><span
-										class="fa fa-user-circle" aria-hidden="true"></span> Admin</a></li>
-								<li><a href="textboardView"><span class="fa fa-heart"
-										aria-hidden="true"></span>7 Likes</a></li>
-								<li><a href="textboardView"><span
-										class="fa fa-comments" aria-hidden="true"></span>8 Comments</a></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				<div
-					class="col-lg-4 col-md-6 mt-md-5 mt-4column column-img mt-md-0 mt-4"
-					id="zoomIn">
-					<div class="services-gd">
-						<div class="serve-info">
-							<h3 class="date">
-								23<sup>rd</sup> October
-							</h3>
-							<a href="textboardView">
-								<figure>
-									<img class="img-responsive" src="assets/images/blog2.jpg"
-										alt="blog-image">
-								</figure>
-							</a>
-							<h3>
-								<a href="textboardView" class="vv-link">Fusce ac eros quis
-									metus por edit some</a>
-							</h3>
-							<ul class="admin-list">
-								<li><a href="textboardView"><span
-										class="fa fa-user-circle" aria-hidden="true"></span> Admin</a></li>
-								<li><a href="textboardView"><span class="fa fa-heart"
-										aria-hidden="true"></span>9 Likes</a></li>
-								<li><a href="textboardView"><span
-										class="fa fa-comments" aria-hidden="true"></span>7 Comments</a></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-6 mt-md-5 mt-4 column column-img"
-					id="zoomIn">
-					<div class="services-gd">
-						<div class="serve-info">
-							<h3 class="date">
-								1<sup>st</sup> November
-							</h3>
-							<a href="textboardView">
-								<figure>
-									<img class="img-responsive" src="assets/images/blog5.jpg"
-										alt="blog-image">
-								</figure>
-							</a>
-							<h3>
-								<a href="textboardView" class="vv-link">Cras fringilla, enim
-									a porta fermentum</a>
-							</h3>
-							<ul class="admin-list">
-								<li><a href="textboardView"><span
-										class="fa fa-user-circle" aria-hidden="true"></span> Admin</a></li>
-								<li><a href="textboardView"><span class="fa fa-heart"
-										aria-hidden="true"></span>6 Likes</a></li>
-								<li><a href="textboardView"><span
-										class="fa fa-comments" aria-hidden="true"></span>9 Comments</a></li>
-							</ul>
-						</div>
-					</div>
-					<br>
-					<button class="btn button-style d-flex ml-auto"
-						onClick="location.href='${pageContext.request.contextPath}textboardWrite'"
-						type="submit">Posting</button>
-				</div>
+				<form id="boardFrm" name="boardFrm" method="post" action="/board/textboardView">
+					<input type="hidden" id="boardSsn" name="boardSsn" value="">
+			</form>
 			</div>
+			
+			<button class="btn button-style d-flex ml-auto"
+					onClick="location.href='${pageContext.request.contextPath}textboardWrite'"
+					type="submit">Posting</button>
 			<!-- pagination -->
 			<div class="pagination">
 				<ul>
@@ -354,8 +126,50 @@ progress::-webkit-progress-value {
 			<!-- //pagination -->
 		</div>
 	</div>
-</section>
+</div>
 <!-- //blog section -->
+<script type="text/javascript">
+    $(document).ready(function(){
+    	boardeObj.fn_getBoardList();
+    });
+    
+	let boardeObj = {
+		fn_getBoardList : function() {
+			ajaxParamExecute("", "/board/getBoardList", "post", false, false, boardeObj.fn_getBoardListReturn);
+		},
+		fn_getBoardListReturn : function(rst) {
+ 			console.log(rst);
+ 			$('#listClone').html('');
+ 						
+			if (rst.resultList.length > 0) {
+				for (var i in rst.resultList) {
+					
+					var html = $('#listCron').clone().removeAttr('title').show();
+					
+// 					html.find('#boardSsn').text(rst.resultList[i].boardSsn);
+				    
+					html.find('#req_title').text(rst.resultList[i].title);
+					html.find('.req_title').attr('onclick', 'boardeObj.fn_view(\''+rst.resultList[i].boardSsn+'\')');
+	               
+					html.find('.date').text(rst.resultList[i].regDtYmd);
+					
+					html.find('#req_file').attr("src", "/common/imageload?fullImageFileNm="+rst.resultList[i].attFile);
+
+					html.find('#req_regName').text(rst.resultList[i].uName);
+					
+					$('#listClone').append(html); 
+				}
+			} else {
+				$('#listClone').html('');
+			}
+		},
+		fn_view : function(boardSsn) {
+ 			console.log(boardSsn);
+			$('#boardSsn').val(boardSsn);
+			$('#boardFrm').submit();
+		}
+	}
+    </script>
 <!-- Js scripts -->
 <!-- move top -->
 <button onclick="topFunction()" id="movetop" title="Go to top">
