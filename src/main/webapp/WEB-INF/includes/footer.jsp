@@ -13,6 +13,45 @@
     width:298px; 
 }
 </style>
+<script>
+function sendEmailValidation(){
+	var name = $("#name").val();
+	var content = $("#content").val();
+	var email = $("#email").val();
+
+	if(!name){
+		alert("이름을 입력해주세요.");
+		$("#name").focus();
+	}else if(!content){
+		alert("내용을 입력해주세요.");
+		$("#content").focus();
+	}else if(!email){
+		alert("이메일 주소를 입력해주세요.");
+		$("#email").focus();
+	}else {
+		sendEmail();
+	}
+}
+
+function sendEmail(){
+	$.ajax({
+		url : "/mail",
+		type : 'POST',
+		data : {
+			"name" : $("#name").val(),
+			"content" : $("#content").val(),
+			"email" : $("#email").val(),
+		},
+		success : function(data){
+			if(data == true){
+				alert("이메일 전송이 완료되었습니다.");
+			} else {
+				alert("이메일 전송 실패");
+			}
+		}
+	})
+}
+</script>
 <!-- section divide border style -->
 <div class="border-sec"></div>
 <!-- //section divide border style -->
@@ -64,14 +103,14 @@
 						<!-- <h3>Newsletter</h3> -->
 						<div class="end-column">
 							<h3>Contact Us</h3>
-							<form action="#" class="<!-- subscribe -->" method="post">
-								<input type="text" name="name" placeholder="Name" required="required" class="inputText">
+							<form class="<!-- subscribe -->">
+								<input type="text" name="name" placeholder="Name" required="required" class="inputText" id="name">
 								<br><br>
-								<input type="text" name="content" placeholder="Content" required="required" class="inputText">
+								<input type="text" name="content" placeholder="Content" required="required" class="inputText" id="content">
 								<br><br>
 								<div style="display:flex;">
-								<input type="email" name="email" placeholder="Email Address" required="required">
-								<button>
+								<input type="email" name="email" placeholder="Email Address" required="required" id="email">
+								<button type="button" onclick="sendEmailValidation()">
 									<span class="fa fa-paper-plane" aria-hidden="true"></span>
 								</button>
 								</div>
