@@ -14,7 +14,7 @@
                     <!-- Item starts -->
                     <div class="row menu-item" id="listCron" style="display:none; float: left; width: 400px; height: 80px;">
                         <div class="col-3 p-0 position-relative">
-                            <img src="https://image.edaily.co.kr/images/Photo/files/NP/S/2020/12/PS20122000371.jpg" class="img-responsive" alt="">
+                            <img id="req_file" class="img-responsive" alt="">
                             <a href=#none id="detail" class="btn button-style button-style-2">자세히</a>
                         </div>
                         <br>
@@ -51,13 +51,17 @@
     <!-- //menu -->
 
 	<script type="text/javascript">
+//	var uName = '${uName}'
+	var uName = 'esg'
+	
 	$(document).ready(function(){
-    	boardObj.fn_getBoardList();
+    	boardObj.fn_getBoardList(uName);
     });
     
 	let boardObj = {
-		fn_getBoardList : function() {
-			ajaxParamExecute("", "/mypage/getBoardList", "post", false, false, boardObj.fn_getBoardListReturn);
+		fn_getBoardList : function(uName) {
+			var param = "uName="+uName;
+			ajaxParamExecute(param, "/mypage/getBoardList", "post", false, false, boardObj.fn_getBoardListReturn);
 		},
 		fn_getBoardListReturn : function(rst) {
  			console.log(rst);
@@ -73,6 +77,7 @@
 					html.find('#boardSsn').text(rst.resultList[i].boardSsn);
 					html.find('.title').attr('onclick', 'boardObj.fn_view(\''+rst.resultList[i].boardSsn+'\')');
 					html.find('#detail').attr('onclick', 'boardObj.fn_view(\''+rst.resultList[i].boardSsn+'\')');
+					html.find('#req_file').attr("src", "/common/imageload?fullImageFileNm="+rst.resultList[i].attFile);
 		//			html.find('.contents').html(rst.resultList[i].contents60);
 
 					$('#listClone').append(html);
