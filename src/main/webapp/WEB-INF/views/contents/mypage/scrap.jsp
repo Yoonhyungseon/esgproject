@@ -1,5 +1,40 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<script src="js/jquery.js" type="text/javascript">
+	$(document).ready(function() {
+ 	var progressbar = $('#progressbar'),
+    max = progressbar.attr('max'),
+    value = progressbar.val();
+};
+</script>
+<style>
+progress {
+	width: 100%;
+	margin: auto;
+	height: 15px;
+	margin-top: 10px;
+}
 
+progress::-webkit-progress-bar {
+	background-color: rgb(192, 192, 192);
+	width: 100%;
+	border-radius: 15px;
+}
+
+progress::-webkit-progress-value {
+	background-color: #0abf53;
+	color: white;
+	padding: 1%;
+	text-align: right;
+	font-size: 20px;
+	border-radius: 15px;
+}
+.Yrow{
+	display: flow-root;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+</style>
 
  <div class="inner-banner">
         <section class="w3l-breadcrumb">
@@ -19,7 +54,7 @@
         <div class="services-layout py-md-4 py-3">
             <div class="container">
                 <h3 class="title-big mb-4 pb-2">스크랩 내역</h3>
-                <div class="row"> 
+                <div class="Yrow">
 	                <div id="listClone" >
 	                </div> 
                 	
@@ -30,12 +65,9 @@
 		                            <div class="serve-info">
 		                                <h3 class="date"></h3>
 		                                <a href="/board/textboardView">
-		                                    <figure>
-		                                        <img class="img-responsive" src="/asset/images/esg.jpg" alt="blog-image">
-		                                    </figure>
+		                                	<img class="img-responsive"  id="req_file"  alt="blog-image">
 		                                </a>
-		                                <h3 class="title" style="line-height: 33px;"> <a href="/board/textboardView" class="vv-link"></a>
-		                                </h3>
+		                                <h3> <a href="/board/textboardView" class="req_title"></a></h3>
 		                                <ul class="admin-list">
 		                                    <li class="name"><a href="/board/textboardView"><span class="fa fa-user-circle" aria-hidden="true"></span>
 		                                            </a></li>
@@ -45,6 +77,7 @@
 		                                                aria-hidden="true"></span>8 Comments</a>
 		                                    </li>
 		                                </ul>
+		                                <progress id="progressbar" max="100" value="50"></progress>
 		                            </div>
 		                        </div>
 		                    </div>
@@ -212,9 +245,9 @@
 					
 					
 					html.find('.date').text(rst.resultList[i].regDtYmd);
-					html.find('.title').text(rst.resultList[i].title20);
+					html.find('.req_title').text(rst.resultList[i].title20);
 					html.find('.name').text(rst.resultList[i].uName);
-
+					html.find('#req_file').attr("src", "/common/imageload?fullImageFileNm="+rst.resultList[i].attFile);
 					$('#listClone').append(html);
 				}
 			} else {
