@@ -15,7 +15,7 @@
             <div class="container">
                 <h4 class="inner-text-title font-weight-bold mb-sm-3 mb-2">ESG News</h4>
                 <ul class="breadcrumbs-custom-path">
-                    <li><a href="index.html">Home</a></li>
+                    <li><a href="/">Home</a></li>
                     <li class="active"><span class="fa fa-chevron-right mx-2" aria-hidden="true"></span>ESG News</li>
                 </ul>
             </div>
@@ -27,145 +27,30 @@
         <div class="services-layout py-md-4 py-3">
             <div class="container">
                 <h3 class="title-big mb-4 pb-2">ESG News</h3>
-                <div class="row">
-                    <div class="col-lg-4 col-md-6 column column-img" id="zoomIn">
-                        <div class="services-gd">
-                            <div class="serve-info">
-                                <h3 class="date">21<sup>st</sup> October</h3>
-                                <a href="newsView">
-                                    <figure>
-                                        <img class="img-responsive" src="assets/images/blog6.jpg" alt="blog-image">
-                                    </figure>
-                                </a>
-                                <h3> <a href="newsView" class="vv-link">Nunc consequat justo id commodo
-                                        feugiat</a>
-                                </h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 column column-img mt-md-0 mt-4" id="zoomIn">
-                        <div class="services-gd">
-                            <div class="serve-info">
-                                <h3 class="date">23<sup>rd</sup> October</h3>
-                                <a href="newsView">
-                                    <figure>
-                                        <img class="img-responsive" src="assets/images/blog2.jpg" alt="blog-image">
-                                    </figure>
-                                </a>
-                                <h3> <a href="newsView" class="vv-link">Fusce ac eros quis metus por edit
-                                        some</a>
-                                </h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 mt-lg-0 mt-md-5 mt-4 column column-img" id="zoomIn">
-                        <div class="services-gd">
-                            <div class="serve-info">
-                                <h3 class="date">1<sup>st</sup> November</h3>
-                                <a href="newsView">
-                                    <figure>
-                                        <img class="img-responsive" src="assets/images/blog5.jpg" alt="blog-image">
-                                    </figure>
-                                </a>
-                                <h3> <a href="newsView" class="vv-link">Cras fringilla, enim a porta
-                                        fermentum</a>
-                                </h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 mt-md-5 mt-4 column column-img" id="zoomIn">
-                        <div class="services-gd">
-                            <div class="serve-info">
-                                <h3 class="date">5<sup>st</sup> October</h3>
-                                <a href="newsView">
-                                    <figure>
-                                        <img class="img-responsive" src="assets/images/blog1.jpg" alt="blog-image">
-                                    </figure>
-                                </a>
-                                <h3> <a href="newsView" class="vv-link">Cras fringilla, enim a porta
-                                        fermentum</a>
-                                </h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 mt-md-5 mt-4 column column-img" id="zoomIn">
-                        <div class="services-gd">
-                            <div class="serve-info">
-                                <h3 class="date">7<sup>st</sup> October</h3>
-                                <a href="newsView">
-                                    <figure>
-                                        <img class="img-responsive" src="assets/images/blog4.jpg" alt="blog-image">
-                                    </figure>
-                                </a>
-                                <h3> <a href="newsView" class="vv-link">Cras fringilla, enim a porta
-                                        fermentum</a>
-                                </h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 mt-md-5 mt-4 column column-img" id="zoomIn">
-                        <div class="services-gd">
-                            <div class="serve-info">
-                                <h3 class="date">4<sup>st</sup> October</h3>
-                                <a href="newsView">
-                                    <figure>
-                                        <img class="img-responsive" src="assets/images/blog3.jpg" alt="blog-image">
-                                    </figure>
-                                </a>
-                                <h3> <a href="newsView" class="vv-link">Cras fringilla, enim a porta
-                                        fermentum</a>
-                                </h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 mt-md-5 mt-4 column column-img" id="zoomIn">
-                        <div class="services-gd">
-                            <div class="serve-info">
-                                <h3 class="date">21<sup>st</sup> October</h3>
-                                <a href="newsView">
-                                    <figure>
-                                        <img class="img-responsive" src="assets/images/blog6.jpg" alt="blog-image">
-                                    </figure>
-                                </a>
-                                <h3> <a href="newsView" class="vv-link">Nunc consequat justo id commodo
-                                        feugiat</a>
-                                </h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 mt-md-5 mt-4column column-img mt-md-0 mt-4" id="zoomIn">
-                        <div class="services-gd">
-                            <div class="serve-info">
-                                <h3 class="date">23<sup>rd</sup> October</h3>
-                                <a href="newsView">
-                                    <figure>
-                                        <img class="img-responsive" src="assets/images/blog2.jpg" alt="blog-image">
-                                    </figure>
-                                </a>
-                                <h3> <a href="newsView" class="vv-link">Fusce ac eros quis metus por edit
-                                        some</a>
-                                </h3>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 mt-md-5 mt-4 column column-img" id="zoomIn">
-                        <div class="services-gd">
-                            <div class="serve-info">
-                                <h3 class="date">1<sup>st</sup> November</h3>
-                                <a href="newsView">
-                                    <figure>
-                                        <img class="img-responsive" src="assets/images/blog5.jpg" alt="blog-image">
-                                    </figure>
-                                </a>
-                                <h3> <a href="newsView" class="vv-link">Cras fringilla, enim a porta
-                                        fermentum</a>
-                                </h3>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <div class="row" id="listClone"></div>
+                <div style="display: none;">
+	                <div class="col-lg-4 col-md-6 column column-img" id="listCron" style="margin: 10px 0">
+	                	<div class="services-gd">
+	                		<div class="serve-info">
+		                		<h3 class="date req_newspaper"></h3>
+		                		<a>
+		                			<figure>
+		                				<img class="img-responsive req_thumb" alt="blog-image">
+		                			</figure>
+		                		</a>
+		                		<h3>
+		                			<a class="vv-link req_title"></a>
+		                			<div class="req_content"></div>
+		                		</h3>
+		                		</div>
+		                </div>
+		            </div>
+	            </div>
+	            <form id="boardFrm" name="boardFrm" method="post" action="/news/newsView">
+	            	<input type="hidden" id="newsUrl" name="newsUrl" value="">
+				</form>
                 <!-- pagination -->
-                <div class="pagination">
+<!--                 <div class="pagination">
                     <ul>
                         <li> <a href="#none" class="not-allowed" disabled="">
                                 <span class="fa fa-angle-double-left" aria-hidden="true"></span>
@@ -183,7 +68,7 @@
                             </a>
                         </li>
                     </ul>
-                </div>
+                </div> -->
                 <!-- //pagination -->
             </div>
         </div>
@@ -217,11 +102,11 @@
     <!-- //move top -->
 
     <!-- common jquery plugin -->
-    <script src="assets/js/jquery-3.3.1.min.js"></script>
+<!--     <script src="assets/js/jquery-3.3.1.min.js"></script> -->
     <!-- //common jquery plugin -->
 
     <!-- theme switch js (light and dark)-->
-    <script src="assets/js/theme-change.js"></script>
+<!--     <script src="assets/js/theme-change.js"></script> -->
     <script>
         function autoType(elementClass, typingSpeed) {
             var thhis = $(elementClass);
@@ -261,6 +146,43 @@
 
     <!-- MENU-JS -->
     <script>
+    
+	    $(document).ready(function(){
+	    	newsObj.fn_getNewsList();
+	    });
+	    
+	    let newsObj = {
+	    	fn_getNewsList : function() {
+				ajaxParamExecute("", "/news/getNewsList", "get", false, false, newsObj.fn_getNewsListReturn);
+			},
+			fn_getNewsListReturn : function(rst) {
+				$('#listClone').html('');
+				
+				if (rst.news.length > 0) {
+					for (var i in rst.news) {
+					
+						var html = $('#listCron').clone().removeAttr('id').show();
+						
+						html.find('.req_newspaper').text(rst.news[i].newspaper);
+						html.find('.req_thumb').attr("src", rst.news[i].thumb);
+						html.find('.req_thumb').attr('onclick', 'newsObj.fn_view(\''+rst.news[i].url+'\')');
+						html.find('.req_title').text(rst.news[i].title);
+						html.find('.req_title').attr('onclick', 'newsObj.fn_view(\''+rst.news[i].url+'\')');
+						html.find('.req_content').text(rst.news[i].content);
+						
+						$('#listClone').append(html);
+					}
+				} else {
+					$('#listClone').html('');
+				}
+			},
+			fn_view : function(url) {
+				console.log(url);
+				$('#newsUrl').val(url);
+				$('#boardFrm').submit();
+			}
+	    };
+    
         $(window).on("scroll", function () {
             var scroll = $(window).scrollTop();
 
@@ -301,13 +223,12 @@
 	     $('#site-header').hide();
 	     $('.border-sec').hide();
 	     $('.w3l-footer-16').hide();
-	     });
 	  });
 	</script>
     <!-- //disable body scroll which navbar is in active -->
 
     <!--bootstrap-->
-    <script src="assets/js/bootstrap.min.js"></script>
+<!--     <script src="assets/js/bootstrap.min.js"></script> -->
     <!-- //bootstrap-->
     <!-- //Js scripts -->
 </body>

@@ -12,7 +12,7 @@
             <div class="container">
                 <h4 class="inner-text-title font-weight-bold mb-sm-3 mb-2">ESG News</h4>
                 <ul class="breadcrumbs-custom-path">
-                    <li><a href="index.html">Home</a></li>
+                    <li><a href="/">Home</a></li>
                     <li class="active"><span class="fa fa-chevron-right mx-2" aria-hidden="true"></span>ESG News</li>
                 </ul>
             </div>
@@ -24,31 +24,18 @@
         <div class="single-blog sec-padding py-md-4 py-3">
             <div class="container">
                 <div class="single-bottom-blog">
-                    <h3 class="date">21<sup>st</sup> October</h3>
-                    <div class="blog-img-single">
-                        <img src="assets/images/single.jpg" alt="" class="img-fluid img-responsive" />
-                    </div>
+                	<div id="dateClone"></div>
+                	<div id="date" style="display: none;"><h3 class="date"></h3></div>
                     <div class="bottom-grid mt-4 pt-2">
-                        <h3>Our Latest Foodies Blog</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                            laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-                            voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-                        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
-                            laudantium, totam
-                            rem
-                            aperiam, eaque ipsa quae ab illo inventore aperiam, eaque ipsa quae ab illo inventore
-                            veritatis et quasi
-                            architecto beatae vitae dicta sunt explicabo.
-                            Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia
-                            consequuntur magni
-                            dolores eos qui ratione voluptatem sequi nesciunt.</p>
-                        <p>Dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                            laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-                            voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                        <div id="titleClone"></div>
+	                	<div id="title" style="display: none;"><h3 class="title" style="margin-bottom: 55px;"></h3></div>
+	                	<div id="thumbClone"></div>
+	                	<div id="thumb" style="display: none;"><img class="thumb" style="margin-bottom: 55px;width: 100%;" alt=""></div>
+	                	<div id="listClone"></div>
+	                	<p id="content" style="display: none;"></p>
                     </div>
                     <!-- bottom -->
-                    <div class="row mb-4 pb-2">
+<!--                     <div class="row mb-4 pb-2">
                         <div class="col-sm-6">
                             <div class="blog-img-single">
                                 <a href="#blog"><img src="assets/images/blog1.jpg" alt="" class="img-fluid" /></a>
@@ -59,35 +46,11 @@
                                 <a href="#blog"><img src="assets/images/blog2.jpg" alt="" class="img-fluid" /></a>
                             </div>
                         </div>
-                    </div>
-                    <p class="para-single">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium
-                        doloremque laudantium,
-                        totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae
-                        dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut
-                        fugit,
-                        sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro
-                        quisquam
-                        est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam
-                        eius
-                        modi tempora.</p>
-                    <p class="para-single">Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur,
-                        adipisci
-                        velit, sed quia non
-                        numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut
-                        enim ad minima
-                        veniam, quis nostrum exercitationem ullam corporis.suscipit laboriosam, nisi ut aliquid ex ea
-                        commodi
-                        consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil
-                        molestiae
-                        consequatur.</p>
-                    <p class="para-single">N Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-                        dolore eu
-                        fugiat
-                        nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
-                        deserunt mollit
-                        anim
-                        id est laborum.</p>
-                    <div class="blog-single-tags d-flex align-items-center mt-4 pt-1 mb-5">
+                    </div> -->
+                    <div id="reporterClone" style="padding-top: 50px;"></div>
+	                <strong id="reporter" style="display: none;"></strong>
+                    <p class="para-single">세상을 보는 균형, 한국일보</p>
+                    <!-- <div class="blog-single-tags d-flex align-items-center mt-4 pt-1 mb-5">
                         <div class="blog-tags">
                             <ul>
                                 <li class="text-tag">Tags:</li>
@@ -103,17 +66,17 @@
                             <a href="#blog"><span class="fa fa-google-plus" aria-hidden="true"></span></a>
                             <a href="#blog"><span class="fa fa-pinterest-p" aria-hidden=" true"></span></a>
                         </div>
-                    </div>
-                    <div class="single-pagination clearfix">
+                    </div> -->
+                    <!-- <div class="single-pagination clearfix">
                         <a class="prev-post pull-left" href="#prev"><span class="fa fa-arrow-left"
                                 aria-hidden="true"></span>
                             Previous Post</a>
                         <a class="next-post pull-right" href="#next">Next Post <span class="fa fa-arrow-right"
                                 aria-hidden="true"></span></a>
-                    </div>
+                    </div> -->
                     <!-- //blog single -->
                     <!-- comments section blog single -->
-                    <section class="w3l-comments-9-main mt-5">
+                    <!-- <section class="w3l-comments-9-main mt-5">
                         <div class="gallery-32">
                             <h3 class="title-main2-blog-single">Comments (2)</h3>
                             <div class="row">
@@ -153,10 +116,10 @@
                                 </div>
                             </div>
                         </div>
-                    </section>
+                    </section> -->
                     <!-- //comments section blog single -->
                     <!-- comments form blog single -->
-                    <section class="w3l-form-comments-sec mt-5">
+                    <!-- <section class="w3l-form-comments-sec mt-5">
                         <div class="coments-forms-sub">
                             <h3 class="title-main2-blog-single">Leave A Message</h3>
                             <div class="form-commets">
@@ -175,7 +138,7 @@
                                 </form>
                             </div>
                         </div>
-                    </section>
+                    </section> -->
                     <!-- //comments form blog single -->
                 </div>
             </div>
@@ -190,6 +153,7 @@
         <span class="fa fa-level-up" aria-hidden="true"></span>
     </button>
     <script>
+    
         // When the user scrolls down 20px from the top of the document, show the button
         window.onscroll = function () {
             scrollFunction()
@@ -212,11 +176,11 @@
     <!-- //move top -->
 
     <!-- common jquery plugin -->
-    <script src="assets/js/jquery-3.3.1.min.js"></script>
+<!--     <script src="assets/js/jquery-3.3.1.min.js"></script> -->
     <!-- //common jquery plugin -->
 
     <!-- theme switch js (light and dark)-->
-    <script src="assets/js/theme-change.js"></script>
+<!--     <script src="assets/js/theme-change.js"></script> -->
     <script>
         function autoType(elementClass, typingSpeed) {
             var thhis = $(elementClass);
@@ -256,6 +220,53 @@
 
     <!-- MENU-JS -->
     <script>
+    	var newsUrl = '${newsUrl}';
+	    
+	    $(document).ready(function(){
+	    	newsObj.fn_getNewsInfo(newsUrl);
+	    });
+	    
+	    let newsObj = {
+	    	fn_getNewsInfo : function(newsUrl) {
+	    		var param = "url="+newsUrl;
+				ajaxParamExecute(param, "/news/getNewsInfo", "get", false, false, newsObj.fn_getNewsInfoReturn);
+			},
+			fn_getNewsInfoReturn : function(rst) {
+
+				$('#dateClone').html('');
+				var html = $('#date').clone().removeAttr('id').show();
+				html.find('.date').text(rst.news.date);
+				$('#dateClone').append(html);
+				
+				$('#titleClone').html('');
+				var html2 = $('#title').clone().removeAttr('id').show();
+				html2.find('.title').text(rst.news.title);
+				$('#titleClone').append(html2);
+				
+				$('#thumbClone').html('');
+				var html4 = $('#thumb').clone().removeAttr('id').show();
+				html4.find('.thumb').attr("src", rst.news.thumb);
+				$('#thumbClone').append(html4);
+				
+				$('#listClone').html('');
+				if (rst.news.content.length > 0) {
+					for (var i in rst.news.content) {
+						var html3 = $('#content').clone().removeAttr('id').show();
+						html3.text(rst.news.content[i]);
+						$('#listClone').append(html3);
+					}
+				} else {
+					$('#listClone').html('');
+				}
+				
+				$('#reporterClone').html('');
+				var html5 = $('#reporter').clone().removeAttr('id').show();
+				html5.text(rst.news.reporter);
+				$('#reporterClone').append(html5);
+			},
+	    }
+	    
+    
         $(window).on("scroll", function () {
             var scroll = $(window).scrollTop();
 
@@ -294,7 +305,7 @@
     <!-- //disable body scroll which navbar is in active -->
 
     <!--bootstrap-->
-    <script src="assets/js/bootstrap.min.js"></script>
+    <!-- <script src="assets/js/bootstrap.min.js"></script> -->
     <!-- //bootstrap-->
     <!-- //Js scripts -->
 </body>
