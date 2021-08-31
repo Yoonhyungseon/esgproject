@@ -44,6 +44,7 @@
     <!-- MENU-JS -->
     <script>
 	    var memEmail = '${memEmail}';
+	    console.log(memEmail);
 	    
 	    $(document).ready(function(){
 	    	memberObj.fn_getMemberId(memEmail);
@@ -55,8 +56,14 @@
 				ajaxParamExecute(param, "/member/getFindId", "post", false, false, memberObj.fn_getMemberIdRetrun);
 			},
 			fn_getMemberIdRetrun : function(rst) {
-	 			var tag = "<h2>" + rst.resultInfo.userId + " 입니다." + "</h2>";
-	 			$("#findId").append(tag);
+				if(rst.resultInfo == null) {
+					alert("아이디가 존재하지 않습니다.");
+					location.href='/member/findId';
+				}
+				else {
+		 			var tag = "<h2>" + rst.resultInfo.userId + " 입니다." + "</h2>";
+		 			$("#findId").append(tag);
+	 			}
 			},
 	    }
     
