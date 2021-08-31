@@ -27,19 +27,16 @@
    	<select id="getLoginInfo" resultType="program.security.Account">
 	   	/* getLoginInfo :: 로그인 처리 */
 		SELECT 
-			USER_SEQ as id, USER_ID as username 
-			, USER_PWD as password, USER_NM as name
-			, CASE WHEN (USER_TYPE='MST001') THEN 'ROLE_ADMIN' WHEN (USER_TYPE='MST002') THEN 'ROLE_USER'   
+			MEM_NUM as id, USER_ID as username 
+			, USER_PW as password, NICK_NAME as name
+			, CASE WHEN (USER_TYPE='A') THEN 'ROLE_ADMIN' WHEN (USER_TYPE='G') THEN 'ROLE_USER'   
 			ELSE 'ROLE_NOT' END as role 
-		FROM TB_MEMBER WHERE USER_ID = #{username}
-		AND STATUS IN ('MES001')
+		FROM member WHERE USER_ID = #{userId}
    </select>
    
    	<select id="selectMemberInfo" resultType="cMap" parameterType="dMap">
 	  /* selectMemberInfo:: 회원 관리 상세 조회 */
-	  SELECT * FROM TB_MEMBER
-	    WHERE USER_SEQ = #{userSeq} AND STATUS = 'MES001'
+	  SELECT * FROM member
+	    WHERE MEM_NUM = #{memNum}
 	</select>
-    
-    
 </mapper>

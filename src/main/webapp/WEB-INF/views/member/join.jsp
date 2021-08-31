@@ -169,7 +169,7 @@
 
 		function signUp(){
 			$.ajax({
-				url : "/member/memberinsert",
+				url : "/rest/member/join",
 				type : 'POST',
 				data : {
 					"userId" : $("#userId").val(),
