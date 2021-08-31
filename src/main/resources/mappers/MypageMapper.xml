@@ -27,6 +27,7 @@
 		, DATE_FORMAT(REG_DT, '%Y-%m-%d') AS REG_DT_YMD
 		, SUBSTR(TITLE, 1, 40) AS TITLE_20
 		FROM bboom_board
+		WHERE U_NAME= #{uName}
 		
     </select>
     

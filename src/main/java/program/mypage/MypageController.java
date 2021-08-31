@@ -225,10 +225,11 @@ public class MypageController {
 
 		ModelAndView mv = new ModelAndView("jsonView");
 		
+		DataMap paramMap = HttpUtil.getRequestDataMap(request);
 		List<CamelMap> resultList = null;
 		
 		try {
-			resultList = mypageMapper.getScrapList();
+			resultList = mypageMapper.getScrapList(paramMap);
 		} catch (Exception e) {
 			logger.debug("게시글 목록 조회 오류", e);
 		}
