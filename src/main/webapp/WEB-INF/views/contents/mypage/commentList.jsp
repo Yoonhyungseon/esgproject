@@ -17,35 +17,27 @@
                     <h3 class="h5 mb-4 text-center">Comment Table</h3>
                     <div class="table-wrap">
                         <table class="table myaccordion table-hover" id="accordion">
-                            <thead>
+                            <thead id="listClone">
                                 <tr>
                                     <th>#</th>
                                     <th>게시글 제목</th>
                                     <th>게시글 작성자</th>
                                     <th>댓글 작성일</th>
-                                   
-                                    <th>&nbsp;</th>
                                 </tr>
                             </thead>
-                            <tbody id="listClone">
-                            </tbody>
-                            	<table id="listCron" style="display:none;" >
-	                                <tr data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" >
-	                                    <th class="seq" scope="row" style="width: 200px"></th>
-	                                    <td class="title" style="width: 170px"></td>
-	                                    <td class="name" style="width: 190px"></td>
-	                                    <td class="date" style="width: 200px"></td>
-	                                    
-	                                    <td>
-	                                        <i class="fa" aria-hidden="true"></i>
-	                                    </td>
-	                                </tr>
-	                                <tr>
-	                                    <td colspan="6" id="collapseOne" class="collapse show acc" data-parent="#accordion">
-	                                        <p class="comment"></p>
-	                                    </td>
-	                                </tr>
-                        		</table>
+                           	<tbody  id="listCron" style="display:none;" >
+                                <tr data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" >
+                                    <th class="seq" scope="row" ></th>
+                                    <td class="title" ></td>
+                                    <td class="name" ></td>
+                                    <td class="date" ></td>
+                                </tr>
+                                <tr>
+                                    <td colspan="6" id="collapseOne" class="collapse show acc" data-parent="#accordion">
+                                        <p class="comment"></p>
+                                    </td>
+                                </tr>
+                       		</tbody >
                             
                         </table>
                     </div>
@@ -65,7 +57,6 @@
 		},
 		fn_getCommentListReturn : function(rst) {
  			console.log(rst);
- 			$('#listClone').html('');
 			console.log(rst.resultList.length);
 			if (rst.resultList.length > 0) {
 				for (var i in rst.resultList) {
@@ -78,7 +69,7 @@
 					html.find('.name').text(rst.resultList[i].regNm);
 					html.find('.comment').text(rst.resultList[i].contents);
 
-					$('#listClone').append(html);
+					$('#listClone').after(html);
 				}
 			} else {
 				$('#listClone').html('');
