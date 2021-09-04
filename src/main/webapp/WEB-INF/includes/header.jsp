@@ -25,11 +25,15 @@
 		    }
 		    if(sessionId != '') {
 		    	$('#login_logout').text('Logout');
+		    	$('#login_logout').attr("href", "/logout");
 			    $('#join_mypage').text('Mypage');
+			    $('#join_mypage').attr("href", "/mypage/mypage");
 		    }
 		    else {
 		    	$('#login_logout').text('Login');
+		    	$('#login_logout').attr("href", "/member/login");
 			    $('#join_mypage').text('Join');
+			    $('#join_mypage').attr("href", "/member/join");
 		    }
 		});
 </script>
@@ -75,9 +79,9 @@
                         </li> -->
 					<li class="nav-item" id="news"><a class="nav-link" href="/news/newsList">ESG
 							News</a></li>
-					<li class="nav-item" id="login"><a id="login_logout" class="nav-link" href="/member/login"></a>
+					<li class="nav-item" id="login"><a id="login_logout" class="nav-link"></a>
 					</li>
-					<li class="nav-item" id="mypage"><a id="join_mypage" class="nav-link" href="/mypage/mypage"></a>
+					<li class="nav-item" id="mypage"><a id="join_mypage" class="nav-link"></a>
 					</li>
 				</ul>
 			</div>

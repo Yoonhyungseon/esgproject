@@ -218,13 +218,6 @@
             })
         });
     </script>
-	<script>
-	  $(function(){
-	     $('#site-header').hide();
-	     $('.border-sec').hide();
-	     $('.w3l-footer-16').hide();
-	  });
-	</script>
     <!-- //disable body scroll which navbar is in active -->
 
     <!--bootstrap-->
