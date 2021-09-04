@@ -7,6 +7,8 @@ import javax.servlet.http.HttpServletRequest;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,6 +20,7 @@ import program.common.CamelMap;
 import program.common.DataMap;
 import program.common.service.CommonService;
 import program.common.util.HttpUtil;
+import program.security.Account;
 import program.textboard.mapper.TextBoardMapper;
 
 @Controller
@@ -193,7 +196,16 @@ public class TextBoardController {
 		DataMap paramMap = HttpUtil.getRequestDataMap(request);
 		System.out.println(paramMap.toString());
 		CamelMap resultInfo = null;
-
+		
+		//TODO : 사용자 로그인 세션
+	    Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+	    if (authentication.getPrincipal() == "anonymousUser") {
+	       logger.debug("상담 상세 페이지 조회: 로그인하지 않은 상태");
+	    }else {
+	         Account account = (Account)authentication.getPrincipal();
+	         paramMap.put("uName", account.getUsername()); 
+	    }
+	    
 		try {
 			resultInfo = textBoardMapper.getBoardInfo(paramMap);
 		} catch (Exception e) {
@@ -201,6 +213,7 @@ public class TextBoardController {
 		}
 
 		mv.addObject("resultInfo", resultInfo);
+		mv.addObject("userInfo", paramMap.getString("uName"));
 
 		logger.debug("TextBoardController : getBoardInfo - end");
 		return mv;

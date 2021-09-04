@@ -190,6 +190,14 @@ var boardSsn="${boardSsn}";
  			}
  			$('#req_hash').text(rst.resultInfo.hashTag);
  			$('#req_content').html(rst.resultInfo.contents);
+ 			
+ 			if(rst.userInfo == rst.resultInfo.regId){
+ 				console.log("내가 쓴글!!!");
+ 				$('#deletBtn').show();
+ 			}else{
+ 				$('#deletBtn').hide();
+ 				console.log("내가 쓴글 아님!!!");
+ 			}
 		}
     }
 </script>
