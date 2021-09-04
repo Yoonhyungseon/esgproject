@@ -47,7 +47,9 @@ public class MainController {
 	* @Version : 2021. 7. 5.
 	**************************************************/
 	@RequestMapping(value = {"index","/*"})
-	public String index(Model model) {
+	public String index(HttpServletRequest request, Model model) {
+		DataMap paramMap = HttpUtil.getRequestDataMap(request);
+		HttpUtil.getParams(paramMap, model);
 //		model.addAttribute("greeting", "Hello!");
 		return "/index";
 	}

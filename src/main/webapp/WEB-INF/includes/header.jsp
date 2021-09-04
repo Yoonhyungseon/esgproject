@@ -1,5 +1,38 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java"%>
 <!--header-->
+<script>
+		var sessionId = '${sessionId}';
+	    console.log(sessionId);
+		$(document).ready(function(){
+		    var path = document.location.pathname; 
+		    if(path == '/' || path == '/index') {
+		    	$('#home').addClass('active');
+		    }
+		    else if(path == '/board/textboardList' || path == '/board/textboardView' || path == '/board/textboardWrite') {
+		    	$('#board').addClass('active');
+		    }
+		    else if(path == '/board/noticeList' || path == '/board/noticeView') {
+		    	$('#notice').addClass('active');
+		    }
+		    else if(path == '/news/newsList' || path == '/news/newsView') {
+		    	$('#news').addClass('active');
+		    }
+		    else if(path == '/member/login' || path == '/member/findId' || path == '/member/findIdMention' || path == '/member/findPassword' || path == '/member/findPasswordMention') {
+		    	$('#login').addClass('active');
+		    }
+		    else if(path == '/mypage/mypage' || path == '/mypage/modifyInfo' || path == '/mypage/postList' || path == '/mypage/commentList' || path == '/mypage/scrap' || path == '/mypage/wallet' || path == '/mypage/usage') {
+		    	$('#mypage').addClass('active');
+		    }
+		    if(sessionId != '') {
+		    	$('#login_logout').text('Logout');
+			    $('#join_mypage').text('Mypage');
+		    }
+		    else {
+		    	$('#login_logout').text('Login');
+			    $('#join_mypage').text('Join');
+		    }
+		});
+</script>
 <header id="site-header" class="fixed-top">
 	<div class="container">
 		<nav class="navbar navbar-expand-lg stroke px-0">
@@ -22,12 +55,12 @@
 
 			<div class="collapse navbar-collapse" id="navbarTogglerDemo02">
 				<ul class="navbar-nav mx-lg-auto">
-					<li class="nav-item active"><a class="nav-link"
-						href="${pageContext.request.contextPath}/index">Home <span class="sr-only">(current)</span></a></li>
-					<li class="nav-item"><a class="nav-link"
-						href="${pageContext.request.contextPath}/board/textboardList">Board</a></li>
-					<li class="nav-item"><a class="nav-link"
-						href="${pageContext.request.contextPath}/board/noticeList">Notice</a></li>
+					<li class="nav-item" id="home"><a class="nav-link"
+						href="/">Home <span class="sr-only">(current)</span></a></li>
+					<li class="nav-item" id="board"><a class="nav-link"
+						href="/board/textboardList">Board</a></li>
+					<li class="nav-item" id="notice"><a class="nav-link"
+						href="/board/noticeList">Notice</a></li>
 					<!--  <li class="nav-item">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -40,11 +73,11 @@
                                 <a class="dropdown-item" href="landing-single.html">Landing Page</a>
                             </div>
                         </li> -->
-					<li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/news/newsList">ESG
+					<li class="nav-item" id="news"><a class="nav-link" href="/news/newsList">ESG
 							News</a></li>
-					<li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/member/login">Login</a>
+					<li class="nav-item" id="login"><a id="login_logout" class="nav-link" href="/member/login"></a>
 					</li>
-					<li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/mypage/mypage">Mypage</a>
+					<li class="nav-item" id="mypage"><a id="join_mypage" class="nav-link" href="/mypage/mypage"></a>
 					</li>
 				</ul>
 			</div>

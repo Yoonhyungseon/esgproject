@@ -61,7 +61,7 @@ function sendEmail(){
 			<div class="container">
 				<div class="row footer-p">
 					<div class="col-lg-4 pr-lg-5" style="margin-top: -36px;">
-						<a class="logo" href="index" style="display: contents;">
+						<a class="logo" href="/" style="display: contents;">
 						<!-- <i class="fa fa-cutlery" aria-hidden="true"></i> Foodies -->
 						<img class="" src="/asset/images/logo1.png" style="height: 36%; width: 41%; margin-left: 14px">
 						</a>
@@ -73,28 +73,28 @@ function sendEmail(){
 						<div class="row">
 							<div class="col-6 column">
 								<ul class="footer-gd-16">
-									<li><a href="index.html"><i class="fa fa-angle-right"
+									<li><a href="/"><i class="fa fa-angle-right"
 											aria-hidden="true"></i>Home</a></li>
-									<li><a href="about.html"><i class="fa fa-angle-right"
-											aria-hidden="true"></i>About Us</a></li>
-									<li><a href="#services"><i class="fa fa-angle-right"
-											aria-hidden="true"></i>Board</a></li>
-									<li><a href="blog.html"><i class="fa fa-angle-right"
+									<!-- <li><a href="about.html"><i class="fa fa-angle-right"
+											aria-hidden="true"></i>About Us</a></li> -->
+									<li><a href="/member/login"><i class="fa fa-angle-right"
 											aria-hidden="true"></i>Login</a></li>
-									<li><a href="contact.html"><i
-											class="fa fa-angle-right" aria-hidden="true"></i>Contact Us</a></li>
+									<li><a href="/member/join"><i class="fa fa-angle-right"
+											aria-hidden="true"></i>Join Us</a></li>
+									<li><a href="/mypage/mypage"><i class="fa fa-angle-right"
+											aria-hidden="true"></i>My Page</a></li>
+									<!-- <li><a href="contact.html"><i
+											class="fa fa-angle-right" aria-hidden="true"></i>Contact Us</a></li> -->
 								</ul>
 							</div>
 							<div class="col-6 column pl-0">
 								<ul class="footer-gd-16">
-									<li><a href="menu.html"><i class="fa fa-angle-right"
+									<li><a href="/board/textboardList"><i class="fa fa-angle-right"
+											aria-hidden="true"></i>Board</a></li>
+									<li><a href="/board/noticeList"><i class="fa fa-angle-right"
 											aria-hidden="true"></i>Notice</a></li>
-									<li><a href="#privacy"><i class="fa fa-angle-right"
+									<li><a href="/news/newsList"><i class="fa fa-angle-right"
 											aria-hidden="true"></i>ESG News</a></li>
-									<li><a href="#terms"><i class="fa fa-angle-right"
-											aria-hidden="true"></i>My Page</a></li>
-									<li><a href="#faq"><i class="fa fa-angle-right"
-											aria-hidden="true"></i>Join Us</a></li>
 								</ul>
 							</div>
 						</div>
