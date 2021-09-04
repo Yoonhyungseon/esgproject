@@ -169,7 +169,7 @@ public class MypageController {
 	    //TODO : 사용자 로그인 세션
 	    Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 	    if (authentication.getPrincipal() == "anonymousUser") {
-	       logger.debug("상담 상세 페이지 조회: 로그인하지 않은 상태");
+	       logger.debug("회원 정보 조회 페이지: 로그인하지 않은 상태");
 	    }else {
 	         Account account = (Account)authentication.getPrincipal();
 	         paramMap.put("memNum", account.getId()); 
@@ -208,6 +208,17 @@ public class MypageController {
 		ModelAndView mv = new ModelAndView("jsonView");
 		
 		DataMap paramMap = HttpUtil.getRequestDataMap(request);
+		
+		
+		//TODO : 사용자 로그인 세션
+//	    Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+//	    if (authentication.getPrincipal() == "anonymousUser") {
+//	       logger.debug("상담 상세 페이지 조회: 로그인하지 않은 상태");
+//	    }else {
+//	         Account account = (Account)authentication.getPrincipal();
+//	         paramMap.put("uName", account.getUsername()); 
+//	    }
+		
 		List<CamelMap> resultList = null;
 		
 		try {
