@@ -52,7 +52,9 @@ public class NewsController {
 	* @Version : 2021. 7. 5.
 	**************************************************/
 	@RequestMapping(value = {"/newsList"})
-	public String newsList(Model model) {
+	public String newsList(HttpServletRequest request, Model model) {
+		DataMap paramMap = HttpUtil.getRequestDataMap(request);
+		HttpUtil.getParams(paramMap, model);
 		return "contents/news/newsList";
 	}
 	
