@@ -303,13 +303,14 @@ progress::-webkit-progress-value {
 			if (rst.resultList.length > 0) {
 				for (var i in rst.resultList) {
 					
-					var html = $('#listCron').clone().removeAttr('title').show();
+					var html = $('#listCron').clone().removeAttr('id').show();
 					
 					html.find('.date').text(rst.resultList[i].regDtYmd);
-					html.find('.req_title').text(rst.resultList[i].title20);
+					html.find('.req_title').text(rst.resultList[i].title);
 					html.find('.name').text(rst.resultList[i].uName);
 					html.find('.req_title').attr('onclick', 'boardeObj.fn_view(\''+rst.resultList[i].boardSsn+'\')');
 					html.find('#req_file').attr("src", "/common/imageload?fullImageFileNm="+rst.resultList[i].attFile);
+					
 
 					html.find('#req_regName').text(rst.resultList[i].uName);
 
