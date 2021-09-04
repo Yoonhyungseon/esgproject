@@ -7,6 +7,8 @@ import javax.servlet.http.HttpServletRequest;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,10 +16,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
-import program.mypage.mapper.MypageMapper;
 import program.common.CamelMap;
 import program.common.DataMap;
 import program.common.util.HttpUtil;
+import program.mypage.mapper.MypageMapper;
+import program.security.Account;
 
 
 /**************************************************
@@ -153,6 +156,7 @@ public class MypageController {
 	* @Author : Beom-Ki, Lee
 	* @Version : 2021. 8. 8.
 	**************************************************/
+	@SuppressWarnings("unchecked")
 	@ResponseBody
 	@RequestMapping(value = {"/getThisMemberInfo"}, method = {RequestMethod.GET, RequestMethod.POST })
 	public ModelAndView getThisMemberInfo(HttpServletRequest request, Model model) {
@@ -162,6 +166,15 @@ public class MypageController {
 		
 		DataMap paramMap = HttpUtil.getRequestDataMap(request);
 		
+	    //TODO : 사용자 로그인 세션
+	    Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+	    if (authentication.getPrincipal() == "anonymousUser") {
+	       logger.debug("회원 정보 조회 페이지: 로그인하지 않은 상태");
+	    }else {
+	         Account account = (Account)authentication.getPrincipal();
+	         paramMap.put("memNum", account.getId()); 
+	    }
+	  
 		CamelMap resultInfo = null;
 		
 		try {
@@ -195,6 +208,17 @@ public class MypageController {
 		ModelAndView mv = new ModelAndView("jsonView");
 		
 		DataMap paramMap = HttpUtil.getRequestDataMap(request);
+		
+		
+		//TODO : 사용자 로그인 세션
+//	    Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+//	    if (authentication.getPrincipal() == "anonymousUser") {
+//	       logger.debug("상담 상세 페이지 조회: 로그인하지 않은 상태");
+//	    }else {
+//	         Account account = (Account)authentication.getPrincipal();
+//	         paramMap.put("uName", account.getUsername()); 
+//	    }
+		
 		List<CamelMap> resultList = null;
 		
 		try {
@@ -225,10 +249,11 @@ public class MypageController {
 
 		ModelAndView mv = new ModelAndView("jsonView");
 		
+		DataMap paramMap = HttpUtil.getRequestDataMap(request);
 		List<CamelMap> resultList = null;
 		
 		try {
-			resultList = mypageMapper.getScrapList();
+			resultList = mypageMapper.getScrapList(paramMap);
 		} catch (Exception e) {
 			logger.debug("게시글 목록 조회 오류", e);
 		}

@@ -49,7 +49,7 @@ public interface MypageMapper {
 	* @Author : Beom-Ki, Lee
 	* @Version : 2021. 8. 21.
 	**************************************************/
-	public List<CamelMap> getScrapList() throws SQLException;
+	public List<CamelMap> getScrapList(DataMap paramMap) throws SQLException;
 	
 	/**************************************************
 	* @MethodName : getCommentList

@@ -31,7 +31,7 @@ public class CustomUserDetailsService implements UserDetailsService {
 			throw new UsernameNotFoundException("UsernameNotFoundException");
 		}
 		DataMap paramMap = new DataMap();
-		paramMap.put("userSeq", account.getId());
+		paramMap.put("memNum", account.getId());
 		try {
 		CamelMap cMap = mapper.selectMemberInfo(paramMap);
 		cMap.put("userPwd", null);

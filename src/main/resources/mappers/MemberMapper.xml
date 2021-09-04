@@ -2,23 +2,71 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="program.member.mapper.MemberMapper">
-    <insert id="memberinsert" parameterType="cMap">
-    	/* memberinsert :: 회원 추가 */
-    	INSERT INTO member(USER_ID, USER_PW, NICK_NAME, EMAIL, STATUS, GENDER, ENABLE, USER_TYPE, REG_DT)
-    	VALUES (#{userId}, #{userPw}, #{nickName}, #{email}, 'D', #{gender}, 'Y', 'A', NOW());
+    <update id="setLoginProc" parameterType="cMap">
+    	/* setLoginProc :: 로그인 시 추가 로직 */
+    	UPDATE member
+    	   SET LAST_LOGIN_DT = now()
+    	 WHERE MEM_NUM = #{memNum}
+    </update>
+    
+    <select id="idCheck" resultType="java.lang.Integer" parameterType="dMap">
+    	/* idCheck :: 일반회원 회원가입: id 중복 검사 */
+    	SELECT COUNT(*)
+		  FROM member
+		 WHERE USER_ID = #{userId} 
+	</select>
+    
+     <insert id="saveMember" parameterType="dMap">
+    	/* saveMember :: 일반회원 회원가입 */
+    	INSERT INTO member SET
+    		USER_ID = #{userId}
+    	   ,USER_PW = #{userPw}
+    	   ,NICK_NAME = #{nickName}
+    	   ,EMAIL = #{email}
+    	   ,USER_TYPE = 'G'
+    	   ,GENDER = #{gender}
     </insert>
     
-    <select id="getFindId" resultType="cMap" parameterType="dMap">
-    	/* findid :: 아이디 찾기 */
-		SELECT USER_ID
-		FROM member
-		WHERE email = #{email}
-    </select>
+    <select id="findId" resultType="cMap" parameterType="dMap">
+    	/* findId :: 일반회원 아이디 찾기 */
+    	SELECT USER_ID, NICK_NAME, EMAIL, DATE_FORMAT(REG_DT, '%Y-%m-%d') REG_DT_YMD
+		  FROM member
+		 WHERE EMAIL = #{email}
+	</select>
+	
+	<update id="pwReassign" parameterType="cMap">
+    	/* pwReassign :: 일반회원 비밀번호 찾기 비밀번호 재설정 */
+    	UPDATE member
+    	   SET USER_PW = #{userPw}
+    	 WHERE USER_ID = #{userId}
+    </update>
     
-    <update id="updatePw" parameterType="cMap">
-	    /* updatePw :: 비밀번호 변경 */
-		UPDATE member
-		SET USER_PW = #{newPw}
-		WHERE USER_ID = #{userId} and email = #{email}
+    <insert id="pwReassignHis" parameterType="cMap">
+    	/* pwReassignHis :: 일반회원 비밀번호 찾기 비밀번호 재설정 히스토리*/
+    	INSERT INTO member_PW_MOD_HIS
+    	   SET USER_SEQ = #{userSeq}
+    </insert>
+    
+    <select id="GetLoginUserInfo" resultType="cMap" parameterType="dMap">
+    	/* GetLoginUserInfo ::  로그인중인 사용자 정보 조회*/
+    	SELECT MEM_NUM, USER_ID, NICK_NAME, EMAIL, GENDER, USER_TYPE ,USER_PW
+		  FROM member
+		   AND MEM_NUM = #{memNum}
+	</select>
+	
+	<update id="userInfoModify" parameterType="cMap">
+    	/* pwReassign :: 사용자 개인정보 수정 */
+    	UPDATE member 
+    	   SET USER_PW = #{userPw}
+    	      ,EMAIL = #{email}
+    	      ,USER_PHONE = #{userPhone}
+         WHERE MEM_NUM = #{memNum}
+    </update>
+    
+    <update id="userWithdrawal" parameterType="cMap">
+    	/* userWithdrawal :: 사용자 회원 탈퇴 업데이트 */
+    	UPDATE member 
+    	   SET ENABLE = 'N'
+         WHERE MEM_NUM = #{memNum}
     </update>
 </mapper>

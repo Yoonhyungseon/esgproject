@@ -179,7 +179,7 @@ public class ClientMemberController {
 		int result = 0;
 		
 		try {
-			result = MemberMapper.memberinsert(paramMap);
+			result = MemberMapper.saveMember(paramMap);
 		} catch (Exception e) {
 			logger.debug("회원 추가 오류", e);
 		}
@@ -208,7 +208,7 @@ public class ClientMemberController {
 		CamelMap resultInfo = null;
 		
 		try {
-			resultInfo = MemberMapper.getFindId(paramMap);
+			resultInfo = (CamelMap) MemberMapper.findId(paramMap);
 		} catch (Exception e) {
 			logger.debug("아이디 찾기 오류", e);
 		}
@@ -238,7 +238,7 @@ public class ClientMemberController {
 		int result = 0;
 		
 		try {
-			result = MemberMapper.updatePw(paramMap);
+			result = MemberMapper.pwReassign(paramMap);
 		} catch (Exception e) {
 			logger.debug("비밀번호 변경 오류", e);
 		}
