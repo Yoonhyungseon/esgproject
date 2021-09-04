@@ -17,9 +17,9 @@
       <ul class="list-group mb-3">
         <li class="list-group-item d-flex justify-content-between bg-light">
           <div>
-            <a class="my-success" href="modifyInfo">개인정보 수정</a>
+            <a class="my-success" href="modifyInfo">개인정보 열람</a>
             <br>
-            <small class="text-muted">정보 수정</small>
+            <small class="text-muted">정보 열람</small>
           </div>
           <!-- <span class="text-muted">$12</span> -->
         </li>
@@ -70,7 +70,7 @@
       </form> -->
     </div>
     <div class="col-md-8 order-md-1">
-      <h4 class="mb-3">개인 정보 수정</h4>
+      <h4 class="mb-3">개인 정보</h4>
       <form class="needs-validation" novalidate>
         <!-- <div class="row">
           <div class="col-md-6 mb-3">
@@ -104,23 +104,28 @@
 -->
         <div class="mb-3">
           <label for="id">아이디</label>
-          <input type="text" class="form-control" id="id" placeholder="" required>
+          <!--  
+          <div class="form-control" class="id">user</div>
+          
+         -->
+          <input type="text" class="form-control" id="id" placeholder="" required disabled>
+           
           <div class="invalid-feedback">
             Please enter your id.
           </div>
         </div>
-        
+        <!--  
         <div class="mb-3">
           <label for="password">비밀번호</label>
-          <input type="text" class="form-control" id="password" placeholder="" required>
+          <input type="text" class="form-control" id="password" placeholder="" required disabled>
           <div class="invalid-feedback">
             Please enter your password.
           </div>
         </div>
-        
+        -->
         <div class="mb-3">
           <label for="name">이름</label>
-          <input type="text" class="form-control" id="name" placeholder="" required>
+          <input type="text" class="form-control" id="name" placeholder="" required disabled>
           <div class="invalid-feedback">
             Please enter your name.
           </div>
@@ -129,7 +134,7 @@
         
         <div class="mb-3">
           <label for="email">이메일</label>
-          <input type="email" class="form-control" id="email" placeholder="email@example.com">
+          <input type="email" class="form-control" id="email" placeholder="email@example.com" disabled>
           <div class="invalid-feedback">
             Please enter a valid email address
           </div>
@@ -148,8 +153,8 @@
 	     	<label class="required" for="id_gender">성별</label>
 	     	<br>
 	        	<div class="select-gender">
-	             	<input type="radio" id="select" name="shop" checked><label for="select">남</label>
-	                <input type="radio" id="select2" name="shop"><label for="select2">여</label>
+	             	<input type="radio" id="select" name="shop" checked disabled><label for="select">남</label>
+	                <input type="radio" id="select2" name="shop" disabled><label for="select2">여</label>
 	            </div>
 	    </div>
 	    <!-- 
@@ -378,6 +383,8 @@
 		fn_getThisMemberInfoRetrun : function(rst) {
  			console.log(rst)
 			$('input[id=id]').val(rst.resultInfo.userId);
+ //			$('div[id=id]').val(rst.resultInfo.userId);
+ //			html.find('.id').text(rst.resultInfo.userId);
 			$('input[id=password]').val(rst.resultInfo.userPw);
 			$('input[id=name]').val(rst.resultInfo.nickName);
 			$('input[id=email]').val(rst.resultInfo.email);

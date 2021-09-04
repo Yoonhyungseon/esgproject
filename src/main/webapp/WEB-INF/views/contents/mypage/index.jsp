@@ -96,7 +96,7 @@
 						<h4>
 							<a href="modifyInfo" class="title-head">내 정보</a>
 						</h4>
-						<p class="">개인정보 수정하는 공간</p>
+						<p class="">개인정보 열람하는 공간</p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6 grids-feature mt-md-0 mt-4">
@@ -147,3 +147,4 @@
 		</div>
 	</div>
 </section>
+
