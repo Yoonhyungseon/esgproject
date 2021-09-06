@@ -1,4 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java"%>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
+<%@ page import="org.springframework.security.core.context.SecurityContextHolder" %>
+<%@ page import="org.springframework.security.core.Authentication" %>
 
 <style>
 .container {
@@ -31,7 +34,9 @@
 	<div class="container ">
 		<h3 class="title-big mb-4 pb-2">Write your posting</h3>
 		<div class="form-commets">
+		<sec:authorize access="isAuthenticated()">
 			<form id="siteFrm" name="siteFrm" enctype="multipart/form-data"	method="post" data-parsley-validate>
+			  <sec:authentication property="principal" var="login"/>
 				<div class="row mb-4">
 					<div class="col-md-6">
 						<input type="text" name="title" id="title" required="required" placeholder="Posting Title">
@@ -45,6 +50,15 @@
 				<input type="text" name="hashTag" id="hashTag" placeholder="Hash Tag" style="margin-top: 1.5rem; margin-bottom: 1.5rem !important;">
 				<button class="btn button-style d-flex ml-auto" type="button" onclick="noWriteObj.fn_save()">Posting</button>
 			</form>
+		</sec:authorize>
+		<sec:authorize access="isAnonymous()">
+			<div style="display: flow-root;">
+				<div>로그인 하시면 게시글을 남길 수 있습니다.</div>
+			    <div class="form-group-2 mt-4 login-button find-id-mention-button">
+	                <button type="button" id="btn_login" name="btn_login" class="btn button-style d-flex ml-auto" onclick="location.href='/member/login'">로그인</button>
+	            </div>
+	    	</div>
+		</sec:authorize>
 		</div>
 	</div>
 </section>
@@ -64,7 +78,7 @@
 			$("#siteFrm").submit();
 		},
 		fn_save : function() {
-			if (!$('#title').val() || !$('#title').val().trim()) {
+			if(!$('#title').val() || !$('#title').val().trim()) {
 				alert("제목을 입력해주세요.");
 				$('#title').focus();
 				return false;

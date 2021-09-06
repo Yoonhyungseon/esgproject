@@ -1,5 +1,6 @@
 package program.textboard;
 
+import java.sql.SQLException;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -116,13 +117,15 @@ public class TextBoardController {
 	* @param model
 	* @param request
 	* @return Boolean
+	 * @throws Exception 
+	 * @throws SQLException 
 	* @Author : Ye-Jin. Jeong
 	* @Version : 2021. 8. 25.
 	**************************************************/
 	@ResponseBody
 	@SuppressWarnings("unchecked")
 	@RequestMapping(value= {"/posting"},method= {RequestMethod.GET,RequestMethod.POST})
-	public Boolean posting(Model model, HttpServletRequest request) {
+	public Boolean posting(Model model, HttpServletRequest request) throws Exception {
 		logger.debug("TextBoardController : posting - start");
 		
 		DataMap paramMap=HttpUtil.getRequestDataMap(request);
@@ -131,17 +134,34 @@ public class TextBoardController {
 		
 		paramMap.put("filePath", "BBOOM_BOARD");
 		List<CamelMap> rstFileList = null;
-
-		try {
-			rstFileList = commonService.saveFile(request, paramMap);
-			for (CamelMap fileMap : rstFileList) {
-				logger.info("fileMap : {}", fileMap);
-				paramMap.put("attFile", fileMap.get("saveFilePath") + "/" + fileMap.get("saveFileName"));
+		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+	    if (authentication.getPrincipal() == "anonymousUser") {
+	       logger.debug("updateScrap : 로그인하지 않은 상태");
+	    }else {
+	         Account account = (Account)authentication.getPrincipal();
+	         paramMap.put("regId", account.getUsername()); 
+	         System.out.println("id="+account.getUsername());
+	         paramMap.put("uName", account.getName()); 
+	         System.out.println("name="+account.getName());
+	         
+			try {
+				rstFileList = commonService.saveFile(request, paramMap);
+				for (CamelMap fileMap : rstFileList) {
+					logger.info("fileMap : {}", fileMap);
+					paramMap.put("attFile", fileMap.get("saveFilePath") + "/" + fileMap.get("saveFileName"));
+				}
+				rst = textBoardMapper.posting(paramMap);
+			} catch (SQLException e) {
+				logger.debug("게시글 등록 오류", e);
 			}
-			rst = textBoardMapper.posting(paramMap);
-		} catch (Exception e) {
-			logger.debug("게시글 등록 오류", e);
-		}
+	    }
+		/*
+		 * try { rstFileList = commonService.saveFile(request, paramMap); for (CamelMap
+		 * fileMap : rstFileList) { logger.info("fileMap : {}", fileMap);
+		 * paramMap.put("attFile", fileMap.get("saveFilePath") + "/" +
+		 * fileMap.get("saveFileName")); } rst = textBoardMapper.posting(paramMap); }
+		 * catch (Exception e) { logger.debug("게시글 등록 오류", e); }
+		 */
 
 		logger.debug("TextBoardController : posting - end");
 		return rst>0 ? true : false;
@@ -204,6 +224,7 @@ public class TextBoardController {
 	    }else {
 	         Account account = (Account)authentication.getPrincipal();
 	         paramMap.put("uName", account.getUsername()); 
+	         System.out.println(account.getUsername());
 	    }
 	    
 		try {
@@ -219,6 +240,263 @@ public class TextBoardController {
 		return mv;
 	}
 	
+	/**************************************************
+	* @MethodName : deletePosting
+	* @Description: 게시글 삭제 컨트롤러
+	* @param request
+	* @param model
+	* @return boolean
+	* @Author : Ye-Jin. Jeong
+	* @Version : 2021. 8. 30.
+	**************************************************/
+	@SuppressWarnings("unchecked")
+	@ResponseBody
+	@RequestMapping(value = {"/deletePosting"}, method = {RequestMethod.GET, RequestMethod.POST })
+	public boolean deletePosting(HttpServletRequest request, Model model) {
+		logger.debug("TextBoardController : deletePosting - start");
+
+		DataMap paramMap = HttpUtil.getRequestDataMap(request);
+		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+
+		int result = 0;
+		
+		if (authentication.getPrincipal() != "anonymousUser") {
+			try {
+		        Account account = (Account)authentication.getPrincipal();
+		        paramMap.put("id", account.getId());
+		        //System.out.println(account.getDetail());
+		        result = textBoardMapper.deletePosting(paramMap);
+			} catch (Exception e) {
+			logger.debug("게시글 삭제 오류", e);
+			}
+		}
+		
+		logger.debug("TextBoardController : deletePosting - end");
+		return result > 0 ? true : false;
+	}
+
+	/************************************************** Scrap **************************************************/
+
+	/**************************************************
+	* @MethodName : selectScrap
+	* @Description: 스크랩 조회 by Id / boardSsn
+	* @param request
+	* @param model
+	* @return Boolean
+	* @Author : Ye-Jin. Jeong
+	* @Version : 2021. 8. 27.
+	**************************************************/
+	@ResponseBody
+	@RequestMapping(value= {"/selectScrap"}, method = { RequestMethod.GET, RequestMethod.POST })
+	public Boolean selectScrap(HttpServletRequest request,Model model) {
+		logger.debug("TextBoardController : selectScrap - start");
+		
+		DataMap paramMap=HttpUtil.getRequestDataMap(request);
+
+		String result = null;
+
+		try {
+			result = textBoardMapper.selectScrap(paramMap);
+		} catch (Exception e) {
+			logger.debug("스크랩 조회 오류", e);
+		}
+
+		logger.debug("TextBoardController : selectScrap - end");
+		return result !=null ? true : false;
+	}
+	/**************************************************
+	* @MethodName : updateScrap
+	* @Description: 스크랩 추가 / 삭제
+	* @param request
+	* @param model
+	* @return ModelAndView
+	* @Author : Ye-Jin. Jeong
+	* @Version : 2021. 8. 27.
+	**************************************************/
+	@ResponseBody
+	@RequestMapping(value = { "/updateScrap" }, method = { RequestMethod.GET, RequestMethod.POST })
+	public ModelAndView updateScrap(HttpServletRequest request, Model model) {
+		logger.debug("TextBoardController : updateScrap - start");
+		
+		ModelAndView mv = new ModelAndView("jsonView");
+
+		DataMap paramMap = HttpUtil.getRequestDataMap(request);
+		System.out.println(paramMap.toString());
+		CamelMap resultInfo = null;
+		
+		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+	    if (authentication.getPrincipal() == "anonymousUser") {
+	       logger.debug("updateScrap : 로그인하지 않은 상태");
+	    }else {
+	         Account account = (Account)authentication.getPrincipal();
+	         paramMap.put("regId", account.getUsername()); 
+	         System.out.println(account.getUsername());
+	    }
+	    String linkSeq=request.getParameter("data");
+	    paramMap.put("linkSeq", linkSeq);
+		try {
+			String checkScrap=textBoardMapper.selectScrap(paramMap);
+			if(checkScrap.equals("0")) {
+				System.out.println("MyScrap update");
+				resultInfo = textBoardMapper.insertScrap(paramMap);
+			}else {
+				System.out.println("MyScrap delete");
+				resultInfo = textBoardMapper.deleteScrap(paramMap);
+			}
+		} catch (Exception e) {
+			logger.debug("게시글 스크랩 오류", e);
+		}
+
+		mv.addObject("resultInfo", resultInfo);
+		mv.addObject("userInfo", paramMap.getString("regId"));
+		mv.addObject("boardInfo",paramMap.getString("linkSeq"));
+
+		logger.debug("TextBoardController : updateScrap - end");
+		return mv;
+	}
+	/************************************************** Scrap **************************************************/
+
+	/************************************************** Comment **************************************************/
+	
+	/**************************************************
+	* @MethodName : postComment
+	* @Description: 댓글 등록
+	* @param model
+	* @param request
+	* @return Boolean
+	* @Author : Ye-Jin. Jeong
+	* @Version : 2021. 8. 27.
+	**************************************************/
+	@ResponseBody
+	@SuppressWarnings("unchecked")
+	@RequestMapping(value= {"/postComment"},method= {RequestMethod.POST})
+	public Boolean postComment(Model model, HttpServletRequest request) {
+		logger.debug("TextBoardController : postComment - start");
+		
+		DataMap paramMap=HttpUtil.getRequestDataMap(request);
+		
+		int rst = 0;
+		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+		
+		if (authentication.getPrincipal() != "anonymousUser") {
+			try {
+		        Account account = (Account)authentication.getPrincipal();
+		        paramMap.put("regNm", account.getName());
+		        //System.out.println(account.getName());
+		        rst = textBoardMapper.postComment(paramMap);
+			
+			} catch (Exception e) {
+				logger.debug("댓글 등록 오류", e);
+			}
+		}
+		/*
+		 * Authentication authentication =
+		 * SecurityContextHolder.getContext().getAuthentication(); if
+		 * (!authentication.getName().equals("anonymousUser")) { Account user =
+		 * (Account)
+		 * SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+		 * model.addAttribute("user", user); String regNm = authentication.getName();
+		 * paramMap.put("regNm", regNm); }
+		 */
+				
+		logger.debug("TextBoardController : postComment - end");
+		return rst>0 ? true : false;
+	}
+	
+	/**************************************************
+	* @MethodName : deleteComment
+	* @Description: 댓글 삭제
+	* @param request
+	* @param model
+	* @return boolean
+	* @Author : Ye-Jin. Jeong
+	* @Version : 2021. 8. 27.
+	**************************************************/
+	@ResponseBody
+	@RequestMapping(value= {"/deleteComment"},method= {RequestMethod.GET,RequestMethod.POST})
+	public boolean deleteComment(HttpServletRequest request,Model model) {
+		logger.debug("TextBoardController : deleteComment - start");
+		
+		DataMap paramMap=HttpUtil.getRequestDataMap(request);
+		
+		int rst = 0;
+
+		try {
+			rst = textBoardMapper.deleteComment(paramMap);
+		} catch (Exception e) {
+			logger.debug("댓글 삭제 오류", e);
+		}
+
+		logger.debug("TextBoardController : deleteComment - end");
+		return rst>0 ? true : false;
+	}
+	
+	/**************************************************
+	* @MethodName : getCommentList
+	* @Description: 글번호에 따른 댓글 리스트
+	* @param request
+	* @param model
+	* @return ModelAndView
+	* @Author : Ye-Jin. Jeong
+	* @Version : 2021. 8. 28.
+	**************************************************/
+	@ResponseBody
+	@RequestMapping(value = { "/getCommentList" }, method = { RequestMethod.GET, RequestMethod.POST })
+	public ModelAndView getCommentList(HttpServletRequest request, Model model) {
+		logger.debug("TextBoardController : getCommentList - start");
+		
+		ModelAndView mv = new ModelAndView("jsonView");
+
+		DataMap paramMap = HttpUtil.getRequestDataMap(request);
+		System.out.println(paramMap.toString());
+	
+		List<CamelMap> resultList = null;
+
+		try {
+			resultList = textBoardMapper.getCommentList(paramMap);
+		} catch (Exception e) {
+			logger.debug("댓글 조회 오류", e);
+		}
+
+		mv.addObject("resultList", resultList);
+
+		logger.debug("TextBoardController : getCommentList - end");
+		return mv;
+	}
+	/**************************************************
+	* @MethodName : getFeedback
+	* @Description: 피드백 조회
+	* @param request
+	* @param model
+	* @return ModelAndView
+	* @Author : Ye-Jin. Jeong
+	* @Version : 2021. 8. 31.
+	**************************************************/
+	@ResponseBody
+	@RequestMapping(value = { "/getFeedback" }, method = { RequestMethod.GET, RequestMethod.POST })
+	public ModelAndView getFeedback(HttpServletRequest request, Model model) {
+		logger.debug("TextBoardController : getFeedback - start");
+		
+		ModelAndView mv = new ModelAndView("jsonView");
+
+		DataMap paramMap = HttpUtil.getRequestDataMap(request);
+		System.out.println(paramMap.toString());
+	
+		List<CamelMap> resultList = null;
+
+		try {
+			resultList = textBoardMapper.getFeedback(paramMap);
+		} catch (Exception e) {
+			logger.debug("피드백 조회 오류", e);
+		}
+
+		mv.addObject("resultList", resultList);
+
+		logger.debug("TextBoardController : getFeedback - end");
+		return mv;
+	}
+	/************************************************** Comment **************************************************/
+
 	/************************************************** Notice **************************************************/
 
 	/**************************************************
@@ -346,4 +624,5 @@ public class TextBoardController {
 		logger.debug("TextBoardController : getNoticeNext - end");
 		return mv;
 	}
+	/************************************************** Notice **************************************************/
 }

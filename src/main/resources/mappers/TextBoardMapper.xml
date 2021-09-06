@@ -4,22 +4,46 @@
 <mapper namespace="program.textboard.mapper.TextBoardMapper">
 
  	<select id="getBoardList" resultType="cMap">
- 		SELECT *, DATE_FORMAT(REG_DT, '%Y-%m-%d') AS REG_DT_YMD
- 			FROM bboom_board
- 	</select>
+		SELECT a.BOARD_SSN, a.TITLE, a.CONTENTS, a.ATT_FILE , a.U_NAME, a.REG_ID, a.REG_DT_YMD, a.HASH_TAG, a.SCRAPS, COUNT(a.SEQ) AS COMMENTS
+		  FROM(
+		  		SELECT   b.BOARD_SSN , b.TITLE, b.CONTENTS, b.ATT_FILE, b.U_NAME, b.REG_ID, b.HASH_TAG, c.SEQ
+		  		, DATE_FORMAT(b.REG_DT, '%Y-%m-%d') AS REG_DT_YMD, COUNT(s.SCRAP_NO) AS SCRAPS
+		         FROM  bboom_board b
+		         LEFT JOIN board_comment c 
+		         ON b.BOARD_SSN=c.LINK_SEQ 
+		         LEFT JOIN board_scrap s
+		         ON b.BOARD_SSN=s.LINK_SEQ
+		         GROUP BY b.BOARD_SSN, b.TITLE, b.CONTENTS, b.ATT_FILE, b.U_NAME, b.REG_ID, b.REG_DT, b.HASH_TAG, c.SEQ
+		      )a
+		   GROUP BY a.BOARD_SSN, a.TITLE, a.CONTENTS, a.ATT_FILE, a.U_NAME, a.REG_ID, a.REG_DT_YMD, a.SCRAPS, a.HASH_TAG
+	</select>
  	
  	<select id="getBoardInfo" resultType="cMap" parameterType="dMap">
- 		SELECT *,DATE_FORMAT(REG_DT, '%Y-%m-%d') AS REG_DT_YMD
- 			FROM bboom_board
- 		WHERE BOARD_SSN = #{boardSsn}
+ 		SELECT a.BOARD_SSN, a.TITLE, a.CONTENTS, a.ATT_FILE , a.U_NAME, a.REG_ID AS ID, a.REG_DT_YMD, a.HASH_TAG, a.SCRAPS, COUNT(a.SEQ) AS COMMENTS
+		  FROM(
+		  		SELECT   b.BOARD_SSN , b.TITLE, b.CONTENTS, b.ATT_FILE, b.U_NAME, b.REG_ID, b.HASH_TAG, c.SEQ
+		  		, DATE_FORMAT(b.REG_DT, '%Y-%m-%d') AS REG_DT_YMD, COUNT(s.SCRAP_NO) AS SCRAPS
+		         FROM  bboom_board b
+		         LEFT JOIN board_comment c 
+		         ON b.BOARD_SSN=c.LINK_SEQ 
+		         LEFT JOIN board_scrap s
+		         ON b.BOARD_SSN=s.LINK_SEQ
+		         GROUP BY b.BOARD_SSN, b.TITLE, b.CONTENTS, b.ATT_FILE, b.U_NAME, b.REG_ID, b.REG_DT, b.HASH_TAG, c.SEQ
+		      )a
+		   WHERE BOARD_SSN = #{boardSsn}
+		   GROUP BY a.BOARD_SSN, a.TITLE, a.CONTENTS, a.ATT_FILE, a.U_NAME, a.REG_ID, a.REG_DT_YMD, a.SCRAPS, a.HASH_TAG
  	</select>
  	
  	<insert id="posting" parameterType="dMap">
  		INSERT INTO bboom_board(U_NAME, TITLE, CONTENTS, ATT_FILE, REG_ID, REG_DT ,HASH_TAG)
       	VALUES (#{uName},#{title} ,#{contents}, #{attFile}, #{regId}, now(), #{hashTag})
- 	</insert>	
- 	
- 	
+ 	</insert>				
+ 					
+ 	<delete id="deletePosting" parameterType="dMap">
+ 		DELETE FROM bboom_board
+ 		WHERE BOARD_SSN = #{boardSsn}
+ 	</delete>	
+ 						<!-- Notice -->
  	<select id="getNoticeList" resultType="cMap">
 		SELECT *, DATE_FORMAT(REG_DT, '%Y-%m-%d') AS REG_DT_YMD
 		  FROM site_board
@@ -42,5 +66,49 @@
 		  FROM site_board
 		WHERE SEQ = #{seq}+1
 	</select>	
+ 						<!-- Notice -->
+ 						
+ 						<!-- Scrap -->
+ 	<select id="selectScrap" parameterType="dMap">
+ 		SELECT count(*)
+ 		FROM board_scrap
+ 		WHERE REG_ID=#{regId} AND LINK_SEQ=#{linkSeq}
+ 	</select>
+ 	
+ 	<insert id="insertScrap" parameterType="dMap">
+ 		INSERT INTO board_scrap(REG_ID, LINK_SEQ)
+ 		VALUES(#{regId},#{linkSeq})
+ 	</insert>
+ 	
+ 	<delete id="deleteScrap" parameterType="dMap">
+ 		DELETE board_scrap
+ 		WHERE REG_ID=#{regId} AND LINK_SEQ=#{linkSeq}
+ 	</delete>
+ 						<!-- Scrap --> 	
+
+ 						<!-- Comment --> 	 							
+	<insert id="postComment" parameterType="dMap">
+		INSERT INTO board_comment(LINK_SEQ, CONTENTS, REG_NM, REG_DT)
+ 		VALUES(#{linkSeq},#{contents},#{regNm},now())
+	</insert> 	
+	
+	<delete id="deleteComment" parameterType="dMap">
+ 		DELETE board_comment
+ 		WHERE REG_NM=#{regNm} AND LINK_SEQ=#{linkSeq}
+ 	</delete>	
+ 	
+ 	<select id="getCommentList" parameterType="dMap" resultType="cMap">
+ 		SELECT *, DATE_FORMAT(REG_DT, '%Y-%m-%d') AS REG_DT_YMD
+ 		FROM board_comment
+ 		WHERE LINK_SEQ=#{linkSeq}
+ 	</select>				
+ 	
+ 	<select id="getFeedback" parameterType="dMap" resultType="cMap">
+ 		SELECT *, DATE_FORMAT(REG_DT, '%Y-%m-%d') AS REG_DT_YMD
+ 		FROM board_feedback
+ 		WHERE LINK_SEQ=#{linkSeq}
+ 	</select>
+ 						<!-- Comment --> 	 							
+ 						
 	
 </mapper>

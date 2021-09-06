@@ -142,7 +142,7 @@ public interface TextBoardMapper {
 	* @Author : Ye-Jin. Jeong
 	* @Version : 2021. 8. 24.
 	**************************************************/
-	CamelMap getNoticePrev(DataMap paramMap);
+	CamelMap getNoticePrev(DataMap paramMap) throws SQLException;
 
 
 	/**************************************************
@@ -153,5 +153,97 @@ public interface TextBoardMapper {
 	* @Author : Ye-Jin. Jeong
 	* @Version : 2021. 8. 24.
 	**************************************************/
-	CamelMap getNoticeNext(DataMap paramMap);
+	CamelMap getNoticeNext(DataMap paramMap) throws SQLException;
+
+
+	/**************************************************
+	* @MethodName : selectScrap
+	* @Description: 스크랩 내역 조회
+	* @param paramMap
+	* @return
+	* @throws SQLException String
+	* @Author : Ye-Jin. Jeong
+	* @Version : 2021. 8. 27.
+	**************************************************/
+	String selectScrap(DataMap paramMap) throws SQLException;
+
+
+	/**************************************************
+	* @MethodName : insertScrap
+	* @Description: 스크랩 추가
+	* @param paramMap
+	* @return
+	* @throws SQLException CamelMap
+	* @Author : Ye-Jin. Jeong
+	* @Version : 2021. 8. 27.
+	**************************************************/
+	CamelMap insertScrap(DataMap paramMap) throws SQLException;
+
+
+	/**************************************************
+	* @MethodName : deleteScrap
+	* @Description: 스크랩 삭제
+	* @param paramMap
+	* @return
+	* @throws SQLException CamelMap
+	* @Author : Ye-Jin. Jeong
+	* @Version : 2021. 8. 27.
+	**************************************************/
+	CamelMap deleteScrap(DataMap paramMap) throws SQLException;
+
+
+	/**************************************************
+	* @MethodName : postComment
+	* @Description: 댓글 등록
+	* @param paramMap
+	* @return
+	* @throws SQLException int
+	* @Author : Ye-Jin. Jeong
+	* @Version : 2021. 8. 27.
+	**************************************************/
+	int postComment(DataMap paramMap) throws SQLException;
+
+
+	/**************************************************
+	* @MethodName : deleteComment
+	* @Description: 댓글 삭제
+	* @param paramMap
+	* @return int
+	* @Author : Ye-Jin. Jeong
+	* @Version : 2021. 8. 27.
+	**************************************************/
+	int deleteComment(DataMap paramMap);
+
+
+	/**************************************************
+	* @MethodName : getCommentList
+	* @Description: 댓글 리스트
+	* @param paramMap
+	* @return CamelMap
+	* @Author : Ye-Jin. Jeong
+	* @Version : 2021. 8. 27.
+	**************************************************/
+	List<CamelMap> getCommentList(DataMap paramMap);
+
+
+	/**************************************************
+	* @MethodName : deletePosting
+	* @Description: 게시글 삭제
+	* @param paramMap
+	* @return int
+	* @Author : Ye-Jin. Jeong
+	* @Version : 2021. 8. 30.
+	**************************************************/
+	int deletePosting(DataMap paramMap);
+
+
+	/**************************************************
+	* @MethodName : getFeedback
+	* @Description: 피드백 조회
+	* @param paramMap
+	* @return List<CamelMap>
+	* @Author : Ye-Jin. Jeong
+	* @Version : 2021. 8. 31.
+	**************************************************/
+	List<CamelMap> getFeedback(DataMap paramMap);
 }
