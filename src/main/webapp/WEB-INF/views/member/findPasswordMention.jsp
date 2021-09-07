@@ -12,7 +12,7 @@
             <div class="container">
                 <h4 class="inner-text-title font-weight-bold mb-sm-3 mb-2">비밀번호 변경</h4>
                 <ul class="breadcrumbs-custom-path">
-                    <li><a href="index.html">Home</a></li>
+                    <li><a href="/">Home</a></li>
                     <li class="active"><span class="fa fa-chevron-right mx-2" aria-hidden="true"></span>Modify Password</li>
                 </ul>
             </div>
@@ -25,9 +25,9 @@
             <div class="container">
                 <div class="single-bottom-blog">
                     <div class="bottom-grid mt-4 pt-2">
-                        <h3 class="find-id">비밀번호 변경</h3>
+                        <h3 class="find-id" style="text-align: center;">비밀번호 변경</h3>
 				        <form method="post" class="w3layouts-contact-fm" action="https://sendmail.w3layouts.com/submitForm">
-	                        <div class="row main-cont-sec">
+	                        <div class="row main-cont-sec" style="display: flex;justify-content: center;">
 	                            <div class="col-md-6 left-cont-contact">
 	                                <div class="form-group">
 	                                    <label for="newpassword">새 비밀번호</label>
@@ -39,11 +39,11 @@
 	                                    <input class="form-control" type="password" name="renewpassword" id="renewpassword" placeholder=""
 	                                        required="">
 	                                </div>
+	                                <div class="form-group-2 mt-4 login-button find-id-mention-button" style="width: 100%;">
+					                	<button type="button" class="btn button-style d-flex ml-auto" onclick="updatePwValidation()" style="width: 100%;justify-content: center;border-radius: 7px;">변경하기</button>
+					                </div>
 	                            </div>
 	                        </div>
-	                        <div class="form-group-2 mt-4 login-button find-id-mention-button">
-			                	<button type="button" class="btn button-style d-flex ml-auto" onclick="updatePwValidation()">변경하기</button>
-			                </div>
 	                    </form>
 					</div>
 				</div>

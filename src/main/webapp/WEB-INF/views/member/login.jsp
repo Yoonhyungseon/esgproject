@@ -10,7 +10,7 @@
             <div class="container">
                 <h4 class="inner-text-title font-weight-bold mb-sm-3 mb-2">Login</h4>
                 <ul class="breadcrumbs-custom-path">
-                    <li><a href="index.html">Home</a></li>
+                    <li><a href="/">Home</a></li>
                     <li class="active"><span class="fa fa-chevron-right mx-2" aria-hidden="true"></span> Login</li>
                 </ul>
             </div>
@@ -22,9 +22,9 @@
         <div class="contact-sec py-5">
             <div class="container py-md-4 py-3">
                 <div class="contact-w3pvt-form">
-                    <h3 class="title-big mb-5">로그인</h3>
+                    <h3 class="title-big mb-5" style="text-align: center;">로그인</h3>
                     <form method="POST" class="form-signin" id="login_form" name="login_form">
-                        <div class="row main-cont-sec">
+                        <div class="row main-cont-sec" style="display: flex;justify-content: center;">
                             <div class="col-md-6 left-cont-contact">
                                 <div class="form-group">
                                     <label for="id">아이디</label>
@@ -36,19 +36,19 @@
                                     <input class="form-control" type="password" name="password" id="password" placeholder=""
                                         required="">
                                 </div>
+                                <div class="form-group-2 mt-4 login-button find-id-mention-button" style="width: 100%;">
+		                            <button type="button" id="btn_login" name="btn_login" class="btn button-style d-flex ml-auto" style="width: 100%;justify-content: center;border-radius: 7px;">로그인</button>
+		                        </div>
+		                        <div class="form-group-2 mt-4 login-button find-id-mention-button" style="width: 100%;">
+		                            <button type="button" class="btn button-style d-flex ml-auto" onclick="location.href='/member/join'" style="width: 100%;justify-content: center;border-radius: 7px;">회원가입</button>
+		                        </div>
+		                        <div class="form-group-2 mt-4 login-button find-id-mention-button" style="width: 100%;">
+		                            <button type="button" class="btn button-style d-flex ml-auto" onclick="location.href='/member/findId'" style="width: 100%;justify-content: center;border-radius: 7px;">아이디 찾기</button>
+		                        </div>
+		                        <div class="form-group-2 mt-4 login-button" style="width: 100%;">
+		                            <button type="button" class="btn button-style d-flex ml-auto" onclick="location.href='/member/findPassword'" style="width: 100%;justify-content: center;border-radius: 7px;">비밀번호 찾기</button>
+		                        </div>
                             </div>
-                        </div>
-                        <div class="form-group-2 mt-4 login-button find-id-mention-button">
-                            <button type="button" id="btn_login" name="btn_login" class="btn button-style d-flex ml-auto">로그인</button>
-                        </div>
-                        <div class="form-group-2 mt-4 login-button find-id-mention-button">
-                            <button type="button" class="btn button-style d-flex ml-auto" onclick="location.href='/member/join'">회원가입</button>
-                        </div>
-                        <div class="form-group-2 mt-4 login-button find-id-mention-button">
-                            <button type="button" class="btn button-style d-flex ml-auto" onclick="location.href='/member/findId'">아이디 찾기</button>
-                        </div>
-                        <div class="form-group-2 mt-4 login-button">
-                            <button type="button" class="btn button-style d-flex ml-auto" onclick="location.href='/member/findPassword'">비밀번호 찾기</button>
                         </div>
                     </form>
                 </div>

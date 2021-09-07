@@ -12,7 +12,7 @@
             <div class="container">
                 <h4 class="inner-text-title font-weight-bold mb-sm-3 mb-2">아이디 찾기</h4>
                 <ul class="breadcrumbs-custom-path">
-                    <li><a href="index.html">Home</a></li>
+                    <li><a href="/">Home</a></li>
                     <li class="active"><span class="fa fa-chevron-right mx-2" aria-hidden="true"></span>Find Id</li>
                 </ul>
             </div>
@@ -27,14 +27,16 @@
                     <div class="blog-img-single">
                         <img src="/assets/images/single.jpg" alt="" class="img-fluid img-responsive" />
                     </div>
-                    <div class="bottom-grid mt-4 pt-2" id="findId">
+                    <div class="bottom-grid mt-4 pt-2" id="findId" style="text-align: center;">
                         <h3 class="find-id-mention">한이음 님의 아이디는</h3>
                     </div>
-                   	<div class="form-group-2 mt-4 login-button find-id-mention-button">
-	                	<button type="button" class="btn button-style d-flex ml-auto" onclick="location.href='/member/findPassword'">비밀번호 찾기</button>
-	                </div>
-	                <div class="form-group-2 mt-4 login-button">
-	                	<button type="button" class="btn button-style d-flex ml-auto" onclick="location.href='/member/login'">로그인 하기</button>
+                    <div class="bottom-grid mt-4 pt-2" style="display: flex;justify-content: center;">
+	                   	<div class="form-group-2 mt-4 login-button find-id-mention-button">
+		                	<button type="button" class="btn button-style d-flex ml-auto" onclick="location.href='/member/findPassword'">비밀번호 찾기</button>
+		                </div>
+		                <div class="form-group-2 mt-4 login-button">
+		                	<button type="button" class="btn button-style d-flex ml-auto" onclick="location.href='/member/login'">로그인 하기</button>
+		                </div>
 	                </div>
                 </div>
             </div>
