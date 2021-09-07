@@ -74,19 +74,19 @@ progress::-webkit-progress-value {
 							<li><a href="#url" id="req_hash">${hashTag}</a></li>
 						</ul>
 					</div>
-					<div class="social-singles ml-md-auto mt-md-0 mt-4">
-						<a href="#blog"><span class="fa fa-facebook"aria-hidden="true"></span></a> 
-						<a href="#blog"><span class="fa fa-twitter" aria-hidden="true"></span></a> 
-						<a href="#blog"><span class="fa fa-google-plus" aria-hidden="true"></span></a> 
-						<a href="#blog"><span class="fa fa-pinterest-p"	aria-hidden=" true"></span></a>
-					</div>
+<!-- 					<div class="social-singles ml-md-auto mt-md-0 mt-4"> -->
+<!-- 						<a href="#blog"><span class="fa fa-facebook"aria-hidden="true"></span></a>  -->
+<!-- 						<a href="#blog"><span class="fa fa-twitter" aria-hidden="true"></span></a>  -->
+<!-- 						<a href="#blog"><span class="fa fa-google-plus" aria-hidden="true"></span></a>  -->
+<!-- 						<a href="#blog"><span class="fa fa-pinterest-p"	aria-hidden=" true"></span></a> -->
+<!-- 					</div> -->
 				</div>
-				<div class="single-pagination clearfix">
-					<a class="prev-post pull-left" href="#prev"><span
-						class="fa fa-arrow-left" aria-hidden="true"></span> Previous Post</a>
-					<a class="next-post pull-right" href="#next">Next Post <span
-						class="fa fa-arrow-right" aria-hidden="true"></span></a>
-				</div>
+<!-- 				<div class="single-pagination clearfix"> -->
+<!-- 					<a class="prev-post pull-left" href="#prev"><span -->
+<!-- 						class="fa fa-arrow-left" aria-hidden="true"></span> Previous Post</a> -->
+<!-- 					<a class="next-post pull-right" href="#next">Next Post <span -->
+<!-- 						class="fa fa-arrow-right" aria-hidden="true"></span></a> -->
+<!-- 				</div> -->
 				<!-- //blog single -->
 				<!-- comments section blog single -->
 			<!-- 	<section class="w3l-comments-9-main mt-5">

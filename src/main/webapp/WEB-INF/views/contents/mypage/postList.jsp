@@ -74,7 +74,7 @@ progress::-webkit-progress-value {
 								<a class="req_title"><img class="img-responsive"
 									id="req_file" alt="blog-image"></a>
 								<h3>
-									<a href="${pageContext.request.contextPath}/board/textboardView?boardSsn='${boardSsn}'" id="req_title" class="req_title"></a>
+									<a href="#none" id="req_title" class="req_title"></a>
 								</h3>
 								<ul class="admin-list">
 									<li><div id="req_regName">
@@ -246,14 +246,14 @@ progress::-webkit-progress-value {
 		fn_getBoardListReturn : function(rst) {
  			console.log(rst);
 			$('#listClone').html('');
-			console.log(rst.resultList.length);
+// 			console.log(rst.resultList.length);
 			if (rst.resultList.length > 0) {
 				for (var i in rst.resultList) {
 					
 					var html = $('#listCron').clone().removeAttr('id').show();
 					
 					html.find('#req_title').text(rst.resultList[i].title);
-					html.find('.req_title').attr('onclick', 'boardeObj.fn_view(\''+rst.resultList[i].boardSsn+'\')');
+					html.find('#req_title, .req_title').attr('onclick', 'boardObj.fn_view(\''+rst.resultList[i].boardSsn+'\')');
 	               
 					html.find('.date').text(rst.resultList[i].regDtYmd);
 
