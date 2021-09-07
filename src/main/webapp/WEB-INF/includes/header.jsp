@@ -21,12 +21,11 @@
 		    else if(path == '/mypage/mypage' || path == '/mypage/modifyInfo' || path == '/mypage/postList' || path == '/mypage/commentList' || path == '/mypage/scrap' || path == '/mypage/wallet' || path == '/mypage/usage') {
 		    	$('#mypage').addClass('active');
 		    }
-		    loginCheck.fn_getLoginState();
+		    headerLoginCheck.fn_getLoginState();
 		});
-		
-		let loginCheck = {
+		let headerLoginCheck = {
 	    	fn_getLoginState : function() {
-				ajaxParamExecute("", "/rest/member/loginCheck", "post", false, false, loginCheck.fn_getLoginStateReturn);
+				ajaxParamExecute("", "/rest/member/loginCheck", "post", false, false, headerLoginCheck.fn_getLoginStateReturn);
 			},
 			fn_getLoginStateReturn : function(rst) {
 				console.log(rst.resultInfo.loginYn);
