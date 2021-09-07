@@ -140,6 +140,14 @@
                         </div>
                     </section> -->
                     <!-- //comments form blog single -->
+					<div class="row" style="display: inline; padding: 1rem 1.1rem;">
+						<div class="btn_area">
+							<div class="btn_right" style="margin-top: 10px; float: right;">
+								<a class="btn btn-primary btn-block myform" href="/news/newsList"
+									style="background-color: #0abf53;">목록</a>
+							</div>
+						</div>
+					</div>
                 </div>
             </div>
         </div>
