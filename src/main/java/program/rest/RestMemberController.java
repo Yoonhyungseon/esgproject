@@ -373,4 +373,41 @@ public class RestMemberController {
 
 		return (queryResult == 1) ? true : false;
 	}
+	
+	/**************************************************
+	* @MethodName : loginCheck
+	* @Description: 로그인 체크
+	* @param request
+	* @param response
+	* @return ModelAndView
+	* @throws Exception 
+	* @Author : Hyung-Seon. Yoon
+	* @Version : 2021. 9. 7.
+	**************************************************/
+	@SuppressWarnings("null")
+	@RequestMapping(value="/loginCheck", method={RequestMethod.POST})
+	@ResponseBody
+    public ModelAndView loginCheck(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		logger.debug("rest loginCheck controller - start");
+		
+		ModelAndView mv = new ModelAndView("jsonView");
+		CamelMap resultInfo = null;
+		
+		//TODO : 사용자 로그인 세션
+		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+		if (authentication.getPrincipal() == "anonymousUser") {
+			logger.debug("상담 상세 페이지 조회: 로그인하지 않은 상태");
+			resultInfo.put("loginYn", "N"); 
+
+		}else {
+	        Account account = (Account)authentication.getPrincipal();
+			resultInfo.put("loginYn", "Y"); 
+			resultInfo.put("id", account.getUsername()); 
+		}
+
+		mv.addObject("resultInfo", resultInfo);
+		
+		logger.debug("rest loginCheck controller - end");
+		return mv;
+	}
 }
