@@ -1,8 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java"%>
 <!--header-->
 <script>
-		var sessionId = '${sessionId}';
-	    console.log(sessionId);
 		$(document).ready(function(){
 		    var path = document.location.pathname; 
 		    if(path == '/' || path == '/index') {
@@ -23,19 +21,29 @@
 		    else if(path == '/mypage/mypage' || path == '/mypage/modifyInfo' || path == '/mypage/postList' || path == '/mypage/commentList' || path == '/mypage/scrap' || path == '/mypage/wallet' || path == '/mypage/usage') {
 		    	$('#mypage').addClass('active');
 		    }
-		    if(sessionId != '') {
-		    	$('#login_logout').text('Logout');
-		    	$('#login_logout').attr("href", "/logout");
-			    $('#join_mypage').text('Mypage');
-			    $('#join_mypage').attr("href", "/mypage/mypage");
-		    }
-		    else {
-		    	$('#login_logout').text('Login');
-		    	$('#login_logout').attr("href", "/member/login");
-			    $('#join_mypage').text('Join');
-			    $('#join_mypage').attr("href", "/member/join");
-		    }
+		    loginCheck.fn_getLoginState();
 		});
+		
+		let loginCheck = {
+	    	fn_getLoginState : function() {
+				ajaxParamExecute("", "/rest/member/loginCheck", "post", false, false, loginCheck.fn_getLoginStateReturn);
+			},
+			fn_getLoginStateReturn : function(rst) {
+				console.log(rst.resultInfo.loginYn);
+				if(rst.resultInfo.loginYn == 'Y') {
+			    	$('#login_logout').text('Logout');
+			    	$('#login_logout').attr("href", "/logout");
+				    $('#join_mypage').text('Mypage');
+				    $('#join_mypage').attr("href", "/mypage/mypage");
+			    }
+			    else {
+			    	$('#login_logout').text('Login');
+			    	$('#login_logout').attr("href", "/member/login");
+				    $('#join_mypage').text('Join');
+				    $('#join_mypage').attr("href", "/member/join");
+			    }
+			},
+	    }
 </script>
 <header id="site-header" class="fixed-top nav-fixed">
 	<div class="container">
