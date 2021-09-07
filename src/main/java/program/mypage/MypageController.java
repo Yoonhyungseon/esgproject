@@ -205,6 +205,7 @@ public class MypageController {
 	* @Author : Beom-Ki, Lee
 	* @Version : 2021. 8. 21.
 	**************************************************/
+	@SuppressWarnings("unchecked")
 	@ResponseBody
 	@RequestMapping(value = {"/getBoardList"}, method = {RequestMethod.GET, RequestMethod.POST })
 	public ModelAndView getBoardList(HttpServletRequest request, Model model) {
@@ -214,16 +215,15 @@ public class MypageController {
 		
 		DataMap paramMap = HttpUtil.getRequestDataMap(request);
 		
-		
 		//TODO : 사용자 로그인 세션
 	    Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 	    if (authentication.getPrincipal() == "anonymousUser") {
-	       logger.debug("상담 상세 페이지 조회: 로그인하지 않은 상태");
+	       logger.debug("내가 작성한 게시글 조회: 로그인하지 않은 상태");
 	    }else {
 	         Account account = (Account)authentication.getPrincipal();
-	         paramMap.put("uName", account.getUsername()); 
+	         paramMap.put("uName", account.getName()); 
+	         System.out.println("name="+account.getName());
 	    }
-		
 	    
 		List<CamelMap> resultList = null;
 		

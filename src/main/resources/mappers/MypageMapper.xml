@@ -13,12 +13,19 @@
     
     <select id="getBoardList" resultType="cMap">
     	/* getBoardList :: 게시글 리스트 조회 */
-		SELECT *, DATE_FORMAT(REG_DT, '%Y-%m-%d') AS REG_DT_YMD
-		, SUBSTR(TITLE, 1, 25) AS TITLE_25
-		, SUBSTR(CONTENTS, 1, 60) AS CONTENTS_60
-		  FROM bboom_board
-		WHERE U_NAME= #{uName}
-		
+    	SELECT a.BOARD_SSN, a.TITLE, a.CONTENTS, a.ATT_FILE , a.U_NAME, a.REG_ID AS ID, a.REG_DT_YMD, a.HASH_TAG, a.SCRAPS, COUNT(a.SEQ) AS COMMENTS
+		  FROM(
+		  		SELECT   b.BOARD_SSN , b.TITLE, b.CONTENTS, b.ATT_FILE, b.U_NAME, b.REG_ID, b.HASH_TAG, c.SEQ
+		  		, DATE_FORMAT(b.REG_DT, '%Y-%m-%d') AS REG_DT_YMD, COUNT(s.SCRAP_NO) AS SCRAPS
+		         FROM  bboom_board b
+		         LEFT JOIN board_comment c 
+		         ON b.BOARD_SSN=c.LINK_SEQ 
+		         LEFT JOIN board_scrap s
+		         ON b.BOARD_SSN=s.LINK_SEQ
+		         GROUP BY b.BOARD_SSN, b.TITLE, b.CONTENTS, b.ATT_FILE, b.U_NAME, b.REG_ID, b.REG_DT, b.HASH_TAG, c.SEQ
+		      )a
+		   WHERE U_NAME= #{uName}
+		   GROUP BY a.BOARD_SSN, a.TITLE, a.CONTENTS, a.ATT_FILE, a.U_NAME, a.REG_ID, a.REG_DT_YMD, a.SCRAPS, a.HASH_TAG
     </select>
     
     <select id="getScrapList" resultType="cMap">
