@@ -23,6 +23,8 @@
                                     <th>게시글 제목</th>
                                     <th>게시글 작성자</th>
                                     <th>댓글 작성일</th>
+                                    <th></th>
+                                    <th></th>
                                 </tr>
                             </thead>
                            	<tbody  id="listCron" style="display:none;" >
