@@ -164,7 +164,7 @@ public class SecurityConfig {
         	.headers().frameOptions().disable()
         	.and()
         	.authorizeRequests()
-//        		.antMatchers("/mypage/**").hasRole("USER")
+        		.antMatchers("/mypage/**").hasRole("USER")
         		.antMatchers("/common/**").permitAll()
         		.antMatchers("/rest/*/**").permitAll()
         		.antMatchers("/member/**").permitAll()
