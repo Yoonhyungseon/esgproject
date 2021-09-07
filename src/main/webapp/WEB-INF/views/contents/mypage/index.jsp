@@ -139,7 +139,7 @@
                     <div class="area-box">
                        <img src="/asset/images/6delete.png" alt="" class="img-fluid" style="width: 60px; margin:auto;">
 						<h4>
-							<a href="usage" class="title-head">Unsubscribe account</a>
+							<a href="#none" class="title-head" onclick="obj.fn_delete();">회원 탈퇴</a>
 						</h4>
 						<p class="">Don't Unsubscribe Our Website</p>
                     </div>
@@ -148,3 +148,22 @@
 	</div>
 </section>
 
+<script type = "text/javascript">
+	var seq = "${seq}";
+	
+	
+	let obj = {
+			fn_delete : function(){
+				if(confirm("탈퇴하시겠습니까?"))
+					ajaxParamExecute("", "/mypage/quitMember", "post", false, false, obj.fn_deleteReturn);
+			},
+			fn_deleteReturn : function(rst){
+				if(rst){
+					alert("탈퇴되었습니다.");
+					window.location.href = '/logout';
+				}else{
+					alert("탈퇴에 실패하였습니다. \n관리자에게 문의바랍니다.");
+				}
+			}
+	}
+</script>

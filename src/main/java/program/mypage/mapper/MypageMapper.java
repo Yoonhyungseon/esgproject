@@ -70,6 +70,6 @@ public interface MypageMapper {
 	* @Author : Beom-Ki, Lee
 	* @Version : 2021. 9. 7.
 	**************************************************/
-	public CamelMap quitMember(DataMap paramMap) throws SQLException;
+	public int quitMember(DataMap paramMap) throws SQLException;
 
 }

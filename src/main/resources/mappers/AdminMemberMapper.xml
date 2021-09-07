@@ -32,6 +32,7 @@
 			, CASE WHEN (USER_TYPE='A') THEN 'ROLE_ADMIN' WHEN (USER_TYPE='G') THEN 'ROLE_USER'   
 			ELSE 'ROLE_NOT' END as role 
 		FROM member WHERE USER_ID = #{userId}
+		AND ENABLE = "Y"
    </select>
    
    	<select id="selectMemberInfo" resultType="cMap" parameterType="dMap">

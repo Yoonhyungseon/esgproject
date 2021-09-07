@@ -315,7 +315,7 @@ public class MypageController {
 	**************************************************/
 	@ResponseBody
 	@RequestMapping(value = {"/quitMember"}, method = {RequestMethod.GET, RequestMethod.POST })
-	public ModelAndView quitMember(HttpServletRequest request, Model model) {
+	public boolean quitMember(HttpServletRequest request, Model model) {
 		logger.debug("MypageController : quitMember - start");
 
 		ModelAndView mv = new ModelAndView("jsonView");
@@ -334,19 +334,17 @@ public class MypageController {
 	    }
 	    
 	    
-		CamelMap resultInfo = null;
+		int rst = 0;
 		
 		try {
-			resultInfo = mypageMapper.quitMember(paramMap);
+			rst = mypageMapper.quitMember(paramMap);
 		} catch (Exception e) {
 			logger.debug("현재 접속 회원정보 조회 오류", e);
 		}
 		
-		mv.addObject("resultInfo",resultInfo);
-		
 		logger.debug("MypageController : quitMember - end");
 
-		return mv;
+		return rst>0? true : false;
 	}
 	
 }
