@@ -60,5 +60,16 @@ public interface MypageMapper {
 	* @Version : 2021. 8. 24.
 	**************************************************/
 	public List<CamelMap> getCommentList() throws SQLException;
+	
+	/**************************************************
+	* @MethodName : quitMember
+	* @Description: 회원 탈퇴
+	* @param paramMap
+	* @return
+	* @throws SQLException CamelMap
+	* @Author : Beom-Ki, Lee
+	* @Version : 2021. 9. 7.
+	**************************************************/
+	public CamelMap quitMember(DataMap paramMap) throws SQLException;
 
 }

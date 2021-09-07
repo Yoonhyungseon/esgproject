@@ -44,4 +44,12 @@
 		  FROM board_comment
 		
     </select>
+    
+    <update id="quitMember" parameterType="cMap">
+    	/* quitMember :: 회원탈퇴 */
+    	UPDATE member
+    	   SET ENABLE = "N"	
+		 WHERE MEM_NUM = #{memNum}
+    	
+    </update>
 </mapper>

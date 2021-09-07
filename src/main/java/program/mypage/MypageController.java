@@ -256,6 +256,8 @@ public class MypageController {
 		ModelAndView mv = new ModelAndView("jsonView");
 		
 		DataMap paramMap = HttpUtil.getRequestDataMap(request);
+		
+		
 		List<CamelMap> resultList = null;
 		
 		try {
@@ -298,6 +300,52 @@ public class MypageController {
 		mv.addObject("resultList",resultList);
 		
 		logger.debug("MypageController : getCommentList - end");
+		return mv;
+	}
+	
+	
+	/**************************************************
+	* @MethodName : quitMember
+	* @Description: 회원탈퇴
+	* @param request
+	* @param model
+	* @return ModelAndView
+	* @Author : Beom-Ki, Lee
+	* @Version : 2021. 9. 7.
+	**************************************************/
+	@ResponseBody
+	@RequestMapping(value = {"/quitMember"}, method = {RequestMethod.GET, RequestMethod.POST })
+	public ModelAndView quitMember(HttpServletRequest request, Model model) {
+		logger.debug("MypageController : quitMember - start");
+
+		ModelAndView mv = new ModelAndView("jsonView");
+		
+		DataMap paramMap = HttpUtil.getRequestDataMap(request);
+		
+	    //TODO : 사용자 로그인 세션
+	    Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+	    if (authentication.getPrincipal() == "anonymousUser") {
+	       logger.debug("회원 정보 조회 페이지: 로그인하지 않은 상태");
+	    }else {
+	         Account account = (Account)authentication.getPrincipal();
+	         paramMap.put("memNum", account.getId());
+	         logger.debug("값 가져오기");
+	         System.out.println(account.getId());	         
+	    }
+	    
+	    
+		CamelMap resultInfo = null;
+		
+		try {
+			resultInfo = mypageMapper.quitMember(paramMap);
+		} catch (Exception e) {
+			logger.debug("현재 접속 회원정보 조회 오류", e);
+		}
+		
+		mv.addObject("resultInfo",resultInfo);
+		
+		logger.debug("MypageController : quitMember - end");
+
 		return mv;
 	}
 	
