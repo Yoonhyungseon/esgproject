@@ -120,4 +120,15 @@ public interface MemberMapper {
 	* @Version : 2021. 4. 2.
 	**************************************************/
 	public int userWithdrawal(DataMap paramMap) throws SQLException;
+	
+    /**************************************************
+    * @MethodName : getFindId
+    * @Description:
+    * @param paramMap
+    * @return
+    * @throws SQLException CamelMap
+    * @Author : Na-Young. Woo
+    * @Version : 2021. 9. 7.
+    **************************************************/
+    public CamelMap getFindId(DataMap paramMap) throws SQLException;
 }

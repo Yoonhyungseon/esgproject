@@ -208,7 +208,7 @@ public class ClientMemberController {
 		CamelMap resultInfo = null;
 		
 		try {
-			resultInfo = (CamelMap) MemberMapper.findId(paramMap);
+			resultInfo = MemberMapper.getFindId(paramMap);
 		} catch (Exception e) {
 			logger.debug("아이디 찾기 오류", e);
 		}
