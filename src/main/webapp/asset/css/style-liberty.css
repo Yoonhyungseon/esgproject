@@ -12085,7 +12085,7 @@ a.text-dark:focus {
 }
 
 .fa-cutlery:before {
-  content: "";
+  /* content: ""; */
 }
 
 .fa-file-text-o:before {

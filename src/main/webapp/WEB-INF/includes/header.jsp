@@ -37,12 +37,13 @@
 		    }
 		});
 </script>
-<header id="site-header" class="fixed-top">
+<header id="site-header" class="fixed-top nav-fixed">
 	<div class="container">
 		<nav class="navbar navbar-expand-lg stroke px-0">
 			<h1>
-				<a class="navbar-brand" href="../index"> <i
-					class="fa fa-cutlery" aria-hidden="true"></i> ESG: 사회를 품다
+				<a class="navbar-brand" href="/">
+					<img src="/asset/images/header_logo_remove_bg.png" alt="">
+					ESG: 사회를 품다
 				</a>
 			</h1>
 			<!-- if logo is image enable this   
