@@ -12,7 +12,7 @@
             <div class="container">
                 <h4 class="inner-text-title font-weight-bold mb-sm-3 mb-2">회원가입</h4>
                 <ul class="breadcrumbs-custom-path">
-                    <li><a href="index.html">Home</a></li>
+                    <li><a href="/">Home</a></li>
                     <li class="active"><span class="fa fa-chevron-right mx-2" aria-hidden="true"></span>Sign Up</li>
                 </ul>
             </div>
@@ -25,7 +25,7 @@
             <div class="container">
                 <div class="single-bottom-blog">
                     <div class="bottom-grid mt-4 pt-2">
-                        <h3>이용약관</h3>
+                        <!-- <h3>이용약관</h3>
                         <form action="" id="joinForm">
 				            <ul class="join_box">
 				                <li class="checkBox check01">
@@ -83,9 +83,10 @@
 				 
 				                </li>
 				            </ul>
-				        </form>
+				        </form> -->
+				        <h3 class="title-big mb-5" style="text-align: center;">회원가입</h3>
 				        <form class="w3layouts-contact-fm" id="signupForm">
-	                        <div class="row main-cont-sec">
+	                        <div class="row main-cont-sec" style="display: flex;justify-content: center;">
 	                            <div class="col-md-6 left-cont-contact">
 	                                <div class="form-group">
 	                                    <label for="userId">아이디</label>
@@ -120,10 +121,10 @@
 	                                    	<input type="radio" id="select2" name="gender" value="F"><label for="select2">여</label>
 	                                    </div>
 	                                </div>
+	                                <div class="form-group-2 mt-4 login-button" style="width: 100%;">
+			                            <button type="button" class="btn button-style d-flex ml-auto" onclick="signUpValidation()" style="width: 100%;justify-content: center;border-radius: 7px;">완료</button>
+			                        </div>
 	                            </div>
-	                        </div>
-	                        <div class="form-group-2 mt-4 login-button">
-	                            <button type="button" class="btn button-style d-flex ml-auto" onclick="signUpValidation()">완료</button>
 	                        </div>
 	                    </form>
 					</div>
@@ -142,6 +143,8 @@
 			var email = $("#email").val();
 			var gender = $('input[name="gender"]:checked').val();
 			
+			var email_rule = /^[A-Za-z0-9_\.\-]+@[A-Za-z0-9\-]+\.[A-Za-z0-9\-]+/;
+			
 			if(!userId){
 				alert("아이디를 입력해주세요.");
 				$("#userId").focus();
@@ -159,6 +162,9 @@
 				$("#nickName").focus();
 			}else if(!email){
 				alert("이메일을 입력해주세요.");
+				$("#email").focus();
+			}else if(!email_rule.test(email)){
+				alert("이메일을 형식에 맞게 입력해주세요.");
 				$("#email").focus();
 			}else if(!gender){
 				alert("성별을 선택해주세요.");
@@ -188,7 +194,7 @@
 				}
 			})
 		}
-    
+		    
         $(window).on("scroll", function () {
             var scroll = $(window).scrollTop();
 
