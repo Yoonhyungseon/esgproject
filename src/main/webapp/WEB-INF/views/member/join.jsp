@@ -91,27 +91,27 @@
 	                                <div class="form-group">
 	                                    <label for="userId">아이디</label>
 	                                    <input class="form-control" type="text" name="userId" id="userId" placeholder=""
-	                                        required="">
+	                                        required="" autocomplete="off">
 	                                </div>
 	                                <div class="form-group">
 	                                    <label for="userPw">비밀번호</label>
 	                                    <input class="form-control" type="password" name="userPw" id="userPw" placeholder=""
-	                                        required="">
+	                                        required="" autocomplete="off">
 	                                </div>
 	                                <div class="form-group">
 	                                    <label for="repassword">비밀번호 확인</label>
 	                                    <input class="form-control" type="password" name="repassword" id="repassword" placeholder=""
-	                                        required="">
+	                                        required="" autocomplete="off">
 	                                </div>
 	                                <div class="form-group">
 	                                    <label for="nickName">이름</label>
 	                                    <input class="form-control" type="text" name="nickName" id="nickName" placeholder=""
-	                                        required="">
+	                                        required="" autocomplete="off">
 	                                </div>
 	                                <div class="form-group">
 	                                    <label for="email">이메일</label>
 	                                    <input class="form-control" type="text" name="email" id="email" placeholder=""
-	                                        required="">
+	                                        required="" autocomplete="off">
 	                                </div>
 	                                <div class="form-group">
 	                                    <label for="gender">성별</label>

@@ -5,6 +5,7 @@ import javax.servlet.http.HttpServletRequest;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -33,6 +34,9 @@ public class ClientMemberController {
 	
 	@Autowired
 	private MemberMapper MemberMapper;
+	
+	@Autowired
+	private PasswordEncoder passwordEncoder;
 	
 //	@Autowired
 //	private TextBoardService textBoardService;
@@ -236,6 +240,14 @@ public class ClientMemberController {
 		DataMap paramMap = HttpUtil.getRequestDataMap(request);
 
 		int result = 0;
+		
+		String userId = paramMap.getString("userId");
+		String newPw = paramMap.getString("newPw");
+		String email = paramMap.getString("email");
+		
+		paramMap.put("userId", userId);
+		paramMap.put("newPw", passwordEncoder.encode(newPw));
+		paramMap.put("email", email);
 		
 		try {
 			result = MemberMapper.pwReassign(paramMap);
