@@ -257,6 +257,15 @@ public class MypageController {
 		
 		DataMap paramMap = HttpUtil.getRequestDataMap(request);
 		
+		//TODO : 사용자 로그인 세션
+	    Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+	    if (authentication.getPrincipal() == "anonymousUser") {
+	       logger.debug("내가 작성한 게시글 조회: 로그인하지 않은 상태");
+	    }else {
+	         Account account = (Account)authentication.getPrincipal();
+	         paramMap.put("uName", account.getName()); 
+	         System.out.println("name="+account.getName());
+	    }
 		
 		List<CamelMap> resultList = null;
 		
@@ -290,6 +299,15 @@ public class MypageController {
 		ModelAndView mv = new ModelAndView("jsonView");
 		
 		DataMap paramMap = HttpUtil.getRequestDataMap(request);
+		//TODO : 사용자 로그인 세션
+	    Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+	    if (authentication.getPrincipal() == "anonymousUser") {
+	       logger.debug("내가 작성한 게시글 조회: 로그인하지 않은 상태");
+	    }else {
+	         Account account = (Account)authentication.getPrincipal();
+	         paramMap.put("regNm", account.getName()); 
+	         System.out.println("name="+account.getName());
+	    }
 		
 		List<CamelMap> resultList = null;
 		
