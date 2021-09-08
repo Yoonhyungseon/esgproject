@@ -232,15 +232,15 @@ progress::-webkit-progress-value {
     
     <script type="text/javascript">
 //	var uName = '${uName}'
-	var uName = 'esg'
+	var regId = '${regId}'
 		
 	$(document).ready(function(){
-    	boardObj.fn_getScrapList(uName);
+    	boardObj.fn_getScrapList(regId);
     });
     
 	let boardObj = {
 		fn_getScrapList : function() {
-			var param = "uName="+uName;
+			var param = "regId="+regId;
 			ajaxParamExecute(param, "/mypage/getScrapList", "post", false, false, boardObj.fn_getScrapListReturn);
 		},
 		fn_getScrapListReturn : function(rst) {
