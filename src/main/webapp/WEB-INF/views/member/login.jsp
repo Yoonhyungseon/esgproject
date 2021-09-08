@@ -102,17 +102,13 @@
 					$("#login_area").find(".error_txt").addClass("hide");
 					$("#login_area").find(".error_txt").html("");
 					//location.reload();
-					if (document.referrer && document.referrer != "") {
-						window.location.replace(document.referrer);
-					} else {
+// 					if (document.referrer && document.referrer != "") {
+// 						window.location.replace(document.referrer);
+// 					} else {
 						window.location.replace("/index");
-					}
-				}else if(rst.status==404) {
-					$("#login_area").find(".error_txt").removeClass("hide");
-					$("#login_area").find(".error_txt").html("가입하지 않은 아이디이거나, 잘못된 비밀번호 입니다.");
-					$(".error_txt").css('display', 'inline');
+// 					}
 				}else {
-					alert("처리 중 오류가 발생하였습니다.");
+					alert("가입하지 않은 아이디이거나, 잘못된 비밀번호 입니다.");
 					/* console.log(rst.status + " : " + rst.message);  */
 				}
 			});

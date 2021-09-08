@@ -32,14 +32,15 @@ progress::-webkit-progress-value {
 	text-align: right;
 	font-size: 20px;
 	border-radius: 15px;
-}
+}-->
+<<style>
 .Yrow{
 	display: flow-root;
     flex-wrap: wrap;
     margin-right: -15px;
     margin-left: -15px;
 }
-</style> -->
+</style> 
 <!-- inner banner -->
 <div class="inner-banner">
 	<section class="w3l-breadcrumb">

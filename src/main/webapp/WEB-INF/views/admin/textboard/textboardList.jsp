@@ -17,12 +17,12 @@
 						<table id="datatablesSimple">
 							<thead>
 								<tr>
-									<th>No</th>
-									<th>제목</th>
+									<th style="width: 10%;">No</th>
+									<th style="width: 50%!important;">제목</th>
 									<th>작성자</th>
-									<th>답변여부</th>
+									<!-- <th>답변여부</th> -->
 									<th>작성일</th>
-									<th>모금액</th>
+									<!-- <th>모금액</th> -->
 								</tr>
 							</thead>
 							<tbody id="listClone">
@@ -31,9 +31,9 @@
 									<td class="boardSsn"></td>
 									<td class="req_title"><a href="textboardView"></a></td>
 									<td class="req_regName"></td>
-									<td class="req_reply"></td>
+									<!-- <td class="req_reply"></td> -->
 									<td class="req_regDt"></td>
-									<td>320,800원</td>
+									<!-- <td>320,800원</td> -->
 								</tr>
 						</table>
 						<form id="boardFrm" name="boardFrm" method="post" action="/admin/textboard/textboardView">
@@ -74,7 +74,7 @@
 
 					html.find('.req_regName').text(rst.resultList[i].uName);
 
-					html.find('.req_reply').text(rst.resultList[i].replyYn);
+					/* html.find('.req_reply').text(rst.resultList[i].replyYn); */
 					   
 					html.find('.req_regDt').text(rst.resultList[i].regDtYmd);
 

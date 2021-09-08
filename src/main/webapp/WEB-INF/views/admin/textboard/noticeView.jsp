@@ -14,16 +14,16 @@
 					</div>
 				</div>
 				<div class="card-body">
-					<div id="req_seq" style="display:none">${seq}</div>
-					<h2 id="req_title" style="margin: auto; display: block;">${title}</h2>
+					<div id="req_seq" style="display:none"></div>
+					<h2 id="req_title" style="margin: auto; display: block;"></h2>
 					
-					<h5 id="req_date" class="date" style="float: right;">${regDtYmd}</h5>
+					<h5 id="req_date" class="date" style="float: right;"></h5>
 					<div class="blog-img-single">
 						<img id="req_file" style="width: 500px; height: 350px; margin: auto; display: none; padding: 20px;" />
 					</div>
-					<h3 id="req_subTitle" style="margin: auto; display: block;">${subTitle}</h3>
+					<h3 id="req_subTitle" style="margin: auto; display: block;"></h3>
 					<br> <br>
-					<p id="req_url">${cUrl}</p>
+					<p id="req_url"></p>
 
 					<div class="form-group">
 						<div style="overflow-y:auto;">
@@ -33,13 +33,13 @@
 					<div
 						class="blog-single-tags d-flex align-items-center mt-4 pt-1 mb-5">
 					</div>
-					<div class="single-pagination clearfix">
+					<!-- <div class="single-pagination clearfix">
 						<a class="" onclick="noticeObj.fn_getNoticePrev()"> <span
 							class="fa fa-arrow-left" aria-hidden="true"></span> Previous Post
 						</a> <a class="" style="float: right;" onclick="noticeObj.fn_getNoticeNext()">Next Post <span
 							class="fa fa-arrow-right" aria-hidden="true"></span>
 						</a>
-					</div>
+					</div> -->
 				</div>
 				<div class="row" style="display: inline; padding: 1rem 1.1rem;">
 					<div class="btn_area">
