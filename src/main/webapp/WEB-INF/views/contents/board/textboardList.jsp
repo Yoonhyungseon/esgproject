@@ -62,7 +62,7 @@ progress::-webkit-progress-value {
 				<div id="listClone"></div>
 				<div id="listCron" style="display: none;">
 					<div class="col-lg-4 col-md-6 column column-img" id="zoomIn" style="float: left; margin: 10px 0">
-						<div class="services-gd">
+						<div class="services-gd" style="height:400px;">
 							<div class="serve-info">
 								<h3 class="date"></h3>
 								<a class="req_title"><img class="img-responsive" id="req_file" alt="blog-image"></a>
