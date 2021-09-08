@@ -8,7 +8,7 @@
 		        <div class="container pt-5 pb-md-4">
 		            <div class="row align-items-center">
 		                <div class="col-md-6 pt-md-0 pt-4">
-		                    <h3 class="mb-sm-4 mb-3 title" style="text-align: left;">ESG: 사회를 품다</h3>
+		                    <h3 class="mb-sm-4 mb-3 title" style="text-align: left;font-size: 47px;">ESG: 사회를 품다</h3>
 		                    <p id="landing-information" style="text-align: left;">기업의 실질적 ESG 경영을 위해<br><br>우리들의 적극적인 행동이 시작되는 곳</p>
 		                    <div class="mt-md-5 mt-4 mb-lg-0 mb-4" style="text-align: left;">
 		                        <button class="btn button-style btn-scroll-move">More information</button>
@@ -24,8 +24,8 @@
 		        <div class="container pt-5 pb-md-4">
 		            <div class="row align-items-center">
 		                <div class="col-md-6 pt-md-0 pt-4">
-		                    <h3 class="mb-sm-4 mb-3 title" style="text-align: left;">ESG: 기업을 평가하는 하나의 잣대</h3>
-		                    <p id="landing-information" style="text-align: left;">사회문제를 고민하는 일은 이제 하나의 소양이 아니라<br><br>기업이 멀리 볼 줄 아는지를 평가하는 잣대</p>
+		                    <h3 class="mb-sm-4 mb-3 title" style="text-align: left;font-size: 47px;">ESG: 국민과 함께하는 금융</h3>
+		                    <p id="landing-information" style="text-align: left;">위기를 기회로 바꾸는 금융<br><br>새로운 도약의 계기를 창출하는 금융</p>
 		                    <div class="mt-md-5 mt-4 mb-lg-0 mb-4" style="text-align: left;">
 		                        <button class="btn button-style btn-scroll-move">More information</button>
 		                    </div>
@@ -40,8 +40,8 @@
 		        <div class="container pt-5 pb-md-4">
 		            <div class="row align-items-center">
 		                <div class="col-md-6 pt-md-0 pt-4">
-		                    <h3 class="mb-sm-4 mb-3 title" style="text-align: left; color: white; text-shadow: 1px 1px 5px #000;">ESG: 국민과 함께하는 금융</h3>
-		                    <p id="landing-information" style="text-align: left; color: white; text-shadow: 1px 1px 5px #000;">위기를 기회로 바꾸는 금융<br><br>새로운 도약의 계기를 창출하는 금융</p>
+		                    <h3 class="mb-sm-4 mb-3 title" style="text-align: left; color: white; text-shadow: 1px 1px 5px #000;font-size: 47px;">ESG: 글로벌 트렌드</h3>
+		                    <p id="landing-information" style="text-align: left; color: white; text-shadow: 1px 1px 5px #000;">떠오르는 투자 키워드<br><br>지속가능한 경영을 위한 ESG 경영</p>
 		                    <div class="mt-md-5 mt-4 mb-lg-0 mb-4" style="text-align: left;">
 		                        <button class="btn button-style btn-scroll-move">More information</button>
 		                    </div>
@@ -56,8 +56,8 @@
 		        <div class="container pt-5 pb-md-4">
 		            <div class="row align-items-center">
 		                <div class="col-md-6 pt-md-0 pt-4">
-		                    <h3 class="mb-sm-4 mb-3 title" style="text-align: left; color: white; left; text-shadow: 1px 1px 5px #000;">ESG: 글로벌 트렌드</h3>
-		                    <p id="landing-information" style="text-align: left; color: white; left; text-shadow: 1px 1px 5px #000;">떠오르는 투자 키워드<br><br>지속가능한 경영을 위한 ESG 경영</p>
+		                    <h3 class="mb-sm-4 mb-3 title" style="text-align: left; color: white; left; text-shadow: 1px 1px 5px #000;font-size: 47px;">ESG: 기업을 평가하는 잣대</h3>
+		                    <p id="landing-information" style="text-align: left; color: white; left; text-shadow: 1px 1px 5px #000;">사회문제를 고민하는 일은 이제 하나의 소양이 아니라<br><br>기업이 멀리 볼 줄 아는지를 평가하는 잣대</p>
 		                    <div class="mt-md-5 mt-4 mb-lg-0 mb-4" style="text-align: left;">
 		                        <button class="btn button-style btn-scroll-move">More information</button>
 		                    </div>
@@ -100,10 +100,10 @@
                     </div>
                     <div class="col-lg-6 content-left mb-md-0 mb-3">
                         <h3>ESG 란?<!-- <span>What is ESG?</span> --></h3>
-                        <p>· 기업의 지속가능경영 수준을 투자자 관점에서 해석</p>
-                        <p>· 비재무적 성과를 재무적 지표로 환산하여 평가</p>
-                        <p>· 20여년 전부터 존재한 개념이나, 최근 들어 주목받는 중</p>
-                        <p>· 기업이 환경, 사회, 지배구조에서 발생할 수 있는 위험을 관리하여<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;기회로 잘 전환하는지에 대한 능력을 확인하는 지표</p>
+                        <p>· 기업의 지속가능경영 수준을 투자자 관점에서 해석한 것이다.</p>
+                        <p>· 비재무적 성과를 재무적 지표로 환산하여 평가한다.</p>
+                        <p>· 20여년 전부터 존재한 개념이나, 최근 들어 주목받는 중이다.</p>
+                        <p>· 기업이 환경, 사회, 지배구조에서 발생할 수 있는 위험을 관리하여<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;기회로 잘 전환하는지에 대한 능력을 확인하는 지표이다.</p>
                     </div>
                 </div>
             </div>
