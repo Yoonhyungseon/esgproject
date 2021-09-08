@@ -203,6 +203,6 @@ input[type=password] { font-family: "Noto Sans KR" !important;}
 .pagination a.next { margin-left: 20px; background:url("../../img/ico/paging_next.png") no-repeat center; background-color:#fff; text-indent:-9999em;}
 .pagination a.first { margin-right: 20px; background:url("../../img/ico/paging_first.png") no-repeat center;background-color:#fff;text-indent:-9999em;}
 .pagination a.last { margin-left: 20px; background:url("../../img/ico/paging_last.png") no-repeat center;background-color:#fff;text-indent:-9999em;}
-.pagination a.active {background: #238ccd; border:1px solid #238ccd; color:#fff;}
+.pagination a.active {background: #238ccd; /* border:1px solid #238ccd; */ color:#fff;}
 .pagination .paging { display: inline-block; font-size: 0;}
 .pagination .paging a:nth-child(n+2) { border-left: none;}

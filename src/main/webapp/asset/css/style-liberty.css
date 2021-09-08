@@ -15866,7 +15866,7 @@ h3.title-big {
 
 .w3l-blog-sec .pagination a.active,
 .w3l-blog-sec .pagination a:hover {
-  background-color: var(--primary-color);
+  background-color: #0abf53;
   color: #fff;
 }
 
