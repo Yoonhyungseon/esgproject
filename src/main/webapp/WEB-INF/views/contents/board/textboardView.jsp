@@ -1,5 +1,8 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java"%>
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
+<%@ page import="org.springframework.security.core.context.SecurityContextHolder" %>
+<%@ page import="org.springframework.security.core.Authentication" %>
 
 <script src="js/jquery.js" type="text/javascript">
 	$(document).ready(function() {
@@ -36,11 +39,11 @@ progress::-webkit-progress-value {
 	<section class="w3l-breadcrumb">
 		<div class="container">
 			<h4 class="inner-text-title font-weight-bold mb-sm-3 mb-2">Blog
-				Sinle</h4>
+				Single</h4>
 			<ul class="breadcrumbs-custom-path">
 				<li><a href="index.html">Home</a></li>
 				<li class="active"><span class="fa fa-chevron-right mx-2"
-					aria-hidden="true"></span>Blog Sinle</li>
+					aria-hidden="true"></span>Blog Single</li>
 			</ul>
 		</div>
 	</section>
@@ -50,17 +53,17 @@ progress::-webkit-progress-value {
 <section class="w3l-blog-single py-5">
 	<div class="single-blog sec-padding py-md-4 py-3">
 		<div class="container">
-			<div id="req_seq" style="display: none">${boardSsn}</div>
+			<div class="req_seq" style="display: none"></div>
 			<div class="single-bottom-blog">
-				<h3 id="req_date" class="date">${regDtYmd}</h3>
+				<h3 id="req_date" class="date"></h3>
 				<div class="blog-img-single">
-					<img id="req_file" class="img-fluid img-responsive" style="width:100%;"/>
+					<img id="req_file" class="img-fluid img-responsive" style="width:50%;"/>
 				</div>
 
 				<div class="bottom-grid mt-4 pt-2">
-					<h3 id="req_title">${title}</h3>
+					<h3 id="req_title"></h3>
 
-					<p id="req_content">${contents}</p>
+					<p id="req_content"></p>
 				</div>
 				<!-- bottom -->
 				
@@ -71,75 +74,100 @@ progress::-webkit-progress-value {
 					<div class="blog-tags">
 						<ul>
 							<li class="text-tag">Tags:</li>
-							<li><a href="#url" id="req_hash">${hashTag}</a></li>
+							<!-- 나중에 Hashtag기능 구현하면 눌렀을때 같은 해쉬테그를 가진 글 검색 -->
+							<li><a id="req_hash"></a></li>
 						</ul>
 					</div>
-<!-- 					<div class="social-singles ml-md-auto mt-md-0 mt-4"> -->
-<!-- 						<a href="#blog"><span class="fa fa-facebook"aria-hidden="true"></span></a>  -->
-<!-- 						<a href="#blog"><span class="fa fa-twitter" aria-hidden="true"></span></a>  -->
-<!-- 						<a href="#blog"><span class="fa fa-google-plus" aria-hidden="true"></span></a>  -->
-<!-- 						<a href="#blog"><span class="fa fa-pinterest-p"	aria-hidden=" true"></span></a> -->
-<!-- 					</div> -->
 				</div>
-<!-- 				<div class="single-pagination clearfix"> -->
-<!-- 					<a class="prev-post pull-left" href="#prev"><span -->
-<!-- 						class="fa fa-arrow-left" aria-hidden="true"></span> Previous Post</a> -->
-<!-- 					<a class="next-post pull-right" href="#next">Next Post <span -->
-<!-- 						class="fa fa-arrow-right" aria-hidden="true"></span></a> -->
-<!-- 				</div> -->
+				<!--  <div class="single-pagination clearfix">
+					<a class="prev-post pull-left" href="#prev"><span
+						class="fa fa-arrow-left" aria-hidden="true"></span> Previous Post</a>
+					<a class="next-post pull-right" href="#next">Next Post <span
+						class="fa fa-arrow-right" aria-hidden="true"></span></a>
+				</div> -->
+				<div class="single-pagination clearfix">
+				
+					<div class="btn_right" style="float: right;  display:flex;">
+						
+						<form method="post" id="deleteFrm"> 
+						<div id="deletBtn">	
+							<button class="btn button-style d-flex ml-auto" onclick="boardObj.fn_delete()" style="margin: 20px 0; color: #fff;">삭제</button>
+<!-- 			                 <a class="btn button-style d-flex ml-auto" id="deletBtn" onclick="boardObj.fn_delete()" style="color: #fff; display:none;">삭제</a>-->
+						</div>	
+		             	</form>
+ 					
+						<a class="btn button-style d-flex ml-auto" href="textboardList" style="color: #fff;">목록</a>						
+					</div>
+				</div>
+				
 				<!-- //blog single -->
-				<!-- comments section blog single -->
-			<!-- 	<section class="w3l-comments-9-main mt-5">
-					<div class="gallery-32">
-						<h3 class="title-main2-blog-single">Comments (2)</h3>
+				<!-- feedback -->
+				<section class="w3l-comments-9-main mt-5">
+					<form id="fbFrm" name="fbFrm" method="post" action="/board/textboardView">
+						<input type="hidden" id="linkSeq" name="boardSsn" value="">
 						<div class="row">
-							<div class="col-md-6">
-								<div class="comment-grid">
-									<p>
-										<i class="fa fa-quote-left" aria-hidden="true"></i> Sed ut
-										perspiciatis unde omnis iste natus error sit voluptatem
-										accusantium doloremque laudantium, totam rem aperiam.
-									</p>
-									<div class="testi-pos mt-3 d-flex align-items-center">
-										<img src="assets/images/testi2.jpg" alt=""
-											class="img-responsive rounded-circle mb-3" />
-										<div class="right-coment">
-											<h4>Nemo en</h4>
-											<span>totam rem</span>
-										</div>
-									</div>
-									<a href="#reply" class="reply-blog"><i class="fa fa-reply"></i>Reply</a>
+							<div id="fbClone"></div>
+							<div id="fbCron" style="display: none;">
+								<div class="gallery-32">
+								<div style="display: -webkit-box;">
+									<h3 class="title-main2-blog-single">Feedback</h3>
 								</div>
-							</div>
-							<div class="col-md-6 mt-md-0 mt-4">
-								<div class="comment-grid">
-									<p>
-										<i class="fa fa-quote-left" aria-hidden="true"></i> Nemo enim
-										ipsam voluptatem quia voluptas sit aspernatur aut odit aut
-										fugit, sed quia consequuntur magni dolores eos qui.
-									</p>
-									<div class="testi-pos mt-3 d-flex align-items-center">
-										<img src="assets/images/testi1.jpg" alt=""
-											class="img-responsive rounded-circle mb-3" />
+								<div class="comment-grid" style="width: 950px; display: flow-root;">
+									<h4 id="fb_title"></h4>
+									<i class="fa fa-quote-left" aria-hidden="true"></i> 
+									<p id="fb_contents" style="margin-left: 50px;"></p>
+									<div class="testi-pos mt-3 d-flex align-items-center" style="float: right;">
 										<div class="right-coment">
-											<h4>eius mod</h4>
-											<span>sed quia</span>
+											<span id="fb_dt"></span>
 										</div>
 									</div>
-									<a href="#reply" class="reply-blog"><i class="fa fa-reply"></i>Reply</a>
+								</div>
 								</div>
 							</div>
 						</div>
-					</div>
+					</form>
 				</section>
-				//comments section blog single
-				comments form blog single
+				<!-- //feedback -->
+				<!-- comments section blog single -->
+				<br><br>
+					<section class="w3l-comments-9-main mt-5">
+						<div class="gallery-32">
+						<div style="display: -webkit-box;">
+							<h3 class="title-main2-blog-single">Comments</h3>(<h4 id="req_comments" style="padding-top: 6px;display: inline-flex;"></h4>)
+						</div>
+						<form id="boardFrm" name="boardFrm" method="post" action="/board/textboardView">
+							<input type="hidden" id="linkSeq" name="boardSsn" value="">
+							<div class="row">
+								<div id="listClone" style="display: contents;"></div>
+								<div class="col-md-6 mt-4" id="listCron" style="display: none;">
+									<div class="comment-grid">
+										<p id="req_contents" style="overflow: hidden; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; height: 5rem;">
+											<i class="fa fa-quote-left" aria-hidden="true"></i> 
+										</p>
+										<div class="testi-pos mt-3 d-flex align-items-center">
+											<div class="right-coment">
+												<h4 id="req_regNm"></h4>
+												<span id="req_dt"></span>
+											</div>
+										</div>
+										<a href="#reply" class="reply-blog"><i class="fa fa-reply"></i>Reply</a>
+									</div>
+								</div>
+							</div>
+							</form>
+						</div>
+					</section>
+			
+				<!-- comments section blog single -->
+				<!-- comments form blog single -->
+				
 				<section class="w3l-form-comments-sec mt-5">
 					<div class="coments-forms-sub">
 						<h3 class="title-main2-blog-single">Leave A Message</h3>
 						<div class="form-commets">
-							<form action="#" method="post">
-								<div class="row mb-4">
+							<sec:authorize access="isAuthenticated()">
+							<form name="commentFrm" action="/board/postComment" method="post" data-parsley-validate>
+								<!-- <div class="row mb-4">
 									<div class="col-md-6">
 										<input type="text" name="Name" required="Name"
 											placeholder="Your Name">
@@ -148,29 +176,55 @@ progress::-webkit-progress-value {
 										<input type="email" name="Email" required="Email"
 											placeholder="Your Email">
 									</div>
-								</div>
-								<textarea name="Message" required=""
+								</div> -->
+
+                  			<%-- 	<input type="hidden" id="regNm">
+                  				<%=request.getAttribute("regNm") %> --%>
+<%--                   				 <c:if test="${account ne null }">
+ --%>			                 <%-- var userName='<%=(String)session.getAttribute(name) %> --%>
+ 						<%-- 		<%
+								    Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+								    Object principal = authentication.getPrincipal();
+								    String loginUserName = "";
+								    if(principal != null) {
+								    	loginUserName = authentication.getName();
+								    }
+								%> --%>
+<%--  								<input id="regNm" name="regNm" value='<%=loginUserName %>'>
+ --%>			                <sec:authentication property="principal" var="login"/>
+			                  	<input type="hidden" id="regNm" name="regNm" value="${login.username}">
+								<input type="hidden" id="linkSeq" name="linkSeq" value="">
+								<textarea name="Message" id="contents" required="required"
 									placeholder="Write your comments here"></textarea>
-								<button class="btn button-style d-flex ml-auto" type="submit">Post
-									comment</button>
+								<button class="btn button-style d-flex ml-auto" type="button" onclick="saveComment()">Post	comment</button>
 							</form>
+							</sec:authorize>
+							<sec:authorize access="isAnonymous()">
+								<div style="display: flow-root;">
+									<div>로그인 하시면 게시글을 남길 수 있습니다.</div>
+								    <div class="form-group-2 mt-4 login-button find-id-mention-button">
+						                <button type="button" id="btn_login" name="btn_login" class="btn button-style d-flex ml-auto" onclick="location.href='/member/login'">로그인</button>
+						            </div>
+						    	</div>
+							</sec:authorize>
 						</div>
 					</div>
-				</section> -->
+				</section>
+				
+					
 				<!-- //comments form blog single -->
-				<div class="btn_right" style="margin-top: 10px; float: right;">
-					<a class="btn button-style" href="textboardList" style="background-color: #0abf53;">목록</a>
-				</div>
 			</div>
 		</div>
 	</div>
 </section>
+
 <!-- //blog single -->
 <script type="text/javascript">
 var boardSsn="${boardSsn}";
-// var boardSsn='172';
     $(document).ready(function(){
     	boardObj.fn_getBoardInfo(boardSsn);
+    	boardObj.fn_getCommentList("${linkSeq}");
+    	boardObj.fn_getFeedbackList("${linkSeq}");
     });
     
     let boardObj = {
@@ -190,16 +244,135 @@ var boardSsn="${boardSsn}";
  			}
  			$('#req_hash').text(rst.resultInfo.hashTag);
  			$('#req_content').html(rst.resultInfo.contents);
- 			
- 			if(rst.userInfo == rst.resultInfo.regId){
- 				console.log("내가 쓴글!!!");
+ 			$('#req_comments').text(rst.resultInfo.comments);
+  			if(rst.userInfo == rst.resultInfo.id){
+ 				//console.log("내가 쓴글!!!");
  				$('#deletBtn').show();
  			}else{
+ 				//console.log("내가 쓴글 아님!!!");
  				$('#deletBtn').hide();
- 				console.log("내가 쓴글 아님!!!");
- 			}
+ 			} 			
+		},
+		fn_getCommentList : function() {
+			$('#linkSeq').val('${boardSsn}');
+    		var cParam = "linkSeq="+'${boardSsn}';
+    		console.log(cParam);
+			ajaxParamExecute(cParam, "/board/getCommentList", "post", false, false, boardObj.fn_getCommentListReturn);
+		},
+		fn_getCommentListReturn : function(rst) {
+ 			console.log(rst)
+ 			$('#listClone').html('');
+ 						
+			if (rst.resultList.length > 0) {
+				for (var i in rst.resultList) {
+					
+					var html = $('#listCron').clone().removeAttr('contents').show();
+
+					html.find('#req_contents').text(rst.resultList[i].contents);
+					 
+					html.find('#req_regNm').text(rst.resultList[i].regNm);
+						
+					html.find('#req_dt').text(rst.resultList[i].regDtYmd);
+
+					$('#listClone').append(html); 
+				}
+			} else {
+				$('#listClone').html(''); 			
+			}
+	    },
+		fn_view : function() {
+			$("#commentFrm").prop("action", "/board/textboardView");
+			$("#commentFrm").submit();
+		},
+		fn_delete : function() {
+		     if (confirm("삭제하시겠습니까?")) {
+		            alert("삭제되었습니다.");
+		            
+		        	var param = "boardSsn="+boardSsn;
+					ajaxParamExecute(param, "/board/deletePosting", "post", false, false, boardObj.fn_deleteReturn);
+		        }
+		},
+		fn_deleteReturn : function(rst) {
+	//		console.log(rst);
+			$('#deleteFrm').attr('action','/board/textboardList');
+			$('#deleteFrm').submit();
+		},
+		fn_getFeedbackList : function() {
+			$('#linkSeq').val('${boardSsn}');
+			var cParam = "linkSeq="+'${boardSsn}';
+			console.log(cParam);
+			ajaxParamExecute(cParam, "/board/getFeedback", "post", false, false, boardObj.fn_getFeedbackListReturn);
+		},
+		fn_getFeedbackListReturn : function(rst) {
+			//console.log(rst);
+			$('#fbClone').html('');
+							
+			if (rst.resultList.length > 0) {
+				for (var i in rst.resultList) {
+					
+					var html = $('#fbCron').clone().removeAttr('contents').show();
+	
+					html.find('#fb_title').text(rst.resultList[i].title);
+					
+					html.find('#fb_contents').text(rst.resultList[i].contents);
+					 					
+					html.find('#fb_dt').text(rst.resultList[i].regDtYmd);
+	
+					$('#fbClone').append(html); 
+				}
+			} else {
+				$('#fbClone').html(''); 			
+			}
 		}
-    }
+ }
+    function saveComment(){
+		var linkSeq = $('#linkSeq').val('${boardSsn}');
+		var contents = $('#contents').val();
+
+		if(!contents){
+			alert("댓글 입력해주세요.");
+			$("#contents").focus();
+		}else {
+			saveReturn();
+		}
+	}
+	function saveReturn(){
+		$.ajax({
+			url : "/board/postComment",
+			type : 'POST',
+			data : {
+				"regNm" : $("#regNm").val(),
+				"linkSeq" : ${boardSsn},
+				"contents" : $("#contents").val()
+			},
+			success : function(data){
+				if(data == true){
+					alert("댓글이 등록되었습니다.");
+					location.reload();
+				} else {
+					alert("댓글 등록 실패");
+				}
+			}
+		})
+	}
+   /*  fn_save : function() {
+    	if (!$('#contents').val() || !$('#contents').val().trim()) {
+			alert("댓글을 입력해주세요.");
+			$('#contents').focus();
+			return false;
+		}
+    	if (confirm('등록하시겠습니까?'))
+    		ajaxFormExecute("commentFrm", "/board/postComment", "post", false,	false, boardObj.fn_saveReturn);
+    },	
+    fn_saveReturn : function(rst) {
+		if (rst) {
+			alert('등록되었습니다.');
+			console.log(rst);
+			boardObj.fn_view();
+		} else {
+			alert('등록에 실패하였습니다. \n관리자에게 문의바랍니다.');
+		}
+	} */
 </script>
 <!-- Js scripts -->
 <!-- move top -->
@@ -309,7 +482,6 @@ var boardSsn="${boardSsn}";
         });
     </script>
 <!-- //disable body scroll which navbar is in active -->
-
 <!--bootstrap-->
 <script src="assets/js/bootstrap.min.js"></script>
 <!-- //bootstrap-->
