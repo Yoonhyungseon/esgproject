@@ -8,8 +8,8 @@
 		        <div class="container pt-5 pb-md-4">
 		            <div class="row align-items-center">
 		                <div class="col-md-6 pt-md-0 pt-4">
-		                    <h3 class="mb-sm-4 mb-3 title" style="text-align: left;">ESG: 사회를 품다.</h3>
-		                    <p id="landing-information" style="text-align: left;">기업의 실질적 ESG 경영을 위해<br>우리들의 적극적인 행동이 시작되는 곳</p>
+		                    <h3 class="mb-sm-4 mb-3 title" style="text-align: left;">ESG: 사회를 품다</h3>
+		                    <p id="landing-information" style="text-align: left;">기업의 실질적 ESG 경영을 위해<br><br>우리들의 적극적인 행동이 시작되는 곳</p>
 		                    <div class="mt-md-5 mt-4 mb-lg-0 mb-4" style="text-align: left;">
 		                        <button class="btn button-style btn-scroll-move">More information</button>
 		                    </div>
@@ -24,8 +24,8 @@
 		        <div class="container pt-5 pb-md-4">
 		            <div class="row align-items-center">
 		                <div class="col-md-6 pt-md-0 pt-4">
-		                    <h3 class="mb-sm-4 mb-3 title" style="text-align: left;">ESG: 사회를 품다.</h3>
-		                    <p id="landing-information" style="text-align: left;">기업의 실질적 ESG 경영을 위해<br>우리들의 적극적인 행동이 시작되는 곳</p>
+		                    <h3 class="mb-sm-4 mb-3 title" style="text-align: left;">ESG: 기업을 평가하는 하나의 잣대</h3>
+		                    <p id="landing-information" style="text-align: left;">사회문제를 고민하는 일은 이제 하나의 소양이 아니라<br><br>기업이 멀리 볼 줄 아는지를 평가하는 잣대</p>
 		                    <div class="mt-md-5 mt-4 mb-lg-0 mb-4" style="text-align: left;">
 		                        <button class="btn button-style btn-scroll-move">More information</button>
 		                    </div>
@@ -40,8 +40,8 @@
 		        <div class="container pt-5 pb-md-4">
 		            <div class="row align-items-center">
 		                <div class="col-md-6 pt-md-0 pt-4">
-		                    <h3 class="mb-sm-4 mb-3 title" style="text-align: left; color: white; text-shadow: 1px 1px 5px #000;">ESG: 사회를 품다.</h3>
-		                    <p id="landing-information" style="text-align: left; color: white; text-shadow: 1px 1px 5px #000;">기업의 실질적 ESG 경영을 위해<br>우리들의 적극적인 행동이 시작되는 곳</p>
+		                    <h3 class="mb-sm-4 mb-3 title" style="text-align: left; color: white; text-shadow: 1px 1px 5px #000;">ESG: 국민과 함께하는 금융</h3>
+		                    <p id="landing-information" style="text-align: left; color: white; text-shadow: 1px 1px 5px #000;">위기를 기회로 바꾸는 금융<br><br>새로운 도약의 계기를 창출하는 금융</p>
 		                    <div class="mt-md-5 mt-4 mb-lg-0 mb-4" style="text-align: left;">
 		                        <button class="btn button-style btn-scroll-move">More information</button>
 		                    </div>
@@ -56,8 +56,8 @@
 		        <div class="container pt-5 pb-md-4">
 		            <div class="row align-items-center">
 		                <div class="col-md-6 pt-md-0 pt-4">
-		                    <h3 class="mb-sm-4 mb-3 title" style="text-align: left; color: white; left; text-shadow: 1px 1px 5px #000;">ESG: 사회를 품다.</h3>
-		                    <p id="landing-information" style="text-align: left; color: white; left; text-shadow: 1px 1px 5px #000;">기업의 실질적 ESG 경영을 위해<br>우리들의 적극적인 행동이 시작되는 곳</p>
+		                    <h3 class="mb-sm-4 mb-3 title" style="text-align: left; color: white; left; text-shadow: 1px 1px 5px #000;">ESG: 글로벌 트렌드</h3>
+		                    <p id="landing-information" style="text-align: left; color: white; left; text-shadow: 1px 1px 5px #000;">떠오르는 투자 키워드<br><br>지속가능한 경영을 위한 ESG 경영</p>
 		                    <div class="mt-md-5 mt-4 mb-lg-0 mb-4" style="text-align: left;">
 		                        <button class="btn button-style btn-scroll-move">More information</button>
 		                    </div>
@@ -177,11 +177,11 @@
     <!-- //move top -->
 
     <!-- common jquery plugin -->
-    <script src="/asset/js/jquery-3.3.1.min.js"></script>
+    <!-- <script src="/asset/js/jquery-3.3.1.min.js"></script> -->
     <!-- //common jquery plugin -->
 
     <!-- theme switch js (light and dark)-->
-    <script src="/asset/js/theme-change.js"></script>
+    <!-- <script src="/asset/js/theme-change.js"></script> -->
     <script>
         function autoType(elementClass, typingSpeed) {
             var thhis = $(elementClass);
@@ -220,7 +220,7 @@
     <!-- //theme switch js (light and dark)-->
 
     <!-- magnific popup -->
-    <script src="/asset/js/jquery.magnific-popup.min.js"></script>
+    <!-- <script src="/asset/js/jquery.magnific-popup.min.js"></script> -->
     <script>
         $(document).ready(function () {
             $('.popup-with-zoom-anim').magnificPopup({
@@ -298,7 +298,7 @@
     <!-- //disable body scroll which navbar is in active -->
 
     <!--bootstrap-->
-    <script src="/asset/js/bootstrap.min.js"></script>
+    <!-- <script src="/asset/js/bootstrap.min.js"></script> -->
     <!-- //bootstrap-->
     <!-- //Js scripts -->
     
