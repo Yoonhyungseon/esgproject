@@ -49,13 +49,16 @@
     </section>
     
     <script type="text/javascript">
+//	var uName = '${uName}'
+	var regNm = 'esg'
 	$(document).ready(function(){
-    	boardObj.fn_getCommentList();
+    	boardObj.fn_getCommentList(regNm);
     });
     
 	let boardObj = {
 		fn_getCommentList : function() {
-			ajaxParamExecute("", "/mypage/getCommentList", "post", false, false, boardObj.fn_getCommentListReturn);
+			var param = "regNm="+regNm;
+			ajaxParamExecute(param, "/mypage/getCommentList", "post", false, false, boardObj.fn_getCommentListReturn);
 		},
 		fn_getCommentListReturn : function(rst) {
  			console.log(rst);
