@@ -42,6 +42,7 @@
     	/* getCommentList :: 댓글 리스트 조회 */
 		SELECT c.LINK_SEQ, c.`CONTENTS`, c.REG_NM, c.REG_DT, c.SEQ ,b.BOARD_SSN, b.U_NAME, b.TITLE
 		, DATE_FORMAT(c.REG_DT, '%Y-%m-%d') AS REG_DT_YMD
+		, SUBSTR(b.TITLE, 1, 20) AS TITLE20
 		FROM board_comment AS c
 		LEFT JOIN bboom_board AS b
 		ON c.LINK_SEQ = b.BOARD_SSN

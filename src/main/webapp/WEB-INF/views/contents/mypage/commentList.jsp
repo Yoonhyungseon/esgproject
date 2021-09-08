@@ -5,6 +5,9 @@
 	<br>
 	<br>
 	<br>
+	<br>
+	<br>
+	
 	<section class="ftco-section">
         <div class="container">
             <div class="row justify-content-center">
@@ -70,7 +73,7 @@
 					
 					html.find('.seq').text(rst.resultList[i].seq);
 					html.find('.date').text(rst.resultList[i].regDtYmd);
-					html.find('.title').text(rst.resultList[i].title);
+					html.find('.title').text(rst.resultList[i].title20);
 					html.find('.name').text(rst.resultList[i].regNm);
 					html.find('.comment').text(rst.resultList[i].contents);
 
