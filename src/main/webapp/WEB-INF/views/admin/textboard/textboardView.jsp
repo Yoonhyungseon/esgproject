@@ -64,14 +64,14 @@ progress::-webkit-progress-value {
 						<h5 class="date" style="float: right;">
 							Writer : <span id="req_name"style="font-weight: normal;"></span> <br>
 							Date : <span id="req_date" style="font-weight: normal;"></span><br>
-							Reply : <span id="req_reply" style="font-weight: normal;"></span> <br> 
+							<!-- Reply : <span id="req_reply" style="font-weight: normal;"></span> <br>  -->
 							Likes : <span style="font-weight: normal;">32</span> <br> 
-							Points : <span style="font-weight: normal;">320,800₩</span>
+							<!-- Points : <span style="font-weight: normal;">320,800₩</span> -->
 						</h5>
 						<div class="blog-img-single">
 							<img id="req_file"
 								style="width: 500px; height: 350px; margin: auto; display: block; padding: 20px;" />
-							<progress id="progressbar" max="100" value="50" style="margin-left: 500px; width: 465px;"></progress>
+							<!-- <progress id="progressbar" max="100" value="50" style="margin-left: 500px; width: 465px;"></progress> -->
 						</div>
 						<br> <br>
 						<p id="req_content"></p>
