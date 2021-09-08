@@ -187,7 +187,7 @@ var boardSsn="${boardSsn}";
  			$('#count_comments').text(rst.resultInfo.comments);
 		},
 		fn_save : function(){
-			/* if(!$('#ftitle').val() || !$('#ftitle').val().trim()){
+			/*  if(!$('#ftitle').val() || !$('#ftitle').val().trim()){
 				alert("피드백 제목을 입력해주세요.");
 				$('#ftitle').focus();
 				return false;
@@ -196,9 +196,9 @@ var boardSsn="${boardSsn}";
 				alert("피드백 내용을 입력해주세요.");
 				$('#fcontent').focus();
 				return false;
-			} */
+			}  */
 			if(confirm('피드백을 등록하시겠습니까?'))
-				ajaxFileFormExecute("fbFrm", "/admin/textboard/postFeedback", "post", false, false, boardObj.fn_saveReturn);
+				ajaxFormExecute("fbFrm", "/admin/textboard/postFeedback", "post", false, false, boardObj.fn_saveReturn);
 		},
 		fn_saveReturn : function(rst){
 			if(rst){
