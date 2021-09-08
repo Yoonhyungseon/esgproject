@@ -201,7 +201,7 @@ progress::-webkit-progress-value {
 							</sec:authorize>
 							<sec:authorize access="isAnonymous()">
 								<div style="display: flow-root;">
-									<div>로그인 하시면 게시글을 남길 수 있습니다.</div>
+									<div>로그인 하시면 댓글을 남길 수 있습니다.</div>
 								    <div class="form-group-2 mt-4 login-button find-id-mention-button">
 						                <button type="button" id="btn_login" name="btn_login" class="btn button-style d-flex ml-auto" onclick="location.href='/member/login'">로그인</button>
 						            </div>
