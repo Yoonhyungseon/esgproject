@@ -182,11 +182,12 @@ public class TextBoardController {
 		logger.debug("TextBoardController : getBoardList - start");
 
 		ModelAndView mv = new ModelAndView("jsonView");
-
+		DataMap paramMap = HttpUtil.getRequestDataMap(request);
+		System.out.println(paramMap.toString());
 		List<CamelMap> resultList = null;
 
 		try {
-			resultList = textBoardMapper.getBoardList();
+			resultList = textBoardMapper.getBoardList(paramMap);
 		} catch (Exception e) {
 			logger.debug("게시글 리스트 조회 오류", e);
 		}
@@ -322,7 +323,7 @@ public class TextBoardController {
 
 		DataMap paramMap = HttpUtil.getRequestDataMap(request);
 		System.out.println(paramMap.toString());
-		CamelMap resultInfo = null;
+		String resultInfo = null;
 		
 		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 	    if (authentication.getPrincipal() == "anonymousUser") {
