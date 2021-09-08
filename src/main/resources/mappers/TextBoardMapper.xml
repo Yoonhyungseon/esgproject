@@ -3,11 +3,11 @@
 
 <mapper namespace="program.textboard.mapper.TextBoardMapper">
 
- 	<select id="getBoardList" resultType="cMap">
-		SELECT a.BOARD_SSN, a.TITLE, a.CONTENTS, a.ATT_FILE , a.U_NAME, a.REG_ID, a.REG_DT_YMD, a.HASH_TAG, a.SCRAPS, COUNT(a.SEQ) AS COMMENTS
+ 	<select id="getBoardList" resultType="cMap" parameterType="dMap">
+		<!-- SELECT a.BOARD_SSN, a.TITLE, a.CONTENTS, a.ATT_FILE , a.U_NAME, a.REG_ID, a.REG_DT_YMD, a.HASH_TAG, a.SCRAPS, COUNT(a.SEQ) AS COMMENTS,a.likes
 		  FROM(
 		  		SELECT   b.BOARD_SSN , b.TITLE, b.CONTENTS, b.ATT_FILE, b.U_NAME, b.REG_ID, b.HASH_TAG, c.SEQ
-		  		, DATE_FORMAT(b.REG_DT, '%Y-%m-%d') AS REG_DT_YMD, COUNT(s.SCRAP_NO) AS SCRAPS
+		  		, DATE_FORMAT(b.REG_DT, '%Y-%m-%d') AS REG_DT_YMD, COUNT(s.SCRAP_NO) AS SCRAPS, COUNT(CASE WHEN s.REG_ID=#{regId} THEN 1 END AND CASE WHEN s.LINK_SEQ=#{boardSsn} THEN 1 END) AS likes
 		         FROM  bboom_board b
 		         LEFT JOIN board_comment c 
 		         ON b.BOARD_SSN=c.LINK_SEQ 
@@ -15,7 +15,16 @@
 		         ON b.BOARD_SSN=s.LINK_SEQ
 		         GROUP BY b.BOARD_SSN, b.TITLE, b.CONTENTS, b.ATT_FILE, b.U_NAME, b.REG_ID, b.REG_DT, b.HASH_TAG, c.SEQ
 		      )a
-		   GROUP BY a.BOARD_SSN, a.TITLE, a.CONTENTS, a.ATT_FILE, a.U_NAME, a.REG_ID, a.REG_DT_YMD, a.SCRAPS, a.HASH_TAG
+		   GROUP BY a.BOARD_SSN, a.TITLE, a.CONTENTS, a.ATT_FILE, a.U_NAME, a.REG_ID, a.REG_DT_YMD, a.SCRAPS, a.HASH_TAG -->
+		   SELECT *
+				FROM (
+					SELECT b.BOARD_SSN,b.TITLE, b.ATT_FILE, b.U_NAME
+						, DATE_FORMAT(b.REG_DT, '%Y-%m-%d') AS REG_DT_YMD
+						,( SELECT COUNT(SEQ) FROM board_comment WHERE LINK_SEQ = b.BOARD_SSN ) AS COMMENTS
+						,( SELECT COUNT(SCRAP_NO) FROM board_scrap WHERE LINK_SEQ = b.BOARD_SSN ) AS SCRAPS
+						,( SELECT COUNT(*) FROM board_scrap WHERE REG_ID=#{regId} AND LINK_SEQ = b.BOARD_SSN ) AS likes 
+							FROM bboom_board AS b
+					)AS a 
 	</select>
  	
  	<select id="getBoardInfo" resultType="cMap" parameterType="dMap">
@@ -23,8 +32,8 @@
 		  FROM(
 		  		SELECT   b.BOARD_SSN , b.TITLE, b.CONTENTS, b.ATT_FILE, b.U_NAME, b.REG_ID, b.HASH_TAG, c.SEQ
 		  		, DATE_FORMAT(b.REG_DT, '%Y-%m-%d') AS REG_DT_YMD, COUNT(s.SCRAP_NO) AS SCRAPS
-		         FROM  bboom_board b
-		         LEFT JOIN board_comment c 
+				  	FROM  bboom_board AS b
+		         LEFT JOIN board_comment AS c 
 		         ON b.BOARD_SSN=c.LINK_SEQ 
 		         LEFT JOIN board_scrap s
 		         ON b.BOARD_SSN=s.LINK_SEQ
@@ -69,7 +78,7 @@
  						<!-- Notice -->
  						
  						<!-- Scrap -->
- 	<select id="selectScrap" parameterType="dMap">
+ 	<select id="selectScrap" parameterType="dMap" resultType="string"> 
  		SELECT count(*)
  		FROM board_scrap
  		WHERE REG_ID=#{regId} AND LINK_SEQ=#{linkSeq}

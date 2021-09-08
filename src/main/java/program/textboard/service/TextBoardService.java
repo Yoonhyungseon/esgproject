@@ -1,10 +1,15 @@
 package program.textboard.service;
 
-import java.util.List;
+import java.sql.SQLException;
+import java.util.HashMap;
+
+import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import program.common.DataMap;
+import program.common.util.HttpUtil;
 import program.textboard.mapper.TextBoardMapper;
 
 
@@ -15,8 +20,8 @@ import program.textboard.mapper.TextBoardMapper;
 @Service
 public class TextBoardService {
 
-	//@Autowired
-	//private TextBoardMapper textBoardMapper;
+	@Autowired
+	private TextBoardMapper textBoardMapper;
 //
 //	/**************************************************
 //	 * @MethodName : getNow
@@ -110,5 +115,22 @@ public class TextBoardService {
 //	public List<BoardVo> searchTitle(String name) throws Exception {	
 //		return textBoardMapper.searchTitle(name);
 //	}
+
+	public String updatePick(HashMap<String, String> map) throws SQLException {
+		
+		String checkScrap=textBoardMapper.selectScrap(map);
+		
+		if(checkScrap.equals("0")) {
+			System.out.println("MyScrap update");
+			textBoardMapper.insertScrap(map);
+		}else if(checkScrap.equals("1")){
+			System.out.println("MyScrap delete");
+			textBoardMapper.deleteScrap(map);
+		}else { 
+			System.out.println("오류");
+			return null;
+		}
+		return checkScrap;
+	}
 }
 

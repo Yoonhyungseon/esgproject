@@ -1,6 +1,7 @@
 package program.textboard.mapper;
 
 import java.sql.SQLException;
+import java.util.HashMap;
 import java.util.List;
 
 import org.springframework.stereotype.Repository;
@@ -85,7 +86,7 @@ public interface TextBoardMapper {
 	* @Author : Ye-Jin. Jeong
 	* @Version : 2021. 8. 13.
 	**************************************************/
-	List<CamelMap> getBoardList() throws SQLException;
+	List<CamelMap> getBoardList(DataMap paramMap) throws SQLException;
 
 	
 	/**************************************************
@@ -159,37 +160,37 @@ public interface TextBoardMapper {
 	/**************************************************
 	* @MethodName : selectScrap
 	* @Description: 스크랩 내역 조회
-	* @param paramMap
+	* @param map
 	* @return
 	* @throws SQLException String
 	* @Author : Ye-Jin. Jeong
 	* @Version : 2021. 8. 27.
 	**************************************************/
-	String selectScrap(DataMap paramMap) throws SQLException;
+	String selectScrap(HashMap<String, String> map) throws SQLException;
 
 
 	/**************************************************
 	* @MethodName : insertScrap
 	* @Description: 스크랩 추가
-	* @param paramMap
+	* @param map
 	* @return
 	* @throws SQLException CamelMap
 	* @Author : Ye-Jin. Jeong
 	* @Version : 2021. 8. 27.
 	**************************************************/
-	CamelMap insertScrap(DataMap paramMap) throws SQLException;
+	String insertScrap(HashMap<String, String> map) throws SQLException;
 
 
 	/**************************************************
 	* @MethodName : deleteScrap
 	* @Description: 스크랩 삭제
-	* @param paramMap
+	* @param map
 	* @return
 	* @throws SQLException CamelMap
 	* @Author : Ye-Jin. Jeong
 	* @Version : 2021. 8. 27.
 	**************************************************/
-	CamelMap deleteScrap(DataMap paramMap) throws SQLException;
+	String deleteScrap(HashMap<String, String> map) throws SQLException;
 
 
 	/**************************************************
@@ -246,4 +247,6 @@ public interface TextBoardMapper {
 	* @Version : 2021. 8. 31.
 	**************************************************/
 	List<CamelMap> getFeedback(DataMap paramMap);
+
+
 }

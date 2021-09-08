@@ -1,13 +1,16 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java"%>
-
-
-<!-- <script src="js/jquery.js" type="text/javascript">
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
+<%@ page import="org.springframework.security.core.context.SecurityContextHolder" %>
+<%@ page import="org.springframework.security.core.Authentication" %>
+<!-- 
+<script src="js/jquery.js" type="text/javascript">
 	$(document).ready(function() {
  	var progressbar = $('#progressbar'),
     max = progressbar.attr('max'),
     value = progressbar.val();
 };
-</script> -->
+</script>
 <style>
 progress {
 	width: 100%;
@@ -36,28 +39,7 @@ progress::-webkit-progress-value {
     margin-right: -15px;
     margin-left: -15px;
 }
-
-/* .container_bar {
-	background-color: rgb(192, 192, 192);
-	width: 100%;
-	border-radius: 15px;
-	height: 15px;
-}
-
-.skill {
-	background-color: rgb(116, 194, 92);
-	color: white;
-	padding: 1%;
-	text-align: right;
-	font-size: 12px;
-	border-radius: 15px;
-	height: 15px;
-}
-
-.html {
-	width: 80%; */
-}
-</style>
+</style> -->
 <!-- inner banner -->
 <div class="inner-banner">
 	<section class="w3l-breadcrumb">
@@ -65,8 +47,7 @@ progress::-webkit-progress-value {
 			<h4 class="inner-text-title font-weight-bold mb-sm-3 mb-2">Board</h4>
 			<ul class="breadcrumbs-custom-path">
 				<li><a href="../index">Home</a></li>
-				<li class="active"><span class="fa fa-chevron-right mx-2"
-					aria-hidden="true"></span>BoardList</li>
+				<li class="active"><span class="fa fa-chevron-right mx-2" aria-hidden="true"></span>BoardList</li>
 			</ul>
 		</div>
 	</section>
@@ -83,22 +64,29 @@ progress::-webkit-progress-value {
 					<div class="col-lg-4 col-md-6 column column-img" id="zoomIn" style="float: left; margin: 10px 0">
 						<div class="services-gd">
 							<div class="serve-info">
-<!-- 								<div id="boardSsn" style="display:none;"></div> -->
 								<h3 class="date"></h3>
 								<a class="req_title"><img class="img-responsive" id="req_file" alt="blog-image"></a>
 								<h3>
 									<a href="#none" id="req_title" class="req_title"></a>
 								</h3>
 								<ul class="admin-list">
-									<li><div id="req_regName"><span
-											class="fa fa-user-circle" aria-hidden="true"></span></div></li>
-									<li><a href="textboardView"><span class="fa fa-heart"
-											aria-hidden="true"></span>55 Likes</a></li>
-									<li><div href="textboardView"><span
-											class="fa fa-comments" aria-hidden="true"></span>7 Comments</div></li>
+									<li><div id="req_regName"><span	class="fa fa-user-circle" aria-hidden="true"></span></div></li>
+									<li id="pick-switch-range" style="font-size: 15px;text-transform: capitalize;">
+									<div id="linkSeq" value="" style="display:hidden;"></div>
+		                             	<c:choose>
+		                                	<c:when test="${req_likes eq '1'}"> <!--   board_scrapVO.regId!=null   -->
+												<a id="pick-switch" value="${linkSeq}"><span class="fa fa-heart req_likes" aria-hidden="true" style="color:#0abf53;!important"></span></a><span class="req_scrap"></span>
+											</c:when>
+											<c:otherwise>
+												<a id="pick-switch" value="${linkSeq}"><span class="fa fa-heart req_likes" aria-hidden="true" style="color: #6b6768;"></span></a><span class="req_scrap"></span>
+											</c:otherwise>
+										</c:choose>
+									</li>
+									<li style="display: inline-table; font-size: 15px;text-transform: capitalize; color: #6b6768;">
+										<span class="fa fa-comments req_comments" aria-hidden="true"></span> Comments</li>
 								</ul>
-								<progress id="progressbar" max="100" value="50"></progress>
-							</div>
+<!-- 								<progress id="progressbar" max="100" value="50"></progress>
+ -->							</div>
 						</div>
 					</div>
 				</div>
@@ -129,13 +117,19 @@ progress::-webkit-progress-value {
 </div>
 <!-- //blog section -->
 <script type="text/javascript">
+var boardSsn="${boardSsn}";
+var regId="${login.name}";
     $(document).ready(function(){
-    	boardeObj.fn_getBoardList();
+    	boardObj.fn_getBoardList(boardSsn);
     });
-    
-	let boardeObj = {
-		fn_getBoardList : function() {
-			ajaxParamExecute("", "/board/getBoardList", "post", false, false, boardeObj.fn_getBoardListReturn);
+  /*   $(document).on("click", "#pick-switch-range", function() {
+		//var boardSsn='${boardSsn}';
+		boardObj.fn_scrap("${linkSeq}");
+	}); */
+	let boardObj = {
+		fn_getBoardList : function(boardSsn) {
+			var param="boardSsn="+boardSsn;
+			ajaxParamExecute(param, "/board/getBoardList", "post", false, false, boardObj.fn_getBoardListReturn);
 		},
 		fn_getBoardListReturn : function(rst) {
  			console.log(rst);
@@ -145,17 +139,23 @@ progress::-webkit-progress-value {
 				for (var i in rst.resultList) {
 					
 					var html = $('#listCron').clone().removeAttr('title').show();
-					
-// 					html.find('#boardSsn').text(rst.resultList[i].boardSsn);
-				    
+									    
 					html.find('#req_title').text(rst.resultList[i].title);
-					html.find('.req_title').attr('onclick', 'boardeObj.fn_view(\''+rst.resultList[i].boardSsn+'\')');
+					html.find('.req_title').attr('onclick', 'boardObj.fn_view(\''+rst.resultList[i].boardSsn+'\')');
 	               
 					html.find('.date').text(rst.resultList[i].regDtYmd);
+
+					html.find('.req_comments').text(rst.resultList[i].comments);
 					
 					html.find('#req_file').attr("src", "/common/imageload?fullImageFileNm="+rst.resultList[i].attFile);
 
 					html.find('#req_regName').text(rst.resultList[i].uName);
+
+					html.find('.req_scrap').text(rst.resultList[i].scraps);
+
+					html.find('.req_likes').text(rst.resultList[i].likes);
+
+					html.find('#linkSeq').text(rst.resultList[i].boardSsn);
 					
 					$('#listClone').append(html); 
 				}
@@ -167,9 +167,51 @@ progress::-webkit-progress-value {
  			console.log(boardSsn);
 			$('#boardSsn').val(boardSsn);
 			$('#boardFrm').submit();
-		}
+		}/* ,
+		fn_scrap : function(boardSsn){
+			console.log(boardSsn);
+			//var boardSsn = $(this).children().attr('value');
+			$('#linkSeq').val('${boardSsn}');
+    		var cParam = "linkSeq="+'${boardSsn}';
+    		console.log(cParam);
+			ajaxParamExecute(cParam, "/board/updateScrap", "post", false, false, boardObj.fn_scrapReturn);
+		},
+		fn_scrapReturn : function(result){
+			console.log(result);
+			if(result.like == '0'){
+				$(this).children("#pick-switch").html("<span class='fa fa-heart'/>");
+			}else if(result.like == '1'){
+				$(this).children("#pick-switch").html("<span class='fa fa-heart' style='color: #0abf53;'/>");
+			}
+		} */
 	}
-    </script>
+
+</script>
+<script type="text/javascript">
+$(document).on("click", "#pick-switch-range", function() {
+		//var linkSeq = "${boardSsn}";
+		var linkSeq = $(this).children().attr('value');
+		//var linkSeq = $(this).children().val('${boardSsn}');
+		
+		alert(linkSeq);
+		$.ajax({
+			type:"post",
+			data:{ "linkSeq" : linkSeq},
+			dataType:"json",
+			url:"/board/updateScrap",
+			context : this, 
+			success:function(result){
+				if(result.like == '0'){
+					$(this).children("#pick-switch").html("<span class='fa fa-heart'/>");
+				}else if(result.like == '1'){
+					$(this).children("#pick-switch").html("<span class='fa fa-heart' style='color: #0abf53;'/>");
+				}
+			}
+		});
+	});
+</script>
+											
+											<!-- bootstrap javascipt -->
 <!-- Js scripts -->
 <!-- move top -->
 <button onclick="topFunction()" id="movetop" title="Go to top">
