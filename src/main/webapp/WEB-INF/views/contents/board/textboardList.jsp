@@ -72,13 +72,13 @@ progress::-webkit-progress-value {
 								<ul class="admin-list">
 									<li><div id="req_regName"><span	class="fa fa-user-circle" aria-hidden="true"></span></div></li>
 									<li id="pick-switch-range" style="font-size: 15px;text-transform: capitalize;">
-									<div id="linkSeq" value="" style="display:hidden;"></div>
+									<div id="linkSeq" value="" style="display:none;"></div>
 		                             	<c:choose>
 		                                	<c:when test="${req_likes eq '1'}"> <!--   board_scrapVO.regId!=null   -->
-												<a id="pick-switch" value="${linkSeq}"><span class="fa fa-heart req_likes" aria-hidden="true" style="color:#0abf53;!important"></span></a><span class="req_scrap"></span>
+												<a id="pick-switch" value="${linkSeq}"><span class="fa fa-heart req_scrap" aria-hidden="true" style="color:#0abf53;!important"></span></a>
 											</c:when>
 											<c:otherwise>
-												<a id="pick-switch" value="${linkSeq}"><span class="fa fa-heart req_likes" aria-hidden="true" style="color: #6b6768;"></span></a><span class="req_scrap"></span>
+												<a id="pick-switch" value="${linkSeq}"><span class="fa fa-heart req_scrap" aria-hidden="true" style="color: #6b6768;"></span></a>
 											</c:otherwise>
 										</c:choose>
 									</li>
