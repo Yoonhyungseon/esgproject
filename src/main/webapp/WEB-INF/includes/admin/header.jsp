@@ -42,14 +42,14 @@
                                     <a class="nav-link" href="/admin/textboard/noticeList">공지사항</a>
                                 </nav>
                             </div>
-                            <a class="nav-link" href="/admin/newsList">
+                          <!--   <a class="nav-link" href="/admin/newsList">
                                 <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
                                 ESG 뉴스
                             </a>
                              <a class="nav-link" href="/admin/companies/companiesList">
                                 <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
                                 기업 관리
-                            </a>
+                            </a> -->
                             <div class="sb-sidenav-menu-heading">회원</div>
                             <a class="nav-link" href="/admin/member/memberList">
                                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
