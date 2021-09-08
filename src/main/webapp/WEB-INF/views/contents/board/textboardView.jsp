@@ -67,7 +67,7 @@ progress::-webkit-progress-value {
 				</div>
 				<!-- bottom -->
 				
-				<progress id="progressbar" max="100" value="50"></progress>
+				<!-- <progress id="progressbar" max="100" value="50"></progress> -->
 
 				<div
 					class="blog-single-tags d-flex align-items-center mt-4 pt-1 mb-5">
