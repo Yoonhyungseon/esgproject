@@ -19,21 +19,21 @@
 <section class="w3l-blog-single py-5">
 	<div class="single-blog sec-padding py-md-4 py-3">
 		<div class="container">
-			<div id="req_seq" style="display: none">${seq}</div>
+			<div id="req_seq" style="display: none"></div>
 			<div class="single-bottom-blog">
-				<h3 id="req_date" class="date">${regDtYmd}</h3>
+				<h3 id="req_date" class="date"></h3>
 
 				<div class="bottom-grid mt-4 pt-2">
-					<h3 id="req_title">${title}</h3>
-					<p id="req_subTitle" style="margin: auto; display: block;">${subTitle}</p>
+					<h3 id="req_title"></h3>
+					<p id="req_subTitle" style="margin: auto; display: block;"></p>
 					<br> <br>
 					<div class="blog-img-single">
 						<img id="req_file" class="img-fluid img-responsive" />
 					</div>
-					<p id="req_url">${cUrl}</p>
-					<p id="req_content">${contents}</p>
+					<p id="req_url"></p>
+					<p id="req_content"></p>
 				</div>
-				<form id="boardFrm" name="boardFrm" method="post" action="/board/noticeView">
+				<!-- <form id="boardFrm" name="boardFrm" method="post" action="/board/noticeView">
 					<input type="hidden" id="post_seq" name="seq" value="">
 					<div class="single-pagination clearfix">
 						<input type="hidden" id="post_seq" name="seq" value=""> 
@@ -42,7 +42,7 @@
 						<a class="next-post pull-right" onclick="noticeObj.fn_getNoticeNext()">Next Post <span
 							class="fa fa-arrow-right" aria-hidden="true"></span></a>
 					</div>
-				</form>
+				</form> -->
 				<div class="row" style="display: inline; padding: 1rem 1.1rem;">
 					<div class="btn_area">
 						<div class="btn_right" style="margin-top: 10px; float: right;">
@@ -82,7 +82,7 @@
  				$('#req_url').show()
  				$('#req_url').text(rst.resultInfo.cUrl);
  			}
- 			$('#req_content').text(rst.resultInfo.contents);
+ 			$('#req_content').html(rst.resultInfo.contents);
  			//location.reload();
 		},
 		fn_getNoticePrev : function() {

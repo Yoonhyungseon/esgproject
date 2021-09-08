@@ -18,8 +18,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="icon" type="image/png" href="/table/images/icons/favicon.ico" />
-<link rel="stylesheet" type="text/css"
-	href="/table/vendor/bootstrap/css/bootstrap.min.css">
+<!-- <link rel="stylesheet" type="text/css"
+	href="/table/vendor/bootstrap/css/bootstrap.min.css"> -->
 <link rel="stylesheet" type="text/css"
 	href="/table/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" type="text/css"
@@ -62,7 +62,7 @@
 				</div>
 				<form id="boardFrm" name="boardFrm" method="post"
 					action="/board/noticeView">
-					<input type="hidden" id=seq name="seq" value="">
+					<input type="hidden" id="seq" name="seq" value="">
 				</form>
 			</div>
 		</div>
