@@ -7,6 +7,8 @@ import javax.servlet.http.HttpServletRequest;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -151,13 +153,12 @@ public class AdminTextBoardController {
 
 		int rst = 0;
 
-		// Authentication authentication =
-		// SecurityContextHolder.getContext().getAuthentication();
-		// String adminId = authentication.getName();
+		Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+		String adminId = authentication.getName();
 		//String mode = paramMap.getString("mode");
 		//String seq = paramMap.getString("seq");
 
-		// paramMap.put("adminId", adminId);
+		paramMap.put("adminId", adminId);
 
 		paramMap.put("filePath", "SITE_BOARD");
 		List<CamelMap> rstFileList = null;
@@ -315,6 +316,67 @@ public class AdminTextBoardController {
 		mv.addObject("resultInfo", resultInfo);
 
 		logger.debug("AdminTextBoardController : getBoardInfo - end");
+		return mv;
+	}
+	
+	/**************************************************
+	* @MethodName : feedbackSave
+	* @Description: 피드백 등록
+	* @param request
+	* @param model
+	* @return Boolean
+	* @Author : Ye-Jin. Jeong
+	* @Version : 2021. 8. 31.
+	**************************************************/
+	@ResponseBody
+	@RequestMapping(value = { "/postFeedback" }, method = { RequestMethod.GET, RequestMethod.POST })
+	public Boolean postFeedback(HttpServletRequest request, Model model) {
+		logger.debug("AdminTextBoardController : postFeedback - start");
+		
+		DataMap paramMap = HttpUtil.getRequestDataMap(request);
+
+		int rst = 0;
+		
+		try {
+			rst = adminTBMapper.postFeedback(paramMap);
+		} catch (Exception e) {
+			logger.debug("피드백 저장 오류", e);
+		}
+		
+		logger.debug("AdminTextBoardController : postFeedback - end");
+		
+		return rst>0 ? true : false;
+	}
+	/**************************************************
+	* @MethodName : getCommentList
+	* @Description: 글번호에 따른 댓글 리스트
+	* @param request
+	* @param model
+	* @return ModelAndView
+	* @Author : Ye-Jin. Jeong
+	* @Version : 2021. 8. 31.
+	**************************************************/
+	@ResponseBody
+	@RequestMapping(value = { "/getCommentList" }, method = { RequestMethod.GET, RequestMethod.POST })
+	public ModelAndView getCommentList(HttpServletRequest request, Model model) {
+		logger.debug("AdminTextBoardController : getCommentList - start");
+		
+		ModelAndView mv = new ModelAndView("jsonView");
+
+		DataMap paramMap = HttpUtil.getRequestDataMap(request);
+		System.out.println(paramMap.toString());
+	
+		List<CamelMap> resultList = null;
+
+		try {
+			resultList = adminTBMapper.getCommentList(paramMap);
+		} catch (Exception e) {
+			logger.debug("게시글 조회 오류", e);
+		}
+
+		mv.addObject("resultList", resultList);
+
+		logger.debug("AdminTextBoardController : getCommentList - end");
 		return mv;
 	}
 }
