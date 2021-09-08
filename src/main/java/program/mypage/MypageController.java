@@ -263,8 +263,8 @@ public class MypageController {
 	       logger.debug("내가 작성한 게시글 조회: 로그인하지 않은 상태");
 	    }else {
 	         Account account = (Account)authentication.getPrincipal();
-	         paramMap.put("uName", account.getName()); 
-	         System.out.println("name="+account.getName());
+	         paramMap.put("regId", account.getUsername()); 
+	         System.out.println("name="+account.getUsername());
 	    }
 		
 		List<CamelMap> resultList = null;

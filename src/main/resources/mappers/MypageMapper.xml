@@ -30,11 +30,11 @@
     
     <select id="getScrapList" resultType="cMap">
     	/* getScrapList :: 스크랩 리스트 조회 */
-		SELECT *
-		, DATE_FORMAT(REG_DT, '%Y-%m-%d') AS REG_DT_YMD
-		, SUBSTR(TITLE, 1, 40) AS TITLE_20
-		FROM bboom_board
-		WHERE U_NAME= #{uName}
+		SELECT s.LINK_SEQ, s.REG_ID, b.BOARD_SSN, b.UP_SSN, b.OPEN_YN, b.REPLY_YN, b.VIEW_CNT, b.U_NAME, b.TITLE, b.`CONTENTS`, b.ATT_FILE, b.DEL_YN, b.REG_DT		
+		FROM board_scrap AS s
+		LEFT JOIN bboom_board AS b
+		ON s.LINK_SEQ = b.BOARD_SSN
+		WHERE s.REG_ID= #{regId}
 		
     </select>
     
